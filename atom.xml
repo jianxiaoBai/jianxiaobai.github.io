@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-06T08:08:24.564Z</updated>
+  <updated>2017-04-06T13:46:51.579Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,19 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2017/04/06/test/"/>
+    <id>http://yoursite.com/2017/04/06/test/</id>
+    <published>2017-04-06T12:34:21.000Z</published>
+    <updated>2017-04-06T13:46:51.579Z</updated>
+    
+    <content type="html"><![CDATA[<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+<!-- 其中 class="blockquote-center" 是必须的 -->
+<blockquote class="blockquote-center">人一切的痛苦，本质上都是对自己的无能的愤怒</blockquote>
+
+<!-- 标签 方式，要求版本在0.4.5或以上 -->
+<blockquote class="blockquote-center"><p>王小波</p>
+</blockquote>
+<!-- 标签别名 -->
+<blockquote class="blockquote-center"><p>blah blah blah </p>
+</blockquote>
+<blockquote>
+<p>adsad撒的阿萨德撒的</p>
+</blockquote>
+<h3 id="Block-Quote-块引用"><a href="#Block-Quote-块引用" class="headerlink" title="Block Quote-块引用"></a>Block Quote-块引用</h3><blockquote><p>I love you forever</p>
+</blockquote>
+<blockquote><p>I love you forever</p>
+<footer><strong>http://www.baidu.com</strong></footer></blockquote>
+<blockquote><p>I love you forever</p>
+<footer><strong>David levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<h3 id="Code-Block代码块"><a href="#Code-Block代码块" class="headerlink" title="Code Block代码块"></a>Code Block代码块</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[rectangle setX:<span class="number">10</span> y:<span class="number">10</span> width:<span class="number">20</span> height:<span class="number">20</span>];</div></pre></td></tr></table></figure>
+<p>以上是文章摘要 &lt;!— more —&gt; 以下是余下全文</p>
+<figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.map(callback[,thisArg])</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>http://www.baidu.com Underscore.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_.compact([0,1,false,2,&apos;&apos;,3]);</div><div class="line">=&gt;[1,2,3]</div></pre></td></tr></table></figure>
+<h3 id="Pull-Quote"><a href="#Pull-Quote" class="headerlink" title="Pull Quote"></a>Pull Quote</h3><blockquote class="pullquote [class]"><p>content</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;人一切的痛苦，本质上都是对自
+    
+    </summary>
+    
+      <category term="Sports" scheme="http://yoursite.com/categories/Sports/"/>
+    
+      <category term="Baseball" scheme="http://yoursite.com/categories/Sports/Baseball/"/>
+    
+    
+      <category term="Injury" scheme="http://yoursite.com/tags/Injury/"/>
+    
+      <category term="Fight" scheme="http://yoursite.com/tags/Fight/"/>
+    
+      <category term="Shocking" scheme="http://yoursite.com/tags/Shocking/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="http://yoursite.com/2017/04/05/hello-world/"/>
     <id>http://yoursite.com/2017/04/05/hello-world/</id>
     <published>2017-04-05T08:41:22.242Z</published>
-    <updated>2017-04-06T08:08:24.564Z</updated>
+    <updated>2017-04-06T12:24:43.122Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h3><p>还记得在 Github 上生成的第一个page时的新奇，<br>还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋、<br>如今在Github的page上生成了自己的博客，那可谓是即新奇 + 兴奋带来的激动，<br>可以在自己的这块领地为所欲为，光想想就有一种迎风而来的酸爽。</p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p>每一次的开始都仿佛打开一扇门，<br>而每扇门的背后都有着无数默默付出和无私奉献的人，<br>是他们让现在的这个圈子有了生态，<br>没有他们我不可能只折腾了一天就把这个博客搭建起来，<br>再次由衷的致敬这些人、这些人们，<br>我愿付出我的努力成为你们中的一份子，这是我的回报。</p>
+    <content type="html"><![CDATA[<h3 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h3><p>还记得在 Github 上生成的第一个page时的新奇<br>还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋<br>如今在Github的page上生成了自己的博客，那可谓是即新奇 + 兴奋带来的激动<br>可以在自己的这块领地为所欲为，光想想就有一种迎风而来的酸爽</p>
+<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p>每一次的开始都仿佛打开一扇门<br>而每扇门的背后都有着无数默默付出和无私奉献的人<br>是他们让现在的这个圈子有了生态<br>没有他们我不可能只折腾了一天就把这个博客搭建起来<br>再次由衷的致敬这些人、这些人们，<br>我愿付出我的努力成为你们中的一份子，这是我的回报</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;历程&quot;&gt;&lt;a href=&quot;#历程&quot; class=&quot;headerlink&quot; title=&quot;历程&quot;&gt;&lt;/a&gt;历程&lt;/h3&gt;&lt;p&gt;还记得在 Github 上生成的第一个page时的新奇，&lt;br&gt;还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋、&lt;b
+      &lt;h3 id=&quot;历程&quot;&gt;&lt;a href=&quot;#历程&quot; class=&quot;headerlink&quot; title=&quot;历程&quot;&gt;&lt;/a&gt;历程&lt;/h3&gt;&lt;p&gt;还记得在 Github 上生成的第一个page时的新奇&lt;br&gt;还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋&lt;br&gt;
     
     </summary>
     
