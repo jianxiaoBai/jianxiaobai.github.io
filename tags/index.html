@@ -140,6 +140,11 @@
   
 </title>
 </head>
+<!-- 听音乐摇晃 -->
+<link href="http://s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css" rel="stylesheet" type="text/css">
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/dytitle.js"></script>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -304,10 +309,10 @@
     
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-            目前共计 3 个标签
+            目前共计 1 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/Fight/" style="font-size: 12px; color: #ccc">Fight</a> <a href="/tags/Injury/" style="font-size: 12px; color: #ccc">Injury</a> <a href="/tags/Shocking/" style="font-size: 12px; color: #ccc">Shocking</a>
+          <a href="/tags/picture/" style="font-size: 12px; color: #ccc">picture</a>
         </div>
       </div>
     
@@ -376,7 +381,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -387,7 +392,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -401,6 +406,64 @@
               <i class="fa fa-rss"></i>
               RSS
             </a>
+            <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+      var songs = [
+          "http://m2.music.126.net/3uHnH7uQAeFwUfuvEB9lrg==/3265549619475054.mp3",
+          "http://m2.music.126.net/NnHwR2HV-1OoKZ6R5LVy4Q==/18502581673300023.mp3",
+          "http://m2.music.126.net/qv3RI4K7ABKJ0TyAdb3taw==/3250156397064860.mp3",
+          "......"
+      ];
+
+      function S() {
+          var e = document.getElementById("audio_element_id");
+          if(e != null){
+              var index = parseInt(e.getAttribute("curSongIndex"));
+              if(index > songs.length - 2) {
+                  index = 0;
+              } else {
+                  index++;
+              }
+              e.setAttribute("curSongIndex", index);
+          }
+          e.src = i;
+          e.play()
+      }
+      function initAudioEle() {
+          var e = document.getElementById("audio_element_id");
+          if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+            document.body.appendChild(e);
+            e.addEventListener("ended", function() {
+              go();
+            }, true);
+          }
+      }
+
+      initAudioEle();
+      var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+      var i = songs[curSongIndex];
+      S();
+    })()'>
+    <i class="fa fa-music"></i> 听音乐</a>
           </div>
         
 

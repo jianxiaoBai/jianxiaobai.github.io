@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-06T13:46:51.579Z</updated>
+  <updated>2017-04-06T12:24:43.122Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,60 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2017/04/06/test/"/>
-    <id>http://yoursite.com/2017/04/06/test/</id>
-    <published>2017-04-06T12:34:21.000Z</published>
-    <updated>2017-04-06T13:46:51.579Z</updated>
-    
-    <content type="html"><![CDATA[<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
-<!-- 其中 class="blockquote-center" 是必须的 -->
-<blockquote class="blockquote-center">人一切的痛苦，本质上都是对自己的无能的愤怒</blockquote>
-
-<!-- 标签 方式，要求版本在0.4.5或以上 -->
-<blockquote class="blockquote-center"><p>王小波</p>
-</blockquote>
-<!-- 标签别名 -->
-<blockquote class="blockquote-center"><p>blah blah blah </p>
-</blockquote>
-<blockquote>
-<p>adsad撒的阿萨德撒的</p>
-</blockquote>
-<h3 id="Block-Quote-块引用"><a href="#Block-Quote-块引用" class="headerlink" title="Block Quote-块引用"></a>Block Quote-块引用</h3><blockquote><p>I love you forever</p>
-</blockquote>
-<blockquote><p>I love you forever</p>
-<footer><strong>http://www.baidu.com</strong></footer></blockquote>
-<blockquote><p>I love you forever</p>
-<footer><strong>David levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<h3 id="Code-Block代码块"><a href="#Code-Block代码块" class="headerlink" title="Code Block代码块"></a>Code Block代码块</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[rectangle setX:<span class="number">10</span> y:<span class="number">10</span> width:<span class="number">20</span> height:<span class="number">20</span>];</div></pre></td></tr></table></figure>
-<p>以上是文章摘要 &lt;!— more —&gt; 以下是余下全文</p>
-<figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.map(callback[,thisArg])</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>http://www.baidu.com Underscore.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_.compact([0,1,false,2,&apos;&apos;,3]);</div><div class="line">=&gt;[1,2,3]</div></pre></td></tr></table></figure>
-<h3 id="Pull-Quote"><a href="#Pull-Quote" class="headerlink" title="Pull Quote"></a>Pull Quote</h3><blockquote class="pullquote [class]"><p>content</p>
-</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
-&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;人一切的痛苦，本质上都是对自
-    
-    </summary>
-    
-      <category term="Sports" scheme="http://yoursite.com/categories/Sports/"/>
-    
-      <category term="Baseball" scheme="http://yoursite.com/categories/Sports/Baseball/"/>
-    
-    
-      <category term="Injury" scheme="http://yoursite.com/tags/Injury/"/>
-    
-      <category term="Fight" scheme="http://yoursite.com/tags/Fight/"/>
-    
-      <category term="Shocking" scheme="http://yoursite.com/tags/Shocking/"/>
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -86,6 +32,28 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Naruto-Pictures</title>
+    <link href="http://yoursite.com/2014/06/02/tupian/"/>
+    <id>http://yoursite.com/2014/06/02/tupian/</id>
+    <published>2014-06-02T02:36:02.000Z</published>
+    <updated>2017-04-06T16:10:50.162Z</updated>
+    
+    <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/18210.jpg" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/196232.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/224147.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/199301.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/213318.jpg" alt=""></div></div></div></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;group-picture&quot;&gt;&lt;div class=&quot;group-picture-container&quot;&gt;&lt;div class=&quot;group-picture-row&quot;&gt;&lt;div class=&quot;group-picture-column&quot; style=&quot;widt
+    
+    </summary>
+    
+      <category term="图片" scheme="http://yoursite.com/categories/%E5%9B%BE%E7%89%87/"/>
+    
+    
+      <category term="picture" scheme="http://yoursite.com/tags/picture/"/>
     
   </entry>
   
