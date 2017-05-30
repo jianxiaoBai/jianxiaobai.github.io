@@ -438,12 +438,9 @@
     <link href="http://yoursite.com/2017/04/05/Object/"/>
     <id>http://yoursite.com/2017/04/05/Object/</id>
     <published>2017-04-05T05:00:04.000Z</published>
-    <updated>2017-04-13T14:26:12.439Z</updated>
+    <updated>2017-05-30T08:17:22.042Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<p><div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/object.png" alt="Markdown"></div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 <strong>构造函数</strong>（constructor）和 <strong>原型链</strong>（prototype）。</p>
+    <content type="html"><![CDATA[<p><div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/object.png" alt="Markdown"></div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 <strong>构造函数</strong>（constructor）和 <strong>原型链</strong>（prototype）。</p>
 <a id="more"></a>
 <h2 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h2><p>我们从两个层次来理解：<br>1、<strong>“对象”是单个实物的抽象</strong><br>一本书、一辆汽车、一个人都可以是“对象”，一个数据库、一张网页、一个与远程服务器的连接也可以是“对象”。当实物被抽象成“对象”，实物之间的关系就变成了“对象”之间的关系，从而就可以模拟现实情况，针对“对象”进行编程。<br>2、<strong>“对象”是一个容器，封装了“属性”（property）和“方法”（method）</strong><br>所谓“属性”，就是对象的状态；所谓“方法”，就是对象的行为（完成某种任务）。比如，我们可以把动物抽象为 animal 对象，“属性”记录具体是那一种动物，“方法”表示动物的某种行为（奔跑、捕猎、休息等等）。</p>
 <h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>虽然 Object 构造函数和对象字面量都可以用来创建单个对象，但这些方式有明显的缺点：使用一个接口创建很多对象，会产生大量的重复代码。未解决这个问题，开发者们不停在探索。</p>
@@ -480,10 +477,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/object.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 &lt;strong&gt;构造函数&lt;/strong&gt;（constructor）和 &lt;strong&gt;原型链&lt;/strong&gt;（prototype）。&lt;/p&gt;
+      &lt;p&gt;&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/object.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 &lt;strong&gt;构造函数&lt;/strong&gt;（constructor）和 &lt;strong&gt;原型链&lt;/strong&gt;（prototype）。&lt;/p&gt;
     
     </summary>
     
@@ -501,12 +495,9 @@
     <link href="http://yoursite.com/2017/04/02/event/"/>
     <id>http://yoursite.com/2017/04/02/event/</id>
     <published>2017-04-02T13:14:46.000Z</published>
-    <updated>2017-04-13T14:25:28.799Z</updated>
+    <updated>2017-05-30T08:17:17.227Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/event.png" alt="markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/event.png" alt="markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Javascript 和 HTML 之间的交互是通过 <strong>事件</strong> 来实现的。最早在 IE 中出现，被作为分担服务器端运算负载的一种手段。到现在，几乎所有的浏览器都支持事件处理。在 DOM2 级中得到规范。</p>
 <a id="more"></a>
@@ -636,10 +627,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/event.png&quot; alt=&quot;markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/event.png&quot; alt=&quot;markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Javascript 和 HTML 之间的交互是通过 &lt;strong&gt;事件&lt;/strong&gt; 来实现的。最早在 IE 中出现，被作为分担服务器端运算负载的一种手段。到现在，几乎所有的浏览器都支持事件处理。在 DOM2 级中得到规范。&lt;/p&gt;
     
@@ -659,12 +647,9 @@
     <link href="http://yoursite.com/2017/03/30/php/"/>
     <id>http://yoursite.com/2017/03/30/php/</id>
     <published>2017-03-30T06:35:34.000Z</published>
-    <updated>2017-04-13T14:26:20.625Z</updated>
+    <updated>2017-05-30T08:17:21.550Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/php.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/php.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学习 JS Ajax 之前，先来搭建一个本地服务器环境。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们使用 WampServer，它集成了<strong>PHP + Apache + MySQL</strong>，并且有 <strong>phpmyAdmin</strong> 可视化数据库，这个对我这个新手前端来说还是很有必要的。</p>
 <a id="more"></a>
@@ -705,10 +690,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/php.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/php.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习 JS Ajax 之前，先来搭建一个本地服务器环境。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们使用 WampServer，它集成了&lt;strong&gt;PHP + Apache + MySQL&lt;/strong&gt;，并且有 &lt;strong&gt;phpmyAdmin&lt;/strong&gt; 可视化数据库，这个对我这个新手前端来说还是很有必要的。&lt;/p&gt;
     
@@ -730,12 +712,9 @@
     <link href="http://yoursite.com/2017/03/29/json/"/>
     <id>http://yoursite.com/2017/03/29/json/</id>
     <published>2017-03-29T14:31:56.000Z</published>
-    <updated>2017-04-13T14:26:01.841Z</updated>
+    <updated>2017-05-30T08:17:24.582Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/json.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/json.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前几天学习了 XML ，趁热打铁也把 JSON 做一下总结。首先 JSON 也是一种结构化数据，它的产生解决了 XML 过于繁琐的问题。它是 JS 的一个严格子集，利用 js 中的一些模式来表述数据化结构。不仅仅是 JS ，java、.NET 等其他语言也可以对 JSON 进行解析和序列化。</p>
 <a id="more"></a>
@@ -753,10 +732,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/json.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/json.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前几天学习了 XML ，趁热打铁也把 JSON 做一下总结。首先 JSON 也是一种结构化数据，它的产生解决了 XML 过于繁琐的问题。它是 JS 的一个严格子集，利用 js 中的一些模式来表述数据化结构。不仅仅是 JS ，java、.NET 等其他语言也可以对 JSON 进行解析和序列化。&lt;/p&gt;
     
@@ -776,12 +752,9 @@
     <link href="http://yoursite.com/2017/03/12/xPath/"/>
     <id>http://yoursite.com/2017/03/12/xPath/</id>
     <published>2017-03-12T13:29:31.000Z</published>
-    <updated>2017-04-13T14:26:47.307Z</updated>
+    <updated>2017-05-30T08:17:18.623Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/xpath.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/xpath.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath 是一种节点查找手段。它比使用 标准DOM 去查找 XML 节点更加方便、更加简单。但是 XPath 是 DOM3 中才支持的标准，并且 IE 有自己的实现方式。（IE总是自己造马车）</p>
 <a id="more"></a>
@@ -842,10 +815,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/xpath.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/xpath.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;XPath 是一种节点查找手段。它比使用 标准DOM 去查找 XML 节点更加方便、更加简单。但是 XPath 是 DOM3 中才支持的标准，并且 IE 有自己的实现方式。（IE总是自己造马车）&lt;/p&gt;
     
@@ -865,12 +835,9 @@
     <link href="http://yoursite.com/2017/03/09/wwwyuming/"/>
     <id>http://yoursite.com/2017/03/09/wwwyuming/</id>
     <published>2017-03-09T06:50:21.000Z</published>
-    <updated>2017-04-13T14:26:43.021Z</updated>
+    <updated>2017-05-30T08:17:19.163Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。</p>
 <a id="more"></a>
@@ -916,10 +883,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。&lt;/p&gt;
     
@@ -1009,12 +973,9 @@
     <link href="http://yoursite.com/2017/03/07/backup/"/>
     <id>http://yoursite.com/2017/03/07/backup/</id>
     <published>2017-03-07T08:26:30.000Z</published>
-    <updated>2017-04-13T14:25:14.115Z</updated>
+    <updated>2017-05-30T08:17:18.028Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/backup.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/backup.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 <code>git</code> 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。<a id="more"></a> 最后索性简单粗暴点，<u><strong>在 GitHub 上创建一个仓库，把 blog 文件整个打包上传。</strong></u>使用过程中发现这个方法还不错，至少对于小白来说很容易理解，也很难出错，就一直沿用到现在。</p>
 <p id="div-border-left-red">这种方式虽然能够备份 Hexo 博客的源文件，但是对于博主这种懒人，每次更新博文都需要输入两三行重复的Git命令真是一件麻烦的事情。</p> 
@@ -1037,10 +998,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/backup.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/backup.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 &lt;code&gt;git&lt;/code&gt; 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。
     
@@ -1062,12 +1020,9 @@
     <link href="http://yoursite.com/2017/03/02/wangyimusic/"/>
     <id>http://yoursite.com/2017/03/02/wangyimusic/</id>
     <published>2017-03-02T13:12:04.000Z</published>
-    <updated>2017-04-13T14:26:39.434Z</updated>
+    <updated>2017-05-30T08:17:19.674Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/couldmusic.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/couldmusic.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）</p>
 <a id="more"></a>
@@ -1084,10 +1039,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/couldmusic.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/couldmusic.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）&lt;/p&gt;
     
@@ -1107,12 +1059,9 @@
     <link href="http://yoursite.com/2017/03/01/host/"/>
     <id>http://yoursite.com/2017/03/01/host/</id>
     <published>2017-03-01T04:01:05.000Z</published>
-    <updated>2017-04-13T14:25:50.678Z</updated>
+    <updated>2017-05-30T08:17:26.266Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/host.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/host.png" alt="Markdown"></div>
 
 <p>分享一个可用的翻墙方法，解决 Google、Facebook、及 Twitter 等被墙问题。</p>
 <p><div>※※※ <span id="yu-1"><strong>本页面长期更新可用 hosts 文件。</strong></span> ※※※</div></p><p></p>
@@ -1133,10 +1082,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/host.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/host.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;分享一个可用的翻墙方法，解决 Google、Facebook、及 Twitter 等被墙问题。&lt;/p&gt;
 &lt;p&gt;&lt;div&gt;※※※ &lt;span id=&quot;yu-1&quot;&gt;&lt;strong&gt;本页面长期更新可用 hosts 文件。&lt;/strong&gt;&lt;/span&gt; ※※※&lt;/p&gt;&lt;/p&gt;
@@ -1244,12 +1190,9 @@
     <link href="http://yoursite.com/2017/02/13/html5-canvas/"/>
     <id>http://yoursite.com/2017/02/13/html5-canvas/</id>
     <published>2017-02-13T05:56:24.000Z</published>
-    <updated>2017-04-13T14:25:56.519Z</updated>
+    <updated>2017-05-30T08:17:25.743Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/canvas.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/canvas.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="inline-blue">canvas</span>是 html5 出现的新标签，用来替代Flash。像所有的 DOM 一样它具有自己本身的属性、方法和事件。他拥有强大的绘图功能。。下面是我在学习时做的一些总结。</p>
 <a id="more"></a>
@@ -1293,10 +1236,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/canvas.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/canvas.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span id=&quot;inline-blue&quot;&gt;canvas&lt;/span&gt;是 html5 出现的新标签，用来替代Flash。像所有的 DOM 一样它具有自己本身的属性、方法和事件。他拥有强大的绘图功能。。下面是我在学习时做的一些总结。&lt;/p&gt;
     
@@ -1316,12 +1256,9 @@
     <link href="http://yoursite.com/2017/02/07/encrypt/"/>
     <id>http://yoursite.com/2017/02/07/encrypt/</id>
     <published>2017-02-07T02:16:31.000Z</published>
-    <updated>2017-04-13T14:25:25.233Z</updated>
+    <updated>2017-05-30T08:17:13.365Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%8A%A0%E5%AF%86.jpg" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%8A%A0%E5%AF%86.jpg" alt="Markdown"></div>
 
 <blockquote>
 <p>即使是最简单的加密方式也足以阻止90%的访问者</p>
@@ -1346,11 +1283,11 @@
       <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
-    
       <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
     
   </entry>
   
@@ -1359,12 +1296,9 @@
     <link href="http://yoursite.com/2017/01/25/hexo2/"/>
     <id>http://yoursite.com/2017/01/25/hexo2/</id>
     <published>2017-01-25T13:37:01.000Z</published>
-    <updated>2017-04-13T14:25:44.893Z</updated>
+    <updated>2017-05-30T08:17:26.823Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
 
 <p>本篇文章主要介绍基于NexT主题的一些第三方功能的实现。<br>基本功能的设置可以参考<a href="http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg" target="_blank" rel="external">Next官网文档</a></p>
 <a id="more"></a>
@@ -1483,10 +1417,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
     
