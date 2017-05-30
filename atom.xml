@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-13T15:35:27.072Z</updated>
+  <updated>2017-05-30T08:05:27.581Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,255 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex</title>
+    <link href="http://yoursite.com/2017/05/30/flex/"/>
+    <id>http://yoursite.com/2017/05/30/flex/</id>
+    <published>2017-05-30T07:58:06.000Z</published>
+    <updated>2017-05-30T08:05:27.581Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Flex-布局是什么"><a href="#Flex-布局是什么" class="headerlink" title="Flex 布局是什么"></a>Flex 布局是什么</h3><blockquote>
+<p>Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。</p>
+</blockquote>
+<p><strong>任何一个容器都可以指定为 Flex 布局</strong></p>
+<p><em>注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line"><span class="comment">/* 行内元素也可以使用 Flex 布局。 */</span></div><div class="line">  <span class="attribute">display</span>: inline-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>#</p>
+<p><strong>flex-flow</strong>简写：这是flex-direction和flex-wrap两个属性的缩写,默认值是row nowrap。</p>
+<h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><p><strong>主轴方向：flex-direction:</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row（默认）；</td>
+<td>从左到右</td>
+</tr>
+<tr>
+<td>row-reverse；</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td>column；</td>
+<td>从上到下</td>
+</tr>
+<tr>
+<td>column-reverse；</td>
+<td>从下到上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>flex-wrap：是否换行</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nowrap（默认）；</td>
+<td>不换行</td>
+</tr>
+<tr>
+<td>wrap；</td>
+<td>正常换行</td>
+</tr>
+<tr>
+<td>wrap-reverse；</td>
+<td>返向换行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>justify-content：设伸缩项目在相对 <code>主轴</code> 水平上的对齐方式</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start（默认）：</td>
+<td>左对齐</td>
+</tr>
+<tr>
+<td>flex-end：</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center：</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>space-between：</td>
+<td>首尾对齐，项目之间的间隔相等。</td>
+</tr>
+<tr>
+<td>space-around：</td>
+<td>每个项目两侧的间隔相等。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>align-content:设伸缩项目在相对  <code>主轴</code> 水垂直的对齐方式</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start：</td>
+<td>上对齐</td>
+</tr>
+<tr>
+<td>flex-end：</td>
+<td>下对齐</td>
+</tr>
+<tr>
+<td>center：</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>space-between：</td>
+<td>首尾对齐，项目之间的间隔相等。</td>
+</tr>
+<tr>
+<td>space-around：</td>
+<td>每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</td>
+</tr>
+<tr>
+<td>stretch（默认）：</td>
+<td>每个项目两侧的间隔相等。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>align-items：管理伸缩容<code>器侧轴方向</code>的额外空间</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-start（默认）：</td>
+<td>左对齐</td>
+</tr>
+<tr>
+<td>flex-end：</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center：</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>baseline:</td>
+<td>项目的第一行文字的基线对齐。</td>
+</tr>
+<tr>
+<td>stretch（默认）：</td>
+<td>如果项目未设置高度或设为auto，将占满整个容器的高度。</td>
+</tr>
+</tbody>
+</table>
+<p>#</p>
+<h3 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h3><table>
+<thead>
+<tr>
+<th>属性作用</th>
+<th>属性值说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order</td>
+<td>数值越小，排列越靠前，默认为0。</td>
+</tr>
+<tr>
+<td>flex-grow</td>
+<td>定义一个Flex项目的扩大比例，默认为0</td>
+</tr>
+<tr>
+<td>flex-shrink</td>
+<td>定义一个Flex项目的缩小比例，默认为0</td>
+</tr>
+<tr>
+<td>flex-basis</td>
+<td>定义了Flex项目在分配Flex容器剩余空间之前的一个默认尺寸，类似width</td>
+</tr>
+</tbody>
+</table>
+<p><strong>align-self：管理伸缩容<code>器侧轴方向</code>的额外空间</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>属性作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto</td>
+<td>自动</td>
+</tr>
+<tr>
+<td>flex-start（默认）：</td>
+<td>左对齐</td>
+</tr>
+<tr>
+<td>flex-end：</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center：</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>baseline:</td>
+<td>项目的第一行文字的基线对齐。</td>
+</tr>
+<tr>
+<td>stretch（默认）：</td>
+<td>如果项目未设置高度或设为auto，将占满整个容器的高度。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>简写：flex</strong></p>
+<p>　　flex是flex-grow，flex-shrink，flex-basis三个属性的缩写。第二个和第三个参数是可选值。默认值是0 1 auto。</p>
+<p>　　<code>建议使用缩写属性。如果flex取值为none，等于0 0 auto。</code></p>
+<p> <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">参考一</a><br> <a href="http://www.cnblogs.com/fxycm/p/4649648.html" target="_blank" rel="external">参考二</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Flex-布局是什么&quot;&gt;&lt;a href=&quot;#Flex-布局是什么&quot; class=&quot;headerlink&quot; title=&quot;Flex 布局是什么&quot;&gt;&lt;/a&gt;Flex 布局是什么&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;任何一个容器都可以指定为 Flex 布局&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用&lt;/em&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 行内元素也可以使用 Flex 布局。 */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: inline-flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
+    
+      <category term="布局" scheme="http://yoursite.com/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>如何才能成为很厉害的人</title>
@@ -406,167 +655,6 @@
   </entry>
   
   <entry>
-    <title>GitHub 文本编辑器 Atom</title>
-    <link href="http://yoursite.com/2017/04/02/atom/"/>
-    <id>http://yoursite.com/2017/04/02/atom/</id>
-    <published>2017-04-02T02:25:45.000Z</published>
-    <updated>2017-04-13T14:25:20.548Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/atom.jpg" alt="markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的 VIM、Emacs 以及如今当红的 SublimeText。另外还有 VS Code、EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。</p>
-<a id="more"></a>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>作为目前全球范围内影响力最大的代码仓库/开源社区，GitHub 的程序员们并不满足于此。他们使用目前最先进流行的技术重新打造了一款称为“属于21世纪”的代码编辑器——Atom， 它开源免费跨平台，并且整合 GIT 并提供类似 SublimeText 的包管理功能，支持插件扩展，可配置性非常高……</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li><strong>开源</strong>，完全 <strong>免费</strong>；</li>
-<li>它提供了与 SublimeText 上类似的 <strong>Package Control</strong> (包管理)功能，人们可以非常方便地安装和管理各种插件，并将 Atom 打造成真正适合自己的开发工具；</li>
-<li>Atom 编辑器可以和 <strong>GIT</strong> 完美结合，所有对代码、文本的修改都能体现在编辑器的界面上。比如在文件内新写的代码会在左边标记为绿色，删除的标记为红色，修改的标记为黄色。在左边的目录导航也能方便的看到文件改动：有改动的文件其文件名和所在文件夹名都会被标记为高亮显示。编辑器底部会显示当前所在分支和对文件的修改行数统计，对于 GIT 用户来说非常方便。</li>
-<li>对前端友好。<strong>基于 WEB 技术</strong>（Chromium+Node.js）开发的，这足以让无数 WEB 工程师为之兴奋！用户可以用 Javascript 来编写编辑器插件，用 CSS 把主题界面改成任何你喜欢的样式等，这使得编写插件、主题、二次开发的门槛的降低了许多。这也能解释从 Atom 发布到现在不长的时间里，Atom 的 Package 和主题数量都快速增长上来了。</li>
-</ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>启动速度慢，打开大文件慢，貌似就这一个缺点！！</li>
-</ul>
-<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><h3 id="Package推荐"><a href="#Package推荐" class="headerlink" title="Package推荐"></a>Package推荐</h3><ul>
-<li><strong>atom-simplified-chinese-menu</strong>  汉化（如果你需要的话）</li>
-<li><strong>Emmet</strong>  前端神器</li>
-<li><strong>javascript-snippets</strong> js中的 emmet</li>
-<li><strong>minimap</strong>  小地图（跟 sublime 上的一样）</li>
-<li><strong>docblockr</strong> 养成良好的注释习惯</li>
-<li><strong>atom-beautiful</strong>  代码格式化。支持HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C…..</li>
-<li><strong>pigments</strong>  显示颜色（rgb等都会显示）</li>
-<li><strong>tree-view-background</strong> 左侧文件列表背景图片（个人感觉很简介、方便）</li>
-<li><strong>Sublime-Style-Column-Selection</strong>  列编辑（也是sublime中的功能）</li>
-<li><strong>markdown-scroll-sync</strong>  编辑markdown时预览页面随光标移动</li>
-<li><strong>markdown-writer</strong> markdown方便管理图片链接等</li>
-<li><strong>markdown-table-formatte</strong> markdown表格格式化</li>
-<li><strong>highlight-selected</strong>  选中时相同文本高亮</li>
-<li><strong>vimMode</strong>  如果你会使用 vim 的话（如果你不会的话最好别装，因为会有好多快捷键冲突）</li>
-<li><strong>autocomplete-plus</strong>   当输入时提供可能的候选项</li>
-<li><strong>autocomplete-paths</strong>  路径自动补全</li>
-<li><strong>activate-power-mode</strong>  动感打字特效（这个很火但是我不喜欢）</li>
-</ul>
-<h3 id="Thems推荐"><a href="#Thems推荐" class="headerlink" title="Thems推荐"></a>Thems推荐</h3><ul>
-<li><strong>atom-material-ui</strong>  非常漂亮的一个主题</li>
-<li><strong>monokai</strong>  代码高亮</li>
-</ul>
-<h2 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h2><h3 id="关于安装插件"><a href="#关于安装插件" class="headerlink" title="关于安装插件"></a>关于安装插件</h3><p>不知道是什么原因，在编辑器里面搜索插件，一直安装不成功，翻墙也不行。所以只能本地安装。<br>1、先把插件代码库 clone 到 atom 的 <strong>插件源码目录</strong> （如果你不知道这个文件夹在哪的话，在设置中可以直接打开）。<br>2、在 插件文件夹中 执行 <code>npm install</code> (注意不要用 <code>apm install</code>)</p>
-<blockquote>
-<p>可能会报错，说你的 npm 版本低什么的，不要管，大概几分钟时间，一直等下去就会安装成功。</p>
-</blockquote>
-<h3 id="怎么修改UI"><a href="#怎么修改UI" class="headerlink" title="怎么修改UI"></a>怎么修改UI</h3><p>1、打开 <code>文件 &gt; 用户样式设置</code> 就会显示编辑器主题 style 文件，我们可以用 css 语言来自定义样式。<br>2、<code>Ctrl+shift+I</code> 快捷键打开开发者工具（跟 chrome 上的一样），你就会发现定义主题是如此的简单。</p>
-<p>###代码括号配对高亮<br>atom 默认的括号匹配太不明显了，跟没有差不多。修改方法：在用户样式设置文件中添加<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//匹配括号</div><div class="line">atom-text-editor.editor .bracket-matcher .region &#123;</div><div class="line">    border-top:yellow;</div><div class="line">    border-bottom:yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="隐藏缩进指示线（中间的白线）"><a href="#隐藏缩进指示线（中间的白线）" class="headerlink" title="隐藏缩进指示线（中间的白线）"></a>隐藏缩进指示线（中间的白线）</h3><p>解决方案：编辑 &gt; 用户样式设置，添加以下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">atom-text-editor</span><span class="selector-pseudo">::shadow</span> <span class="selector-class">.wrap-guide</span> &#123;</div><div class="line">    <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="设置菜单的字体太小"><a href="#设置菜单的字体太小" class="headerlink" title="设置菜单的字体太小"></a>设置菜单的字体太小</h3><p>解决方案：编辑 &gt; 用户样式设置，添加以下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.settings-view</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="文件标题的字体太小"><a href="#文件标题的字体太小" class="headerlink" title="文件标题的字体太小"></a>文件标题的字体太小</h3><p>解决方案：编辑 &gt; 用户样式设置，添加以下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.tab-bar</span> <span class="selector-class">.tab</span> <span class="selector-class">.title</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/atom.jpg&quot; alt=&quot;markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的 VIM、Emacs 以及如今当红的 SublimeText。另外还有 VS Code、EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编辑器" scheme="http://yoursite.com/categories/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-    
-      <category term="编辑器" scheme="http://yoursite.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-      <category term="Atom" scheme="http://yoursite.com/tags/Atom/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript - Ajax学习笔记</title>
-    <link href="http://yoursite.com/2017/03/30/Ajax/"/>
-    <id>http://yoursite.com/2017/03/30/Ajax/</id>
-    <published>2017-03-30T14:53:52.000Z</published>
-    <updated>2017-04-13T14:24:52.848Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自：</strong> <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/ajax.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2005年 <strong>Jesse James Garrett</strong> 发表了一篇文章，介绍了 <strong>Ajax</strong> 这门技术。这种技术能够向服务器请求额外的数据而无需刷新页面，带来了很好的用户体验，一时间席卷全球。</p>
-<a id="more"></a>
-<h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><p>Ajax 技术的核心是 <code>XMLHttpRequest</code> 对象（简称XHR）。这是微软首先引入的一个特性，其他浏览器后来也都有相同的实现。XHR 为向服务器请求和解析服务器响应提供了流畅的接口。用异步的方式从服务器获取更多信息。这意味着，只要用户触发了某一事件，再不刷新网页的情况下，更新服务器最新数据。</p>
-<blockquote>
-<p>虽然 Ajax 中的 X 代表 XML ，但 Ajax 通信和数据格式无关，也就是说这种技术不一定使用 XML。</p>
-</blockquote>
-<h3 id="XHR使用方法"><a href="#XHR使用方法" class="headerlink" title="XHR使用方法"></a>XHR使用方法</h3><p>XHR 对象的使用方法总体上分为三步：<br><strong>第一步：</strong> 创建 <code>XMLHttpRequest</code> 对象。<br>W3C 支持原生的 <code>XMLHttpRequest</code> 对象，IE6使用的是 <code>MSXML</code> 库中的 <code>ActiveXObject</code> 对象，所以要做兼容！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> XMLHttpRequest != <span class="string">'undefined'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> ActiveXObject != <span class="string">'undefined'</span>)&#123;</div><div class="line">        <span class="keyword">var</span> version = [</div><div class="line">            <span class="string">'MSXML2.XMLhttp.6.0'</span>,</div><div class="line">            <span class="string">'MSXML2.XMLhttp.3.0'</span>,</div><div class="line">            <span class="string">'MSXML2.XMLhttp'</span></div><div class="line">        ];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; version.length;i++)&#123;</div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject();</div><div class="line">            &#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">                <span class="comment">//跳过</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'不支持Ajax！！'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> xhr = createXHR();  <span class="comment">//创建对象</span></div></pre></td></tr></table></figure></p>
-<p><strong>第二步：</strong> 准备发送请求用 <code>open()</code> 方法，接受三个参数：发送方式（<code>get/post</code>）、请求的 url、同步或者异步（同步为false、异步为true）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php'</span>,<span class="string">'false'</span>);</div></pre></td></tr></table></figure></p>
-<p><strong>php 文件内容为：</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="keyword">echo</span> Date(<span class="string">'Y-m-d H:i:s'</span>);   <span class="comment">//当前时间</span></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>第三步：</strong> 发送请求 <code>send()</code> 方法 ，接受一个参数作为请求主体发送的数据（非 post 方式一般填 <code>null</code> 即可）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure></p>
-<h2 id="同步方式"><a href="#同步方式" class="headerlink" title="同步方式"></a>同步方式</h2><p>当请求发送到服务器端，收到响应后，相应的数据会自动填充 XHR 对象的属性。一共有四个属性：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">返回值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">responseText</td>
-<td style="text-align:center">作为响应主体被返回</td>
-</tr>
-<tr>
-<td style="text-align:center">responseXML</td>
-<td style="text-align:center">如果响应主体内容类型是 <code>text/xml</code> 或 <code>application/xml</code>，返回包含响应数据的 XMLDOM 文档</td>
-</tr>
-<tr>
-<td style="text-align:center">status</td>
-<td style="text-align:center">响应的 HTTP 状态</td>
-</tr>
-<tr>
-<td style="text-align:center">statusText</td>
-<td style="text-align:center">HTTP 状态的说明</td>
-</tr>
-</tbody>
-</table>
-<p>接受响应之后，第一步检查 <code>status</code> 属性，以确定响应已经成功返回。<u>一般把 HTTP 状<br>态代码为 200 作为成功的标志。</u>（304 代表本地缓存中存在请求的页面缓存，也是响应成功的标志）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr =  createXHR();</div><div class="line">    xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php'</span>,<span class="literal">false</span>);</div><div class="line">    xhr.send(<span class="literal">null</span>);</div><div class="line">    <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</div><div class="line">        alert(xhr.responseText);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        alert(<span class="string">'请求失败'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p><span id="inline-blue">注意:</span> 同步方式 <code>send()</code> 后才能收到返回数据</p>
-</blockquote>
-<h2 id="异步方式："><a href="#异步方式：" class="headerlink" title="异步方式："></a>异步方式：</h2><p>使用异步调用才是我们真正常用的手段。使用异步调用的时候 ，需要触发 <code>readystatechange</code> 事件，然后检测 <code>readyState</code> 属性值。<u>值为 4 时表示 接受到全部响应数据，并且可以使用</u>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = createXHR();</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;    <span class="comment">//完全响应</span></div><div class="line">            <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</div><div class="line">                alert(xhr.responseText);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                alert(<span class="string">'请求失败！'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php'</span>,<span class="literal">true</span>);</div><div class="line">    xhr.send(<span class="literal">null</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>PS: <code>readystatechange</code> 事件要放在发送请求之前！！！</p>
-</blockquote>
-<h2 id="GET方式"><a href="#GET方式" class="headerlink" title="GET方式"></a>GET方式</h2><p>GET方式主要用于向服务器请求获取数据，反应在 <code>URL</code> 中：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> xhr = createXHR();</div><div class="line">   xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">           <span class="keyword">if</span>(xhr.status == <span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;</div><div class="line">               alert(xhr.responseText);</div><div class="line">           &#125;<span class="keyword">else</span>&#123;</div><div class="line">               alert(<span class="string">'Ajax错误！'</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;;</div><div class="line">   <span class="keyword">var</span> url = <span class="string">'demo.php'</span>;</div><div class="line">   url = addURLParam(url,<span class="string">'name'</span>,<span class="string">'cwyaml'</span>);</div><div class="line">   url = addURLParam(url,<span class="string">'age'</span>,<span class="number">100</span>);</div><div class="line">   xhr.open(<span class="string">'get'</span>,url,<span class="literal">true</span>);</div><div class="line">   xhr.send(<span class="literal">null</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编码函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addURLParam</span>(<span class="params">url,name,value</span>)</span>&#123;</div><div class="line">   url += url.indexOf(<span class="string">'?'</span>) == <span class="number">-1</span> ? <span class="string">'?'</span> : <span class="string">'&amp;'</span>;</div><div class="line">   url += <span class="built_in">encodeURIComponent</span>(name) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(value);</div><div class="line">   <span class="keyword">return</span> url;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="POST方式"><a href="#POST方式" class="headerlink" title="POST方式"></a>POST方式</h2><p>在 <code>send()</code> 执行之前需要修改头部信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> xhr = createXHR();</div><div class="line">   xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">           <span class="keyword">if</span>(xhr.status == <span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;</div><div class="line">               alert(xhr.responseText);</div><div class="line">           &#125;<span class="keyword">else</span>&#123;</div><div class="line">               alert(<span class="string">'Ajax错误！'</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;;</div><div class="line">   <span class="keyword">var</span> url = strParam(<span class="string">'name'</span>,<span class="string">'cwyaml'</span>);</div><div class="line">   url += strParam(<span class="string">'age'</span>,<span class="number">23</span>);</div><div class="line">   xhr.open(<span class="string">'get'</span>,<span class="string">'demo.php'</span>,<span class="literal">true</span>);</div><div class="line">   xhr.send(url);</div><div class="line">&#125;</div><div class="line"><span class="comment">//字符编码</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strParam</span>(<span class="params">name,value</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">encodeURIComponent</span>(name) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(value) + <span class="string">'&amp;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h2><p>这里的实现方式和 <code>JQuery</code> 实现 Ajax 的方式相同<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> XMLHttpRequest != <span class="string">'undefined'</span>)&#123;   <span class="comment">//W3C</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> ActiveXObject != <span class="string">'undefined'</span>)&#123;  <span class="comment">//IE</span></div><div class="line">        <span class="keyword">var</span> version = [</div><div class="line">            <span class="string">'MSXML2.XMLHttp.6.0'</span>,</div><div class="line">            <span class="string">'MSXML2.XMLHttp.3.0'</span>,</div><div class="line">            <span class="string">'MSXML2.XMLHttp'</span></div><div class="line">        ];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; version.length;i++)&#123;</div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(version[i]);</div><div class="line">            &#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">                <span class="comment">//跳过！</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'不支持Ajax!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Ajax请求</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = createXHR();</div><div class="line">    obj.date = strParam(obj.date);  <span class="comment">//字符编码是为了解决IE缓存问题</span></div><div class="line"></div><div class="line">    <span class="comment">//判断异步</span></div><div class="line">    <span class="keyword">if</span>(obj.async === <span class="literal">true</span>)&#123;</div><div class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">                callback();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//判断get</span></div><div class="line">    <span class="keyword">if</span>(obj.method === <span class="string">'get'</span>)&#123;</div><div class="line">        obj.url = obj.url + <span class="string">'?rand='</span> + <span class="built_in">Math</span>.random() + <span class="string">'&amp;'</span> + obj.date;</div><div class="line">        xhr.open(obj.method,obj.url,obj.async);</div><div class="line">        xhr.send(<span class="literal">null</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//判断post</span></div><div class="line">    <span class="keyword">if</span>(obj.method === <span class="string">'post'</span>)&#123;</div><div class="line">        xhr.open(obj.method,obj.url,obj.async);</div><div class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</div><div class="line">        xhr.send(obj.date);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//判断同步      同步要放在 send 后面！！！一定要注意</span></div><div class="line">    <span class="keyword">if</span>(obj.async === <span class="literal">false</span>)&#123;</div><div class="line">        callback();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</div><div class="line">            obj.success(xhr.responseText);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            alert(<span class="string">'Ajax错误！'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//字符编码</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strParam</span>(<span class="params">date</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> date)&#123;</div><div class="line">        arr.push(<span class="built_in">encodeURIComponent</span>(i) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(date[i]));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr.join(<span class="string">'&amp;'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用方法</span></div><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ajax(&#123;</div><div class="line">        <span class="attr">method</span> : <span class="string">'get'</span>,</div><div class="line">        <span class="attr">url</span> : <span class="string">'demo.php'</span>,</div><div class="line">        <span class="attr">date</span>:&#123;</div><div class="line">            <span class="string">'name'</span> : <span class="string">'cwyaml'</span>,</div><div class="line">            <span class="string">'age'</span> : <span class="number">123</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">success</span> : <span class="function"><span class="keyword">function</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">            alert(text);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">async</span> : <span class="literal">true</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在写浏览器兼容的时候出现了一个问题：<br>同步请求时 <code>xhr.status</code> 始终返回 0 。这令我百思不得其解，检查代码好几遍没发现错误，上百度找解决办法也没有结果，折腾了一上午时间才发现原来 <strong>把同步请求写在了 send() 前面</strong> 。我也是醉了，同步是单线程的，不发送请求怎么能得到返回数据。<br>不过这也是学习中的一点乐趣，解决问题后的心情还是很爽的。以后一定要细心再细心，不要再这些小问题上浪费太多时间。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自：&lt;/strong&gt; &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/ajax.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2005年 &lt;strong&gt;Jesse James Garrett&lt;/strong&gt; 发表了一篇文章，介绍了 &lt;strong&gt;Ajax&lt;/strong&gt; 这门技术。这种技术能够向服务器请求额外的数据而无需刷新页面，带来了很好的用户体验，一时间席卷全球。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
-    
-  </entry>
-  
-  <entry>
     <title>搭建PHP环境</title>
     <link href="http://yoursite.com/2017/03/30/php/"/>
     <id>http://yoursite.com/2017/03/30/php/</id>
@@ -853,12 +941,9 @@
     <link href="http://yoursite.com/2017/03/08/github&amp;coding/"/>
     <id>http://yoursite.com/2017/03/08/github&amp;coding/</id>
     <published>2017-03-08T05:08:44.000Z</published>
-    <updated>2017-04-13T14:24:25.171Z</updated>
+    <updated>2017-05-30T08:01:06.694Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自：</strong> <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/github&amp;coding.png" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/github&amp;coding.png" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
 <a id="more"></a>
@@ -904,10 +989,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自：&lt;/strong&gt; &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/github&amp;amp;coding.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/github&amp;amp;coding.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以&lt;u&gt;利用域名解析实现国内的走 coding，海外的走github，&lt;/u&gt;分流网站的访问。&lt;/p&gt;
     
@@ -1099,12 +1181,9 @@
     <link href="http://yoursite.com/2017/02/14/markdown/"/>
     <id>http://yoursite.com/2017/02/14/markdown/</id>
     <published>2017-02-14T13:05:06.000Z</published>
-    <updated>2017-04-13T14:26:08.053Z</updated>
+    <updated>2017-05-30T07:47:49.074Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
-</blockquote>
-<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/markdown.jpg" alt="Markdown"></div>
+    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/markdown.jpg" alt="Markdown"></div>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就像 Markdown 官方文档里描述的一样：<strong><em>可读性，无论如何，都是最重要的。</em></strong> Markdown 的目标是实现 &nbsp; <span id="yu-1">『易读易写』</span> 。&nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。</p>
 <a id="more"></a>
@@ -1147,10 +1226,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/markdown.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/markdown.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：&lt;strong&gt;&lt;em&gt;可读性，无论如何，都是最重要的。&lt;/em&gt;&lt;/strong&gt; Markdown 的目标是实现 &amp;nbsp; &lt;span id=&quot;yu-1&quot;&gt;『易读易写』&lt;/span&gt; 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。&lt;/p&gt;
     
@@ -1271,6 +1347,153 @@
     
     
       <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
+    
+      <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO+GitHub搭建博客 - 优化</title>
+    <link href="http://yoursite.com/2017/01/25/hexo2/"/>
+    <id>http://yoursite.com/2017/01/25/hexo2/</id>
+    <published>2017-01-25T13:37:01.000Z</published>
+    <updated>2017-04-13T14:25:44.893Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>转自</strong>： <a href="http://www.cwyaml.top/" target="_blank" rel="external">http://www.cwyaml.top/</a></p>
+</blockquote>
+<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
+
+<p>本篇文章主要介绍基于NexT主题的一些第三方功能的实现。<br>基本功能的设置可以参考<a href="http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg" target="_blank" rel="external">Next官网文档</a></p>
+<a id="more"></a>
+<p>首先，我们需要明白：</p>
+<p id="div-border-left-yellow"> 在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code> 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>我们约定，将前者称为<span id="inline-blue"> 站点配置文件 </span>，后者称为 <span id="inline-purple">主题配置文件</span>。</p>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="动态背景"><a href="#动态背景" class="headerlink" title="动态背景"></a>动态背景</h4><p>修改 <code>_layout.swig</code> 模板<br>模板位置：<code>themes\next\layout\_layout.swig</code><br>在末尾前加上下面一句:（这里提供两种样式，当然你也可以自由更改）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 动态背景 --&gt;</span></div><div class="line">#默认灰色线条</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/particle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">#浅蓝色线条</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/particle.js"</span> <span class="attr">count</span>=<span class="string">"50"</span> <span class="attr">zindex</span>=<span class="string">"-2"</span> <span class="attr">opacity</span>=<span class="string">"1"</span> <span class="attr">color</span>=<span class="string">"0,104,183"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>然后在 <code>themes\source\js\src\</code> 下新建文件 <code>particle.js</code> 写上以下代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params">n,e,t</span>)</span>&#123;<span class="keyword">return</span> n.getAttribute(e)||t&#125;<span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">document</span>.getElementsByTagName(n)&#125;<span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=e(<span class="string">"script"</span>),o=t.length,i=t[o<span class="number">-1</span>];<span class="keyword">return</span>&#123;<span class="attr">l</span>:o,<span class="attr">z</span>:n(i,<span class="string">"zIndex"</span>,<span class="number">-1</span>),<span class="attr">o</span>:n(i,<span class="string">"opacity"</span>,<span class="number">.5</span>),<span class="attr">c</span>:n(i,<span class="string">"color"</span>,<span class="string">"0,0,0"</span>),<span class="attr">n</span>:n(i,<span class="string">"count"</span>,<span class="number">99</span>)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;c=u.width=<span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth,a=u.height=<span class="built_in">window</span>.innerHeight||<span class="built_in">document</span>.documentElement.clientHeight||<span class="built_in">document</span>.body.clientHeight&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params"></span>)</span>&#123;l.clearRect(<span class="number">0</span>,<span class="number">0</span>,c,a);<span class="keyword">var</span> n,e,t,o,u,d,x=[w].concat(y);y.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="keyword">for</span>(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;c||i.x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,i.ya*=i.y&gt;a||i.y&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,l.fillRect(i.x<span class="number">-.5</span>,i.y<span class="number">-.5</span>,<span class="number">1</span>,<span class="number">1</span>),e=<span class="number">0</span>;e&lt;x.length;e++)n=x[e],i!==n&amp;&amp;<span class="literal">null</span>!==n.x&amp;&amp;<span class="literal">null</span>!==n.y&amp;&amp;(o=i.x-n.x,u=i.y-n.y,d=o*o+u*u,d&lt;n.max&amp;&amp;(n===w&amp;&amp;d&gt;=n.max/<span class="number">2</span>&amp;&amp;(i.x-=<span class="number">.03</span>*o,i.y-=<span class="number">.03</span>*u),t=(n.max-d)/n.max,l.beginPath(),l.lineWidth=t/<span class="number">2</span>,l.strokeStyle=<span class="string">"rgba("</span>+m.c+<span class="string">","</span>+(t+<span class="number">.2</span>)+<span class="string">")"</span>,l.moveTo(i.x,i.y),l.lineTo(n.x,n.y),l.stroke()));x.splice(x.indexOf(i),<span class="number">1</span>)&#125;),r(i)&#125;<span class="keyword">var</span> c,a,u=<span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),m=t(),d=<span class="string">"c_n"</span>+m.l,l=u.getContext(<span class="string">"2d"</span>),r=<span class="built_in">window</span>.requestAnimationFrame||<span class="built_in">window</span>.webkitRequestAnimationFrame||<span class="built_in">window</span>.mozRequestAnimationFrame||<span class="built_in">window</span>.oRequestAnimationFrame||<span class="built_in">window</span>.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="built_in">window</span>.setTimeout(n,<span class="number">1e3</span>/<span class="number">45</span>)&#125;,x=<span class="built_in">Math</span>.random,w=&#123;<span class="attr">x</span>:<span class="literal">null</span>,<span class="attr">y</span>:<span class="literal">null</span>,<span class="attr">max</span>:<span class="number">2e4</span>&#125;;u.id=d,u.style.cssText=<span class="string">"position:fixed;top:0;left:0;z-index:"</span>+m.z+<span class="string">";opacity:"</span>+m.o,e(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(u),o(),<span class="built_in">window</span>.onresize=o,<span class="built_in">window</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;n=n||<span class="built_in">window</span>.event,w.x=n.clientX,w.y=n.clientY&#125;,<span class="built_in">window</span>.onmouseout=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;w.x=<span class="literal">null</span>,w.y=<span class="literal">null</span>&#125;;<span class="keyword">for</span>(<span class="keyword">var</span> y=[],s=<span class="number">0</span>;m.n&gt;s;s++)&#123;<span class="keyword">var</span> f=x()*c,h=x()*a,g=<span class="number">2</span>*x()<span class="number">-1</span>,p=<span class="number">2</span>*x()<span class="number">-1</span>;y.push(&#123;<span class="attr">x</span>:f,<span class="attr">y</span>:h,<span class="attr">xa</span>:g,<span class="attr">ya</span>:p,<span class="attr">max</span>:<span class="number">6e3</span>&#125;)&#125;setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;i()&#125;,<span class="number">100</span>)&#125;();</div></pre></td></tr></table></figure></p>
+<h4 id="鼠标点击小红心"><a href="#鼠标点击小红心" class="headerlink" title="鼠标点击小红心"></a>鼠标点击小红心</h4><p>在 <code>\themes\next\source\js\src</code> 文件目录下添加 <code>love.js</code> 文件。内容为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;<span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</div></pre></td></tr></table></figure></p>
+<p>找到 <code>\themes\next\layout\_layout.swing</code> 文件， 在文件的后面， 标签之前 添加以下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 小红心 --&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h3 id="头像圆形旋转"><a href="#头像圆形旋转" class="headerlink" title="头像圆形旋转"></a>头像圆形旋转</h3><p>修改文件 <code>themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code><br><a href="https://github.com/cwyaml/blog-backup/blob/master/themes/next-5.0.1/source/css/_common/components/sidebar/sidebar-author.styl" target="_blank" rel="external">我的样式文件</a></p>
+<h3 id="文章结尾模板"><a href="#文章结尾模板" class="headerlink" title="文章结尾模板"></a>文章结尾模板</h3><p>在 <code>\themes\next\_macro</code> 文件目录下添加 <code>passage-end-tag.swig</code> 文件，内容为：(当然你也可以修改为自己喜欢的样式)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.passage_end_tag.enabled %&#125;</div><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>如果您觉得本博客还不错，欢迎继续关注本博客，欢迎多提宝贵意见，非常感谢！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"inline-green"</span> <span class="attr">style</span>=<span class="string">"border-radius:3px;"</span>&gt;</span>作者<span class="tag">&lt;/<span class="name">span</span>&gt;</span>：</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://github.com/cwyaml"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>cwyaml<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">有问题请 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://cwyaml.github.io/about/"</span>&gt;</span>留言<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line">或者私信我的 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"http://weibo.com/u/5742789641?refer_flag=1001030102_&amp;is_all=1"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center; color:#ccc; font-size:14px; "</span>&gt;</span></div><div class="line"> ------本文结束</div><div class="line"> &amp;nbsp;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-paw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&amp;nbsp; </div><div class="line"> 感谢阅读------</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
+<p>找到 <code>\themes\next\_macro\post.swig</code> 文件，使用查找功能找到 <code>reward.swig</code>，在这一个 <code>&lt;div&gt;</code> 的前面添加：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;% if not is_index %&#125;</div><div class="line">    &#123;% include 'passage-end-tag.swig' %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="文章底部标签云锚点"><a href="#文章底部标签云锚点" class="headerlink" title="文章底部标签云锚点"></a>文章底部标签云锚点</h3><p>在 <code>themes\next\layout\_macro\post.swig</code> 文件中找到以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"post-footer"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--这是文章底部标签云锚点，不喜欢就注释掉</span></div><div class="line">  &#123;% if post.tags and post.tags.length and not is_index %&#125;</div><div class="line">    &lt;div class="post-tags"&gt;</div><div class="line">      &#123;% for tag in post.tags %&#125;</div><div class="line">        &lt;a href="&#123;&#123; url_for(tag.path) &#125;&#125;" rel="tag"&gt;# &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</div><div class="line">      &#123;% endfor %&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &#123;% endif %&#125;</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="关于文章内文本样式"><a href="#关于文章内文本样式" class="headerlink" title="关于文章内文本样式"></a>关于文章内文本样式</h3><p>Markdown 毕竟是为了方便写作，在样式上就过于单调。我们自己来给文章加一些样式。。</p>
+<p></p><p id="div-border-left-red"> Next 作者提供了一个供用户自己定义样式的文件：<code>\themes\next\source\css\_custom\custom.stl</code> </p>  <p></p>
+<h4 id="自己按需要写"><a href="#自己按需要写" class="headerlink" title="自己按需要写"></a>自己按需要写</h4><p>在上述文件中写上自己的 class 类，然后在 Markdown 文档中使用。<br><a href="https://github.com/cwyaml/Useful-code/blob/master/custom.styl" target="_blank" rel="external">我的custom.styl</a></p>
+<h4 id="引用前端框架"><a href="#引用前端框架" class="headerlink" title="引用前端框架"></a>引用前端框架</h4><p>目前流行的前端框架，像 <a href="http://www.bootcss.com/" target="_blank" rel="external">bootstrap</a>、<a href="http://reactjs.cn/react/index.html" target="_blank" rel="external">React</a>、<a href="http://www.apjs.net/" target="_blank" rel="external">Angular</a> 等，提供给我们很好的前端方案，我们可以把喜欢的引入到上面说的那个文件里，然后就可以使用了。</p>
+<h3 id="设置动态title"><a href="#设置动态title" class="headerlink" title="设置动态title"></a>设置动态title</h3><ul>
+<li><p>在 <code>\themes\next\source\js\src</code> 目录下新建 <code>dytitle.js</code> 。添加以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!--崩溃欺骗--&gt;</div><div class="line">var OriginTitile = document.title;</div><div class="line"> var titleTime;</div><div class="line"> document.addEventListener(&apos;visibilitychange&apos;, function () &#123;</div><div class="line">     if (document.hidden) &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/img/TEP.ico&quot;);</div><div class="line">         document.title = &apos; 页面崩溃啦 ~ | cwyaml！&apos;;</div><div class="line">         clearTimeout(titleTime);</div><div class="line">     &#125;</div><div class="line">     else &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/favicon.ico&quot;);</div><div class="line">         document.title = &apos; 噫又好了~ &apos; + OriginTitile;</div><div class="line">         titleTime = setTimeout(function () &#123;</div><div class="line">             document.title = OriginTitile;</div><div class="line">         &#125;, 2000);</div><div class="line">     &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>更改 <code>\themes\next\layout\_layout.swig</code> 。在 <strong>&lt;/body&gt;</strong> 之前添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--崩溃欺骗--&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/dytitle.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="首页动画"><a href="#首页动画" class="headerlink" title="首页动画"></a>首页动画</h3><p>在 <span id="inline-purple">主题配置文件</span> 中，找到 Motion 字段。true 和 false 控制动画的开启与关闭。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Motion</div><div class="line">use_motion: true</div></pre></td></tr></table></figure></p>
+<h3 id="内容宽度"><a href="#内容宽度" class="headerlink" title="内容宽度"></a>内容宽度</h3><p>现在一般的笔记本都在15寸以上，博客页面两侧留白太多就显得没有必要，并且不美观，所以有必要调整一下宽度。（<em>可以慢慢试着调整到最合适的状态</em>）</p>
+<ul>
+<li><p>找到 <code>\themes\next\source\css\_common\components\post\post-expand.styl</code>，找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 767px)</div><div class="line">改为：</div><div class="line">@media (max-width: 1060px)</div></pre></td></tr></table></figure>
+</li>
+<li><p>找到：<code>\themes\next\source\css\ _variables\base.styl</code> ，找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$main-desktop                   = 960px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line"></div><div class="line">$content-desktop                = 700px</div><div class="line">改为：</div><div class="line">$main-desktop                   = 1060px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line"></div><div class="line">$content-desktop                = 800px</div></pre></td></tr></table></figure>
+</li>
+<li><p>找到 <code>\themes\next\source\css\_schemes\Pisces\_layout.styl</code> ，将第 4 行的 <strong>width</strong> 改为 <strong>1060px</strong> ，修改后如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  position: relative;</div><div class="line">  margin: 0 auto;</div><div class="line">  width: 1060px;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h3><h4 id="文章阅读次数统计"><a href="#文章阅读次数统计" class="headerlink" title="文章阅读次数统计"></a>文章阅读次数统计</h4><p>参考： <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">LeanCloud</a></p>
+<h4 id="不蒜子统计站点访问"><a href="#不蒜子统计站点访问" class="headerlink" title="不蒜子统计站点访问"></a>不蒜子统计站点访问</h4><ul>
+<li><strong>全局配置：</strong><br>编辑 <span id="inline-purple">主题配置文件</span> 中的 <code>busuanzi_count</code> 的配置项，配置以下内容：<br>当 <strong>enable: true</strong> 时，代表开启全局开关。若 <u>site_uv、site_pv、page_pv</u> 的值均为 <strong>false</strong> 时，不蒜子仅作记录而不会在页面上显示。</li>
+<li><p><strong>站点 UV/PV 配置：</strong><br>当 <strong>site_uv: true</strong> 时，代表在页面底部显示站点的 UV 值。<br>当 <strong>site_pv: true</strong> 时，代表在页面底部显示站点的 PV 值<br><strong>site_uv_header</strong>(site_pv_header) 和 <strong>site_uv_footer</strong>(site_pv_footer) 为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<u>font-awesome</u>。显示效果为 <strong>[site_uv_header]UV值/PV值[site_uv_footer]</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">busuanzi_count:</div><div class="line">  # count values only if the other configs are false</div><div class="line">  enable: true</div><div class="line">  # custom uv span for the whole site</div><div class="line">  site_uv: true</div><div class="line">  site_uv_header: 本站总访问量</div><div class="line">  site_uv_footer: </div><div class="line">  # custom pv span for the whole site</div><div class="line">  site_pv: true</div><div class="line">  site_pv_header: 您是第 </div><div class="line">  site_pv_footer:  位小伙伴</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>单页面 PV 值设置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># custom pv span for one page only</div><div class="line">page_pv: false</div><div class="line">page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;</div><div class="line">page_pv_footer:</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>越来越多的平台（微信公众平台，新浪微博，简书等）支持打赏功能，付费阅读时代越来越近，特此增加了打赏功能。 只需要 <span id="inline-purple">主题配置文件</span> 中填入 微信 和 支付宝 收款二维码图片地址（放在博客根目录的source文件夹下即可） 即可开启该功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</div><div class="line">wechatpay: /weixin.png</div><div class="line">alipay: /zhifubao.png</div></pre></td></tr></table></figure></p>
+<h3 id="设置RSS"><a href="#设置RSS" class="headerlink" title="设置RSS"></a>设置RSS</h3><ul>
+<li><p>需要安装 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a> 插件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>在 <span id="inline-blue"> 站点配置文件 </span> 中添加字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">feed:</div><div class="line">  type: atom</div><div class="line">  path: atom.xml</div><div class="line">  limit: 20</div><div class="line">  hub:</div><div class="line">  content:</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="听音乐"><a href="#听音乐" class="headerlink" title="听音乐"></a>听音乐</h3><ul>
+<li><strong>下载js文件：</strong><a href="https://github.com/cwyaml/Useful-code/blob/master/high.swig" target="_blank" rel="external">high.swig</a>。放在 <code>\themes\next\layout\_macro</code> 目录下。</li>
+<li><p><strong>在侧边栏引用该文件：</strong>修改 <code>\themes\next\layout\_macro\sidebar.swig</code> ，添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &apos;high.swig&apos; %&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo01.png" alt="Markdown"></p>
+</li>
+<li><p><strong>样式修改：</strong>使 <strong>听音乐</strong> 和 <strong>RSS</strong> 并排展示，修改 <code>\themes\next\source\css\_schemes\Pisces\_sidebar.styl</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</div></pre></td></tr></table></figure>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo02.png" alt="Markdown"></p>
+</li>
+<li><p><strong>添加自己喜欢的音乐：</strong>修改其中的歌曲链接即可（<a href="https://cwyaml.github.io/2017/03/02/wangyimusic/" target="_blank" rel="external">获取歌曲外链教程</a>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> songs = [</div><div class="line">      <span class="string">"http://m2.music.126.net/3uHnH7uQAeFwUfuvEB9lrg==/3265549619475054.mp3"</span>, </div><div class="line">      <span class="string">"http://m2.music.126.net/NnHwR2HV-1OoKZ6R5LVy4Q==/18502581673300023.mp3"</span>,</div><div class="line">      <span class="string">"http://m2.music.126.net/qv3RI4K7ABKJ0TyAdb3taw==/3250156397064860.mp3"</span>,    </div><div class="line">      <span class="string">"......"</span></div><div class="line">  ];</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>首页听音乐摇晃：</strong>需要加载css样式。在 <code>themes\next\layout\_layout.swig</code> 文件的 <u>body标签结束前</u> 添加以下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 听音乐摇晃 --&gt;</div><div class="line">&lt;link href="http://s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css" rel="stylesheet" type="text/css"&gt;</div></pre></td></tr></table></figure>
+<p><span id="inline-red">注意：</span> 有时候使用 Firefox 、Chrome时会提示非法插件并禁止使用，遇到这种情况我们把样式代码引入到 <code>\themes\next\source\css\_custom\custom.stl</code> 文件即可解决。</p>
+</li>
+</ul>
+<h3 id="添加-Forkme-on-GitHub-丝带"><a href="#添加-Forkme-on-GitHub-丝带" class="headerlink" title="添加 Forkme on GitHub 丝带"></a>添加 Forkme on GitHub 丝带</h3><p>首先进入 <a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">GitHub Ribbons</a> 选择自己喜欢的丝带样式。<br>找到 <code>\themes\next\layout\_layout.swig</code> 文件，在 <code>&lt;header&gt;</code> 标签前面添加：（记得把链接修改成自己的GitHub主页）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/you"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="给-Blog-添加-LICENSE"><a href="#给-Blog-添加-LICENSE" class="headerlink" title="给 Blog 添加 LICENSE"></a>给 Blog 添加 LICENSE</h3><p>修改 <span id="inline-purple">主题配置文件</span> （使用查找功能）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
+<h3 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h3><ul>
+<li><p>安装 hexo-generator-searchdb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 <span id="inline-blue"> 站点配置文件 </span> ，添加以下字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  field: post</div><div class="line">  format: html</div><div class="line">  limit: 10000</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 <span id="inline-purple">主题配置文件</span> ，启用本地搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h3><h4 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a>多说评论</h4><p>使用多说前需要先在 <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 创建一个站点。具体步骤如下：</p>
+<ul>
+<li>登录后在首页选择“我要安装”。</li>
+<li>创建站点，填写站点相关信息。<strong>多说域名</strong> 这一栏填写的就是你的 <code>duoshuo_shortname</code>,</li>
+</ul>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo03.png" alt="Markdown"></p>
+<ul>
+<li>创建站点完成后在 <span id="inline-blue"> 站点配置文件 </span> 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值即可。</li>
+</ul>
+<p><strong>多说评论框自定义</strong> : <a href="https://github.com/cwyaml/code-useful/blob/master/%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA%E6%A1%86%E6%A0%B7%E5%BC%8F/index.css" target="_blank" rel="external">我的样式代码</a></p>
+<h4 id="多说分享"><a href="#多说分享" class="headerlink" title="多说分享"></a>多说分享</h4><p>在 <span id="inline-purple">主题配置文件</span> 中设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Share</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
+<p>禁用鼠标经过时分享更多功能（有bug）:<br>找到 <code>\themes\next\layout\_partials\share\duoshuo_share.swig</code> 文件，替换内容为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share flat"</span> <span class="attr">data-thread-key</span>=<span class="string">"&#123;&#123; page.path &#125;&#125;"</span></span></div><div class="line">  <span class="attr">data-title</span>=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span></div><div class="line">  <span class="attr">data-content</span>=<span class="string">""</span></div><div class="line">  <span class="attr">data-url</span>=<span class="string">"&#123;&#123; page.permalink &#125;&#125;"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-inline"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>  <span class="attr">class</span>=<span class="string">"ds-share-icons-16"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds-more"</span>&gt;</span>分享到：<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-weibo"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"weibo"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qzone"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qzone"</span>&gt;</span>QQ空间<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qqt"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qqt"</span>&gt;</span>腾讯微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-wechat"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"wechat"</span>&gt;</span>微信<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-facebook"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"facebook"</span>&gt;</span>Facebook<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-google"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"google"</span>&gt;</span>Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-icons-more"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="博文压缩"><a href="#博文压缩" class="headerlink" title="博文压缩"></a>博文压缩</h3><p>目前知道的有两个插件可以压缩博文，<code>hexo-all-minifier</code> 插件和 <code>gulp</code>插件。<br><strong>hexo-all-minifier</strong> 虽然使用比较简单，而且也可以压缩图片，但是对文章缩进（输入法全拼模式下按 Tab）不支持，所以暂时使用 gulp 压缩手段。</p>
+<h4 id="hexo-all-minifier-使用方法"><a href="#hexo-all-minifier-使用方法" class="headerlink" title="hexo-all-minifier 使用方法"></a>hexo-all-minifier 使用方法</h4><p>安装 hexo-all-minifier，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-all-minifier --save</div></pre></td></tr></table></figure></p>
+<p><code>hexo g</code> 编译的时候就会自动压缩 HTML、JS、图片。详情参考插件介绍 <a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="external">hexo-all-minifier</a></p>
+<h4 id="glup-使用方法"><a href="#glup-使用方法" class="headerlink" title="glup 使用方法"></a>glup 使用方法</h4><p>hexo 依赖 gulp 插件安装，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install gulp -g</div><div class="line">$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure></p>
+<p>在 <code>package.json</code> 同级目录下，新建 <code>gulpfile.js</code> 并填入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">var minifycss = require(&apos;gulp-minify-css&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">var htmlmin = require(&apos;gulp-htmlmin&apos;);</div><div class="line">var htmlclean = require(&apos;gulp-htmlclean&apos;);</div><div class="line">// 压缩 public 目录 css</div><div class="line">gulp.task(&apos;minify-css&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.css&apos;)</div><div class="line">        .pipe(minifycss())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 压缩 public 目录 html</div><div class="line">gulp.task(&apos;minify-html&apos;, function() &#123;</div><div class="line">  return gulp.src(&apos;./public/**/*.html&apos;)</div><div class="line">    .pipe(htmlclean())</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">         removeComments: true,</div><div class="line">         minifyJS: true,</div><div class="line">         minifyCSS: true,</div><div class="line">         minifyURLs: true,</div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(&apos;./public&apos;))</div><div class="line">&#125;);</div><div class="line">// 压缩 public/js 目录 js</div><div class="line">gulp.task(&apos;minify-js&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.js&apos;)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 执行 gulp 命令时执行的任务</div><div class="line">gulp.task(&apos;default&apos;, [</div><div class="line">    &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p>生成博文是执行 <code>hexo g &amp;amp;&amp;amp; gulp</code> 就会根据 <strong>gulpfile.js</strong> 中的配置，对 <strong>public</strong> 目录中的静态资源文件进行压缩。</p>
+<h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><ul>
+<li>修改 <code>hexo-generator-index</code> 插件。<br>替换文件：node_modules/hexo-generator-index/lib/generator.js 为：<a href="https://github.com/cwyaml/Useful-code/blob/master/generator%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9/generator.js" target="_blank" rel="external">generator.js</a></li>
+<li>设置文章置顶<br>在文章 Front-matter 中添加 <strong>top 值</strong>，<u>数值越大文章越靠前</u>，如：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: cwyaml 图集</div><div class="line">categories: [图片]</div><div class="line">tags: [picture]</div><div class="line">date: 2015-04-02 14:36:04</div><div class="line">top: 10</div><div class="line">---</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="博文部署-message"><a href="#博文部署-message" class="headerlink" title="博文部署 message"></a>博文部署 message</h3><p>在 <code>\node_modules\hexo-deployer-git\lib\deployer.js</code> 文件末尾找到这一句：（记得个性一点）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Lucky Boy: &#123;&#123; now(\&apos;YYYY-MM-DD HH:mm:ss\&apos;) &#125;&#125;.</div></pre></td></tr></table></figure></p>
+<h3 id="图片模式"><a href="#图片模式" class="headerlink" title="图片模式"></a>图片模式</h3><p>  新建博文，设置 <code>type: &quot;picture&quot;</code>，使用 <code>{\% gp x-x \%} ... {\% endgp \%}</code> 标签引用要展示的图片地址，如下所示：(其中的 x-x 为图片展示效果，可以自己尝试一下)<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Naruto-Pictures</div><div class="line">categories: [图片]</div><div class="line">tags: [picture]</div><div class="line">date: 2014-06-02 10:36:02</div><div class="line">type: "picture"</div><div class="line">comments: false</div><div class="line">---</div><div class="line">&#123;% gp 5-3 %&#125;</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/18210.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/196232.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/224147.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/199301.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/213318.jpg)</div><div class="line">&#123;% endgp %&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;转自&lt;/strong&gt;： &lt;a href=&quot;http://www.cwyaml.top/&quot;&gt;http://www.cwyaml.top/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
     
       <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
     
