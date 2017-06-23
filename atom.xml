@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-30T08:05:27.581Z</updated>
+  <updated>2017-06-23T02:38:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,131 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ES6 笔记</title>
+    <link href="http://yoursite.com/2017/06/23/es6/"/>
+    <id>http://yoursite.com/2017/06/23/es6/</id>
+    <published>2017-06-23T02:15:10.000Z</published>
+    <updated>2017-06-23T02:38:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>代码块：外层作用于无法读取内层作用域中的变量</p>
+</blockquote>
+<h3 id="let-与-const"><a href="#let-与-const" class="headerlink" title="let 与 const"></a>let 与 const</h3><ul>
+<li>共同点<ul>
+<li>只在块级作用域中有效</li>
+<li>暂时性死区</li>
+<li>不允许重复声明</li>
+</ul>
+</li>
+<li>不同点<ul>
+<li>let<ul>
+<li>不存在变量提升</li>
+</ul>
+</li>
+<li>const<ul>
+<li>声明的值 <strong>不可变</strong></li>
+<li>声明值得同时 <strong>必须赋值</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="关于解析赋值"><a href="#关于解析赋值" class="headerlink" title="关于解析赋值"></a>关于解析赋值</h3><h4 id="数组的"><a href="#数组的" class="headerlink" title="数组的"></a>数组的</h4><ul>
+<li><code>数组的元素是按次序排列的，变量的取值要与位置匹配</code></li>
+</ul>
+<blockquote>
+<p>较典型范例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">let</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">head <span class="comment">// 1</span></div><div class="line">tail <span class="comment">// [2, 3, 4]</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</div><div class="line">x <span class="comment">// "a"</span></div><div class="line">y <span class="comment">// undefined</span></div><div class="line">z <span class="comment">// []</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</div><div class="line">a <span class="comment">// 1</span></div><div class="line">b <span class="comment">// 2</span></div><div class="line">d <span class="comment">// 4</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>设置默认值</strong> ：解构赋值允许指定默认值。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]; <span class="comment">// x='a', y='b'</span></div><div class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>, <span class="literal">undefined</span>]; <span class="comment">// x='a', y='b'</span></div><div class="line"></div><div class="line">-------------------------------------------</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'aaa'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 函数 f 没有执行，因为 x 的值是 1 不属于 undefined </span></div><div class="line"><span class="keyword">let</span> [x = f()] = [<span class="number">1</span>];</div></pre></td></tr></table></figure>
+<h4 id="对象的"><a href="#对象的" class="headerlink" title="对象的"></a>对象的</h4><ul>
+<li><code>对象的属性虽没有次序，但变量必须与属性同名</code></li>
+</ul>
+<blockquote>
+<p>较典型范例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">let</span> &#123; bar, foo &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div><div class="line">foo <span class="comment">// "aaa"</span></div><div class="line">bar <span class="comment">// "bbb"</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> &#123; baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div><div class="line">baz <span class="comment">// undefined</span></div><div class="line">-------------------------------------------</div><div class="line"><span class="comment">/* 如果变量名与属性名不一致，必须写成下面这样。*/</span></div><div class="line"></div><div class="line"><span class="comment">/***********</span></div><div class="line">注意:对于let和const来说，变量不能重新声明，所以一旦赋值的变量以前声明过，就会报错。</div><div class="line">************/</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">first</span>: <span class="string">'hello'</span>, <span class="attr">last</span>: <span class="string">'world'</span> &#125;;</div><div class="line"><span class="keyword">let</span> &#123; <span class="attr">first</span>: f, <span class="attr">last</span>: l &#125; = obj;</div><div class="line">f <span class="comment">// 'hello'</span></div><div class="line">l <span class="comment">// 'world'</span></div><div class="line"></div><div class="line">-------------------------------------------</div><div class="line"><span class="comment">/***********</span></div><div class="line">下面代码中，let命令下面一行的圆括号是必须的，否则会报错。 </div><div class="line">因为解析器会将起首的大括号，理解成一个代码块，而不是赋值语句。</div><div class="line">************/</div><div class="line"></div><div class="line"><span class="keyword">let</span> foo;</div><div class="line">(&#123;foo&#125; = &#123;<span class="attr">foo</span>: <span class="number">1</span>&#125;); <span class="comment">// 成功  </span></div><div class="line"></div><div class="line"><span class="keyword">let</span> baz;</div><div class="line">(&#123;<span class="attr">bar</span>: baz&#125; = &#123;<span class="attr">bar</span>: <span class="number">1</span>&#125;); <span class="comment">// 成功</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>设置默认值</strong> ：解构赋值允许指定默认值。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;x = <span class="number">3</span>&#125; = &#123;&#125;;</div><div class="line">x <span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;x, y = <span class="number">5</span>&#125; = &#123;<span class="attr">x</span>: <span class="number">1</span>&#125;;</div><div class="line">x <span class="comment">// 1</span></div><div class="line">y <span class="comment">// 5</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;<span class="attr">x</span>:y = <span class="number">3</span>&#125; = &#123;&#125;;</div><div class="line">y <span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;<span class="attr">x</span>:y = <span class="number">3</span>&#125; = &#123;<span class="attr">x</span>: <span class="number">5</span>&#125;;</div><div class="line">y <span class="comment">// 5</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123; <span class="attr">message</span>: msg = <span class="string">'Something went wrong'</span> &#125; = &#123;&#125;;</div><div class="line">msg <span class="comment">// "Something went wrong"</span></div></pre></td></tr></table></figure>
+<h4 id="函数的"><a href="#函数的" class="headerlink" title="函数的"></a>函数的</h4><blockquote>
+<p>经典范例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 函数move的参数是一个对象，如果通过解构，得不到变量x或y的值，那么x和y等于默认值。*/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">&#123;x = <span class="number">0</span>, y = <span class="number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> [x, y];</div><div class="line">&#125;</div><div class="line"></div><div class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;); <span class="comment">// [3, 8]</span></div><div class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;); <span class="comment">// [3, 0]. 因为 x 有值 就会赋值 ，y 没有值 就是默认值</span></div><div class="line">move(&#123;&#125;); <span class="comment">// [0, 0]</span></div><div class="line">move(); <span class="comment">// [0, 0]</span></div><div class="line">-------------------------------------------</div><div class="line"><span class="comment">/* undefined就会触发函数参数的默认值。 */</span></div><div class="line">[<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">3</span>].map(<span class="function">(<span class="params">x = <span class="string">'yes'</span></span>) =&gt;</span> x);</div><div class="line"><span class="comment">// [ 1, 'yes', 3 ]</span></div></pre></td></tr></table></figure>
+<h4 id="基本用途"><a href="#基本用途" class="headerlink" title="基本用途"></a>基本用途</h4><h5 id="交换变量的值"><a href="#交换变量的值" class="headerlink" title="交换变量的值"></a>交换变量的值</h5><blockquote>
+<p>上面代码交换变量x和y的值，这样的写法不仅简洁，而且易读，语义非常清晰。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> y = <span class="number">2</span>;</div><div class="line"></div><div class="line">[x, y] = [y, x];</div></pre></td></tr></table></figure>
+<h5 id="从函数返回多个值"><a href="#从函数返回多个值" class="headerlink" title="从函数返回多个值"></a>从函数返回多个值</h5><blockquote>
+<p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 返回一个数组</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">example</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> [a, b, c] = example();</div><div class="line"></div><div class="line"><span class="comment">// 返回一个对象</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">example</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="number">2</span></div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> &#123; foo, bar &#125; = example();</div></pre></td></tr></table></figure>
+<h5 id="函数参数的定义"><a href="#函数参数的定义" class="headerlink" title="函数参数的定义"></a>函数参数的定义</h5><blockquote>
+<p>解构赋值可以方便地将一组参数与变量名对应起来。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 参数是一组有次序的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">[x, y, z]</span>) </span>&#123; ... &#125;</div><div class="line">f([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</div><div class="line"></div><div class="line"><span class="comment">// 参数是一组无次序的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">&#123;x, y, z&#125;</span>) </span>&#123; ... &#125;</div><div class="line">f(&#123;<span class="attr">z</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">x</span>: <span class="number">1</span>&#125;);</div></pre></td></tr></table></figure>
+<h5 id="提取JSON数据"><a href="#提取JSON数据" class="headerlink" title="提取JSON数据"></a>提取JSON数据</h5><blockquote>
+<p>解构赋值对提取JSON对象中的数据，尤其有用。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> jsonData = &#123;</div><div class="line">  <span class="attr">id</span>: <span class="number">42</span>,</div><div class="line">  <span class="attr">status</span>: <span class="string">"OK"</span>,</div><div class="line">  <span class="attr">data</span>: [<span class="number">867</span>, <span class="number">5309</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> &#123; id, status, <span class="attr">data</span>: number &#125; = jsonData;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(id, status, number);</div><div class="line"><span class="comment">// 42, "OK", [867, 5309]</span></div></pre></td></tr></table></figure>
+<h5 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h5><blockquote>
+<p>指定参数的默认值，就避免了在函数体内部再写var foo = config.foo || ‘default foo’;这样的语句。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">jQuery.ajax = <span class="function"><span class="keyword">function</span> (<span class="params">url, &#123;</span></span></div><div class="line">  async = true,</div><div class="line">  beforeSend = function () &#123;&#125;,</div><div class="line">  cache = <span class="literal">true</span>,</div><div class="line">  complete = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</div><div class="line">  crossDomain = <span class="literal">false</span>,</div><div class="line">  global = <span class="literal">true</span>,</div><div class="line">  <span class="comment">// ... more config</span></div><div class="line">&#125;) &#123;</div><div class="line">  <span class="comment">// ... do stuff</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="遍历Map结构"><a href="#遍历Map结构" class="headerlink" title="遍历Map结构"></a>遍历Map结构</h5><blockquote>
+<p>ap结构原生支持Iterator接口，配合变量的解构赋值，获取键名和键值就非常方便。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">map.set(<span class="string">'first'</span>, <span class="string">'hello'</span>);</div><div class="line">map.set(<span class="string">'second'</span>, <span class="string">'world'</span>);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="built_in">console</span>.log(key + <span class="string">" is "</span> + value);</div><div class="line">&#125;</div><div class="line"><span class="comment">// first is hello</span></div><div class="line"><span class="comment">// second is world</span></div><div class="line">-------------------------------------------</div><div class="line"><span class="comment">/* 如果只想获取键名，或者只想获取键值，可以写成下面这样。 */</span></div><div class="line"></div><div class="line"><span class="comment">// 获取键名</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取键值</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [,value] <span class="keyword">of</span> map) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="输入模块的指定方法"><a href="#输入模块的指定方法" class="headerlink" title="输入模块的指定方法"></a>输入模块的指定方法</h5><blockquote>
+<p>加载模块时，往往需要指定输入哪些方法。解构赋值使得输入语句非常清晰。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> &#123; SourceMapConsumer, SourceNode &#125; = <span class="built_in">require</span>(<span class="string">"source-map"</span>);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;代码块：外层作用于无法读取内层作用域中的变量&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;let-与-const&quot;&gt;&lt;a href=&quot;#let-与-const&quot; class=&quot;headerlink&quot; title=&quot;let 与 const&quot;&gt;&lt;/a&gt;let 与 const&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;共同点&lt;ul&gt;
+&lt;li&gt;只在块级作用域中有效&lt;/li&gt;
+&lt;li&gt;暂时性死区&lt;/li&gt;
+&lt;li&gt;不允许重复声明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不同点&lt;ul&gt;
+&lt;li&gt;let&lt;ul&gt;
+&lt;li&gt;不存在变量提升&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;const&lt;ul&gt;
+&lt;li&gt;声明的值 &lt;strong&gt;不可变&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;声明值得同时 &lt;strong&gt;必须赋值&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flex</title>
     <link href="http://yoursite.com/2017/05/30/flex/"/>
     <id>http://yoursite.com/2017/05/30/flex/</id>
     <published>2017-05-30T07:58:06.000Z</published>
-    <updated>2017-05-30T08:05:27.581Z</updated>
+    <updated>2017-05-30T08:05:28.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Flex-布局是什么"><a href="#Flex-布局是什么" class="headerlink" title="Flex 布局是什么"></a>Flex 布局是什么</h3><blockquote>
 <p>Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。</p>
@@ -269,7 +389,7 @@
     <link href="http://yoursite.com/2017/04/13/rexue/"/>
     <id>http://yoursite.com/2017/04/13/rexue/</id>
     <published>2017-04-13T14:33:40.000Z</published>
-    <updated>2017-04-13T15:35:27.072Z</updated>
+    <updated>2017-04-13T15:35:28.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/imgs/hzw1.jpg" alt="markdown"></p>
 <embed src="//music.163.com/style/swf/widget.swf?sid=33682157&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all">
@@ -315,7 +435,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/imgs/hzw1.jpg&quot; alt=&quot;markdown&quot;&gt;&lt;/p&gt;
-&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=33682157&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot;  allowNetworking=&quot;all&quot;&gt;&lt;/embed&gt;
+&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=33682157&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;
 
 &lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;首先，少年，答应别人的承诺，就一定要兑现。&lt;/p&gt;
 &lt;/div&gt;
@@ -336,7 +456,7 @@
     <link href="http://yoursite.com/2017/04/09/quotation/"/>
     <id>http://yoursite.com/2017/04/09/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
-    <updated>2017-04-13T14:48:28.169Z</updated>
+    <updated>2017-04-13T14:48:30.000Z</updated>
     
     <content type="html"><![CDATA[<p><embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all"><br><div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
 </div></p>
@@ -381,9 +501,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot;  allowNetworking=&quot;all&quot;&gt;&lt;/embed&gt;&lt;br&gt;&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。&lt;br&gt;&lt;span  style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『钢之炼金术师』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;&lt;br&gt;&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『钢之炼金术师』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;思想中一旦有了依附，骨子里便失去了坚强；&lt;br&gt;&lt;span  style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『网络』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;思想中一旦有了依附，骨子里便失去了坚强；&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『网络』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
     
     </summary>
@@ -398,7 +518,7 @@
     <link href="http://yoursite.com/2017/04/07/photo/"/>
     <id>http://yoursite.com/2017/04/07/photo/</id>
     <published>2017-04-07T06:04:32.000Z</published>
-    <updated>2017-04-09T15:19:51.782Z</updated>
+    <updated>2017-04-09T15:19:52.000Z</updated>
     
     <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/224147.jpg" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/196232.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/18210.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/213318.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/199301.jpg" alt=""></div></div></div></div>]]></content>
     
@@ -417,8 +537,8 @@
     <title>Hello World</title>
     <link href="http://yoursite.com/2017/04/05/hello-world/"/>
     <id>http://yoursite.com/2017/04/05/hello-world/</id>
-    <published>2017-04-05T08:41:22.242Z</published>
-    <updated>2017-04-07T08:59:22.958Z</updated>
+    <published>2017-04-05T02:15:10.000Z</published>
+    <updated>2017-06-23T03:08:35.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h3><p>还记得在 Github 上生成的第一个page时的新奇<br>还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋<br>如今在Github的page上生成了自己的博客，那可谓是即新奇 + 兴奋带来的激动<br>可以在自己的这块领地为所欲为，光想想就有一种迎风而来的酸爽</p>
 <h3 id="致敬"><a href="#致敬" class="headerlink" title="致敬"></a>致敬</h3><p>每一次的开始都仿佛打开一扇门<br>而每扇门的背后都有着无数默默付出和无私奉献的人<br>是他们让现在的这个圈子有了生态<br>没有他们的付出我不会这么顺利的把这个博客搭建起来<br>再次由衷的致敬这些人<br>我愿成为向你们一样的人</p>
@@ -431,402 +551,7 @@
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>JavaScript - 面向对象</title>
-    <link href="http://yoursite.com/2017/04/05/Object/"/>
-    <id>http://yoursite.com/2017/04/05/Object/</id>
-    <published>2017-04-05T05:00:04.000Z</published>
-    <updated>2017-05-30T08:17:22.042Z</updated>
-    
-    <content type="html"><![CDATA[<p><div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/object.png" alt="Markdown"></div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 <strong>构造函数</strong>（constructor）和 <strong>原型链</strong>（prototype）。</p>
-<a id="more"></a>
-<h2 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h2><p>我们从两个层次来理解：<br>1、<strong>“对象”是单个实物的抽象</strong><br>一本书、一辆汽车、一个人都可以是“对象”，一个数据库、一张网页、一个与远程服务器的连接也可以是“对象”。当实物被抽象成“对象”，实物之间的关系就变成了“对象”之间的关系，从而就可以模拟现实情况，针对“对象”进行编程。<br>2、<strong>“对象”是一个容器，封装了“属性”（property）和“方法”（method）</strong><br>所谓“属性”，就是对象的状态；所谓“方法”，就是对象的行为（完成某种任务）。比如，我们可以把动物抽象为 animal 对象，“属性”记录具体是那一种动物，“方法”表示动物的某种行为（奔跑、捕猎、休息等等）。</p>
-<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>虽然 Object 构造函数和对象字面量都可以用来创建单个对象，但这些方式有明显的缺点：使用一个接口创建很多对象，会产生大量的重复代码。未解决这个问题，开发者们不停在探索。</p>
-<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式是软件工程领域一种广为人知的设计模式。开发人员封装了一个函数，用函数来封装一个对象“模板”，这样可以少些一些代码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">people</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="string">'name'</span> : name,</div><div class="line">    <span class="string">'age'</span> : age</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> people1 = people(<span class="string">'Tom'</span>,<span class="number">23</span>);</div><div class="line"><span class="keyword">var</span> people2 = people(<span class="string">'Peter'</span>,<span class="number">24</span>);</div><div class="line">alert(people1.age);       <span class="comment">//23</span></div></pre></td></tr></table></figure></p>
-<p>这种模式虽然解决了创建多个相似对象的问题，这种方法的问题是，people1 和 people2 之间没有内在的联系，不能反映出它们是同一个原型对象的实例。然后，又出现了一种新的模式。</p>
-<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><p>所谓“构造函数”，其实就是一个普通函数，但是内部使用了 <code>this</code> 变量。对构造函数使用 <code>new</code> 运算符，就能生成实例，并且 <code>this</code> 变量会绑定在实例对象上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People(<span class="string">'Tom'</span>,<span class="number">23</span>);</div><div class="line"><span class="keyword">var</span> people2 = <span class="keyword">new</span> People(<span class="string">'Peter'</span>,<span class="number">24</span>);</div><div class="line">alert(people2.name);      <span class="comment">//Peter</span></div></pre></td></tr></table></figure></p>
-<p>这时 people1 和 people2 会自动拥有一个 <code>constructor</code> 属性，指向他们的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(people1.constructor == People);    <span class="comment">//true</span></div><div class="line">alert(people2.constructor == People);    <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p>或者也可以使用 <code>instanceof</code> 运算符，验证原型与实例之间的关系：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(people1 <span class="keyword">instanceof</span> People);        <span class="comment">//true</span></div><div class="line">alert(people2 <span class="keyword">instanceof</span> People);        <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p id="div-border-left-red">构造函数应注意：<br>1、函数名一般首字母大写，用来和普通函数区分；<br>2、调用时必须使用 <code>new</code> 运算符，否则 <code>this</code> 将指向全局（属性和方法将属于 <strong>window</strong>）<br>3、买有 <code>return</code> 语句。<br></p>
-
-<p>构造函数模式虽然好用，但也不是没有缺点：造成内存浪费。我们给 People 添加一个方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">'我会跑！'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People(<span class="string">'Tom'</span>,<span class="number">23</span>);</div><div class="line"><span class="keyword">var</span> people2 = <span class="keyword">new</span> People(<span class="string">'Peter'</span>,<span class="number">24</span>);</div><div class="line">people1.run();</div></pre></td></tr></table></figure></p>
-<p>貌似没有什么为题。实际上，<code>run</code> 这个方法应该是每个实例共享的（因为每个人都会跑），但是我们每 <code>new</code> 一次，就会为新的实例重新定义 <code>run</code> 方法，造成内存浪费。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(people1.run == people2.run);      <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
-<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p>Javascript 规定，每一个构造函数都有一个 <code>prototype</code> 属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">People.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'我会跑！'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People(<span class="string">'Tom'</span>,<span class="number">23</span>);</div><div class="line"><span class="keyword">var</span> people2 = <span class="keyword">new</span> People(<span class="string">'Peter'</span>,<span class="number">24</span>);</div><div class="line">people1.run();        <span class="comment">//我会跑！</span></div><div class="line">alert(people1.run == people2.run);      <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p>说明 people1 和 people2 的 <code>run()</code> 方法指向相同内存地址，是共享的。减少了内存的使用，提高了运行效率。</p>
-<p id="div-border-left-red"><strong>原型搜索机制：</strong><br>当访问一个实例属性时，首先会在实例中搜索该属性，如果找不到，则会继续搜索实例的原型。</p>
-
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><blockquote>
-<p>一句话，<strong>继承</strong> 就是让一个对象拥有另一个对象的属性或方法。（我是这么理解的）</p>
-</blockquote>
-<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p><strong>原型链</strong> 是 js 继承的主要方法。其主要思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。首先明确一下 <strong>构造函数</strong>、<strong>原型</strong> 和 <strong>实例</strong> 的关系：<em>每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型的内部指针</em>(对照下图理解这句话)。</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/Object1.png" alt="markdown"></p>
-<p>假如我们让原型对象等于另一个类型的实例，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立，如此层层递进，就构成了实例与原型的链条。这就是 <strong>原型链</strong>。<br>原型链的基本模式：（一个构造函数的原型指向另一个构造函数的实例）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Animal.prototype.type = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'动物'</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">People.prototype = <span class="keyword">new</span> Animal();    <span class="comment">//实现继承Animai()</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People();</div><div class="line">alert(people1.type());              <span class="comment">//动物</span></div></pre></td></tr></table></figure></p>
-<p>最终的结果是：people1 指向 People 的原型，People 的原型又指向 Animal 的原型。</p>
-<p><span id="inline-blue">需要注意：</span><br><strong>注意一：</strong> 原型链的顶层为 Object 。这也是所有自定义类型都可以使用 <code>toString()</code>、<code>valueOf()</code> 的原因。<br><strong>注意二：</strong> 如果存在继承，那么子对象的实例属于所有所继承的对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(people1 <span class="keyword">instanceof</span> People);     <span class="comment">//true</span></div><div class="line">alert(people1 <span class="keyword">instanceof</span> Animal);     <span class="comment">//true</span></div><div class="line">alert(people1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);     <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p><strong>注意三：</strong> 如果需要给子类型添加超类型中不存的方法，或者说要替换掉超类型中的方法，那么给原型添加方法的代码一定要放在替换原型的语句之后。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Animal.prototype.type = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'动物'</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">People.prototype = <span class="keyword">new</span> Animal();    <span class="comment">//实现继承Animai()</span></div><div class="line">People.prototype.type = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'我也是动物'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People();</div><div class="line">alert(people1.type());        <span class="comment">//我也是动物   //超类型中的方法被覆盖</span></div><div class="line"></div><div class="line">People.prototype.type = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'我也是动物'</span>;</div><div class="line">&#125;</div><div class="line">People.prototype = <span class="keyword">new</span> Animal();</div><div class="line"><span class="keyword">var</span> people1 = <span class="keyword">new</span> People();</div><div class="line">alert(people1.type());         <span class="comment">//动物</span></div></pre></td></tr></table></figure></p>
-<p><strong>注意四：</strong> 不能使用对象字面量创建原型方法，因为这样会重写原型链。</p>
-<p><span id="inline-red"><strong>原型链的问题：</strong></span><br><strong>问题一：</strong> 前面说过，包含引用类型值得原型属性会被所有实例共享。在通过原型实现继承时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地变成现在的原型属性了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Color</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.color = [<span class="string">'red'</span>,<span class="string">'blue'</span>,<span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Flower</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Flower.prototype = <span class="keyword">new</span> Color();    <span class="comment">//继承Color</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> flower1 = <span class="keyword">new</span> Flower();</div><div class="line">flower1.color.push(<span class="string">'black'</span>);</div><div class="line">alert(flower1.color);      <span class="comment">//red,blue,green,black</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> flower2 = <span class="keyword">new</span> Flower();</div><div class="line">alert(flower2.color);      <span class="comment">//red,blue,green,black</span></div></pre></td></tr></table></figure></p>
-<p><strong>问题二：</strong> 没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。</p>
-<h3 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h3><p>这种技术是为了解决 <strong>原型链</strong> 中的问题而产生的，他的基本思想是：在子类型构造函数的内部调用超类型的构造函数。方式是使用  <code>call()</code> 或 <code>apply()</code> 方法，将父对象的构造函数绑定在子对象上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Color</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.color = [<span class="string">'red'</span>,<span class="string">'blue'</span>,<span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Flower</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  Color.call(<span class="keyword">this</span>);         <span class="comment">//继承Color</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> flower1 = <span class="keyword">new</span> Flower();</div><div class="line">flower1.color.push(<span class="string">'black'</span>);</div><div class="line">alert(flower1.color);      <span class="comment">//red,blue,green,black</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> flower2 = <span class="keyword">new</span> Flower();</div><div class="line">alert(flower2.color);      <span class="comment">//red,blue,green</span></div></pre></td></tr></table></figure></p>
-<p>我们实际上在新创建的 Flower 实例的环境下调用了 Color 构造函数。这样一来，就会在新 Flower 对象上执行 Color 函数中定义的所有对象初始化代码。结果， Flower 的每个实例都会具有自己的 color 属性的副本。<br><span id="inline-red"><strong>借用构造函数的问题：</strong></span><br>方法都在函数中定义，因此函数复用就无从谈起。所以很少单独使用。</p>
-<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><p>将 <strong>原型链</strong> 和 <strong>构造函数</strong> 相结合，从而发挥两者之长的继承方式。思路是：使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，即通过在原型上定义方法实现了函数复用，又能保证每个实例都有它自己的属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.color = [<span class="string">'red'</span>,<span class="string">'blue'</span>,<span class="string">'green'</span>];</div><div class="line">&#125;</div><div class="line">People.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Book</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  People.call(<span class="keyword">this</span>,name);    <span class="comment">//继承了People的name属性</span></div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">Book.prototype = <span class="keyword">new</span> People();    <span class="comment">//继承方法</span></div><div class="line">Book.prototype.constructor = Book;</div><div class="line">Book.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> book1 = <span class="keyword">new</span> Book(<span class="string">'js'</span>,<span class="number">23</span>);</div><div class="line">book1.color.push(<span class="string">'black'</span>);</div><div class="line">alert(book1.color);      <span class="comment">//red,blue,green,black</span></div><div class="line">book1.sayName();         <span class="comment">//js</span></div><div class="line">book1.sayAge();          <span class="comment">//23</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> book2 = <span class="keyword">new</span> Book(<span class="string">'java'</span>,<span class="number">44</span>);</div><div class="line">alert(book2.color);      <span class="comment">//red,blue,green</span></div><div class="line">book2.sayName();         <span class="comment">//java</span></div><div class="line">book2.sayAge();          <span class="comment">//44</span></div></pre></td></tr></table></figure></p>
-<p>People 构造函数定义了两个属性：<code>name</code> 和 <code>color</code>，然后给 People 的原型定义了 <code>sayName()</code> 方法。Book 构造函数在调用 People 构造函数是传入了 <code>name</code> 参数，紧接着又定义了自己的属性 <code>age</code>。然后，将 People 的实例赋值给 Book 的原型，然后又在该新原型上定义了 <code>sayAge()</code> 方法。这样一来，就可以让两个不同的 Book 实例即分别有自己的属性，又可以使用相同方法。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/object.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;面向对象的语言有一个标志，那就是“类”的概念，所谓的“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript语言的对象体系，不是基于“类”的，而是基于 &lt;strong&gt;构造函数&lt;/strong&gt;（constructor）和 &lt;strong&gt;原型链&lt;/strong&gt;（prototype）。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="面向对象" scheme="http://yoursite.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript - 事件</title>
-    <link href="http://yoursite.com/2017/04/02/event/"/>
-    <id>http://yoursite.com/2017/04/02/event/</id>
-    <published>2017-04-02T13:14:46.000Z</published>
-    <updated>2017-05-30T08:17:17.227Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/event.png" alt="markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Javascript 和 HTML 之间的交互是通过 <strong>事件</strong> 来实现的。最早在 IE 中出现，被作为分担服务器端运算负载的一种手段。到现在，几乎所有的浏览器都支持事件处理。在 DOM2 级中得到规范。</p>
-<a id="more"></a>
-<h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><p><strong>事件流</strong> 描述的是从页面中接受事件的顺序。IE 和 Netscape 提出了完全相反的事件流概念。</p>
-<p><strong>事件冒泡：</strong> IE 中的事件流叫做 <strong>事件冒泡</strong> ,即从最具体的元素逐级向外传播到较不具体的元素。（所有现代浏览器都支持事件冒泡）<br><strong>事件捕获：</strong> Netscape 提出了另一种事件流叫做 <strong>事件捕获</strong> 。他们的思想是最具体的元素应该最后接受到事件，所以事件捕获是 “从外向内” 传播的。<br><strong>DOM事件流：</strong> “DOM2级事件”规定了事件流包括三个阶段：首先发生事件捕获，然后是实际的目标接受到事件，最后一个阶段是事件冒泡。</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/event03.png" alt="markdown"></p>
-<blockquote>
-<p><span id="inline-blue"> <strong>汇总：</strong></span> IE8及更早的版本不支持 DOM2 级事件流。</p>
-</blockquote>
-<h2 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h2><p>事件就是用户或浏览器自身执行的某种动作。像<code>click</code>、<code>load</code>等都是事件的名字，而响应这个事件的函数就叫做 <strong>事件处理程序</strong> 。事件处理程序以 <code>on</code> 开头。Javascript 有三种事件模型：<strong>内联模型</strong> 、 <strong>脚本模型</strong> 和 <strong>DOM2级模型</strong> 。</p>
-<p><strong>内链模型：</strong> 被淘汰的方式，举个例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"Click me"</span> onclick=<span class="string">"alert('Clicked')"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>脚本模型：</strong> 这个是现在用的最多的一种方式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">//指定事件</span></div><div class="line">  alert(<span class="string">'Clicked'</span>);</div><div class="line">&#125;</div><div class="line">btn.onclick = <span class="literal">null</span>;         <span class="comment">//删除事件</span></div></pre></td></tr></table></figure></p>
-<h3 id="DOM2级模型"><a href="#DOM2级模型" class="headerlink" title="DOM2级模型"></a>DOM2级模型</h3><p>“DOM2级事件”定义了两个方法：（可用于所有 DOM 节点）</p>
-<ul>
-<li><strong>addEventListener()</strong>  &nbsp;&nbsp;      添加事件</li>
-<li><strong>removeEventListener()</strong>   &nbsp;&nbsp;  移除事件</li>
-</ul>
-<p>这两个方法都接受三个参数：要处理的事件名（<code>click</code>、<code>mouseover</code>）、事件处理程序（一个匿名函数） 和 一个布尔值（最后一个布尔值如果是 <strong>true</strong> 表示在捕获阶段执行事件，如果是 <strong>false</strong> 表示在冒泡阶段执行事件。）</p>
-<blockquote>
-<p><strong>PS:</strong>  大多数情况下，都将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度兼容不同的浏览器。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">btn.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'Clicked'</span>);</div><div class="line">  &#125;,<span class="literal">false</span>);</div></pre></td></tr></table></figure>
-<p id="div-border-left-red"><strong>DOM2方式的特点：</strong><br>1、可以为同一个元素添加多个事件处理程序，他们会按照顺序依次执行。<br>2、移除事件貌似麻烦了很多。</p>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">btn.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'Clicked'</span>);</div><div class="line">  &#125;,<span class="literal">false</span>);</div><div class="line">btn.removeEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </div><div class="line">  alert(<span class="string">'Clicked'</span>);             <span class="comment">//这样是不能移除事件的              </span></div><div class="line">  &#125;,<span class="literal">false</span>);                     <span class="comment">//因为这两个匿名函数已经不是同一个函数了</span></div><div class="line"></div><div class="line"><span class="comment">//必须这样写</span></div><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'Clicked'</span>);</div><div class="line">&#125;</div><div class="line">btn.addEventListener(<span class="string">'click'</span>,handler,<span class="literal">false</span>);</div><div class="line">btn.removeEventListener(<span class="string">'click'</span>,handler,<span class="literal">false</span>);   <span class="comment">//这样才行</span></div></pre></td></tr></table></figure>
-<h3 id="IE中的事件处理程序"><a href="#IE中的事件处理程序" class="headerlink" title="IE中的事件处理程序"></a>IE中的事件处理程序</h3><p>IE 实现了与 DOM 中类似的两个方法：</p>
-<ul>
-<li><strong>attachEvent()</strong> &nbsp;&nbsp;  添加事件</li>
-<li><strong>detachEvent()</strong>  &nbsp;&nbsp;  移除事件</li>
-</ul>
-<p>这两个方法接受两个参数：事件处理程序的名称（<code>onclick</code>、<code>onmouseover</code>） 和 事件处理函数（一个匿名函数）。（IE 默认使用冒泡方式）</p>
-<p id="div-border-left-blue">需要注意的是它 DOM2 中两个方法的区别：<br><strong>区别一：</strong> 第一个参数是 <strong>onclick</strong> ，而不是 <strong>click</strong> 。<br><strong>区别二：</strong> 事件处理程序会在全局作用于下运行，里面的 <code>this 指的是 window</code> 。（在做跨浏览器是这一点要特别注意） </p>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">btn.attachEvent(<span class="string">'onclick'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span> === <span class="built_in">window</span>);     <span class="comment">//true</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<p id="div-border-left-red"><strong>优缺点：</strong><br>优点：同样可以添加多个事件处理程序。<em>但是，这些事件是按添加的相反顺序执行。</em><br>缺点：和上面一样，使用匿名函数是不能被移除。<em>需要传入对相同函数的引用。</em> </p>
-
-<h3 id="跨浏览器事件处理程序"><a href="#跨浏览器事件处理程序" class="headerlink" title="跨浏览器事件处理程序"></a>跨浏览器事件处理程序</h3><p>我们要创建一个方法，视情况分别使用 <strong>传统模型</strong>、<strong>DOM2级模型</strong> 或者 <strong>IE</strong> 事件处理程序。<br>这个方法接受三个参数：要操作的元素、事件类型 和 事件处理函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//添加事件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">element,type,fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(element.addEventListener)&#123;</div><div class="line">    element.addEventListener(type,fn,<span class="literal">false</span>);</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</div><div class="line">    element.attachEvent(<span class="string">'on'</span>+type,fn);</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    element[<span class="string">'on'</span>+type] = fn;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//移除事件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeEvent</span>(<span class="params">element,type,fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(element.removeEventListener)&#123;</div><div class="line">    element.removeEventListener(type,fn,<span class="literal">false</span>);</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent)&#123;</div><div class="line">    element.detachEvent(<span class="string">'on'</span>+type,fn);</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    element[<span class="string">'on'</span>+type] = <span class="literal">null</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>在触发 DOM 上的某个事件时，会产生一个事件对象 <code>event</code>，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。例如鼠标操作导致的事件对象中，包含鼠标位置的信息，键盘操作导致的事件对象中，包含与按键有关的信息。所有浏览器都支持 <code>event</code> 对象，不过支持的方式不同。</p>
-<h3 id="W3C中的事件对象"><a href="#W3C中的事件对象" class="headerlink" title="W3C中的事件对象"></a>W3C中的事件对象</h3><p>无论指定事件处理程序时使用什么方法（DOM0级、DOM2级等），都会传入 <code>event</code> 对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">addEvent(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  alert(event.type);    <span class="comment">//click</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>event 对象的属性和方法：</strong> (这里之列举最常用的)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性/方法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">target</td>
-<td style="text-align:center">事件的目标</td>
-</tr>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">被触发的事件类型</td>
-</tr>
-<tr>
-<td style="text-align:center">currentTarget</td>
-<td style="text-align:center">其事件处理程序当前正在处理事件的那个元素</td>
-</tr>
-<tr>
-<td style="text-align:center">cancelable</td>
-<td style="text-align:center">表明是否可以取消当前事件的默认行为</td>
-</tr>
-<tr>
-<td style="text-align:center">preventDefault()</td>
-<td style="text-align:center">取消时间的默认行为。如果 cancelable 是 true 就可以使用这个方法</td>
-</tr>
-<tr>
-<td style="text-align:center">bubbles</td>
-<td style="text-align:center">表明事件是否冒泡</td>
-</tr>
-<tr>
-<td style="text-align:center">stopPropagation()</td>
-<td style="text-align:center">取消时间的进一步捕获或冒泡。如果 bubbles 为 true 则可以使用这个方法</td>
-</tr>
-</tbody>
-</table>
-<p><span id="inline-red">注意：</span><br>1、在事件执行内部， <u><code>this</code> 始终等于 <code>currentTarget</code></u> 。而 <code>target</code> 只包含事件的实际目标。也就是说 <code>this</code> 和 <code>currentTarget</code> 返回的是你为事件指定的目标元素，而 <code>target</code> 是真正触发这个事件的目标。<br>2、只有 <code>cancelable</code> 的值为 <code>true</code> 的事件，才可以使用 <code>preventDefault()</code> 来取消器默认行为。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.getElementById(<span class="string">'myLink'</span>);</div><div class="line">link.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  event.preventDefault();   <span class="comment">//点击链接不会跳转</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>3、<strong>stopPropagation()</strong> 方法用于立即停止事件冒泡或捕获。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  alert(<span class="string">'Clicked'</span>);</div><div class="line">  event.stopPropagation();    <span class="comment">//如果不阻止事件的传播，点击 btn 后下面的事件也会执行</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.body.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'Body Element'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="IE中的事件对象"><a href="#IE中的事件对象" class="headerlink" title="IE中的事件对象"></a>IE中的事件对象</h3><p>与访问 W3C 中的 event 对象不同，IE 中的 <code>event</code> 对象的访问 <u>取决于指定事件处理程序的方法</u>。<br><strong>脚本模式：</strong> event 作为 <code>window</code> 对象的一个属性存在<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> event = <span class="built_in">window</span>.event;</div><div class="line">  alert(event.type);    <span class="comment">//click</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>DOM2级：</strong> <code>event</code> 作为一个参数被传入事件处理程序。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.attachEvent(<span class="string">'onlick'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  alert(event.type);    <span class="comment">//click</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>IE 中的 event 对象的属性和方法：</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性/方法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">cancelBubble</td>
-<td style="text-align:center">默认值为 false，将其设置为 true 时可以取消事件冒泡（相当于 DOM 中的 stopPropagation() 方法）</td>
-</tr>
-<tr>
-<td style="text-align:center">returnValue</td>
-<td style="text-align:center">默认值为 true，将其设置为 false 是可以取消时间的默认行为（相当于 DOM 中的 preventDefault() 方法）</td>
-</tr>
-<tr>
-<td style="text-align:center">srcElement</td>
-<td style="text-align:center">事件的目标（和 DOM 中的 target 一样）</td>
-</tr>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">被触发事件的类型</td>
-</tr>
-</tbody>
-</table>
-<p><span id="inline-red">注意：</span><br>1、因为事件处理程序的 <strong>作用域</strong> 是由指定的方式决定的，所以要特别注意<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="built_in">window</span>.event.srcElement === <span class="keyword">this</span>);    <span class="comment">//true</span></div><div class="line">&#125;                                             <span class="comment">//这里的this指的是btnDOM</span></div><div class="line">btn.attachEvent(<span class="string">'onclick'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  alert(event.srcElement === <span class="keyword">this</span>);     <span class="comment">//false</span></div><div class="line">  &#125;);                                   <span class="comment">//因为这里的this指的是window</span></div></pre></td></tr></table></figure></p>
-<p>2、只要将 <strong>returnValue</strong> 属性的值设置为 <strong>false</strong>  就可以阻止事件的默认行为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.getElementById(<span class="string">'myLink'</span>);</div><div class="line">link.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">window</span>.event.returnValue = fasle;     <span class="comment">//链接不会跳转</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>3、<strong>cancelBubble</strong> 属性用来停止事件的冒泡（IE不支持事件捕获）这里就不举例了。</p>
-<h3 id="跨浏览器的事件对象"><a href="#跨浏览器的事件对象" class="headerlink" title="跨浏览器的事件对象"></a>跨浏览器的事件对象</h3><p>这里有4个方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEvent</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</div><div class="line">&#125;</div><div class="line"><span class="comment">//获取事件目标元素target</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTarget</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">&#125;</div><div class="line"><span class="comment">//阻止默认行为</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preventDefault</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(event.preventDefault)&#123;</div><div class="line">    event.preventDefault();</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(event.returnValue)&#123;</div><div class="line">    event.returnValue = <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//阻止冒泡</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopPropagation</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(event.stopPropagation)&#123;</div><div class="line">    event.stopPropagation();</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(event.cancelable)&#123;</div><div class="line">    event.cancelable = <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="常用事件类型汇总"><a href="#常用事件类型汇总" class="headerlink" title="常用事件类型汇总"></a>常用事件类型汇总</h2><p>常用的事件类型和具体用法你都可以在这里找到：<a href="http://www.w3cschool.cn/jsref/dom-obj-event.html" target="_blank" rel="external">HTML DOM 事件对象</a><br>自己介绍一下 <strong>鼠标事件</strong> 和 <strong>键盘事件</strong></p>
-<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><p>当浏览器执行鼠标事件的时候回以函数的形式返回一个 <strong>event</strong> 对象<br>event对象有一个 button 属相，按下鼠标的不同按键会返回不同的值（貌似很有用）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    event = event || <span class="built_in">window</span>.event;</div><div class="line">    alert(event.button);      <span class="comment">//chrome 左键弹出0 其它不支持；FF 左键0 中键1 右键2；</span></div><div class="line">                              <span class="comment">//IE 左键0 中键1 右键不支持</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//尝试一次别的事件</span></div><div class="line"><span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    event = event || <span class="built_in">window</span>.event;</div><div class="line">    alert(event.button);      <span class="comment">//chrome 、IE 和 Firefox都符合W3C标准，做到了兼容</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><p>键盘事件一共有三种：<br><strong>keydown</strong> &nbsp;&nbsp;  键盘按下是执行<br><strong>keyup</strong>  &nbsp;&nbsp;  键盘松开是执行<br><strong>keypress</strong> &nbsp;&nbsp; 只支持字符键（能打印出字符的键，不包括enter、shift、Ctrl等）<br>这里理解一个概念<br><strong>键码：</strong> 键盘上每个键都会对应一个数字，这个数字就称为键码。（字符的键码就是其对应的ASICC编码（字母的话按小写来），非字符也会有一个对应的值）。怎么获得这个键码呢？？用到event对象的另一个属性 <strong>keyCode</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    event = event || <span class="built_in">window</span>.event;</div><div class="line">    alert(event.keyCode);           <span class="comment">//这时按下键盘上的每个键都会返回对应的键码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果使用keypress方法来返回keyCode呢？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onkeypress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    event = event || <span class="built_in">window</span>.event;</div><div class="line">    alert(event.keyCode);           <span class="comment">//Chrome和IE 非字符键不返回，字符键返回对应ASCII编码，并且区分大小写</span></div><div class="line">                                    <span class="comment">//forefox 非字符键不返回，字符键全部返回 0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注意：键码在不同浏览器上可能会有所不同（比如 ; 分号，，可以自己试一下）。那么怎么做到兼容呢？？再来认识一个概念：<br><strong>字符编码：</strong> 这个是唯一的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">document</span>.onkeypress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    event = event || <span class="built_in">window</span>.event;</div><div class="line">    alert(event.charCode);           <span class="comment">//返回对应的字符编码，（;分号可以兼容了）</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p id="div-border-left-red">如果只用到字符的事件就用 keypress 的 charCode方法</p>
-
-<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><p>由于事件处理程序可以为现代 WEB 应用程序提供交互能力，因此许多开发人员会不分青红皂白地想页面中添加大量的处理程序。这样做会导致什么问题呢？首先，每个函数都是对象，都会占用内存；其次，必须事件指定好所有事件处理程序而导致 DOM 访问次数过多，延迟整个页面的交互就绪时间。<br>对“事件处理程序过多”问题的解决方案就是 <strong>事件委托</strong> 。事件委托利用 <strong>事件冒泡</strong>，只指定一个事件处理程序，就可以管理某一类型的所有事件。<br><strong>举个例子：</strong> 下面是三个不同的按钮。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>这是按钮A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span>这是按钮B<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn3"</span>&gt;</span>这是按钮C<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们要为他们指定 <code>click</code> 事件，传统意义上我们会分别为他们指定事件，就像下面这样做：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</div><div class="line"><span class="keyword">var</span> btn2 = <span class="built_in">document</span>.getElementById(<span class="string">'btn2'</span>);</div><div class="line"><span class="keyword">var</span> btn3 = <span class="built_in">document</span>.getElementById(<span class="string">'btn3'</span>);</div><div class="line">btn1.click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'这是按钮A！'</span>);</div><div class="line">&#125;</div><div class="line">btn2.click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'这是按钮B！'</span>);</div><div class="line">&#125;</div><div class="line">btn3.click = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'这是按钮C！'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在来看看用 <strong>事件委托</strong> 应该怎么做：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">addEvent(<span class="built_in">document</span>,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> event = getEvent(event);</div><div class="line">  <span class="keyword">var</span> target = getTarget(event);</div><div class="line">  <span class="keyword">switch</span>(target.id)&#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'btn1'</span>:</div><div class="line">      alert(<span class="string">'这是按钮A！'</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">'btn2'</span>:</div><div class="line">      alert(<span class="string">'这是按钮B！'</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">'btn3'</span>:</div><div class="line">      alert(<span class="string">'这是按钮C！'</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>对比就会发现这种方式的优势，首先，我们只指定了一个事件就完成了为三个按钮添加事件的功能，较少了程序运行所需的内存；另外，只有一次 DOM 操作，这使得交互会很快就绪。是不是很完美。</p>
-<p id="div-border-left-red">适合采用 <strong>事件委托</strong> 的事件包括 <code>click</code>、<code>mousedown</code>、<code>mouseup</code>、<code>keydown</code>、<code>keyup</code> 和 <code>keypress</code>。(必须支持事件冒泡)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/event.png&quot; alt=&quot;markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Javascript 和 HTML 之间的交互是通过 &lt;strong&gt;事件&lt;/strong&gt; 来实现的。最早在 IE 中出现，被作为分担服务器端运算负载的一种手段。到现在，几乎所有的浏览器都支持事件处理。在 DOM2 级中得到规范。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="事件" scheme="http://yoursite.com/tags/%E4%BA%8B%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建PHP环境</title>
-    <link href="http://yoursite.com/2017/03/30/php/"/>
-    <id>http://yoursite.com/2017/03/30/php/</id>
-    <published>2017-03-30T06:35:34.000Z</published>
-    <updated>2017-05-30T08:17:21.550Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/php.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学习 JS Ajax 之前，先来搭建一个本地服务器环境。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们使用 WampServer，它集成了<strong>PHP + Apache + MySQL</strong>，并且有 <strong>phpmyAdmin</strong> 可视化数据库，这个对我这个新手前端来说还是很有必要的。</p>
-<a id="more"></a>
-<h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p><strong>PHP：</strong> PHP 是一种后台操作语言，可以制作 web 页面，创建 ajax 请求，访问数据库的请求，操作数据库表格等。<br><strong>MySQL：</strong> MySQL 是数据库的服务。如果没有开启 Mysql 服务，php 中的脚本不能链接到数据库，请求服务时会提示没有 mysql 对象。<br><strong>Apache：</strong> Apache 服务，它可以解析 html 文件，解析 php 文件，提供 html 发出的 http 请求，并响应这个请求，返回给 html 一个 php 或者其他后台脚本的请求，如果你不开启 Apache 的服务，请求不能进行，无法使用 php 访问后台数据。这是一个中间的过程，目前的理解是这样的。</p>
-<p><span id="inline-blue">总结:</span><br>前端访问后台，总共需要三个过程：<br><strong>首先</strong>，html 通过 Apache 服务请求 php 文件，或者其他 url 链接，如果是访问本地 php 文件，则要求两个文件在同一个服务下；<br><strong>第二步</strong>，php 文件被 Apache 服务器解析，执行 php 文件，访问后台数据库；<br><strong>第三步</strong>，执行 php 文件里的指令，访问数据库中的表，返回数据作为 html 文件中创建的请求的响应。</p>
-<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>到 <a href="http://www.wampserver.com/" target="_blank" rel="external">WampServer官网</a> 下载最新版本。<br>安装很简单，一路 next 即可。最后让你选择默认浏览器和编辑器，默认就好。<br>安装完成后用浏览器访问 localhost 就能看到：</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/php03.png" alt="markdown"></p>
-<p><strong>Tools 栏目:</strong><br><code>phpinfo()</code>   查看PHP的详细配置信息；<br><code>phpmyadmin</code>  可以使用其管理界面对数据库进行管理！<br><strong>Your Aliases栏目：</strong><br><code>adminer</code> 和 <code>phpmyadmin</code> 是对数据库进行讲解的，<br><code>phpsysinfo</code> 是用来对PHP程序进行分析的。</p>
-<h3 id="加载php文件"><a href="#加载php文件" class="headerlink" title="加载php文件"></a>加载php文件</h3><p>以后你自己做的 PHP 文件（html文件也行了）就放在 <code>www</code> 下就可以了。</p>
-<blockquote>
-<p>上面 <code>localhost</code> 打开的其实就是这个文件夹下面的 <code>index.php</code> 文件。里面的文件都可以删除。</p>
-</blockquote>
-<p>举个例子：打开 <code>www</code> 目录：新建一个文件夹 <code>website</code> 再在里面新建一个 <code>index.php</code> 文件，在里面输入：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">echo</span> <span class="string">"这是一个测试文件！"</span>;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p>保存（要用 UTF-8 格式）<br>在浏览器中输入 <code>localhost/website</code> 就会显示这个 <code>php</code> 文件了。</p>
-<p><strong>切换语言：</strong> 打开软件后，默认最小化在系统的任务栏里。<code>右键点击 &gt; language &gt; chinese</code> 切换到中文。</p>
-<p>还需要一些常用的配置。</p>
-<h2 id="MySQL以及phpmyAdmin配置"><a href="#MySQL以及phpmyAdmin配置" class="headerlink" title="MySQL以及phpmyAdmin配置"></a>MySQL以及phpmyAdmin配置</h2><p>MySQL是数据库服务，顾名思义就是用来管理数据库的。（数据库就是你硬盘里的一个文件夹）</p>
-<p><strong>设置密码：</strong> 左键点击软件选中 phpmyAdmin 就会进入数据库用户登录界面。默认用户名为：<code>root</code> &nbsp;&nbsp; 默认<code>密码为空</code>。</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/php01.png" alt="markdown"></p>
-<p>进入后选择账户，我们会看到已经有两个默认账户了。我们来给 root 用户修改密码。<br>点 root 用户后面用户权限，然后修改密码后执行。</p>
-<p>这一步只是修改了 <code>phpmyAdmin</code> 账户密码，还需要修改 MySQL 密码。</p>
-<p>依次进入 <code>wamp64\apps\phpmyadmin4.6.4</code> 找到 <code>config.inc.php</code> 文件，修改 <code>$cfg[&#39;Servers&#39;][$i][&#39;password&#39;]</code> 的值（就是你刚才改的密码）。然后保存，重启 phpmyAdmin 输入用户名和密码就可以了。</p>
-<p><strong>创建用户：</strong> 点击新建用户，填入用户名和密码，勾选创建与用户同名的数据库并授予所有权限，勾选全局权限，然后执行。 以后就使用我们新建的这个数据库。</p>
-<p>修改后是这个样子：</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/php02.png" alt="markdown"></p>
-<h2 id="Apache配置"><a href="#Apache配置" class="headerlink" title="Apache配置"></a>Apache配置</h2><h3 id="更改根目录："><a href="#更改根目录：" class="headerlink" title="更改根目录："></a>更改根目录：</h3><p>www目录 默认为 <code>X:\wamp\www</code>，也就是<u> wampserver 安装目录下的 www文件夹</u>。实际使用中，默认设置往往不是我们想要的，可能改成其他文件夹更适合，比如 D:\site 或者 E:\www 等等。那该如何更改呢？</p>
-<p>下面以改为 <code>D:\site</code> 为例：</p>
-<p>打开 <code>wamp\scripts\config.inc.php</code><br>第47行 $wwwDir = $c_installDir.’/www’;<br>改为：<code>$wwwDir = &#39;D:/site&#39;;</code></p>
-<blockquote>
-<p><strong>$c_installDir</strong> 是个变量，指 WAMPserver 安装根目录。</p>
-</blockquote>
-<p>打开 <code>wamp64\bin\apache\apache2.4.23\conf\httpd.conf</code><br>修改 <strong>DocumentRoot</strong> 后面双引号中的值<br>比如将  DocumentRoot ‘D:/wamp/www/‘’<br>改成   <code>DocumentRoot &#39;D:/site/&#39;</code><br>同时将     &lt;Directory ‘D:/wamp/www/‘&gt;<br>改成  <code>&lt;Directory &#39;D:/site/&#39;&gt;;</code></p>
-<h3 id="修改默认端口"><a href="#修改默认端口" class="headerlink" title="修改默认端口"></a>修改默认端口</h3><p>找到 Apache 安装目录下的 <code>httpd.conf</code> 文件（在 wamp 上的 Apache 项下面）<br>打开它，找到 <code>Listen 80</code>（IPV4）、<code>Listen [::0]:80</code>(IPV6) 和 <code>ServerName localhost:80</code>  紧接着 Listen 的数字就是端口号，默认状态下为  80 。修改为 8080 保存即可。</p>
-<p>上面只是修改了 Apache 服务的端口，还要修改：</p>
-<p>找到 <code>X:\wamp\wampmanager.tpl</code> 文件，用文本编辑器打开，Ctrl+F 搜索 <code>http://localhost</code> 关键字，改成下面：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Type: item; Caption: <span class="string">"$&#123;w_localhost&#125;"</span>; Action: run; FileName: <span class="string">"$&#123;c_navigator&#125;"</span>; Parameters: <span class="string">"$&#123;c_edge&#125;http://localhost:8080$&#123;UrlPort&#125;/"</span>; Glyph: <span class="number">27</span></div><div class="line">Type: item; Caption: <span class="string">"$&#123;w_phpmyadmin&#125;"</span>; Action: run; FileName: <span class="string">"$&#123;c_navigator&#125;"</span>; Parameters: <span class="string">"$&#123;c_edge&#125;http://localhost:8080$&#123;UrlPort&#125;/phpmyadmin/"</span>; Glyph: <span class="number">28</span></div></pre></td></tr></table></figure></p>
-<p id="div-border-left-red">PS： 网上还有一些配置，比如说外网访问什么的，个人感觉不需要，自己也没去实验就不写了！！什么时候用到了在折腾。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/php.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习 JS Ajax 之前，先来搭建一个本地服务器环境。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们使用 WampServer，它集成了&lt;strong&gt;PHP + Apache + MySQL&lt;/strong&gt;，并且有 &lt;strong&gt;phpmyAdmin&lt;/strong&gt; 可视化数据库，这个对我这个新手前端来说还是很有必要的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="服务器" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    
-      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="PHP环境" scheme="http://yoursite.com/tags/PHP%E7%8E%AF%E5%A2%83/"/>
-    
-      <category term="WampServer" scheme="http://yoursite.com/tags/WampServer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript - JSON学习笔记</title>
-    <link href="http://yoursite.com/2017/03/29/json/"/>
-    <id>http://yoursite.com/2017/03/29/json/</id>
-    <published>2017-03-29T14:31:56.000Z</published>
-    <updated>2017-05-30T08:17:24.582Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/json.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前几天学习了 XML ，趁热打铁也把 JSON 做一下总结。首先 JSON 也是一种结构化数据，它的产生解决了 XML 过于繁琐的问题。它是 JS 的一个严格子集，利用 js 中的一些模式来表述数据化结构。不仅仅是 JS ，java、.NET 等其他语言也可以对 JSON 进行解析和序列化。</p>
-<a id="more"></a>
-<h2 id="JSON语法"><a href="#JSON语法" class="headerlink" title="JSON语法"></a>JSON语法</h2><p>JSON 的语法可以表示三种类型的值：<strong>简单值</strong>（字符串、数值、布尔值和null）、<strong>对象</strong>和<strong>数组</strong>。（<em>JSON 中没有 undefined</em>）<br>JSON 简单值：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">100</span>,cwyaml,<span class="literal">true</span>,<span class="literal">null</span>    <span class="comment">//这些都是JSON简单值</span></div></pre></td></tr></table></figure></p>
-<p>JSON 对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;"name":"cwyaml","age":23&#125;'</span></div></pre></td></tr></table></figure></p>
-<p>JSON 数组：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'[100,"cwyaml",true]'</span></div></pre></td></tr></table></figure></p>
-<p>相比普通的对象和数组，JSON 对象和数组少了结尾的分号和变量赋值，但是要用单引号包裹，用字符串形式表示。<br><strong>最常用的 JSON 形式：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span> : <span class="string">"a"</span>,</div><div class="line">    <span class="string">"num"</span> : <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span> : <span class="string">"b"</span>,</div><div class="line">    <span class="string">"num"</span> : <span class="number">2</span></div><div class="line">    &#125;,</div><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span> : <span class="string">"c"</span>,</div><div class="line">    <span class="string">"num"</span> : <span class="number">3</span></div><div class="line">&#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p>ECMAScript5 对解析 JSON 的行为进行了规范，定义了全局对象JSON。但是支持这个对象的浏览器有IE8+ FireFox3.5+ Safari4+ Chrome10.5+ 。（版本较高），不支持的浏览器可以通过一个开源库 json.js 来模拟执行。</p>
-<p><strong>JSON 对象提供了两个方法：</strong></p>
-<h3 id="stringify-方法"><a href="#stringify-方法" class="headerlink" title="stringify()方法"></a>stringify()方法</h3><p>stringify()  &nbsp;&nbsp;   将源生的 js 值转换为 JSON 对象<br>这个方法可以传三个参数，分别是需要转换的对象，过滤参数（数组的形式），转换的格式。<br>最简单的用法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box = [</div><div class="line">    &#123;</div><div class="line">        <span class="attr">name</span> : <span class="string">'a'</span>,</div><div class="line">        <span class="attr">num</span> : <span class="number">1</span></div><div class="line">    &#125;,&#123;</div><div class="line">        <span class="attr">name</span> : <span class="string">'b'</span>,</div><div class="line">        <span class="attr">num</span> : <span class="number">2</span></div><div class="line">    &#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(box);</div><div class="line">alert(str);     <span class="comment">//[&#123;"name":"a","num":1&#125;,&#123;"name":"b","num":2&#125;]</span></div></pre></td></tr></table></figure></p>
-<p>三个参数：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(box,[<span class="string">'name'</span>],<span class="number">4</span>);</div><div class="line"><span class="built_in">console</span>.log(str);  </div><div class="line"></div><div class="line"><span class="comment">//打印出来的字符串是有格式的：     </span></div><div class="line">[</div><div class="line">    &#123;</div><div class="line">        <span class="string">"name"</span>: <span class="string">"a"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="string">"name"</span>: <span class="string">"b"</span></div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
-<p>第二个参数也可以是一个函数：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(box,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(key == <span class="string">'name'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'Mr.'</span> + value;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(str);   <span class="comment">//[&#123;"name":"Mr.a","num":1&#125;,&#123;"name":"Mr.b","num":2&#125;]</span></div></pre></td></tr></table></figure></p>
-<h3 id="parse-方法"><a href="#parse-方法" class="headerlink" title="parse()方法"></a>parse()方法</h3><p><strong>parse()</strong>  &nbsp;&nbsp;   将JSON 字符串转换为js原生值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box = <span class="string">'[&#123;"name":"a","num":1&#125;,&#123;"name":"b","num":2&#125;]'</span>;</div><div class="line"><span class="keyword">var</span> json = <span class="built_in">JSON</span>.parse(box);</div><div class="line">alert(json[<span class="number">0</span>].name);    <span class="comment">//a</span></div><div class="line"></div><div class="line"><span class="comment">//也可以传递两个参数</span></div><div class="line"><span class="keyword">var</span> json = <span class="built_in">JSON</span>.parse(box,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(key == <span class="string">'name'</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">'Mr'</span>+ value;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> value;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">alert(json[<span class="number">0</span>].name);    <span class="comment">//Mr.a</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/json.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前几天学习了 XML ，趁热打铁也把 JSON 做一下总结。首先 JSON 也是一种结构化数据，它的产生解决了 XML 过于繁琐的问题。它是 JS 的一个严格子集，利用 js 中的一些模式来表述数据化结构。不仅仅是 JS ，java、.NET 等其他语言也可以对 JSON 进行解析和序列化。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="JSON" scheme="http://yoursite.com/tags/JSON/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript - XPath学习笔记</title>
-    <link href="http://yoursite.com/2017/03/12/xPath/"/>
-    <id>http://yoursite.com/2017/03/12/xPath/</id>
-    <published>2017-03-12T13:29:31.000Z</published>
-    <updated>2017-05-30T08:17:18.623Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/xpath.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath 是一种节点查找手段。它比使用 标准DOM 去查找 XML 节点更加方便、更加简单。但是 XPath 是 DOM3 中才支持的标准，并且 IE 有自己的实现方式。（IE总是自己造马车）</p>
-<a id="more"></a>
-<h2 id="IE中的XPath"><a href="#IE中的XPath" class="headerlink" title="IE中的XPath"></a>IE中的XPath</h2><p>IE 提供了两种方法：</p>
-<ul>
-<li><p><strong>selectSingleNode()</strong>  获取单一节点</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xmlStr = <span class="string">'&lt;root&gt;&lt;user id="1"&gt;Tom&lt;/user&gt;&lt;user id="2"&gt;Lucy&lt;/user&gt;&lt;/root&gt;'</span>;</div><div class="line"><span class="keyword">var</span> xmlDom = parseXML(xmlStr);  <span class="comment">//创建xmlDom对象</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'root/user'</span>);    <span class="comment">//种方式称为节点树查找，必须从最外层开始，由外向内</span></div><div class="line"><span class="comment">//只会获得第一个 user</span></div><div class="line">alert(node.tagName);    <span class="comment">//user</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>selectNodes() </strong>    获取节点集合</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> nodes = xmlDom.selectNodes(<span class="string">'root/user'</span>);    <span class="comment">//返回的是一个数组</span></div><div class="line">alert(nodes.length);    <span class="comment">//2</span></div><div class="line"></div><div class="line"><span class="comment">//一般这样用</span></div><div class="line"><span class="keyword">var</span> nodes = xmlDom.selectNodes(<span class="string">'root[1]/user'</span>); <span class="comment">//获取第二个root下的所有user</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="W3C中的XPath"><a href="#W3C中的XPath" class="headerlink" title="W3C中的XPath"></a>W3C中的XPath</h2><p>在 DOM3 中 XPath 规范中，最重要的两个类型是 XPathEvaluator 和 XPathResult 。其中 XPathEvaluator 用于在特定上下文对 XPath 表达式求值。</p>
-<p><strong>XPathEvaluator</strong> 方法一共需要传递五个参数：<br>1.XPath路径 2.上下文节点 3.命名空间求解器（null） 4.返回结果类型 5.保存结果的 XPath 对象（null）<br>获取成功就返回对应的类型值，获取失败返回 null。</p>
-<p><strong>返回的结果类型</strong>一共有十种，常用的就两种：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">常量</th>
-<th style="text-align:center">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">XPathResult_FIRST_ORDERED_NODE_TYPE</td>
-<td style="text-align:center">返回单一节点  </td>
-</tr>
-<tr>
-<td style="text-align:center">XPathResult_ORDERED_NODE_ITERATOR_TYPE</td>
-<td style="text-align:center">返回节点集合  </td>
-</tr>
-</tbody>
-</table>
-<h3 id="获取单一节点"><a href="#获取单一节点" class="headerlink" title="获取单一节点"></a>获取单一节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = xmlDom.evaluate(<span class="string">'root/user'</span>,xmlDom,<span class="literal">null</span>,XPathResult.FIRST_ORDERED_NODE_TYPE,<span class="literal">null</span>);</div><div class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">  alert(result.singleNodeValue.textContent);  <span class="comment">//Tom   </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="获取节点集合"><a href="#获取节点集合" class="headerlink" title="获取节点集合"></a>获取节点集合</h3><p>获取的时候只需要把返回值的类型修改为 <strong>获取节点集合</strong> 即可。<br>得到的节点集合需要用 <strong>iterateNext()</strong> 方法使用迭代方法存入一个数组。这样就可以对数据进行操作了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = xmlDom.evaluate(<span class="string">'root/user'</span>,xmlDom,<span class="literal">null</span>,XPathResult.ORDERED_NODE_ITERATOR_TYPE,<span class="literal">null</span>);</div><div class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">    <span class="keyword">var</span> nodes = [];</div><div class="line">    <span class="keyword">var</span> node = result.iterateNext();</div><div class="line">    <span class="keyword">while</span>(node !== <span class="literal">null</span>)&#123;</div><div class="line">        nodes.push(node);</div><div class="line">        node = result.iterateNext();</div><div class="line">    &#125;</div><div class="line"><span class="built_in">console</span>.log(nodes[<span class="number">1</span>].innerHTML);    <span class="comment">//Lucy</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="XPath-常用语法"><a href="#XPath-常用语法" class="headerlink" title="XPath 常用语法"></a>XPath 常用语法</h2><p>XML加载之后就可以使用标准DOM来进行各种操作，比如上面的返回 tagName 。当然 XPath 也提供了一套方法：（这里只列举最常用的）</p>
-<ul>
-<li>相同标签问题<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'root/user[1]'</span>); </div><div class="line">alert(serializeXML(node));  <span class="comment">//&lt;user id="2"&gt;Lucy&lt;/user&gt;  第二个user</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p id="div-border-left-red" style="margin-left: 25px"><strong>IE中下标从 0 开始！！   W3C中下标从 1 开始！！</strong></p>
-
-<ul>
-<li><p>获取元素内文本</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'root/user/text()'</span>);</div><div class="line">alert(serializeXML(node));    <span class="comment">//Tom</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>跨结构查找(不关心结构层次)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'//user'</span>);   <span class="comment">//查找整个文档中第一个user</span></div><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'b//user'</span>);  <span class="comment">//也可以限制在一个标签内查找</span></div><div class="line">alert(serializeXML(node));</div></pre></td></tr></table></figure>
-</li>
-<li><p>通过属性查找</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> node = xmlDom.selectSingleNode(<span class="string">'root/user[@id=2]'</span>);</div><div class="line">alert(serializeXML(node));  <span class="comment">//&lt;user id="2"&gt;Tom&lt;/user&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="跨浏览器兼容"><a href="#跨浏览器兼容" class="headerlink" title="跨浏览器兼容"></a>跨浏览器兼容</h2><p>鉴于IE中的相对功能较少，首先考虑 W3C。</p>
-<h3 id="获取单一节点-1"><a href="#获取单一节点-1" class="headerlink" title="获取单一节点"></a>获取单一节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取单一节点  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSingleNode</span>(<span class="params">xmlDom,xpath</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> node = <span class="literal">null</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> xmlDom.evaluate != <span class="string">'undefined'</span>)&#123;  <span class="comment">//W3C</span></div><div class="line">        <span class="comment">//让下标从 0 开始</span></div><div class="line">        <span class="keyword">var</span> patten = <span class="regexp">/\[(\d+)\]/</span>;</div><div class="line">        <span class="keyword">var</span> flag = xpath.match(patten);</div><div class="line">        <span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(flag != <span class="literal">null</span>)&#123;</div><div class="line">            num = <span class="built_in">parseInt</span>(<span class="built_in">RegExp</span>.$<span class="number">1</span>) + <span class="number">1</span>;</div><div class="line">            xpath = xpath.replace(patten,<span class="string">'['</span> + num + <span class="string">']'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> result = xmlDom.evaluate(xpath,xmlDom,<span class="literal">null</span>,XPathResult.FIRST_ORDERED_NODE_TYPE,<span class="literal">null</span>);</div><div class="line">        <span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">            node = result.singleNodeValue;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> xmlDom.selectSingleNode != <span class="string">'undefined'</span>)&#123;    <span class="comment">//IE</span></div><div class="line">        node = xmlDom.selectSingleNode(xpath);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> node;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="获取节点集合-1"><a href="#获取节点集合-1" class="headerlink" title="获取节点集合"></a>获取节点集合</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取节点集合</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectNodes</span>(<span class="params">xmlDom,xpath</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> nodes = [];</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> xmlDom.evaluate != <span class="string">'undefined'</span>)&#123;  <span class="comment">//W3C</span></div><div class="line">        <span class="comment">//让下标从 0 开始</span></div><div class="line">        <span class="keyword">var</span> patten = <span class="regexp">/\[(\d+)\]/</span>;</div><div class="line">        <span class="keyword">var</span> flag = xpath.match(patten);</div><div class="line">        <span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(flag != <span class="literal">null</span>)&#123;</div><div class="line">            num = <span class="built_in">parseInt</span>(<span class="built_in">RegExp</span>.$<span class="number">1</span>) + <span class="number">1</span>;</div><div class="line">            xpath = xpath.replace(patten,<span class="string">'['</span> + num + <span class="string">']'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> result = xmlDom.evaluate(xpath,xmlDom,<span class="literal">null</span>,XPathResult.ORDERED_NODE_ITERATOR_TYPE,<span class="literal">null</span>);</div><div class="line">        <span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">            <span class="keyword">var</span> node = <span class="literal">null</span>;</div><div class="line">            <span class="keyword">while</span>((node = result.iterateNext())!= <span class="literal">null</span>)&#123;</div><div class="line">                nodes.push(node);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> xmlDom.selectNodes != <span class="string">'undefined'</span>)&#123; <span class="comment">//IE</span></div><div class="line">        nodes = xmlDom.selectNodes(xpath);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> nodes;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/xpath.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;XPath 是一种节点查找手段。它比使用 标准DOM 去查找 XML 节点更加方便、更加简单。但是 XPath 是 DOM3 中才支持的标准，并且 IE 有自己的实现方式。（IE总是自己造马车）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="XPath" scheme="http://yoursite.com/tags/XPath/"/>
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
     
   </entry>
   
@@ -835,13 +560,11 @@
     <link href="http://yoursite.com/2017/03/09/wwwyuming/"/>
     <id>http://yoursite.com/2017/03/09/wwwyuming/</id>
     <published>2017-03-09T06:50:21.000Z</published>
-    <updated>2017-05-30T08:17:19.163Z</updated>
+    <updated>2017-06-23T02:52:07.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。</p>
-<a id="more"></a>
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。</p>
 <p>这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。</p>
+<a id="more"></a>
 <p><span id="inline-blue">解决方案：</span><br>我们知道 github 和 coding 的 pages 服务都提供 <code>自定义域名</code> 功能。我们可以利用这一点，绑定自己的域名。域名解析的时候实现国内访问 coding pages ，国外访问 github pages ,从而加快访问速度。 具体怎么实现，往下看：</p>
 <h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>首先我们要购买一个域名，推荐到 <a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.25.nvxK84" target="_blank" rel="external">万网</a> 购买。（毕竟很方便）<br>具体步骤可以参考这篇文章：<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html" target="_blank" rel="external">万网域名注册教程</a>。</p>
 <p id="div-border-left-red">购买域名一定要实名认证，否则会停止解析</p>
@@ -870,7 +593,7 @@
 <blockquote>
 <p>从两个地址访问都会跳转到我们绑定的域名。统计信息自然也是绑定后域名的信息。</p>
 </blockquote>
-<p><strong>@</strong> github pages国内访问速度慢（300ms左右） </p>
+<p><strong>@</strong> github pages国内访问速度慢（300ms左右）</p>
 <blockquote>
 <p>我们测试一下 Ping：(表现不错)</p>
 </blockquote>
@@ -883,9 +606,8 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/%E5%9F%9F%E5%90%8D.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。&lt;/p&gt;
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。&lt;/p&gt;
+&lt;p&gt;这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。&lt;/p&gt;
     
     </summary>
     
@@ -905,10 +627,9 @@
     <link href="http://yoursite.com/2017/03/08/github&amp;coding/"/>
     <id>http://yoursite.com/2017/03/08/github&amp;coding/</id>
     <published>2017-03-08T05:08:44.000Z</published>
-    <updated>2017-05-30T08:01:06.694Z</updated>
+    <updated>2017-06-23T02:56:43.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/github&amp;coding.png" alt="Markdown"></div>
-
+    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/github&coding.png)</div> -->
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
 <a id="more"></a>
 <h3 id="注册GitHub和Coding"><a href="#注册GitHub和Coding" class="headerlink" title="注册GitHub和Coding"></a>注册GitHub和Coding</h3><p><a href="https://github.com/" target="_blank" rel="external">github官网</a>  &nbsp;&nbsp;||&nbsp;&nbsp;   <a href="https://coding.net" target="_blank" rel="external">Coding官网</a> &nbsp;&nbsp;注册就不必多说，不会的可自行百度。<br><strong>需要注意的是</strong>：最好使用同一个 <strong>用户名</strong> 和 <strong>邮箱</strong> ，以免引起不必要的麻烦。</p>
@@ -930,7 +651,7 @@
 <h4 id="添加-SSH-Key-到-GitHub-和-Coding"><a href="#添加-SSH-Key-到-GitHub-和-Coding" class="headerlink" title="添加 SSH Key 到 GitHub 和 Coding"></a>添加 SSH Key 到 GitHub 和 Coding</h4><p><strong>GitHub添加方法：</strong></p>
 <ul>
 <li>进入Github官网，点击头像，再按 <em>settings</em> 进入设置。</li>
-<li>点击 <em>New SSH key</em> 创建 </li>
+<li>点击 <em>New SSH key</em> 创建</li>
 <li>title输入邮箱，key里面粘贴刚才右击复制的内容,再点 <em>Add SSH key</em> 即可。（会让你输入密码）</li>
 </ul>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding01.png" alt="Markdown"></p>
@@ -953,8 +674,7 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/github&amp;amp;coding.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
+      &lt;!-- &lt;div class=&quot;out-img-topic&quot;&gt;![Markdown](http://on5pjsxrv.bkt.clouddn.com/github&amp;coding.png)&lt;/div&gt; --&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以&lt;u&gt;利用域名解析实现国内的走 coding，海外的走github，&lt;/u&gt;分流网站的访问。&lt;/p&gt;
     
     </summary>
@@ -973,12 +693,11 @@
     <link href="http://yoursite.com/2017/03/07/backup/"/>
     <id>http://yoursite.com/2017/03/07/backup/</id>
     <published>2017-03-07T08:26:30.000Z</published>
-    <updated>2017-05-30T08:17:18.028Z</updated>
+    <updated>2017-06-23T03:07:42.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/backup.png" alt="Markdown"></div>
-
+    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/backup.png)</div> -->
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 <code>git</code> 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。<a id="more"></a> 最后索性简单粗暴点，<u><strong>在 GitHub 上创建一个仓库，把 blog 文件整个打包上传。</strong></u>使用过程中发现这个方法还不错，至少对于小白来说很容易理解，也很难出错，就一直沿用到现在。</p>
-<p id="div-border-left-red">这种方式虽然能够备份 Hexo 博客的源文件，但是对于博主这种懒人，每次更新博文都需要输入两三行重复的Git命令真是一件麻烦的事情。</p> 
+<p id="div-border-left-red">这种方式虽然能够备份 Hexo 博客的源文件，但是对于博主这种懒人，每次更新博文都需要输入两三行重复的Git命令真是一件麻烦的事情。</p>
 
 <h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>本方法需要提前将 Hexo 加入 Git仓库 并与 Github 远程仓库绑定之后，才能正常工作。<br><strong>具体做法可以参考：</strong><a href="https://cwyaml.github.io/2017/01/08/update%20to%20github/" target="_blank" rel="external">上传本地项目到GitHub</a></p>
 <h4 id="安装-shelljs-模块"><a href="#安装-shelljs-模块" class="headerlink" title="安装 shelljs 模块"></a>安装 shelljs 模块</h4><p>要实现这个自动备份功能，需要依赖 <code>NodeJs</code> 的一个 <code>shelljs 模块</code>,该模块重新包装了 child_process,调用系统命令更加的方便。<br>使用以下命令，完成 shelljs 模块的安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save shelljs</div></pre></td></tr></table></figure></p>
@@ -988,7 +707,7 @@
 <li>其中，需要修改第17行的 <code>D:/hexo</code> 路径为 <code>Hexo的根目录</code> 路径。（脚本中的路径为博主的Hexo路径）</li>
 <li>如果你的Git远程仓库名称不为 <code>origin</code> 的话，还需要修改第28行执行的push命令，修改成自己的远程仓库名和相应的分支名。</li>
 </ul>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>保存脚本并退出，然后执行 <code>hexo d</code> 命令，将会得到类似以下结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">......</div><div class="line">======================Auto Backup Begin===========================</div><div class="line">warning: LF will be replaced by CRLF in package.json.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/hexo1.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/update to github.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/wangyimusic.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in themes/next-5.0.1/layout/_partials/head.swig.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/backup.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/encrypt.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">[master 1bb6cc5] Form auto backup script&apos;s commit</div><div class="line"> Committer: unknown </div><div class="line">Your name and email address were configured automatically based</div><div class="line">on your username and hostname. Please check that they are accurate.</div><div class="line">You can suppress this message by setting them explicitly. Run the</div><div class="line">following command and follow the instructions in your editor to edit</div><div class="line">your configuration file:</div><div class="line"></div><div class="line">    git config --global --edit</div><div class="line"></div><div class="line">After doing this, you may fix the identity used for this commit with:</div><div class="line"></div><div class="line">    git commit --amend --reset-author</div><div class="line"></div><div class="line"> 6 files changed, 177 insertions(+), 2 deletions(-)</div><div class="line"> create mode 100644 scripts/autobackup.js</div><div class="line"> create mode 100644 source/_posts/backup.md</div><div class="line"> create mode 100644 source/_posts/encrypt.md</div><div class="line">To https://github.com/cwyaml/blog-backup.git</div><div class="line">   d7bc718..1bb6cc5  master -&gt; master</div><div class="line">==================Auto Backup Complete============================</div></pre></td></tr></table></figure></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>保存脚本并退出，然后执行 <code>hexo d</code> 命令，将会得到类似以下结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">......</div><div class="line">======================Auto Backup Begin===========================</div><div class="line">warning: LF will be replaced by CRLF in package.json.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/hexo1.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/update to github.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/wangyimusic.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in themes/next-5.0.1/layout/_partials/head.swig.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/backup.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/encrypt.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">[master 1bb6cc5] Form auto backup script&apos;s commit</div><div class="line"> Committer: unknown</div><div class="line">Your name and email address were configured automatically based</div><div class="line">on your username and hostname. Please check that they are accurate.</div><div class="line">You can suppress this message by setting them explicitly. Run the</div><div class="line">following command and follow the instructions in your editor to edit</div><div class="line">your configuration file:</div><div class="line"></div><div class="line">    git config --global --edit</div><div class="line"></div><div class="line">After doing this, you may fix the identity used for this commit with:</div><div class="line"></div><div class="line">    git commit --amend --reset-author</div><div class="line"></div><div class="line"> 6 files changed, 177 insertions(+), 2 deletions(-)</div><div class="line"> create mode 100644 scripts/autobackup.js</div><div class="line"> create mode 100644 source/_posts/backup.md</div><div class="line"> create mode 100644 source/_posts/encrypt.md</div><div class="line">To https://github.com/cwyaml/blog-backup.git</div><div class="line">   d7bc718..1bb6cc5  master -&gt; master</div><div class="line">==================Auto Backup Complete============================</div></pre></td></tr></table></figure></p>
 <p>这样子，每次更新博文并 deploy 到服务器上之后，备份就自动启动并完成备份啦~是不是很方便呢？</p>
 <p><strong>Enjoy it！</strong></p>
 <blockquote>
@@ -998,8 +717,7 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/backup.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
+      &lt;!-- &lt;div class=&quot;out-img-topic&quot;&gt;![Markdown](http://on5pjsxrv.bkt.clouddn.com/backup.png)&lt;/div&gt; --&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 &lt;code&gt;git&lt;/code&gt; 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。
     
     </summary>
@@ -1020,11 +738,9 @@
     <link href="http://yoursite.com/2017/03/02/wangyimusic/"/>
     <id>http://yoursite.com/2017/03/02/wangyimusic/</id>
     <published>2017-03-02T13:12:04.000Z</published>
-    <updated>2017-05-30T08:17:19.674Z</updated>
+    <updated>2017-06-23T02:45:12.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/couldmusic.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）</p>
+    <content type="html"><![CDATA[<p>本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）</p>
 <a id="more"></a>
 <h2 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h2><p>首先你需要下载想要的歌曲：<br>QQ音乐、网易云音乐需要安装客户端才能下载。虾米音乐可以在网页直接下载。<br>总之把需要的歌曲下载下来就可以了！！</p>
 <p>我们利用 <a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a> 来自动生成歌曲外链。<br>第一步：注册、登录<br>第二步：在对象存储中新建一个仓库，命名为 music 。<br>第三步：在内容管理中上传歌曲文件</p>
@@ -1039,9 +755,7 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/couldmusic.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）&lt;/p&gt;
+      &lt;p&gt;本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）&lt;/p&gt;
     
     </summary>
     
@@ -1055,82 +769,13 @@
   </entry>
   
   <entry>
-    <title>最简单的翻墙方法</title>
-    <link href="http://yoursite.com/2017/03/01/host/"/>
-    <id>http://yoursite.com/2017/03/01/host/</id>
-    <published>2017-03-01T04:01:05.000Z</published>
-    <updated>2017-05-30T08:17:26.266Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/host.png" alt="Markdown"></div>
-
-<p>分享一个可用的翻墙方法，解决 Google、Facebook、及 Twitter 等被墙问题。</p>
-<p><div>※※※ <span id="yu-1"><strong>本页面长期更新可用 hosts 文件。</strong></span> ※※※</div></p><p></p>
-<a id="more"></a>
-<h4 id="废话不多说-直接讲方法"><a href="#废话不多说-直接讲方法" class="headerlink" title="废话不多说,直接讲方法"></a>废话不多说,直接讲方法</h4><p>只需要替换系统的 <code>hosts</code> 文件，就可以使用google、facebook…</p>
-<p><strong>hosts 所在文件夹：</strong></p>
-<ul>
-<li><strong>Windows</strong> 系统hosts位于  <code>C:\Windows\System32\drivers\etc\hosts</code></li>
-<li><strong>Android</strong>（安卓）系统hosts位于  <code>/etc/hosts</code></li>
-<li><strong>Mac</strong>（苹果电脑）系统hosts位于  <code>/etc/hosts</code></li>
-<li><strong>iPhone</strong>（iOS）系统hosts位于  <code>/etc/hosts</code></li>
-<li><strong>Linux</strong> 系统hosts位于  <code>/etc/hosts</code></li>
-</ul>
-<p>绝大多数Unix系统都是在  <code>/etc/hosts</code></p>
-<p><a href="http://pan.baidu.com/s/1nv0mETj" target="_blank" rel="external">可用hosts文件</a> 提取码：b69i  解压密码：laod</p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>Google、Gmail、维基百科、Twitter、Facebook等必须请用https加密方式打开。一般这些网站都是SSL加密链接，如：<br><strong>谷歌学术：</strong><a href="https://scholar.google.com/" target="_blank" rel="external">https://scholar.google.com/</a><br><strong>谷歌：</strong><a href="https://www.google.com/ncr" target="_blank" rel="external">https://www.google.com/ncr</a><br><strong>谷歌香港：</strong><a href="https://www.google.com.hk/ncr" target="_blank" rel="external">https://www.google.com.hk/ncr</a><br><strong>Twitter：</strong><a href="https://twitter.com/?lang=zh-cn" target="_blank" rel="external">https://twitter.com/?lang=zh-cn</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/host.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;分享一个可用的翻墙方法，解决 Google、Facebook、及 Twitter 等被墙问题。&lt;/p&gt;
-&lt;p&gt;&lt;div&gt;※※※ &lt;span id=&quot;yu-1&quot;&gt;&lt;strong&gt;本页面长期更新可用 hosts 文件。&lt;/strong&gt;&lt;/span&gt; ※※※&lt;/p&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="外面的世界" scheme="http://yoursite.com/categories/%E5%A4%96%E9%9D%A2%E7%9A%84%E4%B8%96%E7%95%8C/"/>
-    
-    
-      <category term="翻墙" scheme="http://yoursite.com/tags/%E7%BF%BB%E5%A2%99/"/>
-    
-      <category term="hosts" scheme="http://yoursite.com/tags/hosts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Naruto-Pictures</title>
-    <link href="http://yoursite.com/2017/02/28/top-pitcure/"/>
-    <id>http://yoursite.com/2017/02/28/top-pitcure/</id>
-    <published>2017-02-28T06:36:04.000Z</published>
-    <updated>2017-04-06T14:04:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://on5pjsxrv.bkt.clouddn.com/aaaa.jpg" alt="Markdown"></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://on5pjsxrv.bkt.clouddn.com/aaaaa.jpg" alt="Markdown"></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://on5pjsxrv.bkt.clouddn.com/aaa.jpg" alt="Markdown"></div></div><div class="group-picture-row"></div></div></div>
-<hr style="width: 15%;height: 1px;margin: 40px auto;background: #ccc;">
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;group-picture&quot;&gt;&lt;div class=&quot;group-picture-container&quot;&gt;&lt;div class=&quot;group-picture-row&quot;&gt;&lt;div class=&quot;group-picture-column&quot; style=&quot;widt
-    
-    </summary>
-    
-      <category term="图片" scheme="http://yoursite.com/categories/%E5%9B%BE%E7%89%87/"/>
-    
-    
-      <category term="picture" scheme="http://yoursite.com/tags/picture/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Markdown 使用中常见的问题及解决方法</title>
     <link href="http://yoursite.com/2017/02/14/markdown/"/>
     <id>http://yoursite.com/2017/02/14/markdown/</id>
     <published>2017-02-14T13:05:06.000Z</published>
-    <updated>2017-05-30T07:47:49.074Z</updated>
+    <updated>2017-06-23T02:59:59.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/markdown.jpg" alt="Markdown"></div>
-
+    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/markdown.jpg)</div> -->
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就像 Markdown 官方文档里描述的一样：<strong><em>可读性，无论如何，都是最重要的。</em></strong> Markdown 的目标是实现 &nbsp; <span id="yu-1">『易读易写』</span> 。&nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。</p>
 <a id="more"></a>
 <h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>其实自己喜欢的才是最好的。(像 vim 、emacs什么的不推荐，因为我也不会用)</p>
@@ -1172,8 +817,7 @@
     
     <summary type="html">
     
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/markdown.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
+      &lt;!-- &lt;div class=&quot;out-img-topic&quot;&gt;![Markdown](http://on5pjsxrv.bkt.clouddn.com/markdown.jpg)&lt;/div&gt; --&gt;
 &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：&lt;strong&gt;&lt;em&gt;可读性，无论如何，都是最重要的。&lt;/em&gt;&lt;/strong&gt; Markdown 的目标是实现 &amp;nbsp; &lt;span id=&quot;yu-1&quot;&gt;『易读易写』&lt;/span&gt; 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。&lt;/p&gt;
     
     </summary>
@@ -1186,80 +830,13 @@
   </entry>
   
   <entry>
-    <title>HTML5 之 canvas的使用</title>
-    <link href="http://yoursite.com/2017/02/13/html5-canvas/"/>
-    <id>http://yoursite.com/2017/02/13/html5-canvas/</id>
-    <published>2017-02-13T05:56:24.000Z</published>
-    <updated>2017-05-30T08:17:25.743Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/canvas.png" alt="Markdown"></div>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="inline-blue">canvas</span>是 html5 出现的新标签，用来替代Flash。像所有的 DOM 一样它具有自己本身的属性、方法和事件。他拥有强大的绘图功能。。下面是我在学习时做的一些总结。</p>
-<a id="more"></a>
-<h3 id="开始使用canvas元素"><a href="#开始使用canvas元素" class="headerlink" title="开始使用canvas元素"></a>开始使用canvas元素</h3><h4 id="创建一个画布"><a href="#创建一个画布" class="headerlink" title="创建一个画布"></a>创建一个画布</h4><p>canvas元素里的内容会在浏览器不支持该元素时显示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span>&gt;</span></div><div class="line">    your browser doesn't support the <span class="tag">&lt;<span class="name">code</span>&gt;</span>canvas<span class="tag">&lt;/<span class="name">code</span>&gt;</span> element.</div><div class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h4 id="使用js来绘制图像"><a href="#使用js来绘制图像" class="headerlink" title="使用js来绘制图像"></a>使用js来绘制图像</h4><p>canvas本身并咩有绘图能力，所有的绘制工作必须在js内部完成。以绘制矩形为例。。</p>
-<ul>
-<li><p>首先找到 canvas 元素：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>然后创建 context 对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ctx = c.getContext(<span class="string">"2d"</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>绘制一个矩形：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">150</span>,<span class="number">75</span>);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>就是这么简单！！</p>
-<h3 id="设置画布绘制状态"><a href="#设置画布绘制状态" class="headerlink" title="设置画布绘制状态"></a>设置画布绘制状态</h3><p>绘图操作由 <em>绘制状态</em> 加以配置。后者是一组属性，指定了从线条宽度到填充色的所有参数。所以当我们绘制一个图形时，会用到当前绘制状态的设置。主要有这几种：</p>
-<ul>
-<li><code>fillStyle</code> 用于设置填充颜色，默认为 #000；</li>
-<li><code>lineWidth</code> 用于设置线条的宽度，默认 1.0；</li>
-<li><code>strokeStyle</code> 用于设置线条的颜色，默认 #000；</li>
-<li><code>lineJoin</code> 用于设置线条与图形连接时的样式，有三个参数 round、bevel和miter，默认 miter.</li>
-</ul>
-<p>前面3个很好理解，我们介绍一下 <code>lineJoin</code> ，直接上代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"myCanvas"</span> width=<span class="string">"450px"</span> height=<span class="string">"300px"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">    <span class="keyword">var</span> ctx = c.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.lineWidth = <span class="number">20</span>;</div><div class="line"></div><div class="line">    ctx.lineJoin = <span class="string">"round"</span>;</div><div class="line">    ctx.strokeRect(<span class="number">20</span>,<span class="number">20</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"></div><div class="line">    ctx.lineJoin = <span class="string">"bevel"</span>;</div><div class="line">    ctx.strokeRect(<span class="number">160</span>,<span class="number">20</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"></div><div class="line">    ctx.lineJoin = <span class="string">"miter"</span>;</div><div class="line">    ctx.strokeRect(<span class="number">300</span>,<span class="number">20</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>效果：（差别很明显）<br><img src="http://on5sixmz1.bkt.clouddn.com/canvas01.png" alt="Markdown"></p>
-<h4 id="使用渐变"><a href="#使用渐变" class="headerlink" title="使用渐变"></a>使用渐变</h4><p>除了纯色，我们还可以把填充和笔触样式设置成渐变色。canvas元素支持两类渐变：线性和径向。</p>
-<ul>
-<li><code>createLinearGradient(x,y,x1,y1)</code> 创建一个线性方向和大小</li>
-<li><code>createRadialGradient(x,y,r,x1,y1,r1)</code> 创建一个径向范围</li>
-</ul>
-<p>以上两个方法都返回一个 CanvasGradient 对象，我们对这个对象使用 <code>addColorStop(position,color)</code> 方法来实现渐变。(position的值为 0-1) 。</p>
-<h5 id="实现一个线性渐变"><a href="#实现一个线性渐变" class="headerlink" title="实现一个线性渐变"></a>实现一个线性渐变</h5><blockquote>
-<p><em>适当的调整 梯度线 和 绘制大小 的关系，可以实现不同的效果。。</em></p>
-</blockquote>
-<p>直接上代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"myCanvas"</span> width=<span class="string">"450px"</span> height=<span class="string">"300px"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span>   </div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">    <span class="keyword">var</span> ctx = c.getContext(<span class="string">'2d'</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> grad = ctx.createLinearGradient(<span class="number">20</span>,<span class="number">20</span>,<span class="number">300</span>,<span class="number">200</span>);</div><div class="line">    grad.addColorStop(<span class="number">0</span>,<span class="string">"red"</span>);</div><div class="line">    grad.addColorStop(<span class="number">.3</span>,<span class="string">"yellow"</span>);</div><div class="line">    grad.addColorStop(<span class="number">1</span>,<span class="string">"black"</span>);</div><div class="line"></div><div class="line">    ctx.fillStyle = grad;</div><div class="line">    ctx.fillRect(<span class="number">20</span>,<span class="number">20</span>,<span class="number">300</span>,<span class="number">200</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/canvas02.png" alt="Markdown"></p>
-<h5 id="实现一个径向渐变"><a href="#实现一个径向渐变" class="headerlink" title="实现一个径向渐变"></a>实现一个径向渐变</h5><p>我们用两个圆来定义径向渐变。渐变的起点由第一个圆定义，终点由第二个圆定义，在两者之间添加颜色。就像这样：（我们试着画一个太阳的样子）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"myCanvas"</span> width=<span class="string">"450px"</span> height=<span class="string">"300px"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> c = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</div><div class="line">    <span class="keyword">var</span> ctx = c.getContext(<span class="string">'2d'</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> grad = ctx.createRadialGradient(<span class="number">225</span>,<span class="number">150</span>,<span class="number">20</span>,<span class="number">225</span>,<span class="number">150</span>,<span class="number">300</span>);</div><div class="line">    grad.addColorStop(<span class="number">0</span>,<span class="string">"red"</span>);</div><div class="line">    grad.addColorStop(<span class="number">.2</span>,<span class="string">"yellow"</span>);</div><div class="line">    grad.addColorStop(<span class="number">1</span>,<span class="string">"black"</span>);</div><div class="line"></div><div class="line">    ctx.fillStyle = grad;</div><div class="line">    ctx.fillRect(<span class="number">20</span>,<span class="number">20</span>,<span class="number">450</span>,<span class="number">300</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/canvas03.png" alt="Markdown"></p>
-<h3 id="保存和恢复绘制状态"><a href="#保存和恢复绘制状态" class="headerlink" title="保存和恢复绘制状态"></a>保存和恢复绘制状态</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://on5pjsxrv.bkt.clouddn.com/canvas.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span id=&quot;inline-blue&quot;&gt;canvas&lt;/span&gt;是 html5 出现的新标签，用来替代Flash。像所有的 DOM 一样它具有自己本身的属性、方法和事件。他拥有强大的绘图功能。。下面是我在学习时做的一些总结。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Html5" scheme="http://yoursite.com/categories/Html5/"/>
-    
-    
-      <category term="Html5" scheme="http://yoursite.com/tags/Html5/"/>
-    
-      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
-    
-  </entry>
-  
-  <entry>
     <title>简单博文加密</title>
     <link href="http://yoursite.com/2017/02/07/encrypt/"/>
     <id>http://yoursite.com/2017/02/07/encrypt/</id>
     <published>2017-02-07T02:16:31.000Z</published>
-    <updated>2017-05-30T08:17:13.365Z</updated>
+    <updated>2017-06-23T03:07:55.000Z</updated>
     
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://on5pjsxrv.bkt.clouddn.com/%E5%8A%A0%E5%AF%86.jpg" alt="Markdown"></div>
-
+    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/%E5%8A%A0%E5%AF%86.jpg)</div> -->
 <blockquote>
 <p>即使是最简单的加密方式也足以阻止90%的访问者</p>
 </blockquote>
@@ -1269,7 +846,8 @@
 <h3 id="promt-方法介绍"><a href="#promt-方法介绍" class="headerlink" title="promt()方法介绍"></a>promt()方法介绍</h3><p>这个 promt() 方法有什么作用呢？查看js文档可以知道：</p>
 <p></p><p id="div-border-left-red"><strong>prompt()方法 :</strong>   <em>用于<u>显示可提示用户进行输入的对话框</u>。<br>如果用户单击提示框的 <strong>取消</strong> 按钮，则返回 <strong>null</strong>。<br>如果用户单击 <strong>确认</strong>按钮，则返回 <strong>输入字段当前显示的文本</strong>（用户输入的文本）。</em></p>   我们就是利用 <code>promt()</code> 方法可以返回用户输入的文本这个特性，获取到返回数据，与我们设置的密码进行验证，从而实现文档加密的。。<p></p>
 <h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>找到 <code>themes\next\layout\_partials\head.swig</code> 文件。<br>在 &lt;meta&gt; 标签之后添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    (function()&#123;</div><div class="line">        if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">            if (prompt(&apos;请输入文章密码&apos;,&apos;&apos;) !== &apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">                alert(&apos;密码错误！&apos;);</div><div class="line">                history.back();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>这里有必要解释一下 <code>page.password</code> 是什么东西。以下我给出这篇文章的头部参考：<br>首先 <code>page</code> 是一个变量，你可以理解为这篇文章。以下面的代码为参考，那么 <code>page.title = 最简单的翻墙方法; page.comments = fasle;</code>（很好理解吧）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure></p>
+<p>这里有必要解释一下 <code>page.password</code> 是什么东西。以下我给出这篇文章的头部参考：<br>首先 <code>page</code> 是一个变量，你可以理解为这篇文章。以下面的代码为参考，那么 <code>page.title = 最简单的翻墙方法; page.comments = fasle;</code>（很好理解吧）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure>
 <p>所以，要想加密博文，我们要为文章加上 <code>password</code> 属性。<code>description</code> 属性用于对文章进行描述。（加密下显示内容）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">description: 文章访问密码：password</div><div class="line">password: password</div></pre></td></tr></table></figure></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这种方式只能说是一点小技巧的应用吧，在大神面前可能不管用，但足以阻挡大多数用户。<br>更完美的博文加密方式请参考：<a href="http://edolphin.site/2016/05/31/encrypt-post/" target="_blank" rel="external">加密博客内容，使用密码访问</a></p>
 ]]></content>
@@ -1296,7 +874,7 @@
     <link href="http://yoursite.com/2017/01/25/hexo2/"/>
     <id>http://yoursite.com/2017/01/25/hexo2/</id>
     <published>2017-01-25T13:37:01.000Z</published>
-    <updated>2017-05-30T08:17:26.823Z</updated>
+    <updated>2017-05-30T08:17:28.000Z</updated>
     
     <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
 
@@ -1419,7 +997,73 @@
     
       &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO+GitHub,搭建博客 - 配置</title>
+    <link href="http://yoursite.com/2016/12/24/hexo1/"/>
+    <id>http://yoursite.com/2016/12/24/hexo1/</id>
+    <published>2016-12-24T14:23:58.000Z</published>
+    <updated>2017-06-23T02:51:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章主要介绍怎样利用 <code>Hexo + Next</code> 在 <code>GitHub</code> 上搭建个人博客。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;&nbsp;<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，基于 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 。 它有以下特点：</p>
+<a id="more"></a>
+<ul>
+<li><i class="fa fa-bolt"></i>  <strong>超快速度</strong><br><i>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</i></li>
+<li><i class="fa fa-pencil"></i>  <strong>支持Markdown</strong><br><i>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</i></li>
+<li><i class="fa fa-cloud-upload"></i>  <strong>一件部署</strong><br><i>只需一条指令即可部署到Github Pages，或其他网站</i></li>
+<li><i class="fa fa-cog"></i>  <strong>丰富的插件</strong><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i><br>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">标签插件</a> 来快速的插入特定形式的内容。</li>
+</ul>
+<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>。<br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a> 因其 &nbsp; <span id="yu-1">精于心，简于形</span> &nbsp; 的风格，一直被广大用户所喜爱。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序:</p>
+<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></p>
+</blockquote>
+<p>如果您的电脑中已经安装上述必备程序，跳过这一步。<br>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><ul>
+<li>Windows：下载安装 git 。<a id="download" href="https://git-scm.com/download/win" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a></li>
+<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装</li>
+<li>Linux（Ubuntu，Debian）：<code>sudo apt-get install git-core</code></li>
+<li>Linux（Fedora，Red Hat，CentOS）：<code>sudo yum install git-core</code></li>
+</ul>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>。（nvm：Node Version Manager）<br>windows 下使用 nvm 请看这里： <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">nvm-windows</a> ，首先需要下载安装 nvm 。<a id="download" href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a></p>
+<p>windows下安装完nvm以后，我们可以打开命令行中执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nvm</div><div class="line">$ nvm install latest</div></pre></td></tr></table></figure></p>
+<p>执行完以后，重启命令行，执行命令 <code>node -v</code> ，如果出现版本号，那么 <code>Node.js</code> 就安装成功了。</p>
+<p></p><p id="div-border-left-red">如果没有安装成功，那可能就是墙的原因。建议下载 <code>Node.js</code> 直接安装。<a id="download" href="https://nodejs.org/en/download/" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span></a></p>
+<p>
+
+</p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>有了 Node.js ，我们可以使用 npm 安装 Hexo。（执行完以后，我们同样可以执行命令 <code>hexo -v</code> 查看是否安装成功就安装成功了。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>Hexo安装完成后，我们需要为我们的blog项目创建一个<span id="inline-green">指定文件夹</span>（例如我在 D 盘根目录下创建了一个文件夹 blog 。<code>D:\blog</code> ），在<span id="inline-red">该文件夹中</span>执行以下命令， Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>等待安装，安装完成后，<span id="inline-green">指定文件夹</span> 的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└──</div></pre></td></tr></table></figure></p>
+<p>继续执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g            //编译</div><div class="line">$ hexo s --debug    //开启本地服务</div></pre></td></tr></table></figure></p>
+<p>这个时候，我们在浏览器中访问 <code>http://localhost:4000/</code> ，就可以看到基于 Hexo 的默认主题的原型：</p>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo001.png" alt="Markdown"></p>
+<p>到目前为止我们的本地博客已经部署完成。下面我们换上Next主题。</p>
+<h2 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><p>依旧是在当前目录下，使用 Git checkout 代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
+<p>等待下载完成。</p>
+<h3 id="启用-NexT-主题"><a href="#启用-NexT-主题" class="headerlink" title="启用 NexT 主题"></a>启用 NexT 主题</h3><p>打开 <span id="inline-blue">站点配置文件</span> (Hexo文件夹下的<span id="inline-green">_config.yml</span>文件)，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> 。<br>到此， NexT 主题安装完成。下一步我们依次执行以下命令验证主题是否正确启用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>我们在浏览器中访问 <code>http://localhost:4000/</code> ，你将看到：<br><img src="http://on5sixmz1.bkt.clouddn.com/hexo002.png" alt="Markdown"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>本地调试三部曲：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
+<p>这种带debug的运行，如果出现错误，可以在命令行中看到错误提示信息。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍怎样利用 &lt;code&gt;Hexo + Next&lt;/code&gt; 在 &lt;code&gt;GitHub&lt;/code&gt; 上搭建个人博客。&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://hexo.io/zh-cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的静态站点生成框架，基于 &lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt; 。 它有以下特点：&lt;/p&gt;
     
     </summary>
     
