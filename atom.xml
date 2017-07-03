@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-29T01:46:48.000Z</updated>
+  <updated>2017-07-02T16:32:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/06/23/es6/"/>
     <id>http://yoursite.com/2017/06/23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-06-29T01:46:48.000Z</updated>
+    <updated>2017-07-02T16:32:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="let-与-const"><a href="#let-与-const" class="headerlink" title="let 与 const"></a>let 与 const</h2><p id="border-red">代码块：外层作用于无法读取内层作用域中的变量</p>
 
@@ -413,7 +413,7 @@
 </tr>
 </tbody>
 </table>
-<p id="border-blue">forEach方法还可以接受第二个参数，用来绑定this。</p>
+<p id="border-blue">forEach方法还可以接受第二个参数，用来绑定 this。</p>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> reporter = &#123;</div><div class="line">  <span class="attr">report</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Key: %s, Value: %s"</span>, key, value);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">map.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, key, map</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.report(key, value);</div><div class="line">&#125;, reporter);</div></pre></td></tr></table></figure>
 <hr>
@@ -485,9 +485,63 @@
 <p><img src="/imgs/promise.jpg" alt=""></p>
 <p>一个用Promise对象实现的 Ajax 操作的例子</p>
 <p><img src="/imgs/getJSON.jpg" alt=""></p>
-<h3 id="Promiseprototype-then"><a href="#Promiseprototype-then" class="headerlink" title="Promiseprototype.then()"></a>Promiseprototype.then()</h3><ul>
+<h3 id="Promise-prototype-then"><a href="#Promise-prototype-then" class="headerlink" title="Promise.prototype.then()"></a>Promise.prototype.then()</h3><ul>
 <li>then方法是定义在原型对象Promise.prototype上的</li>
-<li>then(Resolved 状态回调,Rejected 状态的回调)</li>
+<li>then(Resolved状态回调函数,Rejected 状态的回调函数)</li>
+</ul>
+<p>then方法返回的是一个 <code>新的</code> Promise实例,因此可以采用链式写法，即then方法后面再调用另一个then方法。</p>
+<p><img src="/imgs/then.jpg" alt=""></p>
+<h3 id="Promise-prototype-catch"><a href="#Promise-prototype-catch" class="headerlink" title="Promise.prototype.catch()"></a>Promise.prototype.catch()</h3><p id="border-blue">Promise.prototype.catch 方法是 .then(null, rejection)的别名，用于 <code>指定发生错误时的回调函数</code>。 </p>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'fulfilled:'</span>, val))</div><div class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'rejected'</span>, err));</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'fulfilled:'</span>, val))</div><div class="line">  .then(<span class="literal">null</span>, (err) =&gt; <span class="built_in">console</span>.log(<span class="string">"rejected:"</span>, err));</div></pre></td></tr></table></figure>
+<p>例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'test'</span>);</div><div class="line">&#125;);</div><div class="line">promise.catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(error);</div><div class="line">&#125;);</div><div class="line"><span class="comment">/* promise抛出一个错误，就被catch方法指定的回调函数捕获。 */</span></div><div class="line"><span class="comment">// Error: test</span></div></pre></td></tr></table></figure>
+<p>俩种捕捉错误的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line">promise</div><div class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="comment">// success</span></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="comment">// error</span></div><div class="line">  &#125;);</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line">promise</div><div class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123; <span class="comment">//cb</span></div><div class="line">    <span class="comment">// success</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="comment">// error</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">深度阅读</a></p>
+<h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h4><p><span id="border-blue">Promise.all用于将多个 Promise 实例，包装成一个新的 Promise 实例。</span></p>
+<h4 id="Promise-resolve"><a href="#Promise-resolve" class="headerlink" title="Promise.resolve()"></a>Promise.resolve()</h4><p><span id="border-blue">有时需要将现有对象转为Promise对象，Promise.resolve 方法就起到这个作用。</span></p>
+<h4 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject()"></a>Promise.reject()</h4><p><span id="border-blue">也会返回一个新的 Promise 实例，该实例的状态为 rejected。</span></p>
+<hr>
+<h2 id="Iterator-和-for…of循环"><a href="#Iterator-和-for…of循环" class="headerlink" title="Iterator 和 for…of循环"></a>Iterator 和 for…of循环</h2><h3 id="Iterator-概念"><a href="#Iterator-概念" class="headerlink" title="Iterator 概念"></a>Iterator 概念</h3><ol>
+<li>ES6中有四种数据集合分别是：<strong>数组、对象(没有Iterator接口)、Map、Set</strong></li>
+<li>用户如果想组合使用这些数据，就需要一种统一的接口机制，来处理所有不同的数据结构。</li>
+<li>遍历器（Iterator）就是为各种不同的数据结构 <strong>提供统一的访问机制的接口</strong> 。</li>
+<li>任何数据结构只要部署Iterator接口 ，就可以完成遍历操作。</li>
+</ol>
+<ul>
+<li>Iterator的三个作用<ul>
+<li>为各种数据结构，<code>提供一个统一访问接口</code> ；</li>
+<li>使得数据结构的成员能够按 <code>某种次序排列</code> ；</li>
+<li>Iterator接口主要 <code>配合for...of</code> 。</li>
+</ul>
+</li>
+</ul>
+<h3 id="默认的-Iterator-接口"><a href="#默认的-Iterator-接口" class="headerlink" title="默认的 Iterator 接口"></a>默认的 Iterator 接口</h3><ul>
+<li>默认的Iterator接口 部署在数据结构的 <code>Symbol.iterator属性</code></li>
+<li>也就是，一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”。</li>
+<li>Symbol.iterator就是 默认生成遍历器的函数,执行它就会返回一个遍历器。</li>
+<li>原生具备 Iterator 接口的数据结构：Array、Map、Set、<code>String</code>、TypedArray、函数的 arguments 对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 具备原生 Iterator ：Array */</span></div><div class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="comment">/*执行它就会返回一个遍历器,根本特征就是具有 next 方法 */</span></div><div class="line"><span class="keyword">let</span> iter = arr[<span class="built_in">Symbol</span>.iterator]();</div><div class="line"></div><div class="line">iter.next() <span class="comment">// &#123; value: 'a', done: false &#125;</span></div><div class="line">iter.next() <span class="comment">// &#123; value: 'b', done: false &#125;</span></div><div class="line">iter.next() <span class="comment">// &#123; value: 'c', done: false &#125;</span></div><div class="line">iter.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure>
+<p> <img src="/imgs/symbol.jpg" alt=""></p>
+<h3 id="调用-Iterator-接口的场合"><a href="#调用-Iterator-接口的场合" class="headerlink" title="调用 Iterator 接口的场合"></a>调用 Iterator 接口的场合</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 1.解析赋值</div><div class="line"> */</div><div class="line"><span class="keyword">let</span> [first, ...rest] = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="comment">// first='a'; rest=['b','c'];</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 2.扩展运算符</div><div class="line"> */</div><div class="line"><span class="keyword">let</span> arr = [<span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line">[<span class="string">'a'</span>, ...arr, <span class="string">'d'</span>]</div><div class="line"><span class="comment">// ['a', 'b', 'c', 'd']</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 3. yield*</div><div class="line"> * yield*后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。</div><div class="line"> */</div><div class="line"><span class="keyword">let</span> generator = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">yield</span>* [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">  <span class="keyword">yield</span> <span class="number">5</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> iterator = generator();</div><div class="line"></div><div class="line">iterator.next() <span class="comment">// &#123; value: 1, done: false &#125;</span></div><div class="line">iterator.next() <span class="comment">// &#123; value: 2, done: false &#125;</span></div><div class="line">iterator.next() <span class="comment">// &#123; value: 3, done: false &#125;</span></div><div class="line">iterator.next() <span class="comment">// &#123; value: 4, done: false &#125;</span></div><div class="line">iterator.next() <span class="comment">// &#123; value: 5, done: false &#125;</span></div><div class="line">iterator.next() <span class="comment">// &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure>
+<h3 id="遍历器对象的-return-throw"><a href="#遍历器对象的-return-throw" class="headerlink" title="遍历器对象的 return(),throw()"></a>遍历器对象的 return(),throw()</h3><p>遍历器对象具有next、_return、_throw方法。</p>
+<p>return方法的使用场合是，<code>如果for...of循环提前退出</code>（通常是因为出错，或者有break语句或continue语句），就会调用return方法。</p>
+<h3 id="for…of-循环"><a href="#for…of-循环" class="headerlink" title="for…of 循环"></a>for…of 循环</h3><p>for…of循环 <code>内部调用</code> 的是数据结构的<code>Symbol.iterator方法</code>，所以只要数据结构只要部署了Symbol.iterator属性，就可以用for…of循环遍历它的成员</p>
+<h3 id="与其他遍历语法比较"><a href="#与其他遍历语法比较" class="headerlink" title="与其他遍历语法比较"></a>与其他遍历语法比较</h3><ul>
+<li>for循环<ul>
+<li>没有 fo…of 简洁</li>
+</ul>
+</li>
+<li>forEach<ul>
+<li>无法中途跳出forEach循环，break命令或return命令都不能奏效</li>
+</ul>
+</li>
+<li>for…in<ul>
+<li>主要是为遍历对象而设计的，不适用于遍历数组</li>
+</ul>
+</li>
 </ul>
 ]]></content>
     
@@ -1243,11 +1297,11 @@
       <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
+      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
+    
       <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
     
   </entry>
   
