@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T05:37:02.000Z</updated>
+  <updated>2017-07-05T05:45:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/06/23/es6/"/>
     <id>http://yoursite.com/2017/06/23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-05T05:37:02.000Z</updated>
+    <updated>2017-07-05T05:45:35.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -30,6 +30,7 @@
 <li>如笔记整理有错误还请留言 <code>指出</code></li>
 <li>深度阅读请访问 <a href="http://es6.ruanyifeng.com" target="_blank" rel="external">http://es6.ruanyifeng.com</a></li>
 </ul>
+<a id="more"></a>
 <hr>
 <h2 id="let-与-const"><a href="#let-与-const" class="headerlink" title="let 与 const"></a>let 与 const</h2><p id="border-red">代码块：外层作用域无法读取内层作用域中的变量</p>
 
@@ -47,7 +48,6 @@
 </li>
 </ul>
 <hr>
-<a id="more"></a>
 <h2 id="关于解析赋值"><a href="#关于解析赋值" class="headerlink" title="关于解析赋值"></a>关于解析赋值</h2><h3 id="数组的"><a href="#数组的" class="headerlink" title="数组的"></a>数组的</h3><p id="border-blue">数组的元素是按 <span id="inline-blue">次序排列</span> 的，变量的取值要与位置匹配</p>
 
 <p><strong>典型例子</strong></p>
@@ -765,23 +765,6 @@
 &lt;li&gt;如笔记整理有错误还请留言 &lt;code&gt;指出&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;深度阅读请访问 &lt;a href=&quot;http://es6.ruanyifeng.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://es6.ruanyifeng.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;let-与-const&quot;&gt;&lt;a href=&quot;#let-与-const&quot; class=&quot;headerlink&quot; title=&quot;let 与 const&quot;&gt;&lt;/a&gt;let 与 const&lt;/h2&gt;&lt;p id=&quot;border-red&quot;&gt;代码块：外层作用域无法读取内层作用域中的变量&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;共同点&lt;ul&gt;
-&lt;li&gt;只在块级作用域中有效&lt;/li&gt;
-&lt;li&gt;暂时性死区&lt;/li&gt;
-&lt;li&gt;不允许重复声明&lt;/li&gt;
-&lt;li&gt;不存在变量提升&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;不同点&lt;ul&gt;
-&lt;li&gt;const 声明时 &lt;span id=&quot;inline-red&quot;&gt;必须赋值&lt;/span&gt; 并且 &lt;span id=&quot;inline-blue&quot;&gt;值不可变&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
     
     </summary>
     
@@ -1111,7 +1094,7 @@
     <link href="http://yoursite.com/2017/04/09/quotation/"/>
     <id>http://yoursite.com/2017/04/09/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
-    <updated>2017-04-13T14:48:30.000Z</updated>
+    <updated>2017-07-05T05:43:53.000Z</updated>
     
     <content type="html"><![CDATA[<p><embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all"><br><div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
 </div></p>
@@ -1173,7 +1156,7 @@
     <link href="http://yoursite.com/2017/04/07/photo/"/>
     <id>http://yoursite.com/2017/04/07/photo/</id>
     <published>2017-04-07T06:04:32.000Z</published>
-    <updated>2017-04-09T15:19:52.000Z</updated>
+    <updated>2017-07-05T05:43:31.000Z</updated>
     
     <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/224147.jpg" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/196232.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/18210.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/213318.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/199301.jpg" alt=""></div></div></div></div>]]></content>
     
@@ -1193,7 +1176,7 @@
     <link href="http://yoursite.com/2017/04/05/hello-world/"/>
     <id>http://yoursite.com/2017/04/05/hello-world/</id>
     <published>2017-04-05T02:15:10.000Z</published>
-    <updated>2017-07-05T05:37:25.000Z</updated>
+    <updated>2017-07-05T05:42:45.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h3><p>还记得在 Github 上生成的第一个page时的新奇<br>还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋<br>如今在Github的page上生成了自己的博客，那可谓是即新奇 + 兴奋带来的激动<br>可以在自己的这块领地为所欲为，光想想就有一种迎风而来的酸爽</p>
 <h3 id="致敬"><a href="#致敬" class="headerlink" title="致敬"></a>致敬</h3><p>每一次的开始都仿佛打开一扇门<br>而每扇门的背后都有着无数默默付出和无私奉献的人<br>是他们让现在的这个圈子有了生态<br>没有他们的付出我不会这么顺利的把这个博客搭建起来<br>再次由衷的致敬这些人<br>我愿成为向你们一样的人</p>
@@ -1393,7 +1376,7 @@
     <link href="http://yoursite.com/2017/03/02/wangyimusic/"/>
     <id>http://yoursite.com/2017/03/02/wangyimusic/</id>
     <published>2017-03-02T13:12:04.000Z</published>
-    <updated>2017-06-23T06:17:39.000Z</updated>
+    <updated>2017-07-05T05:42:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）</p>
 <a id="more"></a>
@@ -1516,11 +1499,11 @@
       <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
-    
       <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
     
   </entry>
   
