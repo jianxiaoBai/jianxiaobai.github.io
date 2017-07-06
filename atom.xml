@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-05T05:45:35.000Z</updated>
+  <updated>2017-07-06T10:18:37.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,435 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo 笔记</title>
+    <link href="http://yoursite.com/2017/07/06/Hexo%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2017/07/06/Hexo操作/</id>
+    <published>2017-07-06T08:59:12.000Z</published>
+    <updated>2017-07-06T10:18:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo n “我的博客”</td>
+<td>hexo new “我的博客” #新建文章</td>
+</tr>
+<tr>
+<td>hexo p</td>
+<td>hexo publish</td>
+</tr>
+<tr>
+<td>hexo g</td>
+<td>hexo generate#生成</td>
+</tr>
+<tr>
+<td>hexo s</td>
+<td>hexo server #启动服务预览</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td>hexo deploy#部署</td>
+</tr>
+</tbody>
+</table>
+<p id="border-purple">hexo d #部署 #可与hexo g合并为 <code>hexo d -g</code></p>
+
+<a id="more"></a>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo server</td>
+<td>#Hexo 会监视文件变动并自动更新，您无须重启服务器</td>
+</tr>
+<tr>
+<td>hexo server -s</td>
+<td>#静态模式</td>
+</tr>
+<tr>
+<td>hexo server -p 5000</td>
+<td>#更改端口</td>
+</tr>
+<tr>
+<td>hexo server -i 192.168.1.1</td>
+<td>#自定义 IP</td>
+</tr>
+<tr>
+<td>hexo clean</td>
+<td>#清除缓存 网页正常情况下可以忽略此条命令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo g</td>
+<td>#生成静态网页</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td>#开始部署</td>
+</tr>
+</tbody>
+</table>
+<h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo new “postName”</td>
+<td>#新建文章</td>
+</tr>
+<tr>
+<td>hexo new page “pageName”</td>
+<td>#新建页面</td>
+</tr>
+<tr>
+<td>hexo generate</td>
+<td>#生成静态页面至public目录</td>
+</tr>
+<tr>
+<td>hexo server</td>
+<td>#开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</td>
+</tr>
+<tr>
+<td>hexo deploy</td>
+<td>#将.deploy目录部署到GitHub</td>
+</tr>
+</tbody>
+</table>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:title</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>:year</td>
+<td>建立的年份（4 位数）</td>
+</tr>
+<tr>
+<td>:month</td>
+<td>建立的月份（2 位数）</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td>建立的月份（去掉开头的零）</td>
+</tr>
+<tr>
+<td>:day</td>
+<td>建立的日期（2 位数）</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td>建立的日期（去掉开头的零）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">title: 搭建个人博客</div><div class="line">layout: post</div><div class="line">date: 2020-01-01 12:00:00</div><div class="line">comments: true</div><div class="line">categories: Blog</div><div class="line">tags: [Hexo]</div><div class="line">words: Hexo, Blog</div><div class="line">description: 搭建个人博客还是要用 Hexo</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="书写语法"><a href="#书写语法" class="headerlink" title="书写语法"></a>书写语法</h2><h3 id="自定义图片大小"><a href="#自定义图片大小" class="headerlink" title="自定义图片大小"></a>自定义图片大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">标准：&#123;% img [class names] /path/image [width] [height] [title text [alt text]] %&#125;</div><div class="line">例如：&#123;% img  /imgs/baiyan.jpg 100 50  %&#125;</div></pre></td></tr></table></figure>
+<h3 id="突破容器宽度限制的图片的三种方式"><a href="#突破容器宽度限制的图片的三种方式" class="headerlink" title="突破容器宽度限制的图片的三种方式"></a>突破容器宽度限制的图片的三种方式</h3><p id="border-blue">当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上 <code>提升图片的吸引力</code> 。</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</div><div class="line">&#123;% fullimage /image-url, alt, title %&#125;</div><div class="line">&#123;% fi /image-url, alt, title %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</div></pre></td></tr></table></figure>
+<p>其中，<code>class_name</code> 可以是以下列表中的一个值：</p>
+<ul>
+<li>default  默认</li>
+<li>primary  提示</li>
+<li>success  成功</li>
+<li>info     提示</li>
+<li>warning  警告</li>
+<li>danger   危险</li>
+</ul>
+<h3 id="从书中引用"><a href="#从书中引用" class="headerlink" title="从书中引用"></a>从书中引用</h3><blockquote><p>新：DevDocs现在附带语法高亮。<a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+<h3 id="文本居中的引用3中方式"><a href="#文本居中的引用3中方式" class="headerlink" title="文本居中的引用3中方式"></a>文本居中的引用3中方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125;人一切的痛苦，本质上都是对自己的无能的愤怒&#123;% endcq %&#125;   推荐</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h2&gt;&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo n “我的博客”&lt;/td&gt;
+&lt;td&gt;hexo new “我的博客” #新建文章&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo p&lt;/td&gt;
+&lt;td&gt;hexo publish&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo g&lt;/td&gt;
+&lt;td&gt;hexo generate#生成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo s&lt;/td&gt;
+&lt;td&gt;hexo server #启动服务预览&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo d&lt;/td&gt;
+&lt;td&gt;hexo deploy#部署&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p id=&quot;border-purple&quot;&gt;hexo d #部署 #可与hexo g合并为 &lt;code&gt;hexo d -g&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDE 快捷键</title>
+    <link href="http://yoursite.com/2017/07/06/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2017/07/06/快捷键/</id>
+    <published>2017-07-06T06:57:04.000Z</published>
+    <updated>2017-07-06T10:18:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/imgs/key1.jpg" alt=""></p>
+<p id="border">各类开发工具中一般有很多快捷键，但常用的就那么一些，以下种类快捷键前后是根据我的 <code>使用频率</code> 进行排序</p>
+
+<a id="more"></a>
+<h2 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h2><h3 id="选择类"><a href="#选择类" class="headerlink" title="选择类"></a>选择类</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+D</td>
+<td>匹配所选中的下一个相同文本</td>
+</tr>
+<tr>
+<td>Alt+F3</td>
+<td>匹配所选中的所有相同文本</td>
+</tr>
+<tr>
+<td>Ctrl+Enter</td>
+<td>在下一行插入新行</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Enter</td>
+<td>在上一行插入新行</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+←</td>
+<td>向左单位性地选中文本</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+→</td>
+<td>向右单位性地选中文本</td>
+</tr>
+<tr>
+<td>Ctrl+左键</td>
+<td>添加多光标</td>
+</tr>
+<tr>
+<td>滚轮按住向下滑</td>
+<td>添加多光标</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+↑</td>
+<td>将光标所在行和上一行代码互换</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+↓</td>
+<td>将光标所在行和下一行代码互换</td>
+</tr>
+<tr>
+<td>Ctrl+←</td>
+<td>向左单位性地移动光标，快速移动光标</td>
+</tr>
+<tr>
+<td>Ctrl+→</td>
+<td>向右单位性地移动光标，快速移动光标</td>
+</tr>
+<tr>
+<td>shift+↑</td>
+<td>向上选中行</td>
+</tr>
+<tr>
+<td>shift+↓</td>
+<td>向下选中行</td>
+</tr>
+<tr>
+<td>Shift+←</td>
+<td>向左选中文本</td>
+</tr>
+<tr>
+<td>Shift+→</td>
+<td>向右选中文本</td>
+</tr>
+<tr>
+<td>Ctrl+M</td>
+<td>光标移动至括号起始位置</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+M</td>
+<td>选中括号内的内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Z</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+z</td>
+<td>恢复撤销</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+D</td>
+<td>复制光标所在整行，插入到下一行</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>向右缩进</td>
+</tr>
+<tr>
+<td>Shift+Tab</td>
+<td>向左缩进</td>
+</tr>
+<tr>
+<td>Ctrl+F2</td>
+<td>设置书签</td>
+</tr>
+<tr>
+<td>Ctrl+/</td>
+<td>注释单行</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+/</td>
+<td>注释多行</td>
+</tr>
+</tbody>
+</table>
+<h3 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+F</td>
+<td>打开底部搜索框，查找关键字</td>
+</tr>
+<tr>
+<td>Ctrl+shift+F</td>
+<td>在 <code>文件夹</code> 内查找所要搜索的内容</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+P</td>
+<td>打开命令框</td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>打开搜索框，自动带：，输入数字跳转到该行代码</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>打开搜索框，可输入当前项目中的文件名，快速搜索文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="窗口类"><a href="#窗口类" class="headerlink" title="窗口类"></a>窗口类</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alt+Shift+ <code>Number</code></td>
+<td>窗口分屏，恢复默认 <code>Number</code> 屏（非小键盘的数字）</td>
+</tr>
+<tr>
+<td>Ctrl+K+B</td>
+<td>开启/关闭侧边栏</td>
+</tr>
+<tr>
+<td>Ctrl+Tab</td>
+<td>按文件浏览过的顺序，切换当前窗口的标签页</td>
+</tr>
+<tr>
+<td>Ctrl+PageDown</td>
+<td>向左切换当前窗口的标签页</td>
+</tr>
+<tr>
+<td>Ctrl+PageUp</td>
+<td>向右切换当前窗口的标签页</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/key1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;border&quot;&gt;各类开发工具中一般有很多快捷键，但常用的就那么一些，以下种类快捷键前后是根据我的 &lt;code&gt;使用频率&lt;/code&gt; 进行排序&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="快捷键" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ES6 笔记</title>
     <link href="http://yoursite.com/2017/06/23/es6/"/>
     <id>http://yoursite.com/2017/06/23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-05T05:45:35.000Z</updated>
+    <updated>2017-07-06T03:41:53.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -340,8 +764,7 @@
 </thead>
 <tbody>
 <tr>
-<td>keys()</td>
-<td>values()：</td>
+<td>keys() / values()：</td>
 <td>返回键名的遍历器</td>
 </tr>
 <tr>
@@ -778,7 +1201,7 @@
     <link href="http://yoursite.com/2017/05/30/flex/"/>
     <id>http://yoursite.com/2017/05/30/flex/</id>
     <published>2017-05-30T07:58:06.000Z</published>
-    <updated>2017-05-30T08:05:28.000Z</updated>
+    <updated>2017-07-06T06:54:28.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Flex-布局是什么"><a href="#Flex-布局是什么" class="headerlink" title="Flex 布局是什么"></a>Flex 布局是什么</h3><blockquote>
 <p>Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。</p>
@@ -1017,8 +1440,6 @@
     
     
       <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
-    
-      <category term="布局" scheme="http://yoursite.com/tags/%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   
