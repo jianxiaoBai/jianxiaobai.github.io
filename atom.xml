@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-06T10:18:37.000Z</updated>
+  <updated>2017-07-07T04:58:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/06/Hexo%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2017/07/06/Hexo操作/</id>
     <published>2017-07-06T08:59:12.000Z</published>
-    <updated>2017-07-06T10:18:37.000Z</updated>
+    <updated>2017-07-07T04:58:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
 <thead>
@@ -235,7 +235,7 @@
     <link href="http://yoursite.com/2017/07/06/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2017/07/06/快捷键/</id>
     <published>2017-07-06T06:57:04.000Z</published>
-    <updated>2017-07-06T10:18:41.000Z</updated>
+    <updated>2017-07-07T03:30:45.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/imgs/key1.jpg" alt=""></p>
 <p id="border">各类开发工具中一般有很多快捷键，但常用的就那么一些，以下种类快捷键前后是根据我的 <code>使用频率</code> 进行排序</p>
@@ -444,7 +444,7 @@
     <link href="http://yoursite.com/2017/06/23/es6/"/>
     <id>http://yoursite.com/2017/06/23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-06T03:41:53.000Z</updated>
+    <updated>2017-07-07T03:11:52.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -1619,7 +1619,7 @@
     <link href="http://yoursite.com/2017/03/09/wwwyuming/"/>
     <id>http://yoursite.com/2017/03/09/wwwyuming/</id>
     <published>2017-03-09T06:50:21.000Z</published>
-    <updated>2017-06-23T06:17:31.000Z</updated>
+    <updated>2017-07-07T03:28:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。</p>
 <p>这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。</p>
@@ -1920,11 +1920,11 @@
       <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
+      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
+    
       <category term="Next+Hexo" scheme="http://yoursite.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
     
   </entry>
   
