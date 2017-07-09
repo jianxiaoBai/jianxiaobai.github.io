@@ -444,7 +444,7 @@
     <link href="http://www.baixiaojian.com/2017-06-23/es6/"/>
     <id>http://www.baixiaojian.com/2017-06-23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-09T08:35:34.000Z</updated>
+    <updated>2017-07-09T09:37:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -528,7 +528,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
@@ -1191,8 +1191,14 @@
     
     </summary>
     
+      <category term="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6" scheme="http://www.baixiaojian.com/categories/%E8%BF%99%E9%87%8C%E5%88%97%E5%87%BA%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84ES6%E7%9B%B8%E5%85%B3%E7%89%B9%E6%80%A7%EF%BC%8C%E4%BB%A5%E4%BE%BF%E6%9B%B4%E5%BF%AB%E7%9A%84%E7%90%86%E8%A7%A3%E5%92%8C%E5%BA%94%E7%94%A8ES6/"/>
+    
     
       <category term="ES6" scheme="http://www.baixiaojian.com/tags/ES6/"/>
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="ES6笔记" scheme="http://www.baixiaojian.com/tags/ES6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -1201,14 +1207,14 @@
     <link href="http://www.baixiaojian.com/2017-05-30/flex/"/>
     <id>http://www.baixiaojian.com/2017-05-30/flex/</id>
     <published>2017-05-30T07:58:06.000Z</published>
-    <updated>2017-07-06T06:54:28.000Z</updated>
+    <updated>2017-07-09T08:39:38.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Flex-布局是什么"><a href="#Flex-布局是什么" class="headerlink" title="Flex 布局是什么"></a>Flex 布局是什么</h3><blockquote>
 <p>Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。</p>
 </blockquote>
 <p><strong>任何一个容器都可以指定为 Flex 布局</strong></p>
 <p><em>注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用</em></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line"><span class="comment">/* 行内元素也可以使用 Flex 布局。 */</span></div><div class="line">  <span class="attribute">display</span>: inline-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">    .box&#123;</div><div class="line">      display: flex;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .box&#123;</div><div class="line">    /* 行内元素也可以使用 Flex 布局。 */</div><div class="line">      display: inline-flex;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>#</p>
 <p><strong>flex-flow</strong>简写：这是flex-direction和flex-wrap两个属性的缩写,默认值是row nowrap。</p>
@@ -1434,7 +1440,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;任何一个容器都可以指定为 Flex 布局&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用&lt;/em&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 行内元素也可以使用 Flex 布局。 */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: inline-flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .box&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      display: flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .box&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    /* 行内元素也可以使用 Flex 布局。 */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      display: inline-flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1686,10 +1692,9 @@
     <link href="http://www.baixiaojian.com/2017-03-08/github%E5%92%8Ccoding/"/>
     <id>http://www.baixiaojian.com/2017-03-08/github和coding/</id>
     <published>2017-03-08T05:08:44.000Z</published>
-    <updated>2017-07-09T08:35:40.000Z</updated>
+    <updated>2017-07-09T09:27:41.000Z</updated>
     
-    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/github&coding.png)</div> -->
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
 <a id="more"></a>
 <h3 id="注册GitHub和Coding"><a href="#注册GitHub和Coding" class="headerlink" title="注册GitHub和Coding"></a>注册GitHub和Coding</h3><p><a href="https://github.com/" rel="external nofollow noopener noreferrer" target="_blank">github官网</a>  &nbsp;&nbsp;||&nbsp;&nbsp;   <a href="https://coding.net" rel="external nofollow noopener noreferrer" target="_blank">Coding官网</a> &nbsp;&nbsp;注册就不必多说，不会的可自行百度。<br><strong>需要注意的是</strong>：最好使用同一个 <strong>用户名</strong> 和 <strong>邮箱</strong> ，以免引起不必要的麻烦。</p>
 <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在GitHub上创建项目，名称为：<strong>yourname.github.io</strong><br>在Coding上创建项目，名称为：<strong>yourname</strong></p>
@@ -1733,8 +1738,7 @@
     
     <summary type="html">
     
-      &lt;!-- &lt;div class=&quot;out-img-topic&quot;&gt;![Markdown](http://on5pjsxrv.bkt.clouddn.com/github&amp;coding.png)&lt;/div&gt; --&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以&lt;u&gt;利用域名解析实现国内的走 coding，海外的走github，&lt;/u&gt;分流网站的访问。&lt;/p&gt;
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以&lt;u&gt;利用域名解析实现国内的走 coding，海外的走github，&lt;/u&gt;分流网站的访问。&lt;/p&gt;
     
     </summary>
     
@@ -1920,11 +1924,11 @@
       <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
+      <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
+    
       <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
     
   </entry>
   
