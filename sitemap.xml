@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/2017-03-09/wwwyuming/</loc>
+    
+    <lastmod>2017-07-09T08:36:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/2017-04-13/rexue/</loc>
+    
+    <lastmod>2017-07-09T08:36:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/2017-03-08/github%E5%92%8Ccoding/</loc>
     
-    <lastmod>2017-07-09T07:01:31.000Z</lastmod>
+    <lastmod>2017-07-09T08:35:40.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.baixiaojian.com/2017-06-23/es6/</loc>
     
-    <lastmod>2017-07-07T05:55:54.000Z</lastmod>
+    <lastmod>2017-07-09T08:35:34.000Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>http://www.baixiaojian.com/2017-07-06/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     
     <lastmod>2017-07-07T03:30:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/2017-03-09/wwwyuming/</loc>
-    
-    <lastmod>2017-07-07T03:28:29.000Z</lastmod>
     
   </url>
   
@@ -72,21 +79,7 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/2017-02-07/encrypt/</loc>
-    
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/2017-01-25/hexo2/</loc>
-    
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/2016-12-24/hexo1/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
@@ -100,16 +93,23 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/2017-03-07/backup/</loc>
+    <loc>http://www.baixiaojian.com/2016-12-24/hexo1/</loc>
     
-    <lastmod>2017-06-23T06:17:35.000Z</lastmod>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/2017-04-13/rexue/</loc>
+    <loc>http://www.baixiaojian.com/2017-02-07/encrypt/</loc>
     
-    <lastmod>2017-04-13T15:35:28.000Z</lastmod>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/2017-03-07/backup/</loc>
+    
+    <lastmod>2017-06-23T06:17:35.000Z</lastmod>
     
   </url>
   
