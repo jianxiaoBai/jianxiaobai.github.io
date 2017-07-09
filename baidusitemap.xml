@@ -4,6 +4,28 @@
 
     
     
+  <url>
+    <loc>http://www.baixiaojian.com/2017-03-08/github%E5%92%8Ccoding/</loc>
+    <lastmod>2017-07-09T06:34:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>HEXO 博客同时部署到 GitHub & Coding</title>
+        <pubTime>2017-03-08T05:08:44.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.baixiaojian.com/2017-06-23/es6/</loc>
@@ -196,6 +218,26 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/2017-02-14/markdown/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown 使用中常见的问题及解决方法</title>
+        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://www.baixiaojian.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/2017-01-25/hexo2/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
@@ -233,26 +275,6 @@
            
              
               <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/2017-02-14/markdown/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown 使用中常见的问题及解决方法</title>
-        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="http://www.baixiaojian.com/categories/Markdown/"/>
           
         </display>
     </data>
