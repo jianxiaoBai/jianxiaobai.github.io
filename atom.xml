@@ -444,7 +444,7 @@
     <link href="http://www.baixiaojian.com/2017-06-23/es6/"/>
     <id>http://www.baixiaojian.com/2017-06-23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-09T09:42:42.000Z</updated>
+    <updated>2017-07-09T09:57:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -1180,7 +1180,14 @@
     
     <summary type="html">
     
-      这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对阮一峰的ES6的内容进行的 &lt;code&gt;提炼&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对其中的内容进行了 &lt;code&gt;简化&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对一些我个人认为较复杂且不常用的功能或概念 &lt;code&gt;采取忽略&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对ES6 &lt;code&gt;不熟悉&lt;/code&gt; 的同学 可能会有一点帮助&lt;/li&gt;
+&lt;li&gt;如笔记整理有错误还请留言 &lt;code&gt;指出&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;深度阅读请访问 &lt;a href=&quot;http://es6.ruanyifeng.com&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;http://es6.ruanyifeng.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
