@@ -4,6 +4,7 @@
 
     
     
+    
   <url>
     <loc>http://yoursite.com/2017-06-23/es6/</loc>
     <lastmod>2017-07-07T05:55:54.000Z</lastmod>
@@ -195,32 +196,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017-02-14/markdown/</loc>
+    <loc>http://yoursite.com/2017-01-25/hexo2/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
         <display>
-        <title>Markdown 使用中常见的问题及解决方法</title>
-        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="http://yoursite.com/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016-12-24/hexo1/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>HEXO+GitHub,搭建博客 - 配置</title>
-        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
+        <title>HEXO+GitHub搭建博客 - 优化</title>
+        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
         
         <tag>Next+Hexo</tag>
          
@@ -237,12 +218,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017-01-25/hexo2/</loc>
+    <loc>http://yoursite.com/2016-12-24/hexo1/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
         <display>
-        <title>HEXO+GitHub搭建博客 - 优化</title>
-        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
+        <title>HEXO+GitHub,搭建博客 - 配置</title>
+        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
         
         <tag>Next+Hexo</tag>
          
@@ -274,6 +255,26 @@
            
              
               <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017-02-14/markdown/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown 使用中常见的问题及解决方法</title>
+        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="http://yoursite.com/categories/Markdown/"/>
           
         </display>
     </data>
