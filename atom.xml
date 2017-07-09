@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hexo 笔记</title>
-    <link href="http://yoursite.com/2017/07/06/Hexo%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2017/07/06/Hexo操作/</id>
+    <link href="http://yoursite.com/2017-07-06/Hexo%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2017-07-06/Hexo操作/</id>
     <published>2017-07-06T08:59:12.000Z</published>
     <updated>2017-07-07T04:58:55.000Z</updated>
     
@@ -184,8 +184,8 @@
 <li>warning  警告</li>
 <li>danger   危险</li>
 </ul>
-<h3 id="从书中引用"><a href="#从书中引用" class="headerlink" title="从书中引用"></a>从书中引用</h3><blockquote><p>新：DevDocs现在附带语法高亮。<a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
-<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+<h3 id="从书中引用"><a href="#从书中引用" class="headerlink" title="从书中引用"></a>从书中引用</h3><blockquote><p>新：DevDocs现在附带语法高亮。<a href="http://devdocs.io" rel="external nofollow noopener noreferrer" target="_blank">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" rel="external nofollow noopener noreferrer" target="_blank">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
 <h3 id="文本居中的引用3中方式"><a href="#文本居中的引用3中方式" class="headerlink" title="文本居中的引用3中方式"></a>文本居中的引用3中方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125;人一切的痛苦，本质上都是对自己的无能的愤怒&#123;% endcq %&#125;   推荐</div></pre></td></tr></table></figure>
 ]]></content>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>IDE 快捷键</title>
-    <link href="http://yoursite.com/2017/07/06/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://yoursite.com/2017/07/06/快捷键/</id>
+    <link href="http://yoursite.com/2017-07-06/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2017-07-06/快捷键/</id>
     <published>2017-07-06T06:57:04.000Z</published>
     <updated>2017-07-07T03:30:45.000Z</updated>
     
@@ -441,10 +441,10 @@
   
   <entry>
     <title>ES6 笔记</title>
-    <link href="http://yoursite.com/2017/06/23/es6/"/>
-    <id>http://yoursite.com/2017/06/23/es6/</id>
+    <link href="http://yoursite.com/2017-06-23/es6/"/>
+    <id>http://yoursite.com/2017-06-23/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
-    <updated>2017-07-07T03:11:52.000Z</updated>
+    <updated>2017-07-07T05:55:54.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li>对阮一峰的ES6的内容进行的 <code>提炼</code></li>
@@ -452,7 +452,7 @@
 <li>对一些我个人认为较复杂且不常用的功能或概念 <code>采取忽略</code></li>
 <li>对ES6 <code>不熟悉</code> 的同学 可能会有一点帮助</li>
 <li>如笔记整理有错误还请留言 <code>指出</code></li>
-<li>深度阅读请访问 <a href="http://es6.ruanyifeng.com" target="_blank" rel="external">http://es6.ruanyifeng.com</a></li>
+<li>深度阅读请访问 <a href="http://es6.ruanyifeng.com" rel="external nofollow noopener noreferrer" target="_blank">http://es6.ruanyifeng.com</a></li>
 </ul>
 <a id="more"></a>
 <hr>
@@ -871,7 +871,7 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonToStrMap</span>(<span class="params">jsonStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> objToStrMap(<span class="built_in">JSON</span>.parse(jsonStr));</div><div class="line">&#125;</div><div class="line"></div><div class="line">jsonToStrMap(<span class="string">'&#123;"yes": true, "no": false&#125;'</span>)</div><div class="line"><span class="comment">// Map &#123;'yes' =&gt; true, 'no' =&gt; false&#125;</span></div></pre></td></tr></table></figure>
 <hr>
-<h2 id="Proxy-（代理）"><a href="#Proxy-（代理）" class="headerlink" title="Proxy （代理）"></a>Proxy （代理）</h2><p><a href="http://es6.ruanyifeng.com/#docs/proxy" target="_blank" rel="external">详细介绍</a></p>
+<h2 id="Proxy-（代理）"><a href="#Proxy-（代理）" class="headerlink" title="Proxy （代理）"></a>Proxy （代理）</h2><p><a href="http://es6.ruanyifeng.com/#docs/proxy" rel="external nofollow noopener noreferrer" target="_blank">详细介绍</a></p>
 <p id="border-blue">在目标对象之前设置了一个中间人，外界访问该对象时都必须先通过这个中间人，这种机制就可以对外界的访问进行过滤和改写</p>
 
 <p>ES6 原声提供 Proxy 构造函数，用来生成 proxy 实例。</p>
@@ -930,7 +930,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'test'</span>);</div><div class="line">&#125;);</div><div class="line">promise.catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(error);</div><div class="line">&#125;);</div><div class="line"><span class="comment">/* promise抛出一个错误，就被catch方法指定的回调函数捕获。 */</span></div><div class="line"><span class="comment">// Error: test</span></div></pre></td></tr></table></figure>
 <p>俩种捕捉错误的方法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bad</span></div><div class="line">promise</div><div class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="comment">// success</span></div><div class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="comment">// error</span></div><div class="line">  &#125;);</div><div class="line"></div><div class="line"><span class="comment">// good</span></div><div class="line">promise</div><div class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123; <span class="comment">//cb</span></div><div class="line">    <span class="comment">// success</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="comment">// error</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">深度阅读</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="http://es6.ruanyifeng.com/#docs/promise" rel="external nofollow noopener noreferrer" target="_blank">深度阅读</a></p>
 <h4 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h4><p><span id="border-blue">Promise.all用于将多个 Promise 实例，包装成一个新的 Promise 实例。</span></p>
 <h4 id="Promise-resolve"><a href="#Promise-resolve" class="headerlink" title="Promise.resolve()"></a>Promise.resolve()</h4><p><span id="border-blue">有时需要将现有对象转为Promise对象，Promise.resolve 方法就起到这个作用。</span></p>
 <h4 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject()"></a>Promise.reject()</h4><p><span id="border-blue">也会返回一个新的 Promise 实例，该实例的状态为 rejected。</span></p>
@@ -1033,14 +1033,14 @@
 <hr>
 <h2 id="Generator-函数的异步应用"><a href="#Generator-函数的异步应用" class="headerlink" title="Generator 函数的异步应用"></a>Generator 函数的异步应用</h2><p id="border-blue">异步编程对 JavaScript 语言太重要,因为 Javascript 语言的执行环境是 “单线程”的.<br></p>
 
-<p><a href="http://es6.ruanyifeng.com/#docs/generator-async" target="_blank" rel="external">详细阅读</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/generator-async" rel="external nofollow noopener noreferrer" target="_blank">详细阅读</a></p>
 <p><strong>async 函数</strong></p>
 <p> 一句话，它就是 Generator 函数的语法糖</p>
-<p><a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="external">详细阅读</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/async" rel="external nofollow noopener noreferrer" target="_blank">详细阅读</a></p>
 <hr>
 <h2 id="Class-的基本语法"><a href="#Class-的基本语法" class="headerlink" title="Class 的基本语法"></a>Class 的基本语法</h2><p>ES6 的class写法只是让对象原型的 <code>写法更加清晰</code> 、<code>更接近主流面向对象编程</code> 的语法而已。<br><img src="/imgs/es6_1.jpg" alt=""></p>
-<p><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">深度阅读</a></p>
-<p><a href="http://es6.ruanyifeng.com/#docs/class-extends" target="_blank" rel="external">Class的继承</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/class" rel="external nofollow noopener noreferrer" target="_blank">深度阅读</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/class-extends" rel="external nofollow noopener noreferrer" target="_blank">Class的继承</a></p>
 <hr>
 <h2 id="Module-的语法"><a href="#Module-的语法" class="headerlink" title="Module 的语法"></a>Module 的语法</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
 <li>历史上，JavaScript 一直没有模块体系，直接导致了对开发大型的、复杂的项目造成了巨大障碍。</li>
@@ -1135,7 +1135,7 @@
 <p><strong>加载规则</strong></p>
 <p>浏览器加载 ES6 模块，也使用 <code>&lt;script&gt;</code> 标签，但是要加入 <code>type=&quot;module&quot;</code> 属性。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;module&quot; src=&quot;foo.js&quot;&gt;&lt;/script&gt;</div><div class="line">浏览器对于带有type=&quot;module&quot; 都是执行 defer属性的异步加载</div></pre></td></tr></table></figure>
-<p><a href="http://es6.ruanyifeng.com/#docs/module-loader#浏览器加载" target="_blank" rel="external">与Node相关的ES6</a></p>
+<p><a href="http://es6.ruanyifeng.com/#docs/module-loader#浏览器加载" rel="external nofollow noopener noreferrer" target="_blank">与Node相关的ES6</a></p>
 <hr>
 <h2 id="编程风格"><a href="#编程风格" class="headerlink" title="编程风格"></a>编程风格</h2><h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><ul>
 <li><code>let</code> 完全取代var</li>
@@ -1186,7 +1186,7 @@
 &lt;li&gt;对一些我个人认为较复杂且不常用的功能或概念 &lt;code&gt;采取忽略&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;对ES6 &lt;code&gt;不熟悉&lt;/code&gt; 的同学 可能会有一点帮助&lt;/li&gt;
 &lt;li&gt;如笔记整理有错误还请留言 &lt;code&gt;指出&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;深度阅读请访问 &lt;a href=&quot;http://es6.ruanyifeng.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://es6.ruanyifeng.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;深度阅读请访问 &lt;a href=&quot;http://es6.ruanyifeng.com&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;http://es6.ruanyifeng.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -1198,8 +1198,8 @@
   
   <entry>
     <title>Flex</title>
-    <link href="http://yoursite.com/2017/05/30/flex/"/>
-    <id>http://yoursite.com/2017/05/30/flex/</id>
+    <link href="http://yoursite.com/2017-05-30/flex/"/>
+    <id>http://yoursite.com/2017-05-30/flex/</id>
     <published>2017-05-30T07:58:06.000Z</published>
     <updated>2017-07-06T06:54:28.000Z</updated>
     
@@ -1424,7 +1424,7 @@
 <p><strong>简写：flex</strong></p>
 <p>　　flex是flex-grow，flex-shrink，flex-basis三个属性的缩写。第二个和第三个参数是可选值。默认值是0 1 auto。</p>
 <p>　　<code>建议使用缩写属性。如果flex取值为none，等于0 0 auto。</code></p>
-<p> <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">参考一</a><br> <a href="http://www.cnblogs.com/fxycm/p/4649648.html" target="_blank" rel="external">参考二</a></p>
+<p> <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" rel="external nofollow noopener noreferrer" target="_blank">参考一</a><br> <a href="http://www.cnblogs.com/fxycm/p/4649648.html" rel="external nofollow noopener noreferrer" target="_blank">参考二</a></p>
 ]]></content>
     
     <summary type="html">
@@ -1445,8 +1445,8 @@
   
   <entry>
     <title>如何才能成为很厉害的人</title>
-    <link href="http://yoursite.com/2017/04/13/rexue/"/>
-    <id>http://yoursite.com/2017/04/13/rexue/</id>
+    <link href="http://yoursite.com/2017-04-13/rexue/"/>
+    <id>http://yoursite.com/2017-04-13/rexue/</id>
     <published>2017-04-13T14:33:40.000Z</published>
     <updated>2017-04-13T15:35:28.000Z</updated>
     
@@ -1488,7 +1488,7 @@
 <p>最后我给你点个人建议：<br>  1.读书，读到倦，网上有很多方法，但你从来沉不下心看。<br>  2.学习，学到疼，网上有很多方法，但你从来沉不下心看。<br>  3.开口说话，冷场也要说话，脸皮薄也要说话，挨打也要说话。<br>  4.如果你现在不知道做什么，至少你还可以先从做一个牛逼的学生开始。<br>  5.更漂亮更有趣的女孩，五年以后再找。<br>  6.承诺是鞭子，不是兴奋剂。<br>  7.年纪大了，也不要说什么心如死灰。</p>
 <p>改变自己是非常，非常，非常痛苦的，我能看出来你一腔热血的优点，自然知道你孤僻懒散自以为是的缺点，方法很多，不过我不确定你吃不吃得了苦，我和你共勉吧。</p>
 <p>在成为最厉害最厉害最厉害的道路上。</p>
-<p>作者：朱炫<br>链接：<a href="https://www.zhihu.com/question/22921426/answer/23330366" target="_blank" rel="external">https://www.zhihu.com/question/22921426/answer/23330366</a><br>来源：知乎</p>
+<p>作者：朱炫<br>链接：<a href="https://www.zhihu.com/question/22921426/answer/23330366" rel="external nofollow noopener noreferrer" target="_blank">https://www.zhihu.com/question/22921426/answer/23330366</a><br>来源：知乎</p>
 ]]></content>
     
     <summary type="html">
@@ -1512,8 +1512,8 @@
   
   <entry>
     <title>Quotation</title>
-    <link href="http://yoursite.com/2017/04/09/quotation/"/>
-    <id>http://yoursite.com/2017/04/09/quotation/</id>
+    <link href="http://yoursite.com/2017-04-09/quotation/"/>
+    <id>http://yoursite.com/2017-04-09/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
     <updated>2017-07-05T05:43:53.000Z</updated>
     
@@ -1574,8 +1574,8 @@
   
   <entry>
     <title>photo</title>
-    <link href="http://yoursite.com/2017/04/07/photo/"/>
-    <id>http://yoursite.com/2017/04/07/photo/</id>
+    <link href="http://yoursite.com/2017-04-07/photo/"/>
+    <id>http://yoursite.com/2017-04-07/photo/</id>
     <published>2017-04-07T06:04:32.000Z</published>
     <updated>2017-07-05T05:43:31.000Z</updated>
     
@@ -1594,8 +1594,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/04/05/hello-world/"/>
-    <id>http://yoursite.com/2017/04/05/hello-world/</id>
+    <link href="http://yoursite.com/2017-04-05/hello-world/"/>
+    <id>http://yoursite.com/2017-04-05/hello-world/</id>
     <published>2017-04-05T02:15:10.000Z</published>
     <updated>2017-07-05T05:42:45.000Z</updated>
     
@@ -1616,8 +1616,8 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 域名绑定</title>
-    <link href="http://yoursite.com/2017/03/09/wwwyuming/"/>
-    <id>http://yoursite.com/2017/03/09/wwwyuming/</id>
+    <link href="http://yoursite.com/2017-03-09/wwwyuming/"/>
+    <id>http://yoursite.com/2017-03-09/wwwyuming/</id>
     <published>2017-03-09T06:50:21.000Z</published>
     <updated>2017-07-07T03:28:29.000Z</updated>
     
@@ -1625,7 +1625,7 @@
 <p>这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。</p>
 <a id="more"></a>
 <p><span id="inline-blue">解决方案：</span><br>我们知道 github 和 coding 的 pages 服务都提供 <code>自定义域名</code> 功能。我们可以利用这一点，绑定自己的域名。域名解析的时候实现国内访问 coding pages ，国外访问 github pages ,从而加快访问速度。 具体怎么实现，往下看：</p>
-<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>首先我们要购买一个域名，推荐到 <a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.25.nvxK84" target="_blank" rel="external">万网</a> 购买。（毕竟很方便）<br>具体步骤可以参考这篇文章：<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html" target="_blank" rel="external">万网域名注册教程</a>。</p>
+<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>首先我们要购买一个域名，推荐到 <a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.25.nvxK84" rel="external nofollow noopener noreferrer" target="_blank">万网</a> 购买。（毕竟很方便）<br>具体步骤可以参考这篇文章：<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html" rel="external nofollow noopener noreferrer" target="_blank">万网域名注册教程</a>。</p>
 <p id="border-red">购买域名一定要实名认证，否则会停止解析</p>
 
 <h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>这一步是最重要的，我们要把域名指向 github 和 coding 的服务器空间。</p>
@@ -1683,15 +1683,15 @@
   
   <entry>
     <title>HEXO 博客同时部署到 GitHub &amp; Coding</title>
-    <link href="http://yoursite.com/2017/03/08/github&amp;coding/"/>
-    <id>http://yoursite.com/2017/03/08/github&amp;coding/</id>
+    <link href="http://yoursite.com/2017-03-08/github&amp;coding/"/>
+    <id>http://yoursite.com/2017-03-08/github&amp;coding/</id>
     <published>2017-03-08T05:08:44.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
     <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/github&coding.png)</div> -->
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
 <a id="more"></a>
-<h3 id="注册GitHub和Coding"><a href="#注册GitHub和Coding" class="headerlink" title="注册GitHub和Coding"></a>注册GitHub和Coding</h3><p><a href="https://github.com/" target="_blank" rel="external">github官网</a>  &nbsp;&nbsp;||&nbsp;&nbsp;   <a href="https://coding.net" target="_blank" rel="external">Coding官网</a> &nbsp;&nbsp;注册就不必多说，不会的可自行百度。<br><strong>需要注意的是</strong>：最好使用同一个 <strong>用户名</strong> 和 <strong>邮箱</strong> ，以免引起不必要的麻烦。</p>
+<h3 id="注册GitHub和Coding"><a href="#注册GitHub和Coding" class="headerlink" title="注册GitHub和Coding"></a>注册GitHub和Coding</h3><p><a href="https://github.com/" rel="external nofollow noopener noreferrer" target="_blank">github官网</a>  &nbsp;&nbsp;||&nbsp;&nbsp;   <a href="https://coding.net" rel="external nofollow noopener noreferrer" target="_blank">Coding官网</a> &nbsp;&nbsp;注册就不必多说，不会的可自行百度。<br><strong>需要注意的是</strong>：最好使用同一个 <strong>用户名</strong> 和 <strong>邮箱</strong> ，以免引起不必要的麻烦。</p>
 <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在GitHub上创建项目，名称为：<strong>yourname.github.io</strong><br>在Coding上创建项目，名称为：<strong>yourname</strong></p>
 <h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>配置 shh key 是让本地 git 项目与远程的 github 建立联系</p>
 <h4 id="获取ssh"><a href="#获取ssh" class="headerlink" title="获取ssh"></a>获取ssh</h4><ul>
@@ -1728,7 +1728,7 @@
 <p>然后你就可以 <code>hexo c、hexo g、hexo d</code> 了。</p>
 <h3 id="开启pages服务"><a href="#开启pages服务" class="headerlink" title="开启pages服务"></a>开启pages服务</h3><p>GitHub 已经默认开启，就不必多说了。<br>Coding 进入对应项目，点击 <strong>代码&gt;pages服务</strong> ，把部署来源改为 <strong>master</strong> 即可。</p>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding03.png" alt="Markdown"></p>
-<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>这样我们整个部署过程就完成了。有两个地址可以访问我们的博客：<br>GitHub pages：<a href="https://cwyaml.github.io" target="_blank" rel="external">https://cwyaml.github.io</a><br>Coding pages：<a href="https://cwyaml.coding.me" target="_blank" rel="external">https://cwyaml.coding.me</a></p>
+<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>这样我们整个部署过程就完成了。有两个地址可以访问我们的博客：<br>GitHub pages：<a href="https://cwyaml.github.io" rel="external nofollow noopener noreferrer" target="_blank">https://cwyaml.github.io</a><br>Coding pages：<a href="https://cwyaml.coding.me" rel="external nofollow noopener noreferrer" target="_blank">https://cwyaml.coding.me</a></p>
 ]]></content>
     
     <summary type="html">
@@ -1749,8 +1749,8 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 备份</title>
-    <link href="http://yoursite.com/2017/03/07/backup/"/>
-    <id>http://yoursite.com/2017/03/07/backup/</id>
+    <link href="http://yoursite.com/2017-03-07/backup/"/>
+    <id>http://yoursite.com/2017-03-07/backup/</id>
     <published>2017-03-07T08:26:30.000Z</published>
     <updated>2017-06-23T06:17:35.000Z</updated>
     
@@ -1758,7 +1758,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 <code>git</code> 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。<a id="more"></a> 最后索性简单粗暴点，<u><strong>在 GitHub 上创建一个仓库，把 blog 文件整个打包上传。</strong></u>使用过程中发现这个方法还不错，至少对于小白来说很容易理解，也很难出错，就一直沿用到现在。</p>
 <p id="border-red">这种方式虽然能够备份 Hexo 博客的源文件，但是对于博主这种懒人，每次更新博文都需要输入两三行重复的Git命令真是一件麻烦的事情。</p>
 
-<h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>本方法需要提前将 Hexo 加入 Git仓库 并与 Github 远程仓库绑定之后，才能正常工作。<br><strong>具体做法可以参考：</strong><a href="https://cwyaml.github.io/2017/01/08/update%20to%20github/" target="_blank" rel="external">上传本地项目到GitHub</a></p>
+<h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>本方法需要提前将 Hexo 加入 Git仓库 并与 Github 远程仓库绑定之后，才能正常工作。<br><strong>具体做法可以参考：</strong><a href="https://cwyaml.github.io/2017/01/08/update%20to%20github/" rel="external nofollow noopener noreferrer" target="_blank">上传本地项目到GitHub</a></p>
 <h4 id="安装-shelljs-模块"><a href="#安装-shelljs-模块" class="headerlink" title="安装 shelljs 模块"></a>安装 shelljs 模块</h4><p>要实现这个自动备份功能，需要依赖 <code>NodeJs</code> 的一个 <code>shelljs 模块</code>,该模块重新包装了 child_process,调用系统命令更加的方便。<br>使用以下命令，完成 shelljs 模块的安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save shelljs</div></pre></td></tr></table></figure></p>
 <h4 id="编写自动备份脚本"><a href="#编写自动备份脚本" class="headerlink" title="编写自动备份脚本"></a>编写自动备份脚本</h4><p>待到模块安装完成，在<strong>Hexo根目录</strong> 的 <strong>scripts</strong>文件夹下新建一个js文件，文件名随意取。<br><strong><em>如果没有scripts目录，请新建一个。</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">require(&apos;shelljs/global&apos;);</div><div class="line">try &#123;</div><div class="line">    hexo.on(&apos;deployAfter&apos;, function() &#123;//当deploy完成后执行备份</div><div class="line">        run();</div><div class="line">    &#125;);</div><div class="line">&#125; catch (e) &#123;</div><div class="line">    console.log(&quot;产生了一个错误&lt;(￣3￣)&gt; !，错误详情为：&quot; + e.toString());</div><div class="line">&#125;</div><div class="line">function run() &#123;</div><div class="line">    if (!which(&apos;git&apos;)) &#123;</div><div class="line">        echo(&apos;Sorry, this script requires git&apos;);</div><div class="line">        exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        echo(&quot;======================Auto Backup Begin===========================&quot;);</div><div class="line">        cd(&apos;C:/Blog&apos;);    //此处修改为Hexo根目录路径</div><div class="line">        if (exec(&apos;git add .&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git add failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        if (exec(&apos;git commit -m &quot;Form auto backup script\&apos;s commit&quot;&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git commit failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        if (exec(&apos;git push origin master&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git push failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        echo(&quot;==================Auto Backup Complete============================&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><span id="inline-red">注意：</span></p>
@@ -1770,7 +1770,7 @@
 <p>这样子，每次更新博文并 deploy 到服务器上之后，备份就自动启动并完成备份啦~是不是很方便呢？</p>
 <p><strong>Enjoy it！</strong></p>
 <blockquote>
-<p>参考：wanghao大神 <a href="https://notes.wanghao.work/2015-07-06-%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6.html" target="_blank" rel="external">自动备份Hexo博客源文件</a></p>
+<p>参考：wanghao大神 <a href="https://notes.wanghao.work/2015-07-06-%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6.html" rel="external nofollow noopener noreferrer" target="_blank">自动备份Hexo博客源文件</a></p>
 </blockquote>
 ]]></content>
     
@@ -1794,20 +1794,20 @@
   
   <entry>
     <title>教你制作音乐外链</title>
-    <link href="http://yoursite.com/2017/03/02/wangyimusic/"/>
-    <id>http://yoursite.com/2017/03/02/wangyimusic/</id>
+    <link href="http://yoursite.com/2017-03-02/wangyimusic/"/>
+    <id>http://yoursite.com/2017-03-02/wangyimusic/</id>
     <published>2017-03-02T13:12:04.000Z</published>
     <updated>2017-07-05T05:42:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>本篇文章讲怎样制作音乐外链，我主要用来为自己的博客添加背景音乐。（其实主要用来装X）</p>
 <a id="more"></a>
 <h2 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h2><p>首先你需要下载想要的歌曲：<br>QQ音乐、网易云音乐需要安装客户端才能下载。虾米音乐可以在网页直接下载。<br>总之把需要的歌曲下载下来就可以了！！</p>
-<p>我们利用 <a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a> 来自动生成歌曲外链。<br>第一步：注册、登录<br>第二步：在对象存储中新建一个仓库，命名为 music 。<br>第三步：在内容管理中上传歌曲文件</p>
+<p>我们利用 <a href="http://www.qiniu.com/" rel="external nofollow noopener noreferrer" target="_blank">七牛云存储</a> 来自动生成歌曲外链。<br>第一步：注册、登录<br>第二步：在对象存储中新建一个仓库，命名为 music 。<br>第三步：在内容管理中上传歌曲文件</p>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/%E7%BD%91%E6%98%93%E4%BA%91.png" alt="markdown"></p>
 <p></p><p id="border-red">用这种方法所有歌曲（只要能下载）都能获得，并且永久有效</p><p></p>
-<h2 id="网易云音乐获取方法"><a href="#网易云音乐获取方法" class="headerlink" title="网易云音乐获取方法"></a>网易云音乐获取方法</h2><p>第一步： 先获取歌曲id，直接打开网易云音乐网页版: <a href="http://music.163.com" target="_blank" rel="external">http://music.163.com</a><br>搜索自己喜欢的音乐，并获取歌曲的 <code>ID</code> 。举个例子：（id很明显吧）</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://music.163.com/#/song?id=443205403" target="_blank" rel="external">http://music.163.com/#/song?id=443205403</a></p>
-<p>第二步： 将下面网址中的两处id替换成的歌曲id<br><a href="http://music.163.com/api/song/detail/?id=425137664&amp;ids=[425137664]&amp;csrf_token=" target="_blank" rel="external">http://music.163.com/api/song/detail/?id=425137664&amp;ids=[425137664]&amp;csrf_token=</a><br>你将会获得一大串代码：<u>外链就隐藏其中。</u>。<br>找不到的话就把这段代码复制到编辑器里，ctrl+F 查找 <strong>.mp3</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;songs&quot;:[&#123;&quot;name&quot;:&quot;原来都是梦 &quot;,&quot;id&quot;:425137664,&quot;position&quot;:1,&quot;alias&quot;:[],&quot;status&quot;:0,&quot;fee&quot;:0,&quot;copyrightId&quot;:0,&quot;disc&quot;:&quot;&quot;,&quot;no&quot;:1,&quot;artists&quot;:[&#123;&quot;name&quot;:&quot;李行</div><div class="line">亮&quot;,&quot;id&quot;:4093,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p4.music.126.net/6y</div><div class="line">-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;],&quot;album&quot;:&#123;&quot;name&quot;:&quot;原来都是</div><div class="line">梦&quot;,&quot;id&quot;:34816208,&quot;type&quot;:&quot;EP/Single&quot;,&quot;size&quot;:2,&quot;picId&quot;:3432675310535810,&quot;blurPicUrl&quot;:&quot;http://p3.music.126.net/LNL0l5xhstsgIILEaVkprg==/3432675310535810.jpg&quot;,&quot;companyId&quot;:0,&quot;pic&quot;:3432675310535810,&quot;picUrl&quot;:&quot;http://p3.music.126.net/LNL0l5xhstsgIILEaVkprg==/3432675310535810.jpg&quot;,&quot;publishTime&quot;:1470844800007,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:&quot;&quot;,&quot;company&quot;:&quot;百</div><div class="line">纳娱乐&quot;,&quot;briefDesc&quot;:&quot;&quot;,&quot;artist&quot;:&#123;&quot;name&quot;:&quot;&quot;,&quot;id&quot;:0,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-</div><div class="line">UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;,&quot;songs&quot;:[],&quot;alias&quot;:[],&quot;status&quot;:0,&quot;copyrightId&quot;:0,&quot;commentThreadId&quot;:&quot;R_AL_3_34816208&quot;,&quot;artists&quot;:[&#123;&quot;name&quot;:&quot;李行</div><div class="line">亮&quot;,&quot;id&quot;:4093,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p3.music.126.net/6y-</div><div class="line">UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;],&quot;subType&quot;:&quot;录音室</div><div class="line">版&quot;&#125;,&quot;starred&quot;:false,&quot;popularity&quot;:100.0,&quot;score&quot;:100,&quot;starredNum&quot;:0,&quot;duration&quot;:262500,&quot;playedNum&quot;:0,&quot;dayPlays&quot;:0,&quot;hearTime&quot;:0,&quot;ringtone&quot;:null,&quot;crbt&quot;:null,&quot;audition&quot;:null,&quot;copyFrom&quot;:&quot;&quot;,&quot;commentThreadId&quot;:&quot;R_SO_4_425137664&quot;,&quot;rtUrl&quot;:null,&quot;ftype&quot;:0,&quot;rtUrls&quot;:</div><div class="line">[],&quot;copyright&quot;:0,&quot;rurl&quot;:null,&quot;mvid&quot;:0,&quot;rtype&quot;:0,&quot;bMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538623,&quot;size&quot;:3150725,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605233,&quot;bitrate&quot;:96000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.21&#125;,&quot;mp3Url&quot;:&quot;http://m2.music.126.net/eU871p87-mpm5JcrqnsP2w==/1413971967605233.mp3&quot;,&quot;hMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538621,&quot;size&quot;:10502313,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605231,&quot;bitrate&quot;:320000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.63&#125;,&quot;mMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538622,&quot;size&quot;:5251179,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605232,&quot;bitrate&quot;:160000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.19&#125;,&quot;lMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538623,&quot;size&quot;:3150725,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605233,&quot;bitrate&quot;:96000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.21&#125;&#125;],&quot;equalizers&quot;:&#123;&#125;,&quot;code&quot;:200&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="网易云音乐获取方法"><a href="#网易云音乐获取方法" class="headerlink" title="网易云音乐获取方法"></a>网易云音乐获取方法</h2><p>第一步： 先获取歌曲id，直接打开网易云音乐网页版: <a href="http://music.163.com" rel="external nofollow noopener noreferrer" target="_blank">http://music.163.com</a><br>搜索自己喜欢的音乐，并获取歌曲的 <code>ID</code> 。举个例子：（id很明显吧）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://music.163.com/#/song?id=443205403" rel="external nofollow noopener noreferrer" target="_blank">http://music.163.com/#/song?id=443205403</a></p>
+<p>第二步： 将下面网址中的两处id替换成的歌曲id<br><a href="http://music.163.com/api/song/detail/?id=425137664&amp;ids=[425137664]&amp;csrf_token=" rel="external nofollow noopener noreferrer" target="_blank">http://music.163.com/api/song/detail/?id=425137664&amp;ids=[425137664]&amp;csrf_token=</a><br>你将会获得一大串代码：<u>外链就隐藏其中。</u>。<br>找不到的话就把这段代码复制到编辑器里，ctrl+F 查找 <strong>.mp3</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;songs&quot;:[&#123;&quot;name&quot;:&quot;原来都是梦 &quot;,&quot;id&quot;:425137664,&quot;position&quot;:1,&quot;alias&quot;:[],&quot;status&quot;:0,&quot;fee&quot;:0,&quot;copyrightId&quot;:0,&quot;disc&quot;:&quot;&quot;,&quot;no&quot;:1,&quot;artists&quot;:[&#123;&quot;name&quot;:&quot;李行</div><div class="line">亮&quot;,&quot;id&quot;:4093,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p4.music.126.net/6y</div><div class="line">-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;],&quot;album&quot;:&#123;&quot;name&quot;:&quot;原来都是</div><div class="line">梦&quot;,&quot;id&quot;:34816208,&quot;type&quot;:&quot;EP/Single&quot;,&quot;size&quot;:2,&quot;picId&quot;:3432675310535810,&quot;blurPicUrl&quot;:&quot;http://p3.music.126.net/LNL0l5xhstsgIILEaVkprg==/3432675310535810.jpg&quot;,&quot;companyId&quot;:0,&quot;pic&quot;:3432675310535810,&quot;picUrl&quot;:&quot;http://p3.music.126.net/LNL0l5xhstsgIILEaVkprg==/3432675310535810.jpg&quot;,&quot;publishTime&quot;:1470844800007,&quot;description&quot;:&quot;&quot;,&quot;tags&quot;:&quot;&quot;,&quot;company&quot;:&quot;百</div><div class="line">纳娱乐&quot;,&quot;briefDesc&quot;:&quot;&quot;,&quot;artist&quot;:&#123;&quot;name&quot;:&quot;&quot;,&quot;id&quot;:0,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-</div><div class="line">UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;,&quot;songs&quot;:[],&quot;alias&quot;:[],&quot;status&quot;:0,&quot;copyrightId&quot;:0,&quot;commentThreadId&quot;:&quot;R_AL_3_34816208&quot;,&quot;artists&quot;:[&#123;&quot;name&quot;:&quot;李行</div><div class="line">亮&quot;,&quot;id&quot;:4093,&quot;picId&quot;:0,&quot;img1v1Id&quot;:0,&quot;briefDesc&quot;:&quot;&quot;,&quot;picUrl&quot;:&quot;http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;img1v1Url&quot;:&quot;http://p3.music.126.net/6y-</div><div class="line">UleORITEDbvrOLV0Q8A==/5639395138885805.jpg&quot;,&quot;albumSize&quot;:0,&quot;alias&quot;:[],&quot;trans&quot;:&quot;&quot;,&quot;musicSize&quot;:0&#125;],&quot;subType&quot;:&quot;录音室</div><div class="line">版&quot;&#125;,&quot;starred&quot;:false,&quot;popularity&quot;:100.0,&quot;score&quot;:100,&quot;starredNum&quot;:0,&quot;duration&quot;:262500,&quot;playedNum&quot;:0,&quot;dayPlays&quot;:0,&quot;hearTime&quot;:0,&quot;ringtone&quot;:null,&quot;crbt&quot;:null,&quot;audition&quot;:null,&quot;copyFrom&quot;:&quot;&quot;,&quot;commentThreadId&quot;:&quot;R_SO_4_425137664&quot;,&quot;rtUrl&quot;:null,&quot;ftype&quot;:0,&quot;rtUrls&quot;:</div><div class="line">[],&quot;copyright&quot;:0,&quot;rurl&quot;:null,&quot;mvid&quot;:0,&quot;rtype&quot;:0,&quot;bMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538623,&quot;size&quot;:3150725,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605233,&quot;bitrate&quot;:96000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.21&#125;,&quot;mp3Url&quot;:&quot;http://m2.music.126.net/eU871p87-mpm5JcrqnsP2w==/1413971967605233.mp3&quot;,&quot;hMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538621,&quot;size&quot;:10502313,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605231,&quot;bitrate&quot;:320000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.63&#125;,&quot;mMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538622,&quot;size&quot;:5251179,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605232,&quot;bitrate&quot;:160000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.19&#125;,&quot;lMusic&quot;:</div><div class="line">&#123;&quot;name&quot;:null,&quot;id&quot;:1225538623,&quot;size&quot;:3150725,&quot;extension&quot;:&quot;mp3&quot;,&quot;sr&quot;:44100,&quot;dfsId&quot;:1413971967605233,&quot;bitrate&quot;:96000,&quot;playTime&quot;:262500,&quot;volumeDelta&quot;:-2.21&#125;&#125;],&quot;equalizers&quot;:&#123;&#125;,&quot;code&quot;:200&#125;</div></pre></td></tr></table></figure></p>
 <p>第三步： 将上一步中获取到的网址放到地址栏中，若能正常播放音乐说明获取到的网址是正确的。然后你就可以把这些歌曲添加到自己的网页中了！！</p>
 <p></p><p id="border-red">用这种方法有些歌曲并不能获得，不过时效很长（只要网易云能听）</p><p></p>
 ]]></content>
@@ -1829,8 +1829,8 @@
   
   <entry>
     <title>Markdown 使用中常见的问题及解决方法</title>
-    <link href="http://yoursite.com/2017/02/14/markdown/"/>
-    <id>http://yoursite.com/2017/02/14/markdown/</id>
+    <link href="http://yoursite.com/2017-02-14/markdown/"/>
+    <id>http://yoursite.com/2017-02-14/markdown/</id>
     <published>2017-02-14T13:05:06.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
@@ -1838,9 +1838,9 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就像 Markdown 官方文档里描述的一样：<strong><em>可读性，无论如何，都是最重要的。</em></strong> Markdown 的目标是实现 &nbsp; <span id="yu-1">『易读易写』</span> 。&nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。</p>
 <a id="more"></a>
 <h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>其实自己喜欢的才是最好的。(像 vim 、emacs什么的不推荐，因为我也不会用)</p>
-<h3 id="MAC平台"><a href="#MAC平台" class="headerlink" title="MAC平台"></a>MAC平台</h3><p>自己没用过，不做推荐。你可以看看这个帖子：<a href="https://www.zhihu.com/question/28886671" target="_blank" rel="external">Mac 上适合码农用的 Markdown 编辑器是什么？</a></p>
-<h3 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h3><h4 id="印象笔记"><a href="#印象笔记" class="headerlink" title="印象笔记"></a>印象笔记</h4><p><a href="https://maxiang.io/" target="_blank" rel="external">马克飞象传送门</a>，界面不是很好看，书写的时候感觉很别扭</p>
-<h4 id="有道云笔记"><a href="#有道云笔记" class="headerlink" title="有道云笔记"></a>有道云笔记</h4><p><a href="http://note.youdao.com/" target="_blank" rel="external">有道传送门</a>，同样很丑，强迫症受不了</p>
+<h3 id="MAC平台"><a href="#MAC平台" class="headerlink" title="MAC平台"></a>MAC平台</h3><p>自己没用过，不做推荐。你可以看看这个帖子：<a href="https://www.zhihu.com/question/28886671" rel="external nofollow noopener noreferrer" target="_blank">Mac 上适合码农用的 Markdown 编辑器是什么？</a></p>
+<h3 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h3><h4 id="印象笔记"><a href="#印象笔记" class="headerlink" title="印象笔记"></a>印象笔记</h4><p><a href="https://maxiang.io/" rel="external nofollow noopener noreferrer" target="_blank">马克飞象传送门</a>，界面不是很好看，书写的时候感觉很别扭</p>
+<h4 id="有道云笔记"><a href="#有道云笔记" class="headerlink" title="有道云笔记"></a>有道云笔记</h4><p><a href="http://note.youdao.com/" rel="external nofollow noopener noreferrer" target="_blank">有道传送门</a>，同样很丑，强迫症受不了</p>
 <h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><p>强大的 Sublime Text 总是能给我们很多惊喜，经过各种对比，sublime 满足了我对审美的要求。首先我们需要安装两个插件：（至于怎么安装就不说了）</p>
 <ul>
 <li><strong>markdownEditing</strong> 用来书写</li>
@@ -1853,18 +1853,18 @@
 <li><strong>markdown-writer</strong> 方便管理图片链接等</li>
 <li><strong>markdown-table-formatte</strong> 表格格式化</li>
 </ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><a href="http://www.markdown.cn/" target="_blank" rel="external">Markdown官方文档</a></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><a href="http://www.markdown.cn/" rel="external nofollow noopener noreferrer" target="_blank">Markdown官方文档</a></p>
 <h2 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h2><h3 id="html标签显示"><a href="#html标签显示" class="headerlink" title="html标签显示"></a>html标签显示</h3><p>比如说我要写一篇博客，标题为“html中 &lt;canvas&gt; 的使用”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">## html中 &lt;canvas&gt; 的使用</div></pre></td></tr></table></figure></p>
 <p>如果这样写就会出现排版上的问题（不信你试一下），那么怎么解决呢？其实认真想一下就能明白，Markdown 的语法是基于 html 的，我们直接写 &lt;canvas&gt;，自然会被理解为一个标签，而不是要显示的文本。。所以，问题回归到 html 上。在网页中，我们要显示 &lt;canvas&gt; 时要用到 <code>转义字符</code>, 所以 Markdown 中也一样，我们应该这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">## html中 &amp;lt;canvas&amp;gt; 的使用</div></pre></td></tr></table></figure></p>
 <h3 id="代码语法高亮"><a href="#代码语法高亮" class="headerlink" title="代码语法高亮"></a>代码语法高亮</h3><p>这个问题困扰了我好久，官方文档里竟然没有说明！只好自己去查找方法。Markdown 中显示代码块是这样的格式：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown01.png" alt="Markdown"><br>显示为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;这是一个p标签&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>而我们这样写：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown02.png" alt="Markdown"><br>就可以实现代码高亮了<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个p标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>据说这种方式一共支持四十多种语言，有兴趣的话你可以研究一下。</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>Markdown 中嵌入图片，如果使用本地图片就要用到 html 标签来引用，这种方法很稳定，但是使文档变得很大（一张图片最少几百k吧）。所以我们要用到 <strong>图床</strong> 。</p>
-<h4 id="贴图库"><a href="#贴图库" class="headerlink" title="贴图库"></a>贴图库</h4><p>推荐使用 &nbsp; <a href="http://www.tietuku.com/" target="_blank" rel="external">贴图库</a>  &nbsp;快速，免费（我使用过程中没掉过链子）</p>
+<h4 id="贴图库"><a href="#贴图库" class="headerlink" title="贴图库"></a>贴图库</h4><p>推荐使用 &nbsp; <a href="http://www.tietuku.com/" rel="external nofollow noopener noreferrer" target="_blank">贴图库</a>  &nbsp;快速，免费（我使用过程中没掉过链子）</p>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/markdown03.png" alt="Markdown"></p>
 <p>注册登录，就可以上传图片，每张图片自动生成 <strong>原图</strong>、<strong>展示图</strong>和 <strong>缩略图</strong>的<u>图片外链</u>、<u>html代码</u>、<u>Markdown外链</u>等。只要把对应的代码粘贴到你的文档中就可以了。。</p>
 <h4 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h4><p>这个最近很火，可靠、可扩展、低成本等等有很多优点。你可以试一下。<br>我们主要用到他的 <strong>对象存储</strong> 服务，创建一个公开仓库，把图片上传就可以生成外链了。</p>
-<h3 id="gif"><a href="#gif" class="headerlink" title="gif"></a>gif</h3><p>Github 上的开源项目，ReadMe.md 是也支持 Markdown 语法的，通常会看到很多开源项目的 ReadMe 中有 <strong>动态演示</strong>效果，看到这个项目的人一目了然，非常方便，gif本身也是一种图片格式，在 Markdown 中 <em>引用时和正常图片的引用一样</em>，但需要专门的工具生成 gif 格式的图片才行，在这里强烈推荐 <a href="http://www.cockos.com/licecap/" target="_blank" rel="external">LICEcap</a>，它是一款 windows 上的录屏软件，录制后保存的格式为 gif，体积小并且同样也可以在图床上生成链接。</p>
+<h3 id="gif"><a href="#gif" class="headerlink" title="gif"></a>gif</h3><p>Github 上的开源项目，ReadMe.md 是也支持 Markdown 语法的，通常会看到很多开源项目的 ReadMe 中有 <strong>动态演示</strong>效果，看到这个项目的人一目了然，非常方便，gif本身也是一种图片格式，在 Markdown 中 <em>引用时和正常图片的引用一样</em>，但需要专门的工具生成 gif 格式的图片才行，在这里强烈推荐 <a href="http://www.cockos.com/licecap/" rel="external nofollow noopener noreferrer" target="_blank">LICEcap</a>，它是一款 windows 上的录屏软件，录制后保存的格式为 gif，体积小并且同样也可以在图床上生成链接。</p>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/markdown04.gif" alt="Markdown"></p>
 <h3 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h3><p>你可以把音乐文件下载到本地，然后简单粗暴的使用 html 中的 &lt;video&gt; 标签。当然，如果这样就不必写下去了，告诉你简单的方法：<strong>网易云音乐</strong></p>
 <p>打开网易云音乐网页版，搜索自己喜欢的音乐，比如我找到 <strong>告白气球</strong></p>
@@ -1890,8 +1890,8 @@
   
   <entry>
     <title>简单博文加密</title>
-    <link href="http://yoursite.com/2017/02/07/encrypt/"/>
-    <id>http://yoursite.com/2017/02/07/encrypt/</id>
+    <link href="http://yoursite.com/2017-02-07/encrypt/"/>
+    <id>http://yoursite.com/2017-02-07/encrypt/</id>
     <published>2017-02-07T02:16:31.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
@@ -1908,7 +1908,7 @@
 <p>这里有必要解释一下 <code>page.password</code> 是什么东西。以下我给出这篇文章的头部参考：<br>首先 <code>page</code> 是一个变量，你可以理解为这篇文章。以下面的代码为参考，那么 <code>page.title = 最简单的翻墙方法; page.comments = fasle;</code>（很好理解吧）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure>
 <p>所以，要想加密博文，我们要为文章加上 <code>password</code> 属性。<code>description</code> 属性用于对文章进行描述。（加密下显示内容）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">description: 文章访问密码：password</div><div class="line">password: password</div></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这种方式只能说是一点小技巧的应用吧，在大神面前可能不管用，但足以阻挡大多数用户。<br>更完美的博文加密方式请参考：<a href="http://edolphin.site/2016/05/31/encrypt-post/" target="_blank" rel="external">加密博客内容，使用密码访问</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这种方式只能说是一点小技巧的应用吧，在大神面前可能不管用，但足以阻挡大多数用户。<br>更完美的博文加密方式请参考：<a href="http://edolphin.site/2016/05/31/encrypt-post/" rel="external nofollow noopener noreferrer" target="_blank">加密博客内容，使用密码访问</a></p>
 ]]></content>
     
     <summary type="html">
@@ -1930,14 +1930,14 @@
   
   <entry>
     <title>HEXO+GitHub搭建博客 - 优化</title>
-    <link href="http://yoursite.com/2017/01/25/hexo2/"/>
-    <id>http://yoursite.com/2017/01/25/hexo2/</id>
+    <link href="http://yoursite.com/2017-01-25/hexo2/"/>
+    <id>http://yoursite.com/2017-01-25/hexo2/</id>
     <published>2017-01-25T13:37:01.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
     <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
 
-<p>本篇文章主要介绍基于NexT主题的一些第三方功能的实现。<br>基本功能的设置可以参考<a href="http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg" target="_blank" rel="external">Next官网文档</a></p>
+<p>本篇文章主要介绍基于NexT主题的一些第三方功能的实现。<br>基本功能的设置可以参考<a href="http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg" rel="external nofollow noopener noreferrer" target="_blank">Next官网文档</a></p>
 <a id="more"></a>
 <p>首先，我们需要明白：</p>
 <p id="border-yellow"> 在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code> 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>我们约定，将前者称为<span id="inline-blue"> 站点配置文件 </span>，后者称为 <span id="inline-purple">主题配置文件</span>。</p>
@@ -1946,14 +1946,14 @@
 <p>然后在 <code>themes\source\js\src\</code> 下新建文件 <code>particle.js</code> 写上以下代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params">n,e,t</span>)</span>&#123;<span class="keyword">return</span> n.getAttribute(e)||t&#125;<span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">document</span>.getElementsByTagName(n)&#125;<span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=e(<span class="string">"script"</span>),o=t.length,i=t[o<span class="number">-1</span>];<span class="keyword">return</span>&#123;<span class="attr">l</span>:o,<span class="attr">z</span>:n(i,<span class="string">"zIndex"</span>,<span class="number">-1</span>),<span class="attr">o</span>:n(i,<span class="string">"opacity"</span>,<span class="number">.5</span>),<span class="attr">c</span>:n(i,<span class="string">"color"</span>,<span class="string">"0,0,0"</span>),<span class="attr">n</span>:n(i,<span class="string">"count"</span>,<span class="number">99</span>)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;c=u.width=<span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth,a=u.height=<span class="built_in">window</span>.innerHeight||<span class="built_in">document</span>.documentElement.clientHeight||<span class="built_in">document</span>.body.clientHeight&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params"></span>)</span>&#123;l.clearRect(<span class="number">0</span>,<span class="number">0</span>,c,a);<span class="keyword">var</span> n,e,t,o,u,d,x=[w].concat(y);y.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="keyword">for</span>(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;c||i.x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,i.ya*=i.y&gt;a||i.y&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,l.fillRect(i.x<span class="number">-.5</span>,i.y<span class="number">-.5</span>,<span class="number">1</span>,<span class="number">1</span>),e=<span class="number">0</span>;e&lt;x.length;e++)n=x[e],i!==n&amp;&amp;<span class="literal">null</span>!==n.x&amp;&amp;<span class="literal">null</span>!==n.y&amp;&amp;(o=i.x-n.x,u=i.y-n.y,d=o*o+u*u,d&lt;n.max&amp;&amp;(n===w&amp;&amp;d&gt;=n.max/<span class="number">2</span>&amp;&amp;(i.x-=<span class="number">.03</span>*o,i.y-=<span class="number">.03</span>*u),t=(n.max-d)/n.max,l.beginPath(),l.lineWidth=t/<span class="number">2</span>,l.strokeStyle=<span class="string">"rgba("</span>+m.c+<span class="string">","</span>+(t+<span class="number">.2</span>)+<span class="string">")"</span>,l.moveTo(i.x,i.y),l.lineTo(n.x,n.y),l.stroke()));x.splice(x.indexOf(i),<span class="number">1</span>)&#125;),r(i)&#125;<span class="keyword">var</span> c,a,u=<span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),m=t(),d=<span class="string">"c_n"</span>+m.l,l=u.getContext(<span class="string">"2d"</span>),r=<span class="built_in">window</span>.requestAnimationFrame||<span class="built_in">window</span>.webkitRequestAnimationFrame||<span class="built_in">window</span>.mozRequestAnimationFrame||<span class="built_in">window</span>.oRequestAnimationFrame||<span class="built_in">window</span>.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="built_in">window</span>.setTimeout(n,<span class="number">1e3</span>/<span class="number">45</span>)&#125;,x=<span class="built_in">Math</span>.random,w=&#123;<span class="attr">x</span>:<span class="literal">null</span>,<span class="attr">y</span>:<span class="literal">null</span>,<span class="attr">max</span>:<span class="number">2e4</span>&#125;;u.id=d,u.style.cssText=<span class="string">"position:fixed;top:0;left:0;z-index:"</span>+m.z+<span class="string">";opacity:"</span>+m.o,e(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(u),o(),<span class="built_in">window</span>.onresize=o,<span class="built_in">window</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;n=n||<span class="built_in">window</span>.event,w.x=n.clientX,w.y=n.clientY&#125;,<span class="built_in">window</span>.onmouseout=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;w.x=<span class="literal">null</span>,w.y=<span class="literal">null</span>&#125;;<span class="keyword">for</span>(<span class="keyword">var</span> y=[],s=<span class="number">0</span>;m.n&gt;s;s++)&#123;<span class="keyword">var</span> f=x()*c,h=x()*a,g=<span class="number">2</span>*x()<span class="number">-1</span>,p=<span class="number">2</span>*x()<span class="number">-1</span>;y.push(&#123;<span class="attr">x</span>:f,<span class="attr">y</span>:h,<span class="attr">xa</span>:g,<span class="attr">ya</span>:p,<span class="attr">max</span>:<span class="number">6e3</span>&#125;)&#125;setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;i()&#125;,<span class="number">100</span>)&#125;();</div></pre></td></tr></table></figure></p>
 <h4 id="鼠标点击小红心"><a href="#鼠标点击小红心" class="headerlink" title="鼠标点击小红心"></a>鼠标点击小红心</h4><p>在 <code>\themes\next\source\js\src</code> 文件目录下添加 <code>love.js</code> 文件。内容为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;<span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</div></pre></td></tr></table></figure></p>
 <p>找到 <code>\themes\next\layout\_layout.swing</code> 文件， 在文件的后面， 标签之前 添加以下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 小红心 --&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<h3 id="头像圆形旋转"><a href="#头像圆形旋转" class="headerlink" title="头像圆形旋转"></a>头像圆形旋转</h3><p>修改文件 <code>themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code><br><a href="https://github.com/cwyaml/blog-backup/blob/master/themes/next-5.0.1/source/css/_common/components/sidebar/sidebar-author.styl" target="_blank" rel="external">我的样式文件</a></p>
+<h3 id="头像圆形旋转"><a href="#头像圆形旋转" class="headerlink" title="头像圆形旋转"></a>头像圆形旋转</h3><p>修改文件 <code>themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code><br><a href="https://github.com/cwyaml/blog-backup/blob/master/themes/next-5.0.1/source/css/_common/components/sidebar/sidebar-author.styl" rel="external nofollow noopener noreferrer" target="_blank">我的样式文件</a></p>
 <h3 id="文章结尾模板"><a href="#文章结尾模板" class="headerlink" title="文章结尾模板"></a>文章结尾模板</h3><p>在 <code>\themes\next\_macro</code> 文件目录下添加 <code>passage-end-tag.swig</code> 文件，内容为：(当然你也可以修改为自己喜欢的样式)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.passage_end_tag.enabled %&#125;</div><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>如果您觉得本博客还不错，欢迎继续关注本博客，欢迎多提宝贵意见，非常感谢！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"inline-green"</span> <span class="attr">style</span>=<span class="string">"border-radius:3px;"</span>&gt;</span>作者<span class="tag">&lt;/<span class="name">span</span>&gt;</span>：</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://github.com/cwyaml"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>cwyaml<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">有问题请 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://cwyaml.github.io/about/"</span>&gt;</span>留言<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line">或者私信我的 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"http://weibo.com/u/5742789641?refer_flag=1001030102_&amp;is_all=1"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center; color:#ccc; font-size:14px; "</span>&gt;</span></div><div class="line"> ------本文结束</div><div class="line"> &amp;nbsp;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-paw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&amp;nbsp; </div><div class="line"> 感谢阅读------</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
 <p>找到 <code>\themes\next\_macro\post.swig</code> 文件，使用查找功能找到 <code>reward.swig</code>，在这一个 <code>&lt;div&gt;</code> 的前面添加：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;% if not is_index %&#125;</div><div class="line">    &#123;% include 'passage-end-tag.swig' %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="文章底部标签云锚点"><a href="#文章底部标签云锚点" class="headerlink" title="文章底部标签云锚点"></a>文章底部标签云锚点</h3><p>在 <code>themes\next\layout\_macro\post.swig</code> 文件中找到以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"post-footer"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--这是文章底部标签云锚点，不喜欢就注释掉</span></div><div class="line">  &#123;% if post.tags and post.tags.length and not is_index %&#125;</div><div class="line">    &lt;div class="post-tags"&gt;</div><div class="line">      &#123;% for tag in post.tags %&#125;</div><div class="line">        &lt;a href="&#123;&#123; url_for(tag.path) &#125;&#125;" rel="tag"&gt;# &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</div><div class="line">      &#123;% endfor %&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &#123;% endif %&#125;</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
 <h3 id="关于文章内文本样式"><a href="#关于文章内文本样式" class="headerlink" title="关于文章内文本样式"></a>关于文章内文本样式</h3><p>Markdown 毕竟是为了方便写作，在样式上就过于单调。我们自己来给文章加一些样式。。</p>
 <p></p><p id="border-red"> Next 作者提供了一个供用户自己定义样式的文件：<code>\themes\next\source\css\_custom\custom.stl</code> </p>  <p></p>
-<h4 id="自己按需要写"><a href="#自己按需要写" class="headerlink" title="自己按需要写"></a>自己按需要写</h4><p>在上述文件中写上自己的 class 类，然后在 Markdown 文档中使用。<br><a href="https://github.com/cwyaml/Useful-code/blob/master/custom.styl" target="_blank" rel="external">我的custom.styl</a></p>
-<h4 id="引用前端框架"><a href="#引用前端框架" class="headerlink" title="引用前端框架"></a>引用前端框架</h4><p>目前流行的前端框架，像 <a href="http://www.bootcss.com/" target="_blank" rel="external">bootstrap</a>、<a href="http://reactjs.cn/react/index.html" target="_blank" rel="external">React</a>、<a href="http://www.apjs.net/" target="_blank" rel="external">Angular</a> 等，提供给我们很好的前端方案，我们可以把喜欢的引入到上面说的那个文件里，然后就可以使用了。</p>
+<h4 id="自己按需要写"><a href="#自己按需要写" class="headerlink" title="自己按需要写"></a>自己按需要写</h4><p>在上述文件中写上自己的 class 类，然后在 Markdown 文档中使用。<br><a href="https://github.com/cwyaml/Useful-code/blob/master/custom.styl" rel="external nofollow noopener noreferrer" target="_blank">我的custom.styl</a></p>
+<h4 id="引用前端框架"><a href="#引用前端框架" class="headerlink" title="引用前端框架"></a>引用前端框架</h4><p>目前流行的前端框架，像 <a href="http://www.bootcss.com/" rel="external nofollow noopener noreferrer" target="_blank">bootstrap</a>、<a href="http://reactjs.cn/react/index.html" rel="external nofollow noopener noreferrer" target="_blank">React</a>、<a href="http://www.apjs.net/" rel="external nofollow noopener noreferrer" target="_blank">Angular</a> 等，提供给我们很好的前端方案，我们可以把喜欢的引入到上面说的那个文件里，然后就可以使用了。</p>
 <h3 id="设置动态title"><a href="#设置动态title" class="headerlink" title="设置动态title"></a>设置动态title</h3><ul>
 <li><p>在 <code>\themes\next\source\js\src</code> 目录下新建 <code>dytitle.js</code> 。添加以下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!--崩溃欺骗--&gt;</div><div class="line">var OriginTitile = document.title;</div><div class="line"> var titleTime;</div><div class="line"> document.addEventListener(&apos;visibilitychange&apos;, function () &#123;</div><div class="line">     if (document.hidden) &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/img/TEP.ico&quot;);</div><div class="line">         document.title = &apos; 页面崩溃啦 ~ | cwyaml！&apos;;</div><div class="line">         clearTimeout(titleTime);</div><div class="line">     &#125;</div><div class="line">     else &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/favicon.ico&quot;);</div><div class="line">         document.title = &apos; 噫又好了~ &apos; + OriginTitile;</div><div class="line">         titleTime = setTimeout(function () &#123;</div><div class="line">             document.title = OriginTitile;</div><div class="line">         &#125;, 2000);</div><div class="line">     &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
@@ -1975,7 +1975,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  position: relative;</div><div class="line">  margin: 0 auto;</div><div class="line">  width: 1060px;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h3><h4 id="文章阅读次数统计"><a href="#文章阅读次数统计" class="headerlink" title="文章阅读次数统计"></a>文章阅读次数统计</h4><p>参考： <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">LeanCloud</a></p>
+<h3 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h3><h4 id="文章阅读次数统计"><a href="#文章阅读次数统计" class="headerlink" title="文章阅读次数统计"></a>文章阅读次数统计</h4><p>参考： <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" rel="external nofollow noopener noreferrer" target="_blank">LeanCloud</a></p>
 <h4 id="不蒜子统计站点访问"><a href="#不蒜子统计站点访问" class="headerlink" title="不蒜子统计站点访问"></a>不蒜子统计站点访问</h4><ul>
 <li><strong>全局配置：</strong><br>编辑 <span id="inline-purple">主题配置文件</span> 中的 <code>busuanzi_count</code> 的配置项，配置以下内容：<br>当 <strong>enable: true</strong> 时，代表开启全局开关。若 <u>site_uv、site_pv、page_pv</u> 的值均为 <strong>false</strong> 时，不蒜子仅作记录而不会在页面上显示。</li>
 <li><p><strong>站点 UV/PV 配置：</strong><br>当 <strong>site_uv: true</strong> 时，代表在页面底部显示站点的 UV 值。<br>当 <strong>site_pv: true</strong> 时，代表在页面底部显示站点的 PV 值<br><strong>site_uv_header</strong>(site_pv_header) 和 <strong>site_uv_footer</strong>(site_pv_footer) 为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<u>font-awesome</u>。显示效果为 <strong>[site_uv_header]UV值/PV值[site_uv_footer]</strong>。</p>
@@ -1987,7 +1987,7 @@
 </ul>
 <h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>越来越多的平台（微信公众平台，新浪微博，简书等）支持打赏功能，付费阅读时代越来越近，特此增加了打赏功能。 只需要 <span id="inline-purple">主题配置文件</span> 中填入 微信 和 支付宝 收款二维码图片地址（放在博客根目录的source文件夹下即可） 即可开启该功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</div><div class="line">wechatpay: /weixin.png</div><div class="line">alipay: /zhifubao.png</div></pre></td></tr></table></figure></p>
 <h3 id="设置RSS"><a href="#设置RSS" class="headerlink" title="设置RSS"></a>设置RSS</h3><ul>
-<li><p>需要安装 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a> 插件。</p>
+<li><p>需要安装 <a href="https://github.com/hexojs/hexo-generator-feed" rel="external nofollow noopener noreferrer" target="_blank">hexo-generator-feed</a> 插件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
 </li>
 <li><p>在 <span id="inline-blue"> 站点配置文件 </span> 中添加字段：</p>
@@ -1995,7 +1995,7 @@
 </li>
 </ul>
 <h3 id="听音乐"><a href="#听音乐" class="headerlink" title="听音乐"></a>听音乐</h3><ul>
-<li><strong>下载js文件：</strong><a href="https://github.com/cwyaml/Useful-code/blob/master/high.swig" target="_blank" rel="external">high.swig</a>。放在 <code>\themes\next\layout\_macro</code> 目录下。</li>
+<li><strong>下载js文件：</strong><a href="https://github.com/cwyaml/Useful-code/blob/master/high.swig" rel="external nofollow noopener noreferrer" target="_blank">high.swig</a>。放在 <code>\themes\next\layout\_macro</code> 目录下。</li>
 <li><p><strong>在侧边栏引用该文件：</strong>修改 <code>\themes\next\layout\_macro\sidebar.swig</code> ，添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &apos;high.swig&apos; %&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/hexo01.png" alt="Markdown"></p>
@@ -2004,7 +2004,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</div></pre></td></tr></table></figure>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/hexo02.png" alt="Markdown"></p>
 </li>
-<li><p><strong>添加自己喜欢的音乐：</strong>修改其中的歌曲链接即可（<a href="https://cwyaml.github.io/2017/03/02/wangyimusic/" target="_blank" rel="external">获取歌曲外链教程</a>）</p>
+<li><p><strong>添加自己喜欢的音乐：</strong>修改其中的歌曲链接即可（<a href="https://cwyaml.github.io/2017/03/02/wangyimusic/" rel="external nofollow noopener noreferrer" target="_blank">获取歌曲外链教程</a>）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> songs = [</div><div class="line">      <span class="string">"http://m2.music.126.net/3uHnH7uQAeFwUfuvEB9lrg==/3265549619475054.mp3"</span>, </div><div class="line">      <span class="string">"http://m2.music.126.net/NnHwR2HV-1OoKZ6R5LVy4Q==/18502581673300023.mp3"</span>,</div><div class="line">      <span class="string">"http://m2.music.126.net/qv3RI4K7ABKJ0TyAdb3taw==/3250156397064860.mp3"</span>,    </div><div class="line">      <span class="string">"......"</span></div><div class="line">  ];</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>首页听音乐摇晃：</strong>需要加载css样式。在 <code>themes\next\layout\_layout.swig</code> 文件的 <u>body标签结束前</u> 添加以下代码：</p>
@@ -2012,7 +2012,7 @@
 <p><span id="inline-red">注意：</span> 有时候使用 Firefox 、Chrome时会提示非法插件并禁止使用，遇到这种情况我们把样式代码引入到 <code>\themes\next\source\css\_custom\custom.stl</code> 文件即可解决。</p>
 </li>
 </ul>
-<h3 id="添加-Forkme-on-GitHub-丝带"><a href="#添加-Forkme-on-GitHub-丝带" class="headerlink" title="添加 Forkme on GitHub 丝带"></a>添加 Forkme on GitHub 丝带</h3><p>首先进入 <a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">GitHub Ribbons</a> 选择自己喜欢的丝带样式。<br>找到 <code>\themes\next\layout\_layout.swig</code> 文件，在 <code>&lt;header&gt;</code> 标签前面添加：（记得把链接修改成自己的GitHub主页）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/you"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="添加-Forkme-on-GitHub-丝带"><a href="#添加-Forkme-on-GitHub-丝带" class="headerlink" title="添加 Forkme on GitHub 丝带"></a>添加 Forkme on GitHub 丝带</h3><p>首先进入 <a href="https://github.com/blog/273-github-ribbons" rel="external nofollow noopener noreferrer" target="_blank">GitHub Ribbons</a> 选择自己喜欢的丝带样式。<br>找到 <code>\themes\next\layout\_layout.swig</code> 文件，在 <code>&lt;header&gt;</code> 标签前面添加：（记得把链接修改成自己的GitHub主页）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/you"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="给-Blog-添加-LICENSE"><a href="#给-Blog-添加-LICENSE" class="headerlink" title="给 Blog 添加 LICENSE"></a>给 Blog 添加 LICENSE</h3><p>修改 <span id="inline-purple">主题配置文件</span> （使用查找功能）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
 <h3 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h3><ul>
 <li><p>安装 hexo-generator-searchdb</p>
@@ -2025,7 +2025,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h3><h4 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a>多说评论</h4><p>使用多说前需要先在 <a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 创建一个站点。具体步骤如下：</p>
+<h3 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h3><h4 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a>多说评论</h4><p>使用多说前需要先在 <a href="http://duoshuo.com/" rel="external nofollow noopener noreferrer" target="_blank">多说</a> 创建一个站点。具体步骤如下：</p>
 <ul>
 <li>登录后在首页选择“我要安装”。</li>
 <li>创建站点，填写站点相关信息。<strong>多说域名</strong> 这一栏填写的就是你的 <code>duoshuo_shortname</code>,</li>
@@ -2034,17 +2034,17 @@
 <ul>
 <li>创建站点完成后在 <span id="inline-blue"> 站点配置文件 </span> 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值即可。</li>
 </ul>
-<p><strong>多说评论框自定义</strong> : <a href="https://github.com/cwyaml/code-useful/blob/master/%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA%E6%A1%86%E6%A0%B7%E5%BC%8F/index.css" target="_blank" rel="external">我的样式代码</a></p>
+<p><strong>多说评论框自定义</strong> : <a href="https://github.com/cwyaml/code-useful/blob/master/%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA%E6%A1%86%E6%A0%B7%E5%BC%8F/index.css" rel="external nofollow noopener noreferrer" target="_blank">我的样式代码</a></p>
 <h4 id="多说分享"><a href="#多说分享" class="headerlink" title="多说分享"></a>多说分享</h4><p>在 <span id="inline-purple">主题配置文件</span> 中设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Share</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
 <p>禁用鼠标经过时分享更多功能（有bug）:<br>找到 <code>\themes\next\layout\_partials\share\duoshuo_share.swig</code> 文件，替换内容为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share flat"</span> <span class="attr">data-thread-key</span>=<span class="string">"&#123;&#123; page.path &#125;&#125;"</span></span></div><div class="line">  <span class="attr">data-title</span>=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span></div><div class="line">  <span class="attr">data-content</span>=<span class="string">""</span></div><div class="line">  <span class="attr">data-url</span>=<span class="string">"&#123;&#123; page.permalink &#125;&#125;"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-inline"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>  <span class="attr">class</span>=<span class="string">"ds-share-icons-16"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds-more"</span>&gt;</span>分享到：<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-weibo"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"weibo"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qzone"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qzone"</span>&gt;</span>QQ空间<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qqt"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qqt"</span>&gt;</span>腾讯微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-wechat"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"wechat"</span>&gt;</span>微信<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-facebook"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"facebook"</span>&gt;</span>Facebook<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-google"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"google"</span>&gt;</span>Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-icons-more"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="博文压缩"><a href="#博文压缩" class="headerlink" title="博文压缩"></a>博文压缩</h3><p>目前知道的有两个插件可以压缩博文，<code>hexo-all-minifier</code> 插件和 <code>gulp</code>插件。<br><strong>hexo-all-minifier</strong> 虽然使用比较简单，而且也可以压缩图片，但是对文章缩进（输入法全拼模式下按 Tab）不支持，所以暂时使用 gulp 压缩手段。</p>
 <h4 id="hexo-all-minifier-使用方法"><a href="#hexo-all-minifier-使用方法" class="headerlink" title="hexo-all-minifier 使用方法"></a>hexo-all-minifier 使用方法</h4><p>安装 hexo-all-minifier，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-all-minifier --save</div></pre></td></tr></table></figure></p>
-<p><code>hexo g</code> 编译的时候就会自动压缩 HTML、JS、图片。详情参考插件介绍 <a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="external">hexo-all-minifier</a></p>
+<p><code>hexo g</code> 编译的时候就会自动压缩 HTML、JS、图片。详情参考插件介绍 <a href="https://github.com/chenzhutian/hexo-all-minifier" rel="external nofollow noopener noreferrer" target="_blank">hexo-all-minifier</a></p>
 <h4 id="glup-使用方法"><a href="#glup-使用方法" class="headerlink" title="glup 使用方法"></a>glup 使用方法</h4><p>hexo 依赖 gulp 插件安装，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install gulp -g</div><div class="line">$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure></p>
 <p>在 <code>package.json</code> 同级目录下，新建 <code>gulpfile.js</code> 并填入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">var minifycss = require(&apos;gulp-minify-css&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">var htmlmin = require(&apos;gulp-htmlmin&apos;);</div><div class="line">var htmlclean = require(&apos;gulp-htmlclean&apos;);</div><div class="line">// 压缩 public 目录 css</div><div class="line">gulp.task(&apos;minify-css&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.css&apos;)</div><div class="line">        .pipe(minifycss())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 压缩 public 目录 html</div><div class="line">gulp.task(&apos;minify-html&apos;, function() &#123;</div><div class="line">  return gulp.src(&apos;./public/**/*.html&apos;)</div><div class="line">    .pipe(htmlclean())</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">         removeComments: true,</div><div class="line">         minifyJS: true,</div><div class="line">         minifyCSS: true,</div><div class="line">         minifyURLs: true,</div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(&apos;./public&apos;))</div><div class="line">&#125;);</div><div class="line">// 压缩 public/js 目录 js</div><div class="line">gulp.task(&apos;minify-js&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.js&apos;)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 执行 gulp 命令时执行的任务</div><div class="line">gulp.task(&apos;default&apos;, [</div><div class="line">    &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
 <p>生成博文是执行 <code>hexo g &amp;amp;&amp;amp; gulp</code> 就会根据 <strong>gulpfile.js</strong> 中的配置，对 <strong>public</strong> 目录中的静态资源文件进行压缩。</p>
 <h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><ul>
-<li>修改 <code>hexo-generator-index</code> 插件。<br>替换文件：node_modules/hexo-generator-index/lib/generator.js 为：<a href="https://github.com/cwyaml/Useful-code/blob/master/generator%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9/generator.js" target="_blank" rel="external">generator.js</a></li>
+<li>修改 <code>hexo-generator-index</code> 插件。<br>替换文件：node_modules/hexo-generator-index/lib/generator.js 为：<a href="https://github.com/cwyaml/Useful-code/blob/master/generator%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9/generator.js" rel="external nofollow noopener noreferrer" target="_blank">generator.js</a></li>
 <li>设置文章置顶<br>在文章 Front-matter 中添加 <strong>top 值</strong>，<u>数值越大文章越靠前</u>，如：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: cwyaml 图集</div><div class="line">categories: [图片]</div><div class="line">tags: [picture]</div><div class="line">date: 2015-04-02 14:36:04</div><div class="line">top: 10</div><div class="line">---</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -2056,7 +2056,7 @@
     
       &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2071,36 +2071,36 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 配置</title>
-    <link href="http://yoursite.com/2016/12/24/hexo1/"/>
-    <id>http://yoursite.com/2016/12/24/hexo1/</id>
+    <link href="http://yoursite.com/2016-12-24/hexo1/"/>
+    <id>http://yoursite.com/2016-12-24/hexo1/</id>
     <published>2016-12-24T14:23:58.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>本篇文章主要介绍怎样利用 <code>Hexo + Next</code> 在 <code>GitHub</code> 上搭建个人博客。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;&nbsp;<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，基于 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 。 它有以下特点：</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;&nbsp;<a href="https://hexo.io/zh-cn/" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，基于 <a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js</a> 。 它有以下特点：</p>
 <a id="more"></a>
 <ul>
 <li><i class="fa fa-bolt"></i>  <strong>超快速度</strong><br><i>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</i></li>
 <li><i class="fa fa-pencil"></i>  <strong>支持Markdown</strong><br><i>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</i></li>
 <li><i class="fa fa-cloud-upload"></i>  <strong>一件部署</strong><br><i>只需一条指令即可部署到Github Pages，或其他网站</i></li>
-<li><i class="fa fa-cog"></i>  <strong>丰富的插件</strong><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i><br>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">标签插件</a> 来快速的插入特定形式的内容。</li>
+<li><i class="fa fa-cog"></i>  <strong>丰富的插件</strong><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i><br>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" rel="external nofollow noopener noreferrer" target="_blank">标签插件</a> 来快速的插入特定形式的内容。</li>
 </ul>
-<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>。<br><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a> 因其 &nbsp; <span id="yu-1">精于心，简于形</span> &nbsp; 的风格，一直被广大用户所喜爱。</p>
+<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/" rel="external nofollow noopener noreferrer" target="_blank">主题</a>。<br><a href="http://theme-next.iissnan.com/" rel="external nofollow noopener noreferrer" target="_blank">NexT</a> 因其 &nbsp; <span id="yu-1">精于心，简于形</span> &nbsp; 的风格，一直被广大用户所喜爱。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序:</p>
 <blockquote>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></p>
+<p><a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js</a><br><a href="http://git-scm.com/" rel="external nofollow noopener noreferrer" target="_blank">Git</a></p>
 </blockquote>
 <p>如果您的电脑中已经安装上述必备程序，跳过这一步。<br>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
 <h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><ul>
-<li>Windows：下载安装 git 。<a id="download" href="https://git-scm.com/download/win" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a></li>
-<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装</li>
+<li>Windows：下载安装 git 。<a id="download" href="https://git-scm.com/download/win" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span><br></a></li>
+<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" rel="external nofollow noopener noreferrer" target="_blank">Homebrew</a>，<a href="http://www.macports.org/" rel="external nofollow noopener noreferrer" target="_blank">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" rel="external nofollow noopener noreferrer" target="_blank">安装程序</a> 安装</li>
 <li>Linux（Ubuntu，Debian）：<code>sudo apt-get install git-core</code></li>
 <li>Linux（Fedora，Red Hat，CentOS）：<code>sudo yum install git-core</code></li>
 </ul>
-<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>。（nvm：Node Version Manager）<br>windows 下使用 nvm 请看这里： <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">nvm-windows</a> ，首先需要下载安装 nvm 。<a id="download" href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span><br></a></p>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" rel="external nofollow noopener noreferrer" target="_blank">nvm</a>。（nvm：Node Version Manager）<br>windows 下使用 nvm 请看这里： <a href="https://github.com/coreybutler/nvm-windows" rel="external nofollow noopener noreferrer" target="_blank">nvm-windows</a> ，首先需要下载安装 nvm 。<a id="download" href="https://github.com/coreybutler/nvm-windows/releases" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span><br></a></p>
 <p>windows下安装完nvm以后，我们可以打开命令行中执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nvm</div><div class="line">$ nvm install latest</div></pre></td></tr></table></figure></p>
 <p>执行完以后，重启命令行，执行命令 <code>node -v</code> ，如果出现版本号，那么 <code>Node.js</code> 就安装成功了。</p>
-<p></p><p id="border-red">如果没有安装成功，那可能就是墙的原因。建议下载 <code>Node.js</code> 直接安装。<a id="download" href="https://nodejs.org/en/download/" target="_blank" rel="external"><i class="fa fa-download"></i><span> Download Now</span></a></p>
+<p></p><p id="border-red">如果没有安装成功，那可能就是墙的原因。建议下载 <code>Node.js</code> 直接安装。<a id="download" href="https://nodejs.org/en/download/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span></a></p>
 <p>
 
 </p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>有了 Node.js ，我们可以使用 npm 安装 Hexo。（执行完以后，我们同样可以执行命令 <code>hexo -v</code> 查看是否安装成功就安装成功了。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
@@ -2122,7 +2122,7 @@
     <summary type="html">
     
       &lt;p&gt;本篇文章主要介绍怎样利用 &lt;code&gt;Hexo + Next&lt;/code&gt; 在 &lt;code&gt;GitHub&lt;/code&gt; 上搭建个人博客。&lt;/p&gt;
-&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://hexo.io/zh-cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的静态站点生成框架，基于 &lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt; 。 它有以下特点：&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://hexo.io/zh-cn/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的静态站点生成框架，基于 &lt;a href=&quot;https://nodejs.org/en/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Node.js&lt;/a&gt; 。 它有以下特点：&lt;/p&gt;
     
     </summary>
     
