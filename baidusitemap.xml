@@ -2,7 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
-
+    
+    
   <url>
     <loc>http://yoursite.com/2017-06-23/es6/</loc>
     <lastmod>2017-07-07T05:55:54.000Z</lastmod>
@@ -10,16 +11,16 @@
         <display>
         <title>ES6 笔记</title>
         <pubTime>2017-06-23T02:15:10.000Z</pubTime>
-
+        
         <tag>ES6</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-07-06/Hexo%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2017-07-07T04:58:55.000Z</lastmod>
@@ -27,16 +28,16 @@
         <display>
         <title>Hexo 笔记</title>
         <pubTime>2017-07-06T08:59:12.000Z</pubTime>
-
+        
         <tag>快捷键</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-07-06/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2017-07-07T03:30:45.000Z</lastmod>
@@ -44,16 +45,16 @@
         <display>
         <title>IDE 快捷键</title>
         <pubTime>2017-07-06T06:57:04.000Z</pubTime>
-
+        
         <tag>快捷键</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-03-09/wwwyuming/</loc>
     <lastmod>2017-07-07T03:28:29.000Z</lastmod>
@@ -61,23 +62,23 @@
         <display>
         <title>HEXO+GitHub,搭建博客 - 域名绑定</title>
         <pubTime>2017-03-09T06:50:21.000Z</pubTime>
-
+        
         <tag>Next+Hexo</tag>
-
+         
         <tag>博客搭建</tag>
-
+         
         <tag>域名</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
+          
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-05-30/flex/</loc>
     <lastmod>2017-07-06T06:54:28.000Z</lastmod>
@@ -85,16 +86,16 @@
         <display>
         <title>Flex</title>
         <pubTime>2017-05-30T07:58:06.000Z</pubTime>
-
+        
         <tag>flex</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-04-09/quotation/</loc>
     <lastmod>2017-07-05T05:43:53.000Z</lastmod>
@@ -102,17 +103,17 @@
         <display>
         <title>Quotation</title>
         <pubTime>2017-04-09T15:56:04.000Z</pubTime>
-
-
-
-
+        
+         
+           
+             
               <breadCrumb title="语录" url="http://yoursite.com/categories/%E8%AF%AD%E5%BD%95/"/>
-
+          
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-04-07/photo/</loc>
     <lastmod>2017-07-05T05:43:31.000Z</lastmod>
@@ -120,16 +121,16 @@
         <display>
         <title>photo</title>
         <pubTime>2017-04-07T06:04:32.000Z</pubTime>
-
+        
         <tag>picture</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-04-05/hello-world/</loc>
     <lastmod>2017-07-05T05:42:45.000Z</lastmod>
@@ -137,16 +138,16 @@
         <display>
         <title>Hello World</title>
         <pubTime>2017-04-05T02:15:10.000Z</pubTime>
-
+        
         <tag>Hello</tag>
-
-
-
+         
+         
+           
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-03-02/wangyimusic/</loc>
     <lastmod>2017-07-05T05:42:32.000Z</lastmod>
@@ -154,43 +155,21 @@
         <display>
         <title>教你制作音乐外链</title>
         <pubTime>2017-03-02T13:12:04.000Z</pubTime>
-
+        
         <tag>Music</tag>
-
+         
         <tag>网易云音乐</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="Music" url="http://yoursite.com/categories/Music/"/>
-
+          
         </display>
     </data>
     </url>
 
-
-  <url>
-    <loc>http://yoursite.com/2017-03-08/github&coding/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>HEXO 博客同时部署到 GitHub & Coding</title>
-        <pubTime>2017-03-08T05:08:44.000Z</pubTime>
-
-        <tag>Next+Hexo</tag>
-
-        <tag>博客搭建</tag>
-
-
-
-
-              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
-        </display>
-    </data>
-    </url>
-
-
+    
   <url>
     <loc>http://yoursite.com/2017-02-07/encrypt/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
@@ -198,67 +177,23 @@
         <display>
         <title>简单博文加密</title>
         <pubTime>2017-02-07T02:16:31.000Z</pubTime>
-
+        
         <tag>Next+Hexo</tag>
-
+         
         <tag>博客搭建</tag>
-
+         
         <tag>encrypt</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
+          
         </display>
     </data>
     </url>
 
-
-  <url>
-    <loc>http://yoursite.com/2016-12-24/hexo1/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>HEXO+GitHub,搭建博客 - 配置</title>
-        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
-
-        <tag>Next+Hexo</tag>
-
-        <tag>博客搭建</tag>
-
-
-
-
-              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
-        </display>
-    </data>
-    </url>
-
-
-  <url>
-    <loc>http://yoursite.com/2017-01-25/hexo2/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>HEXO+GitHub搭建博客 - 优化</title>
-        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
-
-        <tag>Next+Hexo</tag>
-
-        <tag>博客搭建</tag>
-
-
-
-
-              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
-        </display>
-    </data>
-    </url>
-
-
+    
   <url>
     <loc>http://yoursite.com/2017-02-14/markdown/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
@@ -266,19 +201,85 @@
         <display>
         <title>Markdown 使用中常见的问题及解决方法</title>
         <pubTime>2017-02-14T13:05:06.000Z</pubTime>
-
+        
         <tag>Markdown</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="Markdown" url="http://yoursite.com/categories/Markdown/"/>
-
+          
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2016-12-24/hexo1/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>HEXO+GitHub,搭建博客 - 配置</title>
+        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2017-01-25/hexo2/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>HEXO+GitHub搭建博客 - 优化</title>
+        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017-03-08/github&coding/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>HEXO 博客同时部署到 GitHub & Coding</title>
+        <pubTime>2017-03-08T05:08:44.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://yoursite.com/2017-03-07/backup/</loc>
     <lastmod>2017-06-23T06:17:35.000Z</lastmod>
@@ -286,23 +287,23 @@
         <display>
         <title>HEXO+GitHub,搭建博客 - 备份</title>
         <pubTime>2017-03-07T08:26:30.000Z</pubTime>
-
+        
         <tag>Next+Hexo</tag>
-
+         
         <tag>博客搭建</tag>
-
+         
         <tag>backup</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="博客搭建" url="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-
+          
         </display>
     </data>
     </url>
 
-
+    
   <url>
     <loc>http://yoursite.com/2017-04-13/rexue/</loc>
     <lastmod>2017-04-13T15:35:28.000Z</lastmod>
@@ -310,18 +311,18 @@
         <display>
         <title>如何才能成为很厉害的人</title>
         <pubTime>2017-04-13T14:33:40.000Z</pubTime>
-
+        
         <tag>知乎</tag>
-
-
-
-
+         
+         
+           
+             
               <breadCrumb title="成长" url="http://yoursite.com/categories/%E6%88%90%E9%95%BF/"/>
-
+          
         </display>
     </data>
     </url>
 
-
-
+    
+    
 </urlset>

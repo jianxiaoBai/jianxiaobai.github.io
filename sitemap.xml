@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/google83e17dda3f9e60be.html</loc>
+    
+    <lastmod>2017-07-09T05:53:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017-06-23/es6/</loc>
     
     <lastmod>2017-07-07T05:55:54.000Z</lastmod>
@@ -65,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017-03-08/github&coding/</loc>
+    <loc>http://yoursite.com/2017-02-07/encrypt/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017-02-07/encrypt/</loc>
+    <loc>http://yoursite.com/2017-02-14/markdown/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
@@ -93,7 +100,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017-02-14/markdown/</loc>
+    <loc>http://yoursite.com/2017-03-08/github&coding/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
