@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hexo 笔记</title>
-    <link href="http://www.baixiaojian.com/2017-07-06/Hexo%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.baixiaojian.com/2017-07-06/Hexo操作/</id>
+    <link href="http://www.baixiaojian.com/Hexo%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.baixiaojian.com/Hexo操作/</id>
     <published>2017-07-06T08:59:12.000Z</published>
     <updated>2017-07-07T04:58:55.000Z</updated>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>IDE 快捷键</title>
-    <link href="http://www.baixiaojian.com/2017-07-06/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>http://www.baixiaojian.com/2017-07-06/快捷键/</id>
+    <link href="http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://www.baixiaojian.com/快捷键/</id>
     <published>2017-07-06T06:57:04.000Z</published>
     <updated>2017-07-07T03:30:45.000Z</updated>
     
@@ -441,8 +441,8 @@
   
   <entry>
     <title>ES6 笔记</title>
-    <link href="http://www.baixiaojian.com/2017-06-23/es6/"/>
-    <id>http://www.baixiaojian.com/2017-06-23/es6/</id>
+    <link href="http://www.baixiaojian.com/es6/"/>
+    <id>http://www.baixiaojian.com/es6/</id>
     <published>2017-06-23T02:15:10.000Z</published>
     <updated>2017-07-09T09:57:48.000Z</updated>
     
@@ -1198,8 +1198,8 @@
   
   <entry>
     <title>Flex</title>
-    <link href="http://www.baixiaojian.com/2017-05-30/flex/"/>
-    <id>http://www.baixiaojian.com/2017-05-30/flex/</id>
+    <link href="http://www.baixiaojian.com/flex/"/>
+    <id>http://www.baixiaojian.com/flex/</id>
     <published>2017-05-30T07:58:06.000Z</published>
     <updated>2017-07-09T08:39:38.000Z</updated>
     
@@ -1445,8 +1445,8 @@
   
   <entry>
     <title>如何才能成为很厉害的人</title>
-    <link href="http://www.baixiaojian.com/2017-04-13/rexue/"/>
-    <id>http://www.baixiaojian.com/2017-04-13/rexue/</id>
+    <link href="http://www.baixiaojian.com/rexue/"/>
+    <id>http://www.baixiaojian.com/rexue/</id>
     <published>2017-04-13T14:33:40.000Z</published>
     <updated>2017-07-09T08:36:01.000Z</updated>
     
@@ -1512,8 +1512,8 @@
   
   <entry>
     <title>Quotation</title>
-    <link href="http://www.baixiaojian.com/2017-04-09/quotation/"/>
-    <id>http://www.baixiaojian.com/2017-04-09/quotation/</id>
+    <link href="http://www.baixiaojian.com/quotation/"/>
+    <id>http://www.baixiaojian.com/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
     <updated>2017-07-05T05:43:53.000Z</updated>
     
@@ -1574,8 +1574,8 @@
   
   <entry>
     <title>photo</title>
-    <link href="http://www.baixiaojian.com/2017-04-07/photo/"/>
-    <id>http://www.baixiaojian.com/2017-04-07/photo/</id>
+    <link href="http://www.baixiaojian.com/photo/"/>
+    <id>http://www.baixiaojian.com/photo/</id>
     <published>2017-04-07T06:04:32.000Z</published>
     <updated>2017-07-05T05:43:31.000Z</updated>
     
@@ -1594,8 +1594,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.baixiaojian.com/2017-04-05/hello-world/"/>
-    <id>http://www.baixiaojian.com/2017-04-05/hello-world/</id>
+    <link href="http://www.baixiaojian.com/hello-world/"/>
+    <id>http://www.baixiaojian.com/hello-world/</id>
     <published>2017-04-05T02:15:10.000Z</published>
     <updated>2017-07-05T05:42:45.000Z</updated>
     
@@ -1616,8 +1616,8 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 域名绑定</title>
-    <link href="http://www.baixiaojian.com/2017-03-09/wwwyuming/"/>
-    <id>http://www.baixiaojian.com/2017-03-09/wwwyuming/</id>
+    <link href="http://www.baixiaojian.com/wwwyuming/"/>
+    <id>http://www.baixiaojian.com/wwwyuming/</id>
     <published>2017-03-09T06:50:21.000Z</published>
     <updated>2017-07-09T08:36:08.000Z</updated>
     
@@ -1683,8 +1683,8 @@
   
   <entry>
     <title>HEXO 博客同时部署到 GitHub 和 Coding</title>
-    <link href="http://www.baixiaojian.com/2017-03-08/github%E5%92%8Ccoding/"/>
-    <id>http://www.baixiaojian.com/2017-03-08/github和coding/</id>
+    <link href="http://www.baixiaojian.com/github%E5%92%8Ccoding/"/>
+    <id>http://www.baixiaojian.com/github和coding/</id>
     <published>2017-03-08T05:08:44.000Z</published>
     <updated>2017-07-09T09:27:41.000Z</updated>
     
@@ -1747,8 +1747,8 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 备份</title>
-    <link href="http://www.baixiaojian.com/2017-03-07/backup/"/>
-    <id>http://www.baixiaojian.com/2017-03-07/backup/</id>
+    <link href="http://www.baixiaojian.com/backup/"/>
+    <id>http://www.baixiaojian.com/backup/</id>
     <published>2017-03-07T08:26:30.000Z</published>
     <updated>2017-06-23T06:17:35.000Z</updated>
     
@@ -1792,8 +1792,8 @@
   
   <entry>
     <title>教你制作音乐外链</title>
-    <link href="http://www.baixiaojian.com/2017-03-02/wangyimusic/"/>
-    <id>http://www.baixiaojian.com/2017-03-02/wangyimusic/</id>
+    <link href="http://www.baixiaojian.com/wangyimusic/"/>
+    <id>http://www.baixiaojian.com/wangyimusic/</id>
     <published>2017-03-02T13:12:04.000Z</published>
     <updated>2017-07-05T05:42:32.000Z</updated>
     
@@ -1827,8 +1827,8 @@
   
   <entry>
     <title>Markdown 使用中常见的问题及解决方法</title>
-    <link href="http://www.baixiaojian.com/2017-02-14/markdown/"/>
-    <id>http://www.baixiaojian.com/2017-02-14/markdown/</id>
+    <link href="http://www.baixiaojian.com/markdown/"/>
+    <id>http://www.baixiaojian.com/markdown/</id>
     <published>2017-02-14T13:05:06.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
@@ -1888,8 +1888,8 @@
   
   <entry>
     <title>简单博文加密</title>
-    <link href="http://www.baixiaojian.com/2017-02-07/encrypt/"/>
-    <id>http://www.baixiaojian.com/2017-02-07/encrypt/</id>
+    <link href="http://www.baixiaojian.com/encrypt/"/>
+    <id>http://www.baixiaojian.com/encrypt/</id>
     <published>2017-02-07T02:16:31.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
@@ -1928,8 +1928,8 @@
   
   <entry>
     <title>HEXO+GitHub搭建博客 - 优化</title>
-    <link href="http://www.baixiaojian.com/2017-01-25/hexo2/"/>
-    <id>http://www.baixiaojian.com/2017-01-25/hexo2/</id>
+    <link href="http://www.baixiaojian.com/hexo2/"/>
+    <id>http://www.baixiaojian.com/hexo2/</id>
     <published>2017-01-25T13:37:01.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
@@ -2069,8 +2069,8 @@
   
   <entry>
     <title>HEXO+GitHub,搭建博客 - 配置</title>
-    <link href="http://www.baixiaojian.com/2016-12-24/hexo1/"/>
-    <id>http://www.baixiaojian.com/2016-12-24/hexo1/</id>
+    <link href="http://www.baixiaojian.com/hexo1/"/>
+    <id>http://www.baixiaojian.com/hexo1/</id>
     <published>2016-12-24T14:23:58.000Z</published>
     <updated>2017-06-23T06:17:39.000Z</updated>
     
