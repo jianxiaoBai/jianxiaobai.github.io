@@ -436,14 +436,14 @@
 <h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>配置 shh key 是让本地 git 项目与远程的 github 建立联系</p>
 <h4 id="获取ssh"><a href="#获取ssh" class="headerlink" title="获取ssh"></a>获取ssh</h4><ul>
 <li><p>检查是否已经有SSH Key，打开 <code>Git Bash</code>，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
 </li>
 <li><p>如果没有 <strong>.ssh</strong> 这个目录，则生成一个新的 SSH，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your e-mail&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your e-mail&quot;</div></pre></td></tr></table></figure>
 <p id="border-red"> <strong>注意:</strong>  此处的邮箱地址，是你注册 <strong>GitHub</strong> 和 <strong>coding</strong> 时的邮箱地址; 此处的<strong>「-C」</strong>的是大写的<strong>「C」</strong> 。</p>
 </li>
 <li><p>接下来几步都直接按回车键,然后系统会要你输入密码 (防止别人往你的项目里提交内容)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>成功后，我们打开 <em>C:\Users\cwyaml.ssh</em> 打开 <em>id_rsa.pub</em> 文件。里面的代码就是 ssh key。</p>
@@ -460,11 +460,11 @@
 <li>在点 <em>SSH公钥</em> 设置即可 。（同样要输入密码）</li>
 </ul>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding02.png" alt="Markdown"></p>
-<h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开 <code>Git Bash</code>，首先测试 GitHub 是否成功？输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>(如配置了密码则要输入密码,输完按回车。)如果显示以下内容，则说明 Github 中的 ssh 配置成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
-<p>然后测试 Coding 是否成功？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure></p>
-<p>如果显示以下则说明配置成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello username You&apos;ve connected to Coding.net by SSH successfully!</div></pre></td></tr></table></figure></p>
-<h3 id="上传博客文件"><a href="#上传博客文件" class="headerlink" title="上传博客文件"></a>上传博客文件</h3><p><strong>修改站点配置文件：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: git@github.com:cwyaml/cwyaml.github.io.git,master</div><div class="line">    coding: git@git.coding.net:cwyaml/cwyaml.git,master</div></pre></td></tr></table></figure></p>
+<h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开 <code>Git Bash</code>，首先测试 GitHub 是否成功？输入:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>(如配置了密码则要输入密码,输完按回车。)如果显示以下内容，则说明 Github 中的 ssh 配置成功。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
+<p>然后测试 Coding 是否成功？<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure></p>
+<p>如果显示以下则说明配置成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Hello username You&apos;ve connected to Coding.net by SSH successfully!</div></pre></td></tr></table></figure></p>
+<h3 id="上传博客文件"><a href="#上传博客文件" class="headerlink" title="上传博客文件"></a>上传博客文件</h3><p><strong>修改站点配置文件：</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: git@github.com:cwyaml/cwyaml.github.io.git,master</div><div class="line">    coding: git@git.coding.net:cwyaml/cwyaml.git,master</div></pre></td></tr></table></figure></p>
 <p>然后你就可以 <code>hexo c、hexo g、hexo d</code> 了。</p>
 <h3 id="开启pages服务"><a href="#开启pages服务" class="headerlink" title="开启pages服务"></a>开启pages服务</h3><p>GitHub 已经默认开启，就不必多说了。<br>Coding 进入对应项目，点击 <strong>代码&gt;pages服务</strong> ，把部署来源改为 <strong>master</strong> 即可。</p>
 <p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding03.png" alt="Markdown"></p>
@@ -591,7 +591,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -602,7 +602,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

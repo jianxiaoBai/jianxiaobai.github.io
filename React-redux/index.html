@@ -1,0 +1,23 @@
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="border-blue">如果你的应用有以下场景，可以考虑使用 Redux。</p>
+
+<ol>
+<li>某个组件的状态 <code>需要共享</code></li>
+<li>某个状态需要在 <code>任何地方</code> 都可以获取</li>
+<li>一个组件想要 <code>改变全局状态</code></li>
+<li>一个组件想要 <code>改变另一个组件状态</code></li>
+</ol>
+<a id="more"></a>
+<h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p id="border-green"> web 应用是一个 <code>状态机</code> ，视图与状态是 <code>相对应</code> 的,并且 <code>所有的状态都保存在一个对象里</code>。</p>
+
+
+<h2 id="基本概念和-API"><a href="#基本概念和-API" class="headerlink" title="基本概念和 API"></a>基本概念和 API</h2><h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><ul>
+<li>Store 就是保存数据的地方，你可以把它看成一个容器。</li>
+<li><code>整个应用只能有一个 Store</code>。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="comment">/* createStore函数接受另一个函数作为参数，返回新生成的 Store 对象。 */</span></div></pre></td></tr></table></figure>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><ul>
+<li><code>Store对象包含所有数据</code>。</li>
+<li>如果想得到某个时点的数据，就要对 Store 生成快照,这种时点的数据集合，就叫做 State。</li>
+<li>当前时刻的 State，可以通过 <code>store.getState()</code> 拿到。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = store.getState();</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * Redux 规定， 一个 State 对应一个 View。</div><div class="line"> * 只要 State 相同，View 就相同。</div><div class="line"> * 你知道 State，就知道 View 是什么样，反之亦然。</div><div class="line"> */</div></pre></td></tr></table></figure>

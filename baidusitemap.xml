@@ -4,17 +4,81 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/React-redux/</loc>
+    <lastmod>2017-07-10T13:54:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>React-redux 笔记</title>
+        <pubTime>2017-07-10T07:26:17.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/React/</loc>
+    <lastmod>2017-07-10T07:48:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>React 笔记</title>
+        <pubTime>2017-07-10T02:17:19.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/es6/</loc>
-    <lastmod>2017-07-09T09:57:48.000Z</lastmod>
+    <lastmod>2017-07-10T07:27:19.000Z</lastmod>
     <data>
         <display>
         <title>ES6 笔记</title>
         <pubTime>2017-06-23T02:15:10.000Z</pubTime>
         
+        <tag>笔记</tag>
+         
         <tag>ES6</tag>
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/encrypt/</loc>
+    <lastmod>2017-07-10T02:16:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>简单博文加密</title>
+        <pubTime>2017-02-07T02:16:31.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+        <tag>encrypt</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
         </display>
     </data>
     </url>
@@ -207,30 +271,6 @@
            
              
               <breadCrumb title="Music" url="http://www.baixiaojian.com/categories/Music/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/encrypt/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>简单博文加密</title>
-        <pubTime>2017-02-07T02:16:31.000Z</pubTime>
-        
-        <tag>encrypt</tag>
-         
-        <tag>Next+Hexo</tag>
-         
-        <tag>博客搭建</tag>
-         
-         
-           
-             
-              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>

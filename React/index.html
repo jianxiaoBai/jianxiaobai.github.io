@@ -99,7 +99,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="React,React笔记,阮一峰">
 
 
 
@@ -117,15 +117,17 @@
 
 
 
-<meta name="description" content="总有一天我有属于我的天">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Swhite ★ Notes">
-<meta property="og:url" content="http://www.baixiaojian.com/archives/2017/index.html">
+<meta name="description" content="注意点 注意区分大小写 单标签后面一定要有 / 闭合符">
+<meta name="keywords" content="React,React笔记,阮一峰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 笔记">
+<meta property="og:url" content="http://www.baixiaojian.com/React/index.html">
 <meta property="og:site_name" content="Swhite ★ Notes">
-<meta property="og:description" content="总有一天我有属于我的天">
+<meta property="og:description" content="注意点 注意区分大小写 单标签后面一定要有 / 闭合符">
+<meta property="og:updated_time" content="2017-07-10T07:48:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swhite ★ Notes">
-<meta name="twitter:description" content="总有一天我有属于我的天">
+<meta name="twitter:title" content="React 笔记">
+<meta name="twitter:description" content="注意点 注意区分大小写 单标签后面一定要有 / 闭合符">
 
 
 
@@ -153,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://www.baixiaojian.com/archives/2017/">
+  <link rel="canonical" href="http://www.baixiaojian.com/React/">
 
 
 
 
 
-  <title> 归档 | Swhite ★ Notes </title>
+  <title> React 笔记 | Swhite ★ Notes </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -194,7 +196,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -310,383 +312,263 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 18 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.baixiaojian.com/React/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Small white">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/smile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Swhite ★ Notes">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React 笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T10:17:19+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+
+          
+          
+             <span id="/React/" class="leancloud_visitors" data-flag-title="React 笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ul>
+<li>注意区分大小写</li>
+<li>单标签后面一定要有 <code>/</code> 闭合符</li>
+</ul>
+<a id="more"></a>
+<h2 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render()"></a>ReactDOM.render()</h2><p> React 的最基本方法，用于 将模板转为 HTML 语言，并插入到指定的 DOM 节点。</p>
+<h2 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h2><ul>
+<li>JSX 的基本语法规则：<ul>
+<li>遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；</li>
+<li>遇到代码块（以 { 开头），就用 JavaScript 规则解析;</li>
+<li>JSX 允许直接在模板插入 JS 变量 <code>{x}</code>。</li>
+<li>如果这个变量是一个数组，则会展开这个数组的所有成员</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。</p>
+<ul>
+<li>组建类的第一个字母必须大写,否则会报错</li>
+<li>组件类只能包含一个顶层标签,否则也会报错</li>
+<li>组件可以任意加属性<ul>
+<li>比如 <code>&lt;HelloMessage name=&quot;John&quot;&gt;</code></li>
+<li>组件的属性可以在组件类的 <code>this.props</code>对象上获取 比如 <code>this.props.John</code><ul>
+<li>添加组件属性，保留字需要注意就是</li>
+<li>class 属性需要写成 className</li>
+<li>for 属性需要写成 htmlFor</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="this-props-children"><a href="#this-props-children" class="headerlink" title="this.props.children"></a>this.props.children</h2><ul>
+<li><code>this.props</code> 对象的属性与组件的属性一一对应.</li>
+<li><code>this.props.children</code> 属性,表示组件的所有子节点</li>
+</ul>
+<p>React.Children.map 是专门来遍历 this.props.children 的一个方法</p>
+<h2 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h2><ul>
+<li>组件的属性可以接受任意值，字符串、对象、函数等等都可以。</li>
+<li>有时，我们需要一种机制，验证别人使用组件时，提供的参数是否符合要求。</li>
+<li><code>getDefaultProps</code> 方法可以用来设置组件属性的默认值。</li>
+</ul>
+<h2 id="获取真实的DOM节点"><a href="#获取真实的DOM节点" class="headerlink" title="获取真实的DOM节点"></a>获取真实的DOM节点</h2><ul>
+<li>组件是存在于内存之中的一种数据结构，叫做虚拟(virtual) DOM,只有当它插入文档以后，才会变成真实的 DOM 。</li>
+<li>React 中所有的 DOM 变动之前都先在虚拟 DOM 上发生，然后再将 <code>实际发生变动</code> 的部分，反映在真实DOM上，这种算法叫做 <code>DOM diff</code> ，它可以极大提高网页的性能表现。</li>
+</ul>
+<p>但是，有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = React.createClass(&#123;</div><div class="line">  <span class="attr">handleClick</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.refs.myTextInput.focus();</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" ref="myTextInput" /&gt;</div><div class="line">        &lt;input type="button" value="Focus the text input" onClick=&#123;this.handleClick&#125; /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;MyComponent /&gt;,</div><div class="line">  document.getElementById('example')</div><div class="line">);</div></pre></td></tr></table></figure>
+<ul>
+<li>组件 <code>MyComponent</code> 的子节点有一个文本输入框，用于获取用户的输入。</li>
+<li>这时就必须获取真实的 DOM 节点，<code>虚拟 DOM 是拿不到用户输入的</code>。</li>
+<li>为了做到这一点，文本输入框 <code>必须有一个 ref 属性</code>，然后 this.refs.[refName] 就会返回这个真实的 DOM 节点。</li>
+<li>由于 this.refs.[refName] 属性获取的是 <code>真实 DOM</code> ，所以<code>必须等到虚拟 DOM 插入文档以后</code>，才能使用这个属性，否则会报错。</li>
+<li>上面代码中，通过为组件指定 Click 事件的回调函数，确保了只有等到真实 DOM 发生 Click 事件之后，才会读取 this.refs.[refName] 属性。</li>
+</ul>
+<h2 id="this-state"><a href="#this-state" class="headerlink" title="this.state"></a>this.state</h2><p>React 中将组件看成是一个状态机，开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 UI</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> LikeButton = React.createClass(&#123;</div><div class="line">  <span class="attr">getInitialState</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">liked</span>: <span class="literal">false</span>&#125;;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">handleClick</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">liked</span>: !<span class="keyword">this</span>.state.liked&#125;);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> text = <span class="keyword">this</span>.state.liked ? <span class="string">'like'</span> : <span class="string">'haven\'t liked'</span>;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;p onClick=&#123;this.handleClick&#125;&gt;</div><div class="line">        You &#123;text&#125; this. Click to toggle.</div><div class="line">     &lt;/p&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;LikeButton /&gt;,</div><div class="line">  document.getElementById('example')</div><div class="line">);</div></pre></td></tr></table></figure>
+<ul>
+<li><code>LikeButton</code> 组件中的 <code>getInitialState</code> 方法用于定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取。</li>
+<li>当用户点击组件，导致状态变化，<code>this.setState</code> 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件。</li>
+<li>由于 this.props 和 this.state 都用于描述组件的特性，可能会产生混淆。<ul>
+<li>this.props 表示那些一旦定义，就不再改变的特性</li>
+<li>this.state 是会随着用户互动而产生变化的特性</li>
+</ul>
+</li>
+</ul>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>类似于双向数据绑定</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> Input = React.createClass(&#123;</div><div class="line">  <span class="attr">getInitialState</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">value</span>: <span class="string">'Hello!'</span>&#125;;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">handleChange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;<span class="attr">value</span>: event.target.value&#125;);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> value = <span class="keyword">this</span>.state.value;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;input type="text" value=&#123;value&#125; onChange=&#123;this.handleChange&#125; /&gt;</div><div class="line">       &lt;p&gt;&#123;value&#125;&lt;/p&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(&lt;Input/&gt;, document.body);</div></pre></td></tr></table></figure>
+<p>文本输入框的值，不能用 this.props.value 读取，而要定义一个 <code>onChange</code> 事件的回调函数，通过 <code>event.target.value</code> 读取用户输入的值。</p>
+<h2 id="组建的生命周期"><a href="#组建的生命周期" class="headerlink" title="组建的生命周期"></a>组建的生命周期</h2><ul>
+<li><p>组件周期的三个状态</p>
+<ul>
+<li>Mounting：已插入真实 DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实 DOM</li>
+</ul>
+</li>
+<li><p>React 为每个状态都提供了两种处理函数，<code>will 函数在进入状态之前调用</code>，<code>did 函数在进入状态之后调用</code></p>
+<ul>
+<li>componentWillMount()</li>
+<li>componentDidMount()</li>
+<li>componentWillUpdate(object nextProps, object nextState)</li>
+<li>componentDidUpdate(object prevProps, object prevState)</li>
+<li>componentWillUnmount()</li>
+</ul>
+</li>
+<li><p>此外，React 还提供两种特殊状态的处理函数。</p>
+<ul>
+<li>componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用</li>
+<li>shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>参考自:<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" rel="external nofollow noopener noreferrer" target="_blank">阮一峰入门实例教程</a></p>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
         </div>
       
+
+      
+        
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hexo操作/" rel="next" title="Hexo 笔记">
+                <i class="fa fa-chevron-left"></i> Hexo 笔记
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/React-redux/" itemprop="url">
-              
-                <span itemprop="name">React-redux 笔记</span>
-              
-            </a>
-        
-      </h1>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/React-redux/" rel="prev" title="React-redux 笔记">
+                React-redux 笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-07-10T15:26:17+08:00" content="2017-07-10">
-          07-10
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/React/" itemprop="url">
-              
-                <span itemprop="name">React 笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-07-10T10:17:19+08:00" content="2017-07-10">
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/Hexo操作/" itemprop="url">
-              
-                <span itemprop="name">Hexo 笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-07-06T16:59:12+08:00" content="2017-07-06">
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/快捷键/" itemprop="url">
-              
-                <span itemprop="name">IDE 快捷键</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-07-06T14:57:04+08:00" content="2017-07-06">
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/es6/" itemprop="url">
-              
-                <span itemprop="name">ES6 笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-06-23T10:15:10+08:00" content="2017-06-23">
-          06-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/flex/" itemprop="url">
-              
-                <span itemprop="name">Flex</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-30T15:58:06+08:00" content="2017-05-30">
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/rexue/" itemprop="url">
-              
-                <span itemprop="name">如何才能成为很厉害的人</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-13T22:33:40+08:00" content="2017-04-13">
-          04-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/quotation/" itemprop="url">
-              
-                <span itemprop="name">Quotation</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-09T23:56:04+08:00" content="2017-04-09">
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-picture" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/photo/" itemprop="url">
-              
-                <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/224147.jpg" alt=""></div><div class="group-picture-column" style="width: 50%;"><img src="http://oapjp6spr.bkt.clouddn.com/196232.jpg" alt=""></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/18210.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/213318.jpg" alt=""></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://oapjp6spr.bkt.clouddn.com/199301.jpg" alt=""></div></div></div></div>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-07T14:04:32+08:00" content="2017-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-05T10:15:10+08:00" content="2017-04-05">
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -713,8 +595,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/smile.jpg" alt="Small white">
           <p class="site-author-name" itemprop="name">Small white</p>
@@ -842,6 +733,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点"><span class="nav-number">1.</span> <span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReactDOM-render"><span class="nav-number">2.</span> <span class="nav-text">ReactDOM.render()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX-语法"><span class="nav-number">3.</span> <span class="nav-text">JSX 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">4.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-props-children"><span class="nav-number">5.</span> <span class="nav-text">this.props.children</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PropTypes"><span class="nav-number">6.</span> <span class="nav-text">PropTypes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取真实的DOM节点"><span class="nav-number">7.</span> <span class="nav-text">获取真实的DOM节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-state"><span class="nav-number">8.</span> <span class="nav-text">this.state</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">9.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组建的生命周期"><span class="nav-number">10.</span> <span class="nav-text">组建的生命周期</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -955,11 +862,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   

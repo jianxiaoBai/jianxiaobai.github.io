@@ -99,7 +99,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="encrypt,Next+Hexo,博客搭建,">
+  <meta name="keywords" content="Next+Hexo,博客搭建,encrypt,">
 
 
 
@@ -118,13 +118,13 @@
 
 
 <meta name="description" content="本文访问密码：123456">
-<meta name="keywords" content="encrypt,Next+Hexo,博客搭建">
+<meta name="keywords" content="Next+Hexo,博客搭建,encrypt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单博文加密">
 <meta property="og:url" content="http://www.baixiaojian.com/encrypt/index.html">
 <meta property="og:site_name" content="Swhite ★ Notes">
 <meta property="og:description" content="本文访问密码：123456">
-<meta property="og:updated_time" content="2017-06-23T06:17:39.000Z">
+<meta property="og:updated_time" content="2017-07-10T02:16:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单博文加密">
 <meta name="twitter:description" content="本文访问密码：123456">
@@ -429,8 +429,7 @@
       
 
       
-        <!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/%E5%8A%A0%E5%AF%86.jpg)</div> -->
-<blockquote>
+        <blockquote>
 <p>即使是最简单的加密方式也足以阻止90%的访问者</p>
 </blockquote>
 <a id="more"></a>
@@ -438,10 +437,10 @@
 <p>这就要讲到 js 的阻塞机制了，当调用 <code>alert();</code> 函数的时候，整个页面会停止运行，直到你点击确定之后，才会继续执行下去。我们这里需要的也是这样一个假象，阻止整个页面的渲染，直到你输入了正确的密码才能让页面继续渲染实际的文章。可是 <code>alert();</code> 只有提醒的功能，没有输入的功能，所以，这里要用到的是 <code>promt()</code> 方法。</p>
 <h3 id="promt-方法介绍"><a href="#promt-方法介绍" class="headerlink" title="promt()方法介绍"></a>promt()方法介绍</h3><p>这个 promt() 方法有什么作用呢？查看js文档可以知道：</p>
 <p></p><p id="border-red"><strong>prompt()方法 :</strong>   <em>用于<u>显示可提示用户进行输入的对话框</u>。<br>如果用户单击提示框的 <strong>取消</strong> 按钮，则返回 <strong>null</strong>。<br>如果用户单击 <strong>确认</strong>按钮，则返回 <strong>输入字段当前显示的文本</strong>（用户输入的文本）。</em></p>   我们就是利用 <code>promt()</code> 方法可以返回用户输入的文本这个特性，获取到返回数据，与我们设置的密码进行验证，从而实现文档加密的。。<p></p>
-<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>找到 <code>themes\next\layout\_partials\head.swig</code> 文件。<br>在 &lt;meta&gt; 标签之后添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    (function()&#123;</div><div class="line">        if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">            if (prompt(&apos;请输入文章密码&apos;,&apos;&apos;) !== &apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">                alert(&apos;密码错误！&apos;);</div><div class="line">                history.back();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>找到 <code>themes\next\layout\_partials\head.swig</code> 文件。<br>在 &lt;meta&gt; 标签之后添加以下代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    (function()&#123;</div><div class="line">        if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">            if (prompt(&apos;请输入文章密码&apos;,&apos;&apos;) !== &apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">                alert(&apos;密码错误！&apos;);</div><div class="line">                history.back();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>这里有必要解释一下 <code>page.password</code> 是什么东西。以下我给出这篇文章的头部参考：<br>首先 <code>page</code> 是一个变量，你可以理解为这篇文章。以下面的代码为参考，那么 <code>page.title = 最简单的翻墙方法; page.comments = fasle;</code>（很好理解吧）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure>
-<p>所以，要想加密博文，我们要为文章加上 <code>password</code> 属性。<code>description</code> 属性用于对文章进行描述。（加密下显示内容）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">description: 文章访问密码：password</div><div class="line">password: password</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure>
+<p>所以，要想加密博文，我们要为文章加上 <code>password</code> 属性。<code>description</code> 属性用于对文章进行描述。（加密下显示内容）<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">description: 文章访问密码：password</div><div class="line">password: password</div></pre></td></tr></table></figure></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这种方式只能说是一点小技巧的应用吧，在大神面前可能不管用，但足以阻挡大多数用户。<br>更完美的博文加密方式请参考：<a href="http://edolphin.site/2016/05/31/encrypt-post/" rel="external nofollow noopener noreferrer" target="_blank">加密博客内容，使用密码访问</a></p>
 
       
@@ -472,11 +471,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/encrypt/" rel="tag"># encrypt</a>
-          
             <a href="/tags/Next-Hexo/" rel="tag"># Next+Hexo</a>
           
             <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
+          
+            <a href="/tags/encrypt/" rel="tag"># encrypt</a>
           
         </div>
       
@@ -567,7 +566,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -578,7 +577,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

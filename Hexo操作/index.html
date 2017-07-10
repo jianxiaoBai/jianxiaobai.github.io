@@ -549,13 +549,13 @@
 </tbody>
 </table>
 <p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">title: 搭建个人博客</div><div class="line">layout: post</div><div class="line">date: 2020-01-01 12:00:00</div><div class="line">comments: true</div><div class="line">categories: Blog</div><div class="line">tags: [Hexo]</div><div class="line">words: Hexo, Blog</div><div class="line">description: 搭建个人博客还是要用 Hexo</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: 搭建个人博客</div><div class="line">layout: post</div><div class="line">date: 2020-01-01 12:00:00</div><div class="line">comments: true</div><div class="line">categories: Blog</div><div class="line">tags: [Hexo]</div><div class="line">words: Hexo, Blog</div><div class="line">description: 搭建个人博客还是要用 Hexo</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="书写语法"><a href="#书写语法" class="headerlink" title="书写语法"></a>书写语法</h2><h3 id="自定义图片大小"><a href="#自定义图片大小" class="headerlink" title="自定义图片大小"></a>自定义图片大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">标准：&#123;% img [class names] /path/image [width] [height] [title text [alt text]] %&#125;</div><div class="line">例如：&#123;% img  /imgs/baiyan.jpg 100 50  %&#125;</div></pre></td></tr></table></figure>
+<h2 id="书写语法"><a href="#书写语法" class="headerlink" title="书写语法"></a>书写语法</h2><h3 id="自定义图片大小"><a href="#自定义图片大小" class="headerlink" title="自定义图片大小"></a>自定义图片大小</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">标准：&#123;% img [class names] /path/image [width] [height] [title text [alt text]] %&#125;</div><div class="line">例如：&#123;% img  /imgs/baiyan.jpg 100 50  %&#125;</div></pre></td></tr></table></figure>
 <h3 id="突破容器宽度限制的图片的三种方式"><a href="#突破容器宽度限制的图片的三种方式" class="headerlink" title="突破容器宽度限制的图片的三种方式"></a>突破容器宽度限制的图片的三种方式</h3><p id="border-blue">当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上 <code>提升图片的吸引力</code> 。</p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</div><div class="line">&#123;% fullimage /image-url, alt, title %&#125;</div><div class="line">&#123;% fi /image-url, alt, title %&#125;</div></pre></td></tr></table></figure>
-<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</div><div class="line">&#123;% fullimage /image-url, alt, title %&#125;</div><div class="line">&#123;% fi /image-url, alt, title %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</div></pre></td></tr></table></figure>
 <p>其中，<code>class_name</code> 可以是以下列表中的一个值：</p>
 <ul>
 <li>default  默认</li>
@@ -567,7 +567,7 @@
 </ul>
 <h3 id="从书中引用"><a href="#从书中引用" class="headerlink" title="从书中引用"></a>从书中引用</h3><blockquote><p>新：DevDocs现在附带语法高亮。<a href="http://devdocs.io" rel="external nofollow noopener noreferrer" target="_blank">http://devdocs.io</a></p>
 <footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" rel="external nofollow noopener noreferrer" target="_blank">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
-<h3 id="文本居中的引用3中方式"><a href="#文本居中的引用3中方式" class="headerlink" title="文本居中的引用3中方式"></a>文本居中的引用3中方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125;人一切的痛苦，本质上都是对自己的无能的愤怒&#123;% endcq %&#125;   推荐</div></pre></td></tr></table></figure>
+<h3 id="文本居中的引用3中方式"><a href="#文本居中的引用3中方式" class="headerlink" title="文本居中的引用3中方式"></a>文本居中的引用3中方式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125;人一切的痛苦，本质上都是对自己的无能的愤怒&#123;% endcq %&#125;   推荐</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -619,6 +619,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/React/" rel="prev" title="React 笔记">
+                React 笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -684,7 +688,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -695,7 +699,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
