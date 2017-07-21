@@ -4,16 +4,53 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/React-native/</loc>
+    <lastmod>2017-07-21T07:39:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>React-native 笔记</title>
+        <pubTime>2017-07-12T08:47:59.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/quotation/</loc>
+    <lastmod>2017-07-13T06:05:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>Quotation</title>
+        <pubTime>2017-04-09T15:56:04.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="语录" url="http://www.baixiaojian.com/categories/%E8%AF%AD%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/React-redux/</loc>
-    <lastmod>2017-07-10T13:54:25.000Z</lastmod>
+    <lastmod>2017-07-11T00:41:19.000Z</lastmod>
     <data>
         <display>
         <title>React-redux 笔记</title>
         <pubTime>2017-07-10T07:26:17.000Z</pubTime>
         
-        <tag>React</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>React</tag>
          
          
            
@@ -30,9 +67,9 @@
         <title>React 笔记</title>
         <pubTime>2017-07-10T02:17:19.000Z</pubTime>
         
-        <tag>React</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>React</tag>
          
          
            
@@ -198,24 +235,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/quotation/</loc>
-    <lastmod>2017-07-05T05:43:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Quotation</title>
-        <pubTime>2017-04-09T15:56:04.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="语录" url="http://www.baixiaojian.com/categories/%E8%AF%AD%E5%BD%95/"/>
-          
         </display>
     </data>
     </url>

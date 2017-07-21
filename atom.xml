@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-07-10T13:54:25.000Z</updated>
+  <updated>2017-07-21T07:39:33.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,13 +16,219 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>React-native 笔记</title>
+    <link href="http://www.baixiaojian.com/React-native/"/>
+    <id>http://www.baixiaojian.com/React-native/</id>
+    <published>2017-07-12T08:47:59.000Z</published>
+    <updated>2017-07-21T07:39:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装运行-ReactNative"><a href="#安装运行-ReactNative" class="headerlink" title="安装运行 ReactNative"></a>安装运行 ReactNative</h2><ul>
+<li><code>react-native init</code> AwesomeProject</li>
+<li>cd AwesomeProject &amp;&amp; <code>react-native run-ios</code></li>
+</ul>
+<p><span id="inline-yellow">提示:</span> version参数 可用来指定版本,例如 <code>react-native init MyApp --version 0.44.3</code>。</p>
+<a id="more"></a>
+<hr>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* 引用 React 的默认方法 与 Component 组件 */</span></div><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="comment">/* 引用 react-native 的AppRegister 与 Text 组件 */</span></div><div class="line"><span class="keyword">import</span> &#123; AppRegistry, Text &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"><span class="comment">/* 定义 Hello 组件 并扩展到 react 的 Component 中*/</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="comment">/* JSX 渲染语法 */</span></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* AppRegistry的内置模块对 Hello组件 进行了“注册”操作,在整个应用里只会用一次 */</span></div><div class="line">AppRegistry.registerComponent(<span class="string">'Hello'</span>, () =&gt; Hello);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Props-属性"><a href="#Props-属性" class="headerlink" title="Props(属性)"></a>Props(属性)</h2><p id="border-blue">多数组件在创建时就可使用 <code>props参数</code> 来定制。</p>
+
+<h3 id="Image组件使用-props"><a href="#Image组件使用-props" class="headerlink" title="Image组件使用 props"></a>Image组件使用 <code>props</code></h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppRegistry, Image &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bananas</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">let</span> pic = &#123;</div><div class="line">      <span class="attr">uri</span>: <span class="string">'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;Image source=&#123;pic&#125; style=&#123;&#123;width: 193, height: 110&#125;&#125; /&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('Bananas', () =&gt; Bananas);</div></pre></td></tr></table></figure>
+<h3 id="自定义的组件使用-props"><a href="#自定义的组件使用-props" class="headerlink" title="自定义的组件使用 props"></a>自定义的组件使用 <code>props</code></h3><p><img src="/imgs/RN-props.jpg" alt=""></p>
+<hr>
+<h2 id="State-状态"><a href="#State-状态" class="headerlink" title="State(状态)"></a>State(状态)</h2><ul>
+<li>RN中可通过 props 和 state 来控制一个组件<ul>
+<li><code>props</code> 数据是在父组件中指定，仅生效一次</li>
+<li><code>state</code> 数据可根据需求进行改写</li>
+</ul>
+</li>
+<li><code>constructor</code> 可用来初始化state ,需要改写时调用 <code>setState</code> 方法</li>
+</ul>
+<p>文字变换例子</p>
+<p><img src="/imgs/RN-state.jpg" alt=""></p>
+<hr>
+<h2 id="Style-样式"><a href="#Style-样式" class="headerlink" title="Style(样式)"></a>Style(样式)</h2><ul>
+<li>按照JS的语法要求使用了驼峰命名法</li>
+<li><code>StyleSheet.create</code> 来集中定义组件的样式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppRegistry, StyleSheet, Text, View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LotsOfStyles</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Text style=&#123;styles.red&#125;&gt;just red&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;styles.bigblue&#125;&gt;just bigblue&lt;/Text&gt;</div><div class="line"></div><div class="line">        /* 常见的做法是按顺序使用属性，即后属性会覆盖前属性 */</div><div class="line"></div><div class="line">        &lt;Text style=&#123;[styles.bigblue, styles.red]&#125;&gt;bigblue, then red&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[styles.red, styles.bigblue]&#125;&gt;red, then bigblue&lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</div><div class="line">  <span class="attr">bigblue</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">'blue'</span>,</div><div class="line">    <span class="attr">fontWeight</span>: <span class="string">'bold'</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="number">30</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">red</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AppRegistry.registerComponent(<span class="string">'LotsOfStyles'</span>, () =&gt; LotsOfStyles);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Flexbox-布局"><a href="#Flexbox-布局" class="headerlink" title="Flexbox 布局"></a>Flexbox 布局</h2><p id="border-yellow"> <code>flexDirection</code> 的默认值是 <code>column</code> 而不是row，而flex也只能指定一个数字值。</p>
+
+<ul>
+<li>Flexbox 主要三属性<ul>
+<li>flexDirection</li>
+<li>justifyContent</li>
+<li>alignItems</li>
+</ul>
+</li>
+</ul>
+<p><strong>居中排列</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppRegistry, View &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AlignItemsBasics</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="comment">// 尝试把`alignItems`改为`flex-start`看看</span></div><div class="line">      <span class="comment">// 尝试把`justifyContent`改为`flex-end`看看</span></div><div class="line">      <span class="comment">// 尝试把`flexDirection`改为`row`看看</span></div><div class="line">      &lt;View style=&#123;&#123;</div><div class="line">        <span class="attr">flex</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">flexDirection</span>: <span class="string">'row'</span>,</div><div class="line">        <span class="attr">justifyContent</span>: <span class="string">'center'</span>,</div><div class="line">        <span class="attr">alignItems</span>: <span class="string">'center'</span>,</div><div class="line">      &#125;&#125;&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: 'powderblue'&#125;&#125; /&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: 'skyblue'&#125;&#125; /&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: 'steelblue'&#125;&#125; /&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('AwesomeProject', () =&gt; AlignItemsBasics);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="TextInput"><a href="#TextInput" class="headerlink" title="TextInput"></a>TextInput</h2><ul>
+<li><code>TextInput</code> 是一个允许用户输入文本的基础组件。</li>
+<li><code>onChangeText</code> 属性接受一个函数，而此函数会在 <code>文本变化时</code> 被调用。</li>
+<li><code>onSubmitEditing</code> 属性，会在 <code>文本被提交后</code>（用户按下软键盘上的提交键）调用。</li>
+</ul>
+<hr>
+<h2 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h2><ul>
+<li>ScrollView 是一个通用的可滚动的容器，其中可放入多个组件和视图，<code>不区分类型</code>,可以 <code>水平滚动</code></li>
+<li>ScrollView 适合用来显示 <code>数量不多</code> 的滚动元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">  AppRegistry,</div><div class="line">  StyleSheet,</div><div class="line">  Text,</div><div class="line">  View,</div><div class="line">  ScrollView,</div><div class="line">  Image</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">testApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">      <span class="keyword">return</span>(</div><div class="line">        &lt;ScrollView&gt;</div><div class="line">          &lt;Text style=&#123;&#123;fontSize:96&#125;&#125;&gt;Scroll me plz&lt;/Text&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/aaa.png')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/aaa.png')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/bbb.jpeg')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/aaa.png')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/aaa.png')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Text style=&#123;&#123;fontSize:96&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">          &lt;Image source=&#123;require('./src/img/bbb.jpeg')&#125; style=&#123;&#123;height:200,width:200&#125;&#125;/&gt;</div><div class="line">          &lt;Text style=&#123;&#123;fontSize:80&#125;&#125;&gt;React Native&lt;/Text&gt;</div><div class="line">        &lt;/ScrollView&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">AppRegistry.registerComponent('testApp', () =&gt; testApp);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><ul>
+<li>RN 中展示长列表数据的常用组件有俩个<ul>
+<li>FlatList</li>
+<li>SectionList</li>
+</ul>
+</li>
+</ul>
+<h3 id="FlatList-组件"><a href="#FlatList-组件" class="headerlink" title="FlatList 组件"></a>FlatList 组件</h3><ul>
+<li><p>特点</p>
+<ul>
+<li>适用展示一组 <code>仅数据不同的垂直滚动列表</code></li>
+<li>适用 <code>长列表数据</code> 且元素的个数可以增删</li>
+<li>FlatList <code>优先渲染屏幕上可见的元素</code></li>
+</ul>
+</li>
+<li><p>使用</p>
+<ul>
+<li>FlatList 组件 <code>必须</code> 的两个属性是 <code>data</code> 和 <code>renderItem</code> 。<ul>
+<li>data 是列表的 <code>数据源</code></li>
+<li>renderItem 是从数据源中逐个 <code>解析数据</code> ，然后返回一个设定好格式的组件来渲染。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">  AppRegistry,</div><div class="line">  StyleSheet,</div><div class="line">  Text,</div><div class="line">  View,</div><div class="line">  ScrollView,</div><div class="line">  Image,</div><div class="line">  FlatList</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">testApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">        &lt;FlatList</div><div class="line">          data=&#123;[</div><div class="line">            &#123;key: 'Devin'&#125;,</div><div class="line">            &#123;key: 'Jackson'&#125;,</div><div class="line">            &#123;key: 'James'&#125;,</div><div class="line">            &#123;key: 'Joel'&#125;,</div><div class="line">            &#123;key: 'John'&#125;,</div><div class="line">            &#123;key: 'Jillian'&#125;,</div><div class="line">            &#123;key: 'Jimmy'&#125;,</div><div class="line">            &#123;key: 'Julie'&#125;,</div><div class="line">            &#123;key: 'Julie'&#125;,</div><div class="line">            &#123;key: '白晓健'&#125;,</div><div class="line">            &#123;key: '白晓建'&#125;,</div><div class="line">            &#123;key: '白晓见'&#125;,</div><div class="line">            &#123;key: '白小剑'&#125;,</div><div class="line">          ]&#125;</div><div class="line">          // renderItem 一个对象, 里面有一个箭头函数其参数是一个对象,对象的值时 data 中的 每一项</div><div class="line">          renderItem=&#123;(&#123;item&#125;) =&gt; &#123;</div><div class="line"></div><div class="line">            return &lt;Text style=&#123;styles.item&#125;&gt; 你好&#123;item.key&#125; ,welcome &lt;/Text&gt;</div><div class="line">      &#125;&#125;</div><div class="line">        /&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const styles = StyleSheet.create(&#123;</div><div class="line">  container: &#123;</div><div class="line">   flex: 1,</div><div class="line">   paddingTop: 22,</div><div class="line">  &#125;,</div><div class="line">  item: &#123;</div><div class="line">    padding: 10,</div><div class="line">    fontSize: 18,</div><div class="line">    height: 44,</div><div class="line">    backgroundColor:'pink'</div><div class="line">  &#125;,</div><div class="line">&#125;)</div><div class="line">AppRegistry.registerComponent('testApp', () =&gt; testApp);</div></pre></td></tr></table></figure>
+<h3 id="SectionList"><a href="#SectionList" class="headerlink" title="SectionList"></a>SectionList</h3><p id="border-blue">如果想提供一组数据分成 <code>逻辑部分</code> 或 <code>章节标题</code> ，可以使用 <code>SectionList</code> 。</p>
+
+
+<h2 id="网络请求-fetch"><a href="#网络请求-fetch" class="headerlink" title="网络请求(fetch)"></a>网络请求(fetch)</h2><h3 id="发起网络请求"><a href="#发起网络请求" class="headerlink" title="发起网络请求"></a>发起网络请求</h3><p id="border-blue">想从地址获取内容,只需将网址作为参数即可</p>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">testApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  state = &#123;</div><div class="line">    <span class="attr">movies</span>:[</div><div class="line">      &#123;<span class="attr">key</span>: <span class="string">'白晓健'</span>&#125;,</div><div class="line">      &#123;<span class="attr">key</span>: <span class="string">'白晓建'</span>&#125;,</div><div class="line">      &#123;<span class="attr">key</span>: <span class="string">'白晓见'</span>&#125;,</div><div class="line">      &#123;<span class="attr">key</span>: <span class="string">'白小剑'</span>&#125;,</div><div class="line">    ],</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  fatchData=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    fetch(<span class="string">'https://api.douban.com/v2/movie/in_theaters'</span>)</div><div class="line">    <span class="comment">// 转换成 Text  是为了当意外发生时,更容易锁定错误</span></div><div class="line">    .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.text())</div><div class="line">    .then(<span class="function">(<span class="params">responseText</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">const</span> json = <span class="built_in">JSON</span>.parse(responseText);</div><div class="line">      <span class="built_in">console</span>.log(json)</div><div class="line">      <span class="comment">// 重新设置 state 中 movies 的 值,也就是给 movies 赋值</span></div><div class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">movies</span>:json.subjects&#125;);</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.error(error);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  componentDidMount() &#123;</div><div class="line">      <span class="keyword">this</span>.fatchData()</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="comment">// const &#123; movies &#125; = this.state;</span></div><div class="line">      &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">        &lt;FlatList</div><div class="line">          data=&#123;this.state.movies&#125;</div><div class="line">          // 一个对象 里面有一个</div><div class="line">          renderItem=&#123;(&#123;item&#125;) =&gt; &#123;</div><div class="line"></div><div class="line">            return &lt;Text style=&#123;styles.item&#125;&gt; 你好,&#123;item.title&#125; ,welcome &lt;/Text&gt;</div><div class="line">      &#125;&#125;</div><div class="line">        /&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>fetch 的第二个可选参数,可用来定制HTTP请求一些参数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* 指定header参数，指定使用POST方法，提交数据 */</span></div><div class="line">fetch(<span class="string">'https://mywebsite.com/endpoint/'</span>, &#123;</div><div class="line">  <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">  <span class="attr">headers</span>: &#123;</div><div class="line">    <span class="string">'Accept'</span>: <span class="string">'application/json'</span>,</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">body</span>: <span class="built_in">JSON</span>.stringify(&#123;</div><div class="line">    <span class="attr">firstParam</span>: <span class="string">'yourValue'</span>,</div><div class="line">    <span class="attr">secondParam</span>: <span class="string">'yourOtherValue'</span>,</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="处理响应数据"><a href="#处理响应数据" class="headerlink" title="处理响应数据"></a>处理响应数据</h3><ul>
+<li>网络请求天生就是一种异步操作</li>
+<li>Fetch 方法会返回一个 <code>Promise实例</code> ，其用意是简化异步风格的代码</li>
+<li>默认情况下，iOS会 <code>阻止所有非https的请求</code> ,<a href="https://segmentfault.com/a/1190000002933776" rel="external nofollow noopener noreferrer" target="_blank">解决方案</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">getMoviesFromApiAsync() &#123;</div><div class="line">   <span class="keyword">return</span> fetch(<span class="string">'https://facebook.github.io/react-native/movies.json'</span>)</div><div class="line">     .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</div><div class="line">     .then(<span class="function">(<span class="params">responseJson</span>) =&gt;</span> &#123;</div><div class="line">       <span class="keyword">return</span> responseJson.movies;</div><div class="line">     &#125;)</div><div class="line">     .catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</div><div class="line">       <span class="built_in">console</span>.error(error);</div><div class="line">     &#125;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>RN 应用中使用 <code>ES7标准中</code> 的async/await 语法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 注意这个方法前面有async关键字</span></div><div class="line"> <span class="keyword">async</span> getMoviesFromApi() &#123;</div><div class="line">   <span class="keyword">try</span> &#123;</div><div class="line">     <span class="comment">// 注意这里的await语句，其所在的函数必须有async关键字声明</span></div><div class="line">     <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'https://facebook.github.io/react-native/movies.json'</span>);</div><div class="line">     <span class="keyword">let</span> responseJson = <span class="keyword">await</span> response.json();</div><div class="line">     <span class="keyword">return</span> responseJson.movies;</div><div class="line">   &#125; <span class="keyword">catch</span>(error) &#123;</div><div class="line">     <span class="comment">/* 别忘了catch住fetch可能抛出的异常，否则出错时你可能看不到任何提示。 */</span></div><div class="line">     <span class="built_in">console</span>.error(error);</div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="使用其他的网络库"><a href="#使用其他的网络库" class="headerlink" title="使用其他的网络库"></a>使用其他的网络库</h3><ul>
+<li>RN 中已经内置了 <code>XMLHttpRequest</code> 也就是 ajax</li>
+<li>基于 <code>XMLHttpRequest</code> 封装的第三方库有 <code>frisbee</code> 或是 <code>axios</code> 等</li>
+<li>没有跨域限制</li>
+</ul>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p id="border-blue">RN 支持 WebSocket，这种协议可以在单个 <code>TCP</code> 连接上提供 <code>全双工</code> 的通信信道</p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" rel="external nofollow noopener noreferrer" target="_blank">深度阅读</a></p>
+<hr>
+<h2 id="使用导航器跳转页面"><a href="#使用导航器跳转页面" class="headerlink" title="使用导航器跳转页面"></a>使用导航器跳转页面</h2><p id="border-yellow">从0.44版本开始， <code>Navigator</code> 被从react native的核心组件库中 <code>抽离</code> 到了一个名为 <code>react-native-deprecated-custom-components</code> 的单独模块中。<br>如果需要继续使用 <code>Navigator</code> ，则需要先 <code>yarn add react-native-deprecated-custom-components</code> 安装，然后从这个模块中 import，即 <code>import { Navigator } from &#39;react-native-deprecated-custom-components&#39;</code> .</p>
+
+
+<h3 id="React-Navigation"><a href="#React-Navigation" class="headerlink" title="React Navigation"></a>React Navigation</h3><p id="border-blue">社区今后主推的方案是一个 <code>单独</code> 的导航库 <code>react-navigation</code> ，它的使用十分简单。</p>
+
+<p><a href="https://reactnavigation.org/docs/intro/" rel="external nofollow noopener noreferrer" target="_blank">详细了解</a></p>
+<p>首先是在当前应用中安装此库</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">yarn add react-navigation</div></pre></td></tr></table></figure>
+<p>基本例子</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">  AppRegistry,</div><div class="line">  Text,</div><div class="line">  View,</div><div class="line">  Button</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"><span class="keyword">import</span> &#123; StackNavigator &#125; <span class="keyword">from</span> <span class="string">'react-navigation'</span>;</div><div class="line"></div><div class="line"><span class="comment">/* 导入组件 */</span></div><div class="line"><span class="keyword">import</span> Detail <span class="keyword">from</span> <span class="string">'./src/components/Detail'</span>;</div><div class="line"><span class="keyword">import</span> ChatScreen <span class="keyword">from</span> <span class="string">'./src/components/Chat'</span>;</div><div class="line"><span class="keyword">import</span> TestScreen <span class="keyword">from</span> <span class="string">'./src/components/Test'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomeScreen</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">/* 定义本页面的导航栏设置*/</span></div><div class="line">  <span class="keyword">static</span> navigationOptions = &#123;</div><div class="line">    <span class="comment">/* 定义标题,此标题也是跳入其他页面时返回键上的信息 */</span></div><div class="line">    title: <span class="string">'Welcome'</span>,</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="comment">/* 使标题生效 */</span></div><div class="line">    <span class="keyword">const</span> &#123; navigate &#125; = <span class="keyword">this</span>.props.navigation;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Text&gt;Hello, Chat App!&lt;/Text&gt;</div><div class="line">        &lt;Button</div><div class="line">          /* 设置文本点击事件,进入指定组件 */</div><div class="line">          onPress=&#123;() =&gt; navigate('Chat')&#125;</div><div class="line">          title="Chat with Lucy"</div><div class="line">        /&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 在根文件中用 StackNavigator 声明这些组件(类似于定义路由),键就是 路由名称  */</div><div class="line">const testApp = StackNavigator(&#123;</div><div class="line">  Home: &#123; screen: HomeScreen &#125;,</div><div class="line">  aaa: &#123; screen: Detail &#125;,</div><div class="line">   Chat: &#123; screen: ChatScreen &#125;,</div><div class="line">   Test: &#123; screen: TestScreen &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AppRegistry.registerComponent('testApp', () =&gt; testApp);</div></pre></td></tr></table></figure>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="静态图片资源引用方式"><a href="#静态图片资源引用方式" class="headerlink" title="静态图片资源引用方式"></a>静态图片资源引用方式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 正确</span></div><div class="line">&lt;Image source=&#123;<span class="built_in">require</span>(<span class="string">'./my-icon.png'</span>)&#125; /&gt;</div><div class="line"></div><div class="line"><span class="comment">// 错误</span></div><div class="line"><span class="keyword">var</span> icon = <span class="keyword">this</span>.props.active ? <span class="string">'my-icon-active'</span> : <span class="string">'my-icon-inactive'</span>;</div><div class="line">&lt;Image source=&#123;require('./' + icon + '.png')&#125; /&gt;</div><div class="line"></div><div class="line">// 正确</div><div class="line">var icon = this.props.active ? require('./my-icon-active.png') : require('./my-icon-inactive.png');</div><div class="line">&lt;Image source=&#123;icon&#125; /&gt;</div></pre></td></tr></table></figure>
+<p>注意:require中的图片名字必须是一个静态字符串, <code>不能使用变量</code> ！</p>
+<h3 id="静态非图片资源"><a href="#静态非图片资源" class="headerlink" title="静态非图片资源"></a>静态非图片资源</h3><p id="border-blue"><code>require</code> 语法也可以用来静态地加载你项目中的声音、视频或者文档等文件。</p>
+
+<p>注意: <code>视频必须指定尺寸</code> 而不能使用flex样式.</p>
+<h3 id="网络图片"><a href="#网络图片" class="headerlink" title="网络图片"></a>网络图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 正确</span></div><div class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: <span class="string">'https://facebook.github.io/react/img/logo_og.png'</span>&#125;&#125;</div><div class="line">       style=&#123;&#123;<span class="attr">width</span>: <span class="number">400</span>, <span class="attr">height</span>: <span class="number">400</span>&#125;&#125; /&gt;</div><div class="line"></div><div class="line"><span class="comment">// 错误</span></div><div class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>: <span class="string">'https://facebook.github.io/react/img/logo_og.png'</span>&#125;&#125; /&gt;</div></pre></td></tr></table></figure>
+<p>可携带参数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;Image source=&#123;&#123;</div><div class="line">  <span class="attr">uri</span>: <span class="string">'https://facebook.github.io/react/img/logo_og.png'</span>,</div><div class="line">  <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">  <span class="attr">headers</span>: &#123;</div><div class="line">    <span class="attr">Pragma</span>: <span class="string">'no-cache'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">body</span>: <span class="string">'Your Body goes here'</span></div><div class="line">&#125;&#125;</div><div class="line">style=&#123;&#123;<span class="attr">width</span>: <span class="number">400</span>, <span class="attr">height</span>: <span class="number">400</span>&#125;&#125; /&gt;</div></pre></td></tr></table></figure>
+<h3 id="背景图片组件"><a href="#背景图片组件" class="headerlink" title="背景图片组件"></a>背景图片组件</h3><p>开发者们常面对的一种需求就是类似web中的背景图（background-image）。要实现这一用例，只需简单使用<imagebackground>组件，然后把需要背景图的子组件嵌入其中即可。</imagebackground></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">return</span> (</div><div class="line">  &lt;ImageBackground source=&#123;...&#125;&gt;</div><div class="line">    &lt;Text&gt;Inside&lt;/Text&gt;</div><div class="line">  &lt;/ImageBackground&gt;</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="处理触摸事件"><a href="#处理触摸事件" class="headerlink" title="处理触摸事件"></a>处理触摸事件</h2><h3 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyButton</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  _onPressButton() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"You tapped the button!"</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;TouchableHighlight onPress=&#123;this._onPressButton&#125;&gt;</div><div class="line">        &lt;Text&gt;Button&lt;/Text&gt;</div><div class="line">      &lt;/TouchableHighlight&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>具体使用哪种组件，取决于希望给用户什么样的视觉反馈：<ul>
+<li><code>TouchableHighlight</code>:来制作按钮或者链接。用户手指按下时 <code>背景变暗</code></li>
+<li><code>TouchableNativeFeedback</code>:用户手指按下时形成类似 <code>墨水涟漪</code> 的视觉效果(限Android)</li>
+<li><code>TouchableOpacity</code>:会在用户手指按下时 <code>降低透明度</code></li>
+<li><code>TouchableWithoutFeedback</code>:点击事件的时 <code>无效果</code></li>
+</ul>
+</li>
+</ul>
+<p id="border-blue">某些场景中你可能需要检测用户是否进行了 <code>长按操作</code> 。<br>可以在上面列出的任意组件中使用 <code>onLongPress</code> 属性来实现。</p>
+
+
+<h3 id="列表滑动"><a href="#列表滑动" class="headerlink" title="列表滑动"></a>列表滑动</h3><ul>
+<li>ScrollView<ul>
+<li>可实现用户会在列表中或快或慢的 <code>各种滑动</code></li>
+<li>还可以配置 <code>pagingEnabled</code> 属性来让用户 <code>整屏滑动</code></li>
+<li>水平方向的滑动还可以使用Android上的 <code>ViewPagerAndroid</code> 组件。</li>
+</ul>
+</li>
+<li>ListView<ul>
+<li>是一种特殊的ScrollView，用于显示 <code>较长垂直列表</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li>RN 提供了两个互补的动画系统：<ul>
+<li>用于 <code>全局</code> 的布局动画 <code>LayoutAnimation</code></li>
+<li>用于创建更 <code>精细</code> 的交互控制的动画 <code>Animated</code></li>
+</ul>
+</li>
+</ul>
+<p><a href="http://reactnative.cn/docs/0.46/animations.html#content" rel="external nofollow noopener noreferrer" target="_blank">深度阅读</a></p>
+<hr>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>RN 实现了和浏览器一致的定时器 Timer 。</p>
+<ul>
+<li>定时器<ul>
+<li>setTimeout, clearTimeout</li>
+<li>setInterval, clearInterval</li>
+<li><code>setImmediate</code>, clearImmediate</li>
+<li><code>requestAnimationFrame</code>, cancelAnimationFrame</li>
+</ul>
+</li>
+</ul>
+<p>setImmediate 和 setTimeout 有略微不同.<br>requestAnimationFrame 和 setInterval 有略微不同.</p>
+<p><a href="http://reactnative.cn/docs/0.46/timers.html#content" rel="external nofollow noopener noreferrer" target="_blank">详细阅读</a></p>
+<p>注意: <code>卸载组件前务必清除定时器</code></p>
+<hr>
+<h2 id="直接操作"><a href="#直接操作" class="headerlink" title="直接操作"></a>直接操作</h2><p id="border-blue">在 RN 中， <code>setNativeProps</code> 就是等价于直接在底层操作DOM节点的方法。</p>
+
+<p>注意: 在使用 <code>setNativeProps</code> 之前,先尝试用 <code>setState</code> 或 <code>shouldComponentUpdate</code> 方法来解决问题</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装运行-ReactNative&quot;&gt;&lt;a href=&quot;#安装运行-ReactNative&quot; class=&quot;headerlink&quot; title=&quot;安装运行 ReactNative&quot;&gt;&lt;/a&gt;安装运行 ReactNative&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;react-native init&lt;/code&gt; AwesomeProject&lt;/li&gt;
+&lt;li&gt;cd AwesomeProject &amp;amp;&amp;amp; &lt;code&gt;react-native run-ios&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span id=&quot;inline-yellow&quot;&gt;提示:&lt;/span&gt; version参数 可用来指定版本,例如 &lt;code&gt;react-native init MyApp --version 0.44.3&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ReactNative" scheme="http://www.baixiaojian.com/tags/ReactNative/"/>
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React-redux 笔记</title>
     <link href="http://www.baixiaojian.com/React-redux/"/>
     <id>http://www.baixiaojian.com/React-redux/</id>
     <published>2017-07-10T07:26:17.000Z</published>
-    <updated>2017-07-10T13:54:25.000Z</updated>
+    <updated>2017-07-11T00:41:19.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="border-blue">如果你的应用有以下场景，可以考虑使用 Redux。</p>
+    <content type="html"><![CDATA[<h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="border-blue">如果你的应用有以下场景，可以考虑使用 Redux。</p>
 
 <ol>
 <li>某个组件的状态 <code>需要共享</code></li>
@@ -45,11 +251,39 @@
 <li>当前时刻的 State，可以通过 <code>store.getState()</code> 拿到。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = store.getState();</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * Redux 规定， 一个 State 对应一个 View。</div><div class="line"> * 只要 State 相同，View 就相同。</div><div class="line"> * 你知道 State，就知道 View 是什么样，反之亦然。</div><div class="line"> */</div></pre></td></tr></table></figure>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><ul>
+<li>State 的变化，会导致 View 的变化。</li>
+<li>而改变 State 的唯一办法，就是使用 Action。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Action 是一个对象。</div><div class="line"> * 只有type属性是必须的，表示 Action 的名称。</div><div class="line"> * 其他属性可以自由设置</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> action = &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Action-Creator"><a href="#Action-Creator" class="headerlink" title="Action Creator"></a>Action Creator</h3><p>View 要发送多少种消息，就会有多少种 Action。<br>如果都手写，会很麻烦。可以定义一个函数来生成 Action，这个函数就叫 Action Creator。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">'添加 TODO'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">type</span>: ADD_TODO,</div><div class="line">    text</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> action = addTodo(<span class="string">'Learn Redux'</span>);</div><div class="line"></div><div class="line"><span class="comment">/* addTodo函数就是一个 Action Creator。 */</span></div></pre></td></tr></table></figure>
+<h3 id="store-dispatch"><a href="#store-dispatch" class="headerlink" title="store.dispatch()"></a>store.dispatch()</h3><p><code>store.dispatch()是 View 发出 Action 的唯一方法。</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="comment">/* store.dispatch接受一个 Action 对象作为参数，将它发送出去。*/</span></div><div class="line">store.dispatch(&#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/* 结合 Action Creator，这段代码可以改写如下。 */</span></div><div class="line">store.dispatch(addTodo(<span class="string">'Learn Redux'</span>));</div></pre></td></tr></table></figure>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p id="border-blue"><code>Store</code> 收到 <code>Action</code> 以后，必须给出一个 <code>新的 State</code> ，这样 View 才会发生变化,这种 State 的 <code>计算过程</code> 就叫做 <code>Reducer</code> 。</p>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Reducer 是一个函数</div><div class="line"> * 它接受 当前 State 和 Action 作为参数</div><div class="line"> * 返回一个新的 State。</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  <span class="keyword">return</span> new_state;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>整个应用的初始状态,可以作为State的默认值.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> defaultState = <span class="number">0</span>;</div><div class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = defaultState, action</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'ADD'</span>:</div><div class="line">      <span class="keyword">return</span> state + action.payload;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = reducer(<span class="number">1</span>, &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="number">2</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * reducer 函数收到名为ADD的 Action 以后，</div><div class="line"> * 就返回一个新的 State ，作为加法的计算结果。</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p id="border-red">实际应用中，Reducer 函数不用像上面这样手动调用，<code>store.dispatch</code> 方法会触发 Reducer 的自动执行。</p>
+
+<p>为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入 <code>createStore</code> 方法。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"><span class="comment">/**</span></div><div class="line"> * createStore接受 Reducer 作为参数，生成一个新的 Store。</div><div class="line"> * 以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p><em><code>为什么这个函数叫做 Reducer 呢？</code></em></p>
+<p>因为它可以作为数组的reduce方法的参数。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> actions = [</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">0</span> &#125;,</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">1</span> &#125;,</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">2</span> &#125;</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">const</span> total = actions.reduce(reducer, <span class="number">0</span>); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>数组 <code>actions</code> 表示依次有三个 Action，分别是加0、加1和加2。</li>
+<li>数组的reduce方法接受 Reducer 函数作为参数，就可以直接得到最终的状态3。</li>
+</ul>
+<h3 id="store-subscribe"><a href="#store-subscribe" class="headerlink" title="store.subscribe()"></a>store.subscribe()</h3><p id="border-blue"> <code>store.subscribe</code> 方法是用来设置监听函数，一旦 State 发生变化，就自动执行这个函数。</p>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 把 View 的更新函数（对于 React 项目，就是组件的render方法或setState方法）放入listen，就会实现 View 的自动渲染。</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">let</span> unsubscribe = tore.subscribe(listener);</div><div class="line"></div><div class="line"><span class="comment">/* store.subscribe 方法返回一个函数，调用该函数就可以 解除监听 。 */</span></div><div class="line">unsubscribe();</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p id=&quot;border-blue&quot;&gt;如果你的应用有以下场景，可以考虑使用 Redux。&lt;/p&gt;
+      &lt;h1 id=&quot;未完待续&quot;&gt;&lt;a href=&quot;#未完待续&quot; class=&quot;headerlink&quot; title=&quot;未完待续&quot;&gt;&lt;/a&gt;未完待续&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p id=&quot;border-blue&quot;&gt;如果你的应用有以下场景，可以考虑使用 Redux。&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;某个组件的状态 &lt;code&gt;需要共享&lt;/code&gt;&lt;/li&gt;
@@ -61,9 +295,9 @@
     </summary>
     
     
-      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
-    
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
     
   </entry>
   
@@ -179,9 +413,9 @@
     </summary>
     
     
-      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
-    
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
     
   </entry>
   
@@ -1687,10 +1921,22 @@
     <link href="http://www.baixiaojian.com/quotation/"/>
     <id>http://www.baixiaojian.com/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
-    <updated>2017-07-05T05:43:53.000Z</updated>
+    <updated>2017-07-13T06:05:29.000Z</updated>
     
-    <content type="html"><![CDATA[<p><embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all"><br><div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
-</div></p>
+    <content type="html"><![CDATA[<embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all">
+
+<div class="note primary"><p>只比你努力一点的人,其实已经甩你很远<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+</div>
+<div class="note primary"><p>主动往往能为你赢得更多机会<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+</div>
+<div class="note primary"><p>世界的模样在于你看它的角度<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+</div>
+<div class="note primary"><p>真正成熟的人,脾气永远不会大于他的能力<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+</div>
+<div class="note primary"><p>不要用 “作” 来找存在感<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+</div>
+<div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
+</div>
 <div class="note danger"><p>思想中一旦有了依附，骨子里便失去了坚强；<br><span style="margin-left: 50%"><strong><em>出自『网络』</em></strong></span></p>
 </div>
 <a id="more"></a>
@@ -1732,8 +1978,20 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;&lt;br&gt;&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『钢之炼金术师』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;
+      &lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;
+
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;只比你努力一点的人,其实已经甩你很远&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;主动往往能为你赢得更多机会&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;世界的模样在于你看它的角度&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;真正成熟的人,脾气永远不会大于他的能力&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;不要用 “作” 来找存在感&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『钢之炼金术师』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;思想中一旦有了依附，骨子里便失去了坚强；&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『网络』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
     

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/React-native/</loc>
+    
+    <lastmod>2017-07-21T07:39:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/quotation/</loc>
+    
+    <lastmod>2017-07-13T06:05:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/React-redux/</loc>
+    
+    <lastmod>2017-07-11T00:41:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/React/</loc>
     
     <lastmod>2017-07-10T07:48:59.000Z</lastmod>
@@ -65,13 +86,6 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/quotation/</loc>
-    
-    <lastmod>2017-07-05T05:43:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/photo/</loc>
     
     <lastmod>2017-07-05T05:43:31.000Z</lastmod>
@@ -93,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/hexo2/</loc>
+    <loc>http://www.baixiaojian.com/markdown/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
@@ -107,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/markdown/</loc>
+    <loc>http://www.baixiaojian.com/hexo2/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
