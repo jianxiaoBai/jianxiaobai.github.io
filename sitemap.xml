@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/ReactES6/</loc>
+    
+    <lastmod>2017-07-25T03:25:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/React-native/</loc>
     
-    <lastmod>2017-07-21T07:51:54.000Z</lastmod>
+    <lastmod>2017-07-21T10:21:14.000Z</lastmod>
     
   </url>
   
@@ -114,14 +121,14 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/markdown/</loc>
+    <loc>http://www.baixiaojian.com/hexo1/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/hexo1/</loc>
+    <loc>http://www.baixiaojian.com/markdown/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
