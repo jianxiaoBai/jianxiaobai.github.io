@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/FEDAY3/</loc>
+    
+    <lastmod>2017-09-09T14:34:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2017-09-09T14:33:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    
+    <lastmod>2017-08-13T09:13:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/React-redux/</loc>
+    
+    <lastmod>2017-07-27T09:29:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/quotation/</loc>
+    
+    <lastmod>2017-07-26T09:24:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/ReactES6/</loc>
     
     <lastmod>2017-07-25T03:25:49.000Z</lastmod>
@@ -12,20 +47,6 @@
     <loc>http://www.baixiaojian.com/React-native/</loc>
     
     <lastmod>2017-07-21T10:21:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/quotation/</loc>
-    
-    <lastmod>2017-07-13T06:05:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/React-redux/</loc>
-    
-    <lastmod>2017-07-11T00:41:19.000Z</lastmod>
     
   </url>
   
@@ -86,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    
-    <lastmod>2017-07-07T03:30:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/photo/</loc>
     
     <lastmod>2017-07-05T05:43:31.000Z</lastmod>
@@ -114,6 +128,13 @@
   </url>
   
   <url>
+    <loc>http://www.baixiaojian.com/markdown/</loc>
+    
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/hexo2/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
@@ -122,13 +143,6 @@
   
   <url>
     <loc>http://www.baixiaojian.com/hexo1/</loc>
-    
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/markdown/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     

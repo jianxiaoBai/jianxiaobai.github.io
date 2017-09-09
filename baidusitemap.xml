@@ -4,6 +4,98 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/FEDAY3/</loc>
+    <lastmod>2017-09-09T14:34:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>FEDAY3 笔记</title>
+        <pubTime>2017-09-09T02:19:57.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>FEDAY3</tag>
+         
+        <tag>记录</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-09-09T14:33:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>英语笔记</title>
+        <pubTime>2017-05-13T09:05:11.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2017-08-13T09:13:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>IDE 快捷键</title>
+        <pubTime>2017-07-06T06:57:04.000Z</pubTime>
+        
+        <tag>快捷键</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/React-redux/</loc>
+    <lastmod>2017-07-27T09:29:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>React-redux 笔记</title>
+        <pubTime>2017-07-10T07:26:17.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/quotation/</loc>
+    <lastmod>2017-07-26T09:24:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Quotation</title>
+        <pubTime>2017-04-09T15:56:04.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="语录" url="http://www.baixiaojian.com/categories/%E8%AF%AD%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/ReactES6/</loc>
     <lastmod>2017-07-25T03:25:49.000Z</lastmod>
     <data>
@@ -32,46 +124,9 @@
         <title>React-native 笔记</title>
         <pubTime>2017-07-12T08:47:59.000Z</pubTime>
         
+        <tag>笔记</tag>
+         
         <tag>ReactNative</tag>
-         
-        <tag>笔记</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/quotation/</loc>
-    <lastmod>2017-07-13T06:05:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Quotation</title>
-        <pubTime>2017-04-09T15:56:04.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="语录" url="http://www.baixiaojian.com/categories/%E8%AF%AD%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/React-redux/</loc>
-    <lastmod>2017-07-11T00:41:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>React-redux 笔记</title>
-        <pubTime>2017-07-10T07:26:17.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>React</tag>
          
          
            
@@ -88,9 +143,9 @@
         <title>React 笔记</title>
         <pubTime>2017-07-10T02:17:19.000Z</pubTime>
         
-        <tag>笔记</tag>
-         
         <tag>React</tag>
+         
+        <tag>笔记</tag>
          
          
            
@@ -126,11 +181,11 @@
         <title>简单博文加密</title>
         <pubTime>2017-02-07T02:16:31.000Z</pubTime>
         
+        <tag>encrypt</tag>
+         
         <tag>Next+Hexo</tag>
          
         <tag>博客搭建</tag>
-         
-        <tag>encrypt</tag>
          
          
            
@@ -245,23 +300,6 @@
 
     
   <url>
-    <loc>http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2017-07-07T03:30:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>IDE 快捷键</title>
-        <pubTime>2017-07-06T06:57:04.000Z</pubTime>
-        
-        <tag>快捷键</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.baixiaojian.com/photo/</loc>
     <lastmod>2017-07-05T05:43:31.000Z</lastmod>
     <data>
@@ -318,6 +356,28 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/hexo1/</loc>
+    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>HEXO+GitHub,搭建博客 - 配置</title>
+        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
+        
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/markdown/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
@@ -344,28 +404,6 @@
         <display>
         <title>HEXO+GitHub搭建博客 - 优化</title>
         <pubTime>2017-01-25T13:37:01.000Z</pubTime>
-        
-        <tag>Next+Hexo</tag>
-         
-        <tag>博客搭建</tag>
-         
-         
-           
-             
-              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.baixiaojian.com/hexo1/</loc>
-    <lastmod>2017-06-23T06:17:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>HEXO+GitHub,搭建博客 - 配置</title>
-        <pubTime>2016-12-24T14:23:58.000Z</pubTime>
         
         <tag>Next+Hexo</tag>
          

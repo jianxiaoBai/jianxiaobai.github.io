@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-07-25T03:25:49.000Z</updated>
+  <updated>2017-09-09T14:34:17.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -14,6 +14,259 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FEDAY3 笔记</title>
+    <link href="http://www.baixiaojian.com/FEDAY3/"/>
+    <id>http://www.baixiaojian.com/FEDAY3/</id>
+    <published>2017-09-09T02:19:57.000Z</published>
+    <updated>2017-09-09T14:34:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="构建大型应用"><a href="#构建大型应用" class="headerlink" title="构建大型应用"></a>构建大型应用</h2><p>分享人：孟红伦(钉钉)</p>
+<h3 id="重要的俩块"><a href="#重要的俩块" class="headerlink" title="重要的俩块"></a>重要的俩块</h3><ul>
+<li>使用 <code>TypeScript</code> 解决代码 <code>复杂</code> ,数据模型的问题</li>
+<li>使用 <code>RxJS</code> 更好的解决 <code>异步</code> 带来的问题</li>
+</ul>
+<h3 id="代码如何复杂"><a href="#代码如何复杂" class="headerlink" title="代码如何复杂"></a>代码如何复杂</h3><ul>
+<li>上百个 RPC 接口</li>
+<li>几十种消息推送</li>
+<li>10W + 行代码</li>
+<li>模块依赖关系复杂</li>
+<li>数据模型复杂</li>
+</ul>
+<h3 id="钉钉犯过的错"><a href="#钉钉犯过的错" class="headerlink" title="钉钉犯过的错"></a>钉钉犯过的错</h3><ul>
+<li>开发时没有考虑到个人用户登录时的 ‘org’ 字段</li>
+<li>因为开发环境中是 <code>归属某个企业</code> 的,忽视了对 <code>不归属任何企业的个人用户</code>的测试</li>
+<li>最后还是用户主动反映了这个问题</li>
+<li>问题责任:测试的锅</li>
+</ul>
+<a id="more"></a>
+<h3 id="什么是Typescript"><a href="#什么是Typescript" class="headerlink" title="什么是Typescript"></a>什么是Typescript</h3><ul>
+<li>它是 JS 的超集,兼容 ES5,ES2015/16/17.</li>
+<li>它的编译结果是 JS , 可以运行在浏览器/Node端.</li>
+<li>它支持 TS 和 JS 混用</li>
+</ul>
+<h3 id="主流框架支持程度"><a href="#主流框架支持程度" class="headerlink" title="主流框架支持程度"></a>主流框架支持程度</h3><ul>
+<li>Angular 2.0 <code>完全支持</code></li>
+<li>VUE 2.0 <code>部分支持</code><ul>
+<li>模板中还不具备 Type Check 的能力</li>
+</ul>
+</li>
+<li>React <code>完全支持</code><ul>
+<li>jsx 不是 ‘模板’而是 js,所以 Type Check 支持的很好</li>
+</ul>
+</li>
+</ul>
+<h3 id="异步逻辑的处理"><a href="#异步逻辑的处理" class="headerlink" title="异步逻辑的处理"></a>异步逻辑的处理</h3><ul>
+<li><code>RxJS</code> 实现渐进式搜索</li>
+<li>使用 Rx.js Observable 可以更好更直观的描述这些 API,帮助你在错综复杂的异步 API 调用中少犯错</li>
+</ul>
+<hr>
+<h2 id="项目中如何选择框架和库"><a href="#项目中如何选择框架和库" class="headerlink" title="项目中如何选择框架和库"></a>项目中如何选择框架和库</h2><p>分享人：张克军(豆瓣)</p>
+<p id="border-blue"><code>特指</code>公司规模比较大,协作开发的人数比较多,商业型项目</p>
+
+<h3 id="商业型项目的核心"><a href="#商业型项目的核心" class="headerlink" title="商业型项目的核心"></a>商业型项目的核心</h3><ol>
+<li>注重以结果为导向</li>
+<li>高效率高质量的产出产品</li>
+</ol>
+<h3 id="考虑方面"><a href="#考虑方面" class="headerlink" title="考虑方面"></a>考虑方面</h3><ol>
+<li>迭代周期长,方案的选择就要 <code>长期有效性</code></li>
+<li>代码可维护性</li>
+<li>伸缩性,用比较小的成本应对可能随时变更的需求</li>
+<li>方案的选择需要更务实</li>
+</ol>
+<h3 id="基本前提"><a href="#基本前提" class="headerlink" title="基本前提"></a>基本前提</h3><ul>
+<li>成本和效率<ul>
+<li>实现目标的成本和效率</li>
+<li>团队协作的成本和效率</li>
+<li>后续迭代的成本和效率</li>
+</ul>
+</li>
+</ul>
+<p><strong>选择库时经常谈到的关键词</strong></p>
+<ul>
+<li>模式,普及率,成熟度</li>
+<li>体量,局限性,学习成本</li>
+<li>性能,活跃度,周边资源</li>
+<li>前景,契合度,文档质量</li>
+</ul>
+<h3 id="选择的原则"><a href="#选择的原则" class="headerlink" title="选择的原则"></a>选择的原则</h3><ol>
+<li>妥适性原则(避免过度实现)</li>
+<li>库的选择:<ol>
+<li>缩小依赖范围和向稳定方向依赖</li>
+<li>避重趋轻、避繁逐简、以简驭繁、避虚就实</li>
+<li>可替代性</li>
+</ol>
+</li>
+<li>主框架的选择<ol>
+<li>没有不二法则</li>
+<li>拥抱未来</li>
+<li>经验价值高</li>
+<li>架构上的优势为重</li>
+</ol>
+</li>
+</ol>
+<h3 id="选择的原则-白话版"><a href="#选择的原则-白话版" class="headerlink" title="选择的原则(白话版)"></a>选择的原则(白话版)</h3><ol>
+<li>妥适性原则(避免过度实现)</li>
+<li>库的选择，尽量同时满足以下条件<ol>
+<li>单一性</li>
+<li>普遍性</li>
+<li>轻量型</li>
+<li>依赖少</li>
+</ol>
+</li>
+<li>主框架的选择：做足调研和实践，多和老司机交流</li>
+<li>code Review 十分重要</li>
+</ol>
+<h3 id="包分析工具"><a href="#包分析工具" class="headerlink" title="包分析工具"></a>包分析工具</h3><p id="border-green">可以分析出项目中库的依赖和自己写得代码的比重</p>
+
+<p><a href="https://www.npmjs.com/package/webpack-bundle-analyzer" rel="external nofollow noopener noreferrer" target="_blank">https://www.npmjs.com/package/webpack-bundle-analyzer</a></p>
+<hr>
+<h2 id="RN跨三端技术实践"><a href="#RN跨三端技术实践" class="headerlink" title="RN跨三端技术实践"></a>RN跨三端技术实践</h2><p>分享人：<a href="https://github.com/putaoshu" rel="external nofollow noopener noreferrer" target="_blank">刘威</a>(京东金融)</p>
+<h3 id="移动开发常见问题"><a href="#移动开发常见问题" class="headerlink" title="移动开发常见问题"></a>移动开发常见问题</h3><ul>
+<li>原生开发 <code>门槛高</code></li>
+<li>原生发版到上线相对 <code>周期长</code></li>
+<li>原生线上问题相对 <code>难修复</code></li>
+<li>H5 相对原生 <code>体验差</code></li>
+</ul>
+<h3 id="RN优缺点"><a href="#RN优缺点" class="headerlink" title="RN优缺点"></a>RN优缺点</h3><ul>
+<li>优点<ul>
+<li>学习<code>成本低</code></li>
+<li>体验<code>接近原生</code></li>
+<li>二端代码<code>可复用</code></li>
+<li>社区活跃</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>不支持热更新</li>
+<li>不支持h5</li>
+<li>向下兼容性差</li>
+<li>低端机型会有崩溃</li>
+</ul>
+</li>
+</ul>
+<h3 id="三端平台-架构"><a href="#三端平台-架构" class="headerlink" title="三端平台-架构"></a>三端平台-架构</h3><p><img src="../imgs/jinrong.png" alt=""></p>
+<h4 id="关于热更新"><a href="#关于热更新" class="headerlink" title="关于热更新"></a>关于热更新</h4><p id="border-green">苹果官方停掉热更新之后并不影响RN，因为RN热更新没有更改底层的OC代码</p>
+
+<ul>
+<li>缓存机制<ul>
+<li>模块名称</li>
+<li>bundle文件下载地址</li>
+<li>文件校验安全码</li>
+<li>版本号</li>
+</ul>
+</li>
+<li>更新机制<ul>
+<li>插件安全码是否一致</li>
+</ul>
+</li>
+</ul>
+<p>大体思路好像是：</p>
+<ol>
+<li>用户进入APP</li>
+<li>默认下载一个某个接口的数据到本地<ul>
+<li>接口中包括模块名称、bundle文件<code>下载地址</code>、文件校验安全码、版本号</li>
+</ul>
+</li>
+<li>当用户再一次进入APP中的时候会再次下载接口中的数据</li>
+<li>然后在对比之前的数据是否发生了变化，安全码是否一致</li>
+<li>如果不一致，就重新下载一遍，以此实现热更新</li>
+</ol>
+<h4 id="拆分bundle"><a href="#拆分bundle" class="headerlink" title="拆分bundle"></a>拆分bundle</h4><ul>
+<li>底层框架Bundle<ul>
+<li>基础RN JS库</li>
+<li>三端组件 JS库</li>
+</ul>
+</li>
+<li>业务代码Bundle<ul>
+<li>纯业务JS</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/@cqingwang/react-native-split" rel="external nofollow noopener noreferrer" target="_blank">可参考react-native-split</a></li>
+</ul>
+<h4 id="灾备策略"><a href="#灾备策略" class="headerlink" title="灾备策略"></a>灾备策略</h4><p id="border-red">当在低版本手机点击时出现崩溃备用方案</p>
+
+<ul>
+<li>低版本的原生跳H5</li>
+<li>原生连续崩溃降级至H5</li>
+</ul>
+<h4 id="如何支持web端"><a href="#如何支持web端" class="headerlink" title="如何支持web端"></a>如何支持web端</h4><ul>
+<li>编译时转译RN API</li>
+<li><a href="https://github.com/necolas/react-native-web" rel="external nofollow noopener noreferrer" target="_blank">react-native-web</a></li>
+<li><a href="https://www.npmjs.com/package/node-haste-webpack-plugin" rel="external nofollow noopener noreferrer" target="_blank">node-haste-webpack-plugin</a></li>
+</ul>
+<h4 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h4><ul>
+<li>入口配置灵活<ul>
+<li>指定端和版本(可以指定版本打对应的包)</li>
+<li>指定人群定向(作用主要用于测试)</li>
+<li>小流量</li>
+</ul>
+</li>
+</ul>
+<h4 id="跳转中心"><a href="#跳转中心" class="headerlink" title="跳转中心"></a>跳转中心</h4><ul>
+<li>低版本H5</li>
+<li>高版本原生<ul>
+<li>全量包URL</li>
+<li>拆分包URL</li>
+</ul>
+</li>
+<li>App 外输出H5页面</li>
+</ul>
+<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p><img src="../imgs/youhua.png" alt=""></p>
+<h4 id="数据上报"><a href="#数据上报" class="headerlink" title="数据上报"></a>数据上报</h4><p><img src="../imgs/shangbao.png" alt=""></p>
+<hr>
+<h3 id="三端平台-集成方案"><a href="#三端平台-集成方案" class="headerlink" title="三端平台-集成方案"></a>三端平台-集成方案</h3><h4 id="三端组件"><a href="#三端组件" class="headerlink" title="三端组件"></a>三端组件</h4><ul>
+<li>JS UI组件<ul>
+<li>为<code>抹平</code>三端<code>差异化</code>的API，基于视觉的规范UI层JS组件</li>
+<li>UIButon、UIExplain、UISwipe…</li>
+</ul>
+</li>
+<li>JS 业务组件<ul>
+<li>Fetch、Login…</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://fe.jr.jd.com/" rel="external nofollow noopener noreferrer" target="_blank">变色龙三端开发平台文档</a></p>
+<h4 id="三端工具"><a href="#三端工具" class="headerlink" title="三端工具"></a>三端工具</h4><ul>
+<li>本地Nodejs脚手架</li>
+<li>本地模拟器-Android</li>
+<li>本地模拟器-IOS</li>
+<li><a href="https://itunes.apple.com/cn/app/id1244996679?mt=8" rel="external nofollow noopener noreferrer" target="_blank"><code>独立调试IOS</code> APP</a></li>
+<li>本地IDE客户端</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;构建大型应用&quot;&gt;&lt;a href=&quot;#构建大型应用&quot; class=&quot;headerlink&quot; title=&quot;构建大型应用&quot;&gt;&lt;/a&gt;构建大型应用&lt;/h2&gt;&lt;p&gt;分享人：孟红伦(钉钉)&lt;/p&gt;
+&lt;h3 id=&quot;重要的俩块&quot;&gt;&lt;a href=&quot;#重要的俩块&quot; class=&quot;headerlink&quot; title=&quot;重要的俩块&quot;&gt;&lt;/a&gt;重要的俩块&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用 &lt;code&gt;TypeScript&lt;/code&gt; 解决代码 &lt;code&gt;复杂&lt;/code&gt; ,数据模型的问题&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;RxJS&lt;/code&gt; 更好的解决 &lt;code&gt;异步&lt;/code&gt; 带来的问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;代码如何复杂&quot;&gt;&lt;a href=&quot;#代码如何复杂&quot; class=&quot;headerlink&quot; title=&quot;代码如何复杂&quot;&gt;&lt;/a&gt;代码如何复杂&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;上百个 RPC 接口&lt;/li&gt;
+&lt;li&gt;几十种消息推送&lt;/li&gt;
+&lt;li&gt;10W + 行代码&lt;/li&gt;
+&lt;li&gt;模块依赖关系复杂&lt;/li&gt;
+&lt;li&gt;数据模型复杂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;钉钉犯过的错&quot;&gt;&lt;a href=&quot;#钉钉犯过的错&quot; class=&quot;headerlink&quot; title=&quot;钉钉犯过的错&quot;&gt;&lt;/a&gt;钉钉犯过的错&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;开发时没有考虑到个人用户登录时的 ‘org’ 字段&lt;/li&gt;
+&lt;li&gt;因为开发环境中是 &lt;code&gt;归属某个企业&lt;/code&gt; 的,忽视了对 &lt;code&gt;不归属任何企业的个人用户&lt;/code&gt;的测试&lt;/li&gt;
+&lt;li&gt;最后还是用户主动反映了这个问题&lt;/li&gt;
+&lt;li&gt;问题责任:测试的锅&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="FEDAY3" scheme="http://www.baixiaojian.com/tags/FEDAY3/"/>
+    
+      <category term="记录" scheme="http://www.baixiaojian.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>RN 中 ES6 书写规范</title>
@@ -286,9 +539,9 @@
     </summary>
     
     
-      <category term="ReactNative" scheme="http://www.baixiaojian.com/tags/ReactNative/"/>
-    
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="ReactNative" scheme="http://www.baixiaojian.com/tags/ReactNative/"/>
     
   </entry>
   
@@ -297,7 +550,7 @@
     <link href="http://www.baixiaojian.com/React-redux/"/>
     <id>http://www.baixiaojian.com/React-redux/</id>
     <published>2017-07-10T07:26:17.000Z</published>
-    <updated>2017-07-11T00:41:19.000Z</updated>
+    <updated>2017-07-27T09:29:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="border-blue">如果你的应用有以下场景，可以考虑使用 Redux。</p>
 
@@ -315,41 +568,36 @@
 <li>Store 就是保存数据的地方，你可以把它看成一个容器。</li>
 <li><code>整个应用只能有一个 Store</code>。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="comment">/* createStore函数接受另一个函数作为参数，返回新生成的 Store 对象。 */</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="comment">/* createStore函数接受另一个函数作为参数，返回新生成的 Store 对象。 */</span></div></pre></td></tr></table></figure>
 <h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><ul>
 <li><code>Store对象包含所有数据</code>。</li>
-<li>如果想得到某个时点的数据，就要对 Store 生成快照,这种时点的数据集合，就叫做 State。</li>
-<li>当前时刻的 State，可以通过 <code>store.getState()</code> 拿到。</li>
+<li><code>store.getState()</code> 可获得当前 State</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = store.getState();</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * Redux 规定， 一个 State 对应一个 View。</div><div class="line"> * 只要 State 相同，View 就相同。</div><div class="line"> * 你知道 State，就知道 View 是什么样，反之亦然。</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = store.getState();</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * Redux 规定， 一个 State 对应一个 View。</div><div class="line"> * 只要 State 相同，View 就相同。</div><div class="line"> * 你知道 State，就知道 View 是什么样，反之亦然。</div><div class="line"> */</div></pre></td></tr></table></figure>
 <h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><ul>
-<li>State 的变化，会导致 View 的变化。</li>
-<li>而改变 State 的唯一办法，就是使用 Action。</li>
+<li>Action 只是一个对象</li>
+<li>Action 可改变 State, 其变化会同步到 View</li>
+<li><code>type属性必须</code> ，表示 Action 的名称,其他属性随意</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Action 是一个对象。</div><div class="line"> * 只有type属性是必须的，表示 Action 的名称。</div><div class="line"> * 其他属性可以自由设置</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> action = &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> action = &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="Action-Creator"><a href="#Action-Creator" class="headerlink" title="Action Creator"></a>Action Creator</h3><p>View 要发送多少种消息，就会有多少种 Action。<br>如果都手写，会很麻烦。可以定义一个函数来生成 Action，这个函数就叫 Action Creator。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">'添加 TODO'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">type</span>: ADD_TODO,</div><div class="line">    text</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> action = addTodo(<span class="string">'Learn Redux'</span>);</div><div class="line"></div><div class="line"><span class="comment">/* addTodo函数就是一个 Action Creator。 */</span></div></pre></td></tr></table></figure>
 <h3 id="store-dispatch"><a href="#store-dispatch" class="headerlink" title="store.dispatch()"></a>store.dispatch()</h3><p><code>store.dispatch()是 View 发出 Action 的唯一方法。</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(fn);</div><div class="line"></div><div class="line"><span class="comment">/* store.dispatch接受一个 Action 对象作为参数，将它发送出去。*/</span></div><div class="line">store.dispatch(&#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/* 结合 Action Creator，这段代码可以改写如下。 */</span></div><div class="line">store.dispatch(addTodo(<span class="string">'Learn Redux'</span>));</div></pre></td></tr></table></figure>
-<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p id="border-blue"><code>Store</code> 收到 <code>Action</code> 以后，必须给出一个 <code>新的 State</code> ，这样 View 才会发生变化,这种 State 的 <code>计算过程</code> 就叫做 <code>Reducer</code> 。</p>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Reducer 是一个函数</div><div class="line"> * 它接受 当前 State 和 Action 作为参数</div><div class="line"> * 返回一个新的 State。</div><div class="line"> */</div><div class="line"><span class="keyword">const</span> reducer = <span class="function"><span class="keyword">function</span> (<span class="params">state, action</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  <span class="keyword">return</span> new_state;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>整个应用的初始状态,可以作为State的默认值.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> defaultState = <span class="number">0</span>;</div><div class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = defaultState, action</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'ADD'</span>:</div><div class="line">      <span class="keyword">return</span> state + action.payload;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> state = reducer(<span class="number">1</span>, &#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="number">2</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * reducer 函数收到名为ADD的 Action 以后，</div><div class="line"> * 就返回一个新的 State ，作为加法的计算结果。</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p id="border-red">实际应用中，Reducer 函数不用像上面这样手动调用，<code>store.dispatch</code> 方法会触发 Reducer 的自动执行。</p>
-
-<p>为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入 <code>createStore</code> 方法。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"><span class="comment">/**</span></div><div class="line"> * createStore接受 Reducer 作为参数，生成一个新的 Store。</div><div class="line"> * 以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p><em><code>为什么这个函数叫做 Reducer 呢？</code></em></p>
-<p>因为它可以作为数组的reduce方法的参数。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> actions = [</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">0</span> &#125;,</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">1</span> &#125;,</div><div class="line">  &#123; <span class="attr">type</span>: <span class="string">'ADD'</span>, <span class="attr">payload</span>: <span class="number">2</span> &#125;</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">const</span> total = actions.reduce(reducer, <span class="number">0</span>); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<ul>
-<li>数组 <code>actions</code> 表示依次有三个 Action，分别是加0、加1和加2。</li>
-<li>数组的reduce方法接受 Reducer 函数作为参数，就可以直接得到最终的状态3。</li>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="comment">/* store.dispatch接受一个 Action 对象作为参数，将它发送出去。*/</span></div><div class="line">store.dispatch(&#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">  <span class="attr">payload</span>: <span class="string">'Learn Redux'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/* 结合 Action Creator，这段代码可以改写如下。 */</span></div><div class="line">store.dispatch(addTodo(<span class="string">'Learn Redux'</span>));</div></pre></td></tr></table></figure>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><ul>
+<li>Reducer 是一个函数</li>
+<li>接受 <code>当前State</code> 和 <code>Action</code> 作为参数并返回新的 <code>State</code></li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> chatReducer = <span class="function">(<span class="params">state = defaultState, action = &#123;&#125;</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> &#123; type, payload &#125; = action;</div><div class="line">  <span class="keyword">switch</span> (type) &#123;</div><div class="line">    <span class="keyword">case</span> ADD_CHAT:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        <span class="attr">chatLog</span>: state.chatLog.concat(payload)</div><div class="line">      &#125;);</div><div class="line">    <span class="keyword">case</span> CHANGE_STATUS:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        <span class="attr">statusMessage</span>: payload</div><div class="line">      &#125;);</div><div class="line">    <span class="keyword">case</span> CHANGE_USERNAME:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        <span class="attr">userName</span>: payload</div><div class="line">      &#125;);</div><div class="line">    <span class="keyword">default</span>: <span class="keyword">return</span> state;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="store-subscribe"><a href="#store-subscribe" class="headerlink" title="store.subscribe()"></a>store.subscribe()</h3><p id="border-blue"> <code>store.subscribe</code> 方法是用来设置监听函数，一旦 State 发生变化，就自动执行这个函数。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 把 View 的更新函数（对于 React 项目，就是组件的render方法或setState方法）放入listen，就会实现 View 的自动渲染。</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">let</span> unsubscribe = tore.subscribe(listener);</div><div class="line"></div><div class="line"><span class="comment">/* store.subscribe 方法返回一个函数，调用该函数就可以 解除监听 。 */</span></div><div class="line">unsubscribe();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">const</span> store = createStore(reducer);</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 把 View 的更新函数（对于 React 项目，就是组件的render方法或setState方法）放入listen，就会实现 View 的自动渲染。</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">let</span> unsubscribe = store.subscribe(listener);</div><div class="line"></div><div class="line"><span class="comment">/* store.subscribe 方法返回一个函数，调用该函数就可以 解除监听 。 */</span></div><div class="line">unsubscribe();</div></pre></td></tr></table></figure>
+<h3 id="流程步骤"><a href="#流程步骤" class="headerlink" title="流程步骤"></a>流程步骤</h3><ol>
+<li>首先需要在 <code>reducer 函数内</code>,定义 type 值和默认值对应的操作</li>
+<li>把 reducer 函数放到 storeCreate(reducer) <code>进行初始化</code> ,初始化时 返回的是 reducer 函数内的默认值</li>
+<li>通过 store.dispatch({type:’xxx’,value:123}) 来发送 Action 数据格式,以此来触发 reducer 函数,并更新 state 当前值</li>
+<li>在通过 <code>store.subscribe</code> 检测 State 的变化,以此来更新 View</li>
+</ol>
 ]]></content>
     
     <summary type="html">
@@ -366,9 +614,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -484,9 +732,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -710,7 +958,7 @@
     <link href="http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://www.baixiaojian.com/快捷键/</id>
     <published>2017-07-06T06:57:04.000Z</published>
-    <updated>2017-07-07T03:30:45.000Z</updated>
+    <updated>2017-08-13T09:13:46.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/imgs/key1.jpg" alt=""></p>
 <p id="border">各类开发工具中一般有很多快捷键，但常用的就那么一些，以下种类快捷键前后是根据我的 <code>使用频率</code> 进行排序</p>
@@ -1003,7 +1251,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
@@ -1921,6 +2169,781 @@
   </entry>
   
   <entry>
+    <title>英语笔记</title>
+    <link href="http://www.baixiaojian.com/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.baixiaojian.com/英语笔记/</id>
+    <published>2017-05-13T09:05:11.000Z</published>
+    <updated>2017-09-09T14:33:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="从属类别"><a href="#从属类别" class="headerlink" title="从属类别"></a>从属类别</h2><ul>
+<li>从属<ul>
+<li>n. 名词</li>
+<li>v. 动词</li>
+<li>adv. 副词</li>
+<li>adj. 形容词</li>
+<li>prop. 人称代词</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>关于我</th>
+<th>关于你</th>
+<th>关于Ta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I 我(主语)</td>
+<td>you 你</td>
+<td>she 她 ，her 她的</td>
+</tr>
+<tr>
+<td>me 我(用于宾语)</td>
+<td>your 你、你们</td>
+<td>him 他 ，his 他的</td>
+</tr>
+<tr>
+<td>we或us 我们</td>
+<td></td>
+<td>it 它 ，its 它的</td>
+</tr>
+<tr>
+<td>our 我们的</td>
+<td></td>
+<td>they或them 他们、她们、它们</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>their 他们的、她们的、它们的</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<hr>
+<h2 id="单词类别"><a href="#单词类别" class="headerlink" title="单词类别"></a>单词类别</h2><h3 id="名词-n"><a href="#名词-n" class="headerlink" title="名词(n.)"></a>名词(n.)</h3><table>
+<thead>
+<tr>
+<th>普通</th>
+<th>抽象</th>
+<th>集合</th>
+<th>时间</th>
+<th>地点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pen 钢笔</td>
+<td>love 爱</td>
+<td>calss 班级,同学</td>
+</tr>
+<tr>
+<td>pencli 铅笔</td>
+<td>danger 危险</td>
+<td>family 家庭,家人</td>
+</tr>
+<tr>
+<td>book 书</td>
+<td>music 音乐</td>
+<td>audience 听众</td>
+</tr>
+<tr>
+<td>watch 手表</td>
+<td>violence 暴力</td>
+<td></td>
+</tr>
+<tr>
+<td>coat 外套</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dress 连衣裙</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-shirt T桖</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>car 汽车</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>house 房子</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>形容词(adj.)</th>
+<th>指示词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>very 非常</td>
+<td>that  那，那个</td>
+</tr>
+<tr>
+<td>much 多,大量</td>
+<td>the  这个、那个、这些、那些</td>
+</tr>
+<tr>
+<td>new 新</td>
+<td>this   这，这个</td>
+</tr>
+<tr>
+<td>old   老的，旧的</td>
+<td>there   那里</td>
+</tr>
+<tr>
+<td>high   高的</td>
+<td>then   那时候，然后</td>
+</tr>
+<tr>
+<td>long   长的</td>
+<td>than   比</td>
+</tr>
+<tr>
+<td>hot   热的，辣的</td>
+<td>these   这些</td>
+</tr>
+<tr>
+<td>cold   寒冷的，冷漠的</td>
+<td>those   那些</td>
+</tr>
+<tr>
+<td>small   小的</td>
+<td>here   这里</td>
+</tr>
+<tr>
+<td>big   大的</td>
+<td>such   那样的，如此的</td>
+</tr>
+<tr>
+<td>strong   强壮</td>
+<td>both   两者都</td>
+</tr>
+<tr>
+<td>simple   简单</td>
+</tr>
+<tr>
+<td>slow   慢的</td>
+</tr>
+<tr>
+<td>fast    快的，迅速</td>
+</tr>
+<tr>
+<td>quick   （动作）快的</td>
+</tr>
+<tr>
+<td>dark   黑暗的</td>
+</tr>
+<tr>
+<td>center   中心</td>
+</tr>
+<tr>
+<td>ease   安逸，使放松</td>
+</tr>
+<tr>
+<td>often   经常</td>
+</tr>
+<tr>
+<td>hard 坚硬的，努力的，猛烈的</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>副词(adv.)</th>
+<th>介词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>but  但是</td>
+<td>in   在……里面，用……</td>
+</tr>
+<tr>
+<td>if  如果，是否</td>
+<td>as   作为，因为</td>
+</tr>
+<tr>
+<td>so  因此，如此的</td>
+<td>a  一…</td>
+</tr>
+<tr>
+<td>may  可以，可能</td>
+<td>of  ……的 ， 属于</td>
+</tr>
+<tr>
+<td>many  许多</td>
+<td>at  在</td>
+</tr>
+<tr>
+<td>much  许多（不可数事物）</td>
+<td>to  朝…，（在动词原形前）无词义</td>
+</tr>
+<tr>
+<td>few  极少（可数事物）</td>
+<td>for  为，替，因为</td>
+</tr>
+<tr>
+<td>very  非常</td>
+<td>on  在……上面</td>
+</tr>
+<tr>
+<td>must  必须，一定</td>
+<td>with  和…一起，用，带着</td>
+</tr>
+<tr>
+<td>don’t  不(构成否定句，在动词原形前面)</td>
+<td>have   有</td>
+</tr>
+<tr>
+<td>now  现在</td>
+<td>by   通过，在…旁边，被</td>
+</tr>
+<tr>
+<td>some  一些，某个</td>
+<td>from   来自，从</td>
+</tr>
+<tr>
+<td>seem  看上去，似乎</td>
+<td>or   或者，否则</td>
+</tr>
+<tr>
+<td>only  仅仅，唯一的</td>
+<td>too   太，也</td>
+</tr>
+<tr>
+<td>every  每一个</td>
+<td>can   能，罐头</td>
+</tr>
+<tr>
+<td>never  从不</td>
+<td>do   做,无词义（助动词）</td>
+</tr>
+<tr>
+<td>nothing  什么都没有</td>
+</tr>
+<tr>
+<td>should  应该</td>
+</tr>
+<tr>
+<td>will  将，愿意，遗嘱</td>
+</tr>
+<tr>
+<td>just  刚好，仅仅，正义的</td>
+</tr>
+<tr>
+<td>any  任何，一些</td>
+</tr>
+<tr>
+<td>always  总是，一直</td>
+</tr>
+<tr>
+<td>other  其它的</td>
+</tr>
+<tr>
+<td>best  最好的</td>
+</tr>
+<tr>
+<td>better  更好</td>
+</tr>
+<tr>
+<td>about  关于，大约</td>
+</tr>
+<tr>
+<td>yet  然而，已经</td>
+</tr>
+<tr>
+<td>together  一起</td>
+</tr>
+<tr>
+<td>mean  意味着，意思是</td>
+</tr>
+<tr>
+<td>lot  许多</td>
+</tr>
+<tr>
+<td>same  相同的</td>
+</tr>
+<tr>
+<td>perhaps  也许</td>
+</tr>
+<tr>
+<td>less  更少，更（次）的</td>
+</tr>
+<tr>
+<td>try  试着，努力去做</td>
+</tr>
+<tr>
+<td>use  使用，用途</td>
+</tr>
+<tr>
+<td>more  更多，更</td>
+</tr>
+<tr>
+<td>hear  听说，听到</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="语法概念"><a href="#语法概念" class="headerlink" title="语法概念"></a>语法概念</h2><ul>
+<li><p>常用 be 动词  一般是代表“是”的意思</p>
+<ul>
+<li>一般过去时<ul>
+<li>was</li>
+<li>were</li>
+</ul>
+</li>
+<li>一般现在<ul>
+<li>am  第一人称单数(只有 I am)</li>
+<li>are 现在时 <code>复数</code>,主语可以是 we,you,they</li>
+<li>is  (Ta是)</li>
+</ul>
+</li>
+<li>一般将来时<ul>
+<li>will</li>
+<li>be</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>一般疑问句<ul>
+<li>可以直接用 <code>yes 或 no</code> 回答</li>
+<li>最基本的含有be动词的句子吧be提至句首,首字母大写<ul>
+<li>例如: Is this your handbag</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>选择疑问句<ul>
+<li>回答时不用yes活no,而选择一句话</li>
+<li>仅仅在一般疑问句的末尾加or…即可<ul>
+<li>例如: Is this a French car or a German car ? (语调前升后降)</li>
+<li>例如: Are you English or Chinesewho</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>特殊疑问句</p>
+<ul>
+<li>what 什么<ul>
+<li>结构:What(+名词)+助动词+主语?</li>
+<li>例如:What make(名词) is(助动词) your car(主语)?  你的车(主语) 是(助动词) 什么(特殊疑问词) 牌子(名词)</li>
+<li>例如:What’s(其中 is是助动词) your name(主语)?   你的名字是什么</li>
+</ul>
+</li>
+<li>whose 谁的<ul>
+<li>结构:What+名词+助动词+主语?</li>
+<li>例如:Whose book is this?</li>
+<li>例如:Whose shift is that?</li>
+</ul>
+</li>
+<li>which 哪一个<ul>
+<li>结构:Which (名词或者人称代词) + 助动词 + …?</li>
+<li>例如:Which girl is your sister? 哪个女孩是你的妹妹</li>
+<li>例如:Which is your dog? 哪个是你的狗</li>
+<li>例如:Which car is dirty? 哪辆车脏吗</li>
+</ul>
+</li>
+<li>who 谁的</li>
+<li>how 怎么样</li>
+</ul>
+</li>
+<li><p>特殊疑问句变换三部曲:</p>
+<ol>
+<li>根据意思确定特殊疑问词;</li>
+<li>特殊疑问词置于句首;</li>
+<li>把助动词提至主语前;</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>注:特殊疑问词对主语进行提问时不倒装</p>
+<ul>
+<li><p>名词所有格和代词所有格</p>
+<ul>
+<li>一般用于 <code>有生命</code> 的人或物,翻译成 <code>&quot;...的&quot;</code><ul>
+<li>名词所有格: 人名+’s (如Tim’s=Tim的)<ul>
+<li>可相当于形容词或名词,也可做定语修饰名词,也可单独用</li>
+</ul>
+</li>
+<li>代词所有格: <code>形容词性</code> 物主代词(如my,your,his等)和 <code>名词性</code> 物主代词(mine,hers等)<ul>
+<li>代词所有格<code>后面必须有名词</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>否定句</p>
+<ul>
+<li>英文中否定句通过 <code>not</code> 来体现,not 需放在助动词后面<ul>
+<li>例如: This isn’t my umbrella . (这不是我的雨伞,isn’t 是 is not de 缩写)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>区分a/an</p>
+<ul>
+<li>a/an 意思为 ‘一个’,只放在 <code>可数名词</code> 单数前</li>
+<li>用a还是用an取决于后面单词的第一个音标.<code>元音用an</code>,<code>辅音用a</code></li>
+</ul>
+</li>
+<li><p>a/an/the</p>
+<ul>
+<li>a/an不定冠词(不一定指哪个),只能修饰可数名词且是单数,无法修饰可数名词复数</li>
+<li><p>the 定冠词(特指哪些),<code>可修饰任何名词</code>,无论是 单数/复数/不可数名词</p>
+<ol>
+<li>用于 <code>特指</code> 的人或者物前 .</li>
+<li>用于 <code>重新</code> 提到的或者物前.</li>
+<li>用于世界上 <code>独一无二</code> 的事物前 .<ol>
+<li>the sun/earth/moon = 太阳/地球/月亮</li>
+</ol>
+</li>
+</ol>
+<p>注:the的发音,辅音前读 偏”ze” , 元音前读的音偏重</p>
+</li>
+</ul>
+</li>
+<li><p>there be结构<br>  +</p>
+</li>
+<li><p>名词变复数</p>
+<ul>
+<li>英文中名词分 <code>可数名词</code> 和 <code>不可数名词</code>.<ul>
+<li>可数名词有单数复数俩种形式,<code>指一个以上</code> 事物时用复数</li>
+</ul>
+</li>
+<li>名词变复数规则<ol>
+<li>一般名词词尾加-s 构成复数. friends,cases,handbags</li>
+<li>以 -s,-x,-ch,-sh 和部分 o 结尾的词词尾加 -es . dress-dresses,box-boxes,watch-watches,dish-dishes</li>
+<li>以<code>辅音字母</code>+y结尾的单词,把y变为i再加-es. baby-babies , city-cities</li>
+<li>以-f,-fe结尾的名词把-f,-fe变为v再加-es. wife-wives , wolf-wolves</li>
+<li>man,woman 及以<code>其结尾的名词</code>把 man变为men,woman变为women.policeman-policemen,policewoman-policewomen<br>6.不规则名词复数需单独记忆. tooth-teeth,child-children</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>give 的用法</p>
+<ul>
+<li>give sb sth 授人予物</li>
+<li>give sth to sb 授物予人<ul>
+<li>give Jack a car=给杰克一辆车</li>
+<li>give me the book = 把这本书给我</li>
+<li>give sb a hand = 帮某人一个忙或给某人鼓掌(结合上下文)</li>
+<li>give it a try = 试一下</li>
+<li>give me a call = 给我打电话</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>be full of…  = be filled with  = 充满…</p>
+<ul>
+<li>The garden is full of flowers = 这花园里充满了花</li>
+<li>The room is full of smoke = 这房间充满了烟</li>
+</ul>
+</li>
+<li><p>on (从后往前翻译)</p>
+<ul>
+<li>(2.The box) (1.on the floor) (3.is heavy)=地板上的盒子很重</li>
+</ul>
+</li>
+<li><p>of  …的 (从后往前翻译)</p>
+<ul>
+<li>the middle of the room = 房间的中间<ul>
+<li>(3.the middle) (2.of) (1.the room)  = 1.房间 2.的 3.中间</li>
+</ul>
+</li>
+<li>the end of the street = 街道的尽头</li>
+</ul>
+</li>
+<li><p>the 句型</p>
+</li>
+<li><p>知识点</p>
+<ul>
+<li>当面介绍其他人时直接 this is 谁谁谁就可以了</li>
+<li>英文中的 <code>可数单数名词</code> 不能单独出现，必须加个 a 或 an<ul>
+<li>例如: an apple , a book</li>
+</ul>
+</li>
+<li>-or,-er,-eer,ist 都是 <code>名词后缀</code> ,通常指人</li>
+<li>-ess 表示女性</li>
+<li>不是句子开头还用大写就是专有名词<ul>
+<li>the White House 白宫</li>
+</ul>
+</li>
+<li>形容词没有单复数</li>
+<li>记住一句话，all，often，also都是放在be动词的后面，行为动词的前面</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Here you are,catch! 给你,接住</li>
+<li>Here you go,catch! 给你,接住</li>
+<li>a little 有一点</li>
+</ul>
+<h2 id="新东方概念英语单词"><a href="#新东方概念英语单词" class="headerlink" title="新东方概念英语单词"></a>新东方概念英语单词</h2><ul>
+<li>pen 钢笔</li>
+<li>pen+cli 铅笔</li>
+<li>book 书</li>
+<li>watch 手表</li>
+<li>coat 外套</li>
+<li>dress 连衣裙</li>
+<li>T-shirt T桖</li>
+<li>blouse 女衬衫</li>
+<li>car 汽车</li>
+<li>house 房子</li>
+<li>sure 当然</li>
+<li>good morning 早上好</li>
+<li>good afternoon 中午好</li>
+<li>good evening 晚上好</li>
+<li>good night 晚安</li>
+<li>Mr wang    王先生</li>
+<li>Miss li    李小姐</li>
+</ul>
+<ul>
+<li>stu+dent 学生</li>
+<li>new 新</li>
+<li>old 旧</li>
+<li>too 也</li>
+<li>nice 不错</li>
+<li>meet 遇见</li>
+<li>make 制造、牌子</li>
+<li>French 法国</li>
+<li>German 德国 Germany 德国人</li>
+<li>Japan 日本 Japanese 日本人</li>
+<li>Korea 韩国 Korean 韩国人</li>
+<li>China 中国 Chinese 中国人</li>
+<li>England 英国 English 英国人</li>
+<li>America 美国 American 美国人</li>
+<li>Russia 俄罗斯 Russian 俄罗斯人</li>
+<li>Den+mark 丹麦</li>
+<li><p>Norway 挪威</p>
+</li>
+<li><p>what 什么</p>
+</li>
+<li>job/可数 work/不可数,</li>
+<li>typist 打字员</li>
+<li>keyboard 键盘</li>
+<li>operator 操作员</li>
+<li>operate  操作</li>
+<li>engine  引擎,发动机</li>
+<li>engineer 工程师</li>
+<li>nation 国家,民族</li>
+<li>national 国家的</li>
+<li><p>national+ity 国籍</p>
+</li>
+<li><p>police+man 男警</p>
+</li>
+<li>police+women 女警</li>
+<li>police car 警车</li>
+<li>texi 出租汽车</li>
+<li>drive 开车</li>
+<li>driver 司机</li>
+<li>air 空气</li>
+<li>host+ess 女主人,女招待</li>
+<li>air hostess 空姐(空中的女招待)</li>
+<li>post 邮寄 postman邮寄员</li>
+<li>email 电子邮件</li>
+<li>nurse 护士 nursing home(养老院)</li>
+<li>mechanic 修理工</li>
+<li>hair 头发 dress穿衣打扮 头发+穿衣打扮+er(人) = 理发师</li>
+<li>hair salon(沙龙,客厅,展览馆)  美发厅</li>
+<li>house 住宅,家庭 wife 妻子,夫人  housewife 家庭主妇</li>
+<li>milk 牛奶</li>
+<li><p>coffee 咖啡</p>
+</li>
+<li><p>perhaps/maybe 也许 (放在句子开头)</p>
+</li>
+<li>catch 抓住,借助</li>
+<li>cold  寒冷</li>
+<li><p>bus 公共汽车</p>
+</li>
+<li><p>fa+ther 父亲 dad 爸爸</p>
+</li>
+<li>mo+ther 母亲 mom/mum 妈妈</li>
+<li>bro+ther 哥,弟 big/little</li>
+<li>sis+ter 姐,妹 big/little</li>
+<li>child+ren 孩子/孩子们</li>
+<li>parent 父母</li>
+<li>family 家庭</li>
+<li><p>tie n.领带 v.系,绑,捆 (tie a tie : 打领带,像是中文的画画)</p>
+</li>
+<li><p>cus+tom 风俗习惯,+s=海关</p>
+</li>
+<li>pass+port 通过+港口=护照</li>
+<li>ticket 票,入场券</li>
+<li>visa   签证</li>
+<li>tour+ist  旅游+ist 表示人的后缀 = 旅客</li>
+<li>art+ist  艺术+ist 表示人的后缀 = 艺术家</li>
+<li>scient+ist  科学+ist 表示人的后缀 = la科学家</li>
+<li>office 办公室,+r 官员 (在办公室办公的人)</li>
+<li>girl 女孩 , boy 男孩</li>
+<li>fri+end 朋友</li>
+<li>fri+end+ly 友好的  (a friendly smile 一个友好的微笑)</li>
+<li>smile 微笑</li>
+<li><p>in+deed 真正,的确,实在</p>
+</li>
+<li><p>wish 希望,祝福,心愿</p>
+</li>
+<li>wis 知道,以为</li>
+<li>shop 商店</li>
+<li>dirty 污秽,下流,脏</li>
+<li>clean 清洁,干净</li>
+<li>clear 清楚,清澈,晴朗</li>
+</ul>
+<ul>
+<li>these/this 这些/这个</li>
+<li>those/that 那些/那个</li>
+<li>grey/gray 灰色</li>
+<li>purple 紫色</li>
+<li>brown 褐色</li>
+<li>silver 银色</li>
+<li>dark 黑暗的,深色的(dark+grey=深灰色)</li>
+<li><p>light 光,光亮,浅色</p>
+</li>
+<li><p>ti+red 疲倦的,厌烦的,累的</p>
+</li>
+<li>thir+sty 口渴的,口干的</li>
+<li>heavy 沉重的,繁重的,巨大的</li>
+<li>light 轻的,浅的</li>
+<li>stai+r 楼梯,阶梯</li>
+<li>pic+ture 照片,图画,景色</li>
+<li>photo 照片</li>
+<li><p>open/shut 打开/关闭</p>
+</li>
+<li><p>give 给</p>
+</li>
+<li>sure 可靠地,当然</li>
+<li>try 尝试,试验,努力</li>
+<li><p>guy+s 家伙,男人+s = 伙计们</p>
+</li>
+<li><p>cup 杯子,奖杯,酒杯</p>
+</li>
+<li>g+lass 玻璃,镜子</li>
+<li>glasses 眼镜</li>
+<li>cup 茶杯,咖啡杯</li>
+<li>bottle 瓶子</li>
+<li>tin 罐头,易拉罐</li>
+<li>plate 金属板</li>
+<li>park 公园,停车场</li>
+<li>gar+den 菜园,花园</li>
+<li>flo+wer 花,精华</li>
+<li>sale/sell 出售,销售</li>
+<li>ma+tter 物质,事件,原因</li>
+<li><p>le+tter 字母,文字,信,字面意义</p>
+</li>
+<li><p>empty 空的,空旷的,空虚</p>
+</li>
+<li>full 完全的,完整的,满的,充满的</li>
+<li>fill 装满</li>
+<li>hungry 饿</li>
+<li>feel 感觉,认为</li>
+<li>street 街道</li>
+<li>big/large 大的(large一般用于尺寸的表达)</li>
+<li>little/small 小的(small一般用于尺寸的表达)</li>
+<li>k+ni+fe 刀,匕首</li>
+<li>fork 叉子</li>
+<li>chopsticks 筷子</li>
+<li>spoon 勺子</li>
+<li>cup+board 食厨,碗柜</li>
+<li>bottle 瓶子</li>
+<li>paper 纸,文件,论文</li>
+<li>ma+ga+zine 杂志,弹药库</li>
+<li>bike 自行车</li>
+<li>sha+rp/blu+nt 锋利/钝的</li>
+<li>sha+rp+en 销尖,磨快</li>
+<li>box+es(复数) 盒子,箱子,拳击</li>
+<li>box+er 拳击+人=运动员</li>
+<li>box+ing 拳击+进行时=拳击运动</li>
+<li><p>fat/thin/thick 肥的胖的/瘦的,薄的/最拥挤的,厚的</p>
+</li>
+<li><p>Mrs/Miss/Ms 夫人/小姐/女士</p>
+</li>
+<li>Mr 先生</li>
+<li>kitchen 厨房</li>
+<li>fridge 冰箱</li>
+<li>Right/Left 右边/左边(turn Right = 向右转)</li>
+<li>electric 带电的,可通电的</li>
+<li>cooker 炉子(虽然带er但不是指人)</li>
+<li>cook/chef 厨子/大厨</li>
+<li>middle 中间 (in the middle of room = 在房间的中间)</li>
+<li>room 房间</li>
+<li>bed+room 床+房间 = 卧室</li>
+<li>class+room 班级+房间 = 教室</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;从属类别&quot;&gt;&lt;a href=&quot;#从属类别&quot; class=&quot;headerlink&quot; title=&quot;从属类别&quot;&gt;&lt;/a&gt;从属类别&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;从属&lt;ul&gt;
+&lt;li&gt;n. 名词&lt;/li&gt;
+&lt;li&gt;v. 动词&lt;/li&gt;
+&lt;li&gt;adv. 副词&lt;/li&gt;
+&lt;li&gt;adj. 形容词&lt;/li&gt;
+&lt;li&gt;prop. 人称代词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关于我&lt;/th&gt;
+&lt;th&gt;关于你&lt;/th&gt;
+&lt;th&gt;关于Ta&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;I 我(主语)&lt;/td&gt;
+&lt;td&gt;you 你&lt;/td&gt;
+&lt;td&gt;she 她 ，her 她的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;me 我(用于宾语)&lt;/td&gt;
+&lt;td&gt;your 你、你们&lt;/td&gt;
+&lt;td&gt;him 他 ，his 他的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;we或us 我们&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;it 它 ，its 它的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;our 我们的&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;they或them 他们、她们、它们&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;their 他们的、她们的、它们的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何才能成为很厉害的人</title>
     <link href="http://www.baixiaojian.com/rexue/"/>
     <id>http://www.baixiaojian.com/rexue/</id>
@@ -1992,25 +3015,29 @@
     <link href="http://www.baixiaojian.com/quotation/"/>
     <id>http://www.baixiaojian.com/quotation/</id>
     <published>2017-04-09T15:56:04.000Z</published>
-    <updated>2017-07-13T06:05:29.000Z</updated>
+    <updated>2017-07-26T09:24:55.000Z</updated>
     
     <content type="html"><![CDATA[<embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all">
 
-<div class="note primary"><p>只比你努力一点的人,其实已经甩你很远<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+
+
+<div class="note info"><p>苟利国家生以死,岂因祸福趋避之<br><span style="margin-left: 50%"><strong><em>出自『林则徐』</em></strong></span></p>
+</div>
+<div class="note danger"><p>只比你努力一点的人,其实已经甩你很远<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
 </div>
 <div class="note primary"><p>主动往往能为你赢得更多机会<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
 </div>
-<div class="note primary"><p>世界的模样在于你看它的角度<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+<div class="note danger"><p>世界的模样在于你看它的角度<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
 </div>
+<a id="more"></a>
 <div class="note primary"><p>真正成熟的人,脾气永远不会大于他的能力<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
 </div>
-<div class="note primary"><p>不要用 “作” 来找存在感<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
+<div class="note danger"><p>不要用 “作” 来找存在感<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
 </div>
 <div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
 </div>
 <div class="note danger"><p>思想中一旦有了依附，骨子里便失去了坚强；<br><span style="margin-left: 50%"><strong><em>出自『网络』</em></strong></span></p>
 </div>
-<a id="more"></a>
 <div class="note info"><p>星星之火，可以燎原。<br><span style="margin-left: 50%"><strong><em>出自『张居正』</em></strong></span></p>
 </div>
 <div class="note danger"><p>纸上得来终觉浅，绝知此事要躬行。<br><span style="margin-left: 50%"><strong><em>出自『陆游』</em></strong></span></p>
@@ -2051,19 +3078,15 @@
     
       &lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;
 
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;只比你努力一点的人,其实已经甩你很远&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+
+
+&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;苟利国家生以死,岂因祸福趋避之&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『林则徐』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;只比你努力一点的人,其实已经甩你很远&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;主动往往能为你赢得更多机会&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;世界的模样在于你看它的角度&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;真正成熟的人,脾气永远不会大于他的能力&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;不要用 “作” 来找存在感&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『钢之炼金术师』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;思想中一旦有了依附，骨子里便失去了坚强；&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『网络』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;世界的模样在于你看它的角度&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
     
     </summary>
@@ -2418,214 +3441,7 @@
       <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
       <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO+GitHub搭建博客 - 优化</title>
-    <link href="http://www.baixiaojian.com/hexo2/"/>
-    <id>http://www.baixiaojian.com/hexo2/</id>
-    <published>2017-01-25T13:37:01.000Z</published>
-    <updated>2017-06-23T06:17:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="out-img-topic"><img src="http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg" alt="Markdown"></div>
-
-<p>本篇文章主要介绍基于NexT主题的一些第三方功能的实现。<br>基本功能的设置可以参考<a href="http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg" rel="external nofollow noopener noreferrer" target="_blank">Next官网文档</a></p>
-<a id="more"></a>
-<p>首先，我们需要明白：</p>
-<p id="border-yellow"> 在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code> 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>我们约定，将前者称为<span id="inline-blue"> 站点配置文件 </span>，后者称为 <span id="inline-purple">主题配置文件</span>。</p>
-
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="动态背景"><a href="#动态背景" class="headerlink" title="动态背景"></a>动态背景</h4><p>修改 <code>_layout.swig</code> 模板<br>模板位置：<code>themes\next\layout\_layout.swig</code><br>在末尾前加上下面一句:（这里提供两种样式，当然你也可以自由更改）<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 动态背景 --&gt;</span></div><div class="line">#默认灰色线条</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/particle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">#浅蓝色线条</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/particle.js"</span> <span class="attr">count</span>=<span class="string">"50"</span> <span class="attr">zindex</span>=<span class="string">"-2"</span> <span class="attr">opacity</span>=<span class="string">"1"</span> <span class="attr">color</span>=<span class="string">"0,104,183"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>然后在 <code>themes\source\js\src\</code> 下新建文件 <code>particle.js</code> 写上以下代码:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params">n,e,t</span>)</span>&#123;<span class="keyword">return</span> n.getAttribute(e)||t&#125;<span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">document</span>.getElementsByTagName(n)&#125;<span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=e(<span class="string">"script"</span>),o=t.length,i=t[o<span class="number">-1</span>];<span class="keyword">return</span>&#123;<span class="attr">l</span>:o,<span class="attr">z</span>:n(i,<span class="string">"zIndex"</span>,<span class="number">-1</span>),<span class="attr">o</span>:n(i,<span class="string">"opacity"</span>,<span class="number">.5</span>),<span class="attr">c</span>:n(i,<span class="string">"color"</span>,<span class="string">"0,0,0"</span>),<span class="attr">n</span>:n(i,<span class="string">"count"</span>,<span class="number">99</span>)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;c=u.width=<span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth,a=u.height=<span class="built_in">window</span>.innerHeight||<span class="built_in">document</span>.documentElement.clientHeight||<span class="built_in">document</span>.body.clientHeight&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params"></span>)</span>&#123;l.clearRect(<span class="number">0</span>,<span class="number">0</span>,c,a);<span class="keyword">var</span> n,e,t,o,u,d,x=[w].concat(y);y.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="keyword">for</span>(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;c||i.x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,i.ya*=i.y&gt;a||i.y&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,l.fillRect(i.x<span class="number">-.5</span>,i.y<span class="number">-.5</span>,<span class="number">1</span>,<span class="number">1</span>),e=<span class="number">0</span>;e&lt;x.length;e++)n=x[e],i!==n&amp;&amp;<span class="literal">null</span>!==n.x&amp;&amp;<span class="literal">null</span>!==n.y&amp;&amp;(o=i.x-n.x,u=i.y-n.y,d=o*o+u*u,d&lt;n.max&amp;&amp;(n===w&amp;&amp;d&gt;=n.max/<span class="number">2</span>&amp;&amp;(i.x-=<span class="number">.03</span>*o,i.y-=<span class="number">.03</span>*u),t=(n.max-d)/n.max,l.beginPath(),l.lineWidth=t/<span class="number">2</span>,l.strokeStyle=<span class="string">"rgba("</span>+m.c+<span class="string">","</span>+(t+<span class="number">.2</span>)+<span class="string">")"</span>,l.moveTo(i.x,i.y),l.lineTo(n.x,n.y),l.stroke()));x.splice(x.indexOf(i),<span class="number">1</span>)&#125;),r(i)&#125;<span class="keyword">var</span> c,a,u=<span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),m=t(),d=<span class="string">"c_n"</span>+m.l,l=u.getContext(<span class="string">"2d"</span>),r=<span class="built_in">window</span>.requestAnimationFrame||<span class="built_in">window</span>.webkitRequestAnimationFrame||<span class="built_in">window</span>.mozRequestAnimationFrame||<span class="built_in">window</span>.oRequestAnimationFrame||<span class="built_in">window</span>.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="built_in">window</span>.setTimeout(n,<span class="number">1e3</span>/<span class="number">45</span>)&#125;,x=<span class="built_in">Math</span>.random,w=&#123;<span class="attr">x</span>:<span class="literal">null</span>,<span class="attr">y</span>:<span class="literal">null</span>,<span class="attr">max</span>:<span class="number">2e4</span>&#125;;u.id=d,u.style.cssText=<span class="string">"position:fixed;top:0;left:0;z-index:"</span>+m.z+<span class="string">";opacity:"</span>+m.o,e(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(u),o(),<span class="built_in">window</span>.onresize=o,<span class="built_in">window</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;n=n||<span class="built_in">window</span>.event,w.x=n.clientX,w.y=n.clientY&#125;,<span class="built_in">window</span>.onmouseout=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;w.x=<span class="literal">null</span>,w.y=<span class="literal">null</span>&#125;;<span class="keyword">for</span>(<span class="keyword">var</span> y=[],s=<span class="number">0</span>;m.n&gt;s;s++)&#123;<span class="keyword">var</span> f=x()*c,h=x()*a,g=<span class="number">2</span>*x()<span class="number">-1</span>,p=<span class="number">2</span>*x()<span class="number">-1</span>;y.push(&#123;<span class="attr">x</span>:f,<span class="attr">y</span>:h,<span class="attr">xa</span>:g,<span class="attr">ya</span>:p,<span class="attr">max</span>:<span class="number">6e3</span>&#125;)&#125;setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;i()&#125;,<span class="number">100</span>)&#125;();</div></pre></td></tr></table></figure></p>
-<h4 id="鼠标点击小红心"><a href="#鼠标点击小红心" class="headerlink" title="鼠标点击小红心"></a>鼠标点击小红心</h4><p>在 <code>\themes\next\source\js\src</code> 文件目录下添加 <code>love.js</code> 文件。内容为：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;<span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;<span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;<span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;<span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;<span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</div></pre></td></tr></table></figure></p>
-<p>找到 <code>\themes\next\layout\_layout.swing</code> 文件， 在文件的后面， 标签之前 添加以下代码：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;!-- 小红心 --&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<h3 id="头像圆形旋转"><a href="#头像圆形旋转" class="headerlink" title="头像圆形旋转"></a>头像圆形旋转</h3><p>修改文件 <code>themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code><br><a href="https://github.com/cwyaml/blog-backup/blob/master/themes/next-5.0.1/source/css/_common/components/sidebar/sidebar-author.styl" rel="external nofollow noopener noreferrer" target="_blank">我的样式文件</a></p>
-<h3 id="文章结尾模板"><a href="#文章结尾模板" class="headerlink" title="文章结尾模板"></a>文章结尾模板</h3><p>在 <code>\themes\next\_macro</code> 文件目录下添加 <code>passage-end-tag.swig</code> 文件，内容为：(当然你也可以修改为自己喜欢的样式)<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;% if theme.passage_end_tag.enabled %&#125;</div><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>如果您觉得本博客还不错，欢迎继续关注本博客，欢迎多提宝贵意见，非常感谢！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"inline-green"</span> <span class="attr">style</span>=<span class="string">"border-radius:3px;"</span>&gt;</span>作者<span class="tag">&lt;/<span class="name">span</span>&gt;</span>：</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://github.com/cwyaml"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>cwyaml<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">有问题请 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"https://cwyaml.github.io/about/"</span>&gt;</span>留言<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line">或者私信我的 <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link-blue"</span> <span class="attr">href</span>=<span class="string">"http://weibo.com/u/5742789641?refer_flag=1001030102_&amp;is_all=1"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span>。</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center; color:#ccc; font-size:14px; "</span>&gt;</span></div><div class="line"> ------本文结束</div><div class="line"> &amp;nbsp;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-paw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&amp;nbsp; </div><div class="line"> 感谢阅读------</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
-<p>找到 <code>\themes\next\_macro\post.swig</code> 文件，使用查找功能找到 <code>reward.swig</code>，在这一个 <code>&lt;div&gt;</code> 的前面添加：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;% if not is_index %&#125;</div><div class="line">    &#123;% include 'passage-end-tag.swig' %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="文章底部标签云锚点"><a href="#文章底部标签云锚点" class="headerlink" title="文章底部标签云锚点"></a>文章底部标签云锚点</h3><p>在 <code>themes\next\layout\_macro\post.swig</code> 文件中找到以下代码：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"post-footer"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--这是文章底部标签云锚点，不喜欢就注释掉</span></div><div class="line">  &#123;% if post.tags and post.tags.length and not is_index %&#125;</div><div class="line">    &lt;div class="post-tags"&gt;</div><div class="line">      &#123;% for tag in post.tags %&#125;</div><div class="line">        &lt;a href="&#123;&#123; url_for(tag.path) &#125;&#125;" rel="tag"&gt;# &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</div><div class="line">      &#123;% endfor %&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &#123;% endif %&#125;</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="关于文章内文本样式"><a href="#关于文章内文本样式" class="headerlink" title="关于文章内文本样式"></a>关于文章内文本样式</h3><p>Markdown 毕竟是为了方便写作，在样式上就过于单调。我们自己来给文章加一些样式。。</p>
-<p></p><p id="border-red"> Next 作者提供了一个供用户自己定义样式的文件：<code>\themes\next\source\css\_custom\custom.stl</code> </p>  <p></p>
-<h4 id="自己按需要写"><a href="#自己按需要写" class="headerlink" title="自己按需要写"></a>自己按需要写</h4><p>在上述文件中写上自己的 class 类，然后在 Markdown 文档中使用。<br><a href="https://github.com/cwyaml/Useful-code/blob/master/custom.styl" rel="external nofollow noopener noreferrer" target="_blank">我的custom.styl</a></p>
-<h4 id="引用前端框架"><a href="#引用前端框架" class="headerlink" title="引用前端框架"></a>引用前端框架</h4><p>目前流行的前端框架，像 <a href="http://www.bootcss.com/" rel="external nofollow noopener noreferrer" target="_blank">bootstrap</a>、<a href="http://reactjs.cn/react/index.html" rel="external nofollow noopener noreferrer" target="_blank">React</a>、<a href="http://www.apjs.net/" rel="external nofollow noopener noreferrer" target="_blank">Angular</a> 等，提供给我们很好的前端方案，我们可以把喜欢的引入到上面说的那个文件里，然后就可以使用了。</p>
-<h3 id="设置动态title"><a href="#设置动态title" class="headerlink" title="设置动态title"></a>设置动态title</h3><ul>
-<li><p>在 <code>\themes\next\source\js\src</code> 目录下新建 <code>dytitle.js</code> 。添加以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;!--崩溃欺骗--&gt;</div><div class="line">var OriginTitile = document.title;</div><div class="line"> var titleTime;</div><div class="line"> document.addEventListener(&apos;visibilitychange&apos;, function () &#123;</div><div class="line">     if (document.hidden) &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/img/TEP.ico&quot;);</div><div class="line">         document.title = &apos; 页面崩溃啦 ~ | cwyaml！&apos;;</div><div class="line">         clearTimeout(titleTime);</div><div class="line">     &#125;</div><div class="line">     else &#123;</div><div class="line">         $(&apos;[rel=&quot;icon&quot;]&apos;).attr(&apos;href&apos;, &quot;/favicon.ico&quot;);</div><div class="line">         document.title = &apos; 噫又好了~ &apos; + OriginTitile;</div><div class="line">         titleTime = setTimeout(function () &#123;</div><div class="line">             document.title = OriginTitile;</div><div class="line">         &#125;, 2000);</div><div class="line">     &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>更改 <code>\themes\next\layout\_layout.swig</code> 。在 <strong>&lt;/body&gt;</strong> 之前添加：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;!--崩溃欺骗--&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/dytitle.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="首页动画"><a href="#首页动画" class="headerlink" title="首页动画"></a>首页动画</h3><p>在 <span id="inline-purple">主题配置文件</span> 中，找到 Motion 字段。true 和 false 控制动画的开启与关闭。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># Motion</div><div class="line">use_motion: true</div></pre></td></tr></table></figure></p>
-<h3 id="内容宽度"><a href="#内容宽度" class="headerlink" title="内容宽度"></a>内容宽度</h3><p>现在一般的笔记本都在15寸以上，博客页面两侧留白太多就显得没有必要，并且不美观，所以有必要调整一下宽度。（<em>可以慢慢试着调整到最合适的状态</em>）</p>
-<ul>
-<li><p>找到 <code>\themes\next\source\css\_common\components\post\post-expand.styl</code>，找到：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@media (max-width: 767px)</div><div class="line">改为：</div><div class="line">@media (max-width: 1060px)</div></pre></td></tr></table></figure>
-</li>
-<li><p>找到：<code>\themes\next\source\css\ _variables\base.styl</code> ，找到：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$main-desktop                   = 960px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line"></div><div class="line">$content-desktop                = 700px</div><div class="line">改为：</div><div class="line">$main-desktop                   = 1060px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line"></div><div class="line">$content-desktop                = 800px</div></pre></td></tr></table></figure>
-</li>
-<li><p>找到 <code>\themes\next\source\css\_schemes\Pisces\_layout.styl</code> ，将第 4 行的 <strong>width</strong> 改为 <strong>1060px</strong> ，修改后如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  position: relative;</div><div class="line">  margin: 0 auto;</div><div class="line">  width: 1060px;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="统计功能"><a href="#统计功能" class="headerlink" title="统计功能"></a>统计功能</h3><h4 id="文章阅读次数统计"><a href="#文章阅读次数统计" class="headerlink" title="文章阅读次数统计"></a>文章阅读次数统计</h4><p>参考： <a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" rel="external nofollow noopener noreferrer" target="_blank">LeanCloud</a></p>
-<h4 id="不蒜子统计站点访问"><a href="#不蒜子统计站点访问" class="headerlink" title="不蒜子统计站点访问"></a>不蒜子统计站点访问</h4><ul>
-<li><strong>全局配置：</strong><br>编辑 <span id="inline-purple">主题配置文件</span> 中的 <code>busuanzi_count</code> 的配置项，配置以下内容：<br>当 <strong>enable: true</strong> 时，代表开启全局开关。若 <u>site_uv、site_pv、page_pv</u> 的值均为 <strong>false</strong> 时，不蒜子仅作记录而不会在页面上显示。</li>
-<li><p><strong>站点 UV/PV 配置：</strong><br>当 <strong>site_uv: true</strong> 时，代表在页面底部显示站点的 UV 值。<br>当 <strong>site_pv: true</strong> 时，代表在页面底部显示站点的 PV 值<br><strong>site_uv_header</strong>(site_pv_header) 和 <strong>site_uv_footer</strong>(site_pv_footer) 为自定义样式配置，相关的值留空时将不显示，可以使用（带特效的）<u>font-awesome</u>。显示效果为 <strong>[site_uv_header]UV值/PV值[site_uv_footer]</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">busuanzi_count:</div><div class="line">  # count values only if the other configs are false</div><div class="line">  enable: true</div><div class="line">  # custom uv span for the whole site</div><div class="line">  site_uv: true</div><div class="line">  site_uv_header: 本站总访问量</div><div class="line">  site_uv_footer: </div><div class="line">  # custom pv span for the whole site</div><div class="line">  site_pv: true</div><div class="line">  site_pv_header: 您是第 </div><div class="line">  site_pv_footer:  位小伙伴</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>单页面 PV 值设置：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># custom pv span for one page only</div><div class="line">page_pv: false</div><div class="line">page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;</div><div class="line">page_pv_footer:</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>越来越多的平台（微信公众平台，新浪微博，简书等）支持打赏功能，付费阅读时代越来越近，特此增加了打赏功能。 只需要 <span id="inline-purple">主题配置文件</span> 中填入 微信 和 支付宝 收款二维码图片地址（放在博客根目录的source文件夹下即可） 即可开启该功能。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</div><div class="line">wechatpay: /weixin.png</div><div class="line">alipay: /zhifubao.png</div></pre></td></tr></table></figure></p>
-<h3 id="设置RSS"><a href="#设置RSS" class="headerlink" title="设置RSS"></a>设置RSS</h3><ul>
-<li><p>需要安装 <a href="https://github.com/hexojs/hexo-generator-feed" rel="external nofollow noopener noreferrer" target="_blank">hexo-generator-feed</a> 插件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>在 <span id="inline-blue"> 站点配置文件 </span> 中添加字段：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">feed:</div><div class="line">  type: atom</div><div class="line">  path: atom.xml</div><div class="line">  limit: 20</div><div class="line">  hub:</div><div class="line">  content:</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="听音乐"><a href="#听音乐" class="headerlink" title="听音乐"></a>听音乐</h3><ul>
-<li><strong>下载js文件：</strong><a href="https://github.com/cwyaml/Useful-code/blob/master/high.swig" rel="external nofollow noopener noreferrer" target="_blank">high.swig</a>。放在 <code>\themes\next\layout\_macro</code> 目录下。</li>
-<li><p><strong>在侧边栏引用该文件：</strong>修改 <code>\themes\next\layout\_macro\sidebar.swig</code> ，添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% include &apos;high.swig&apos; %&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo01.png" alt="Markdown"></p>
-</li>
-<li><p><strong>样式修改：</strong>使 <strong>听音乐</strong> 和 <strong>RSS</strong> 并排展示，修改 <code>\themes\next\source\css\_schemes\Pisces\_sidebar.styl</code></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</div></pre></td></tr></table></figure>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo02.png" alt="Markdown"></p>
-</li>
-<li><p><strong>添加自己喜欢的音乐：</strong>修改其中的歌曲链接即可（<a href="https://cwyaml.github.io/2017/03/02/wangyimusic/" rel="external nofollow noopener noreferrer" target="_blank">获取歌曲外链教程</a>）</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> songs = [</div><div class="line">      <span class="string">"http://m2.music.126.net/3uHnH7uQAeFwUfuvEB9lrg==/3265549619475054.mp3"</span>, </div><div class="line">      <span class="string">"http://m2.music.126.net/NnHwR2HV-1OoKZ6R5LVy4Q==/18502581673300023.mp3"</span>,</div><div class="line">      <span class="string">"http://m2.music.126.net/qv3RI4K7ABKJ0TyAdb3taw==/3250156397064860.mp3"</span>,    </div><div class="line">      <span class="string">"......"</span></div><div class="line">  ];</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>首页听音乐摇晃：</strong>需要加载css样式。在 <code>themes\next\layout\_layout.swig</code> 文件的 <u>body标签结束前</u> 添加以下代码：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;!-- 听音乐摇晃 --&gt;</div><div class="line">&lt;link href="http://s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css" rel="stylesheet" type="text/css"&gt;</div></pre></td></tr></table></figure>
-<p><span id="inline-red">注意：</span> 有时候使用 Firefox 、Chrome时会提示非法插件并禁止使用，遇到这种情况我们把样式代码引入到 <code>\themes\next\source\css\_custom\custom.stl</code> 文件即可解决。</p>
-</li>
-</ul>
-<h3 id="添加-Forkme-on-GitHub-丝带"><a href="#添加-Forkme-on-GitHub-丝带" class="headerlink" title="添加 Forkme on GitHub 丝带"></a>添加 Forkme on GitHub 丝带</h3><p>首先进入 <a href="https://github.com/blog/273-github-ribbons" rel="external nofollow noopener noreferrer" target="_blank">GitHub Ribbons</a> 选择自己喜欢的丝带样式。<br>找到 <code>\themes\next\layout\_layout.swig</code> 文件，在 <code>&lt;header&gt;</code> 标签前面添加：（记得把链接修改成自己的GitHub主页）<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://github.com/you"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="给-Blog-添加-LICENSE"><a href="#给-Blog-添加-LICENSE" class="headerlink" title="给 Blog 添加 LICENSE"></a>给 Blog 添加 LICENSE</h3><p>修改 <span id="inline-purple">主题配置文件</span> （使用查找功能）<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div></pre></td></tr></table></figure></p>
-<h3 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h3><ul>
-<li><p>安装 hexo-generator-searchdb</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 <span id="inline-blue"> 站点配置文件 </span> ，添加以下字段：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  field: post</div><div class="line">  format: html</div><div class="line">  limit: 10000</div></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 <span id="inline-purple">主题配置文件</span> ，启用本地搜索</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h3><h4 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a>多说评论</h4><p>使用多说前需要先在 <a href="http://duoshuo.com/" rel="external nofollow noopener noreferrer" target="_blank">多说</a> 创建一个站点。具体步骤如下：</p>
-<ul>
-<li>登录后在首页选择“我要安装”。</li>
-<li>创建站点，填写站点相关信息。<strong>多说域名</strong> 这一栏填写的就是你的 <code>duoshuo_shortname</code>,</li>
-</ul>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo03.png" alt="Markdown"></p>
-<ul>
-<li>创建站点完成后在 <span id="inline-blue"> 站点配置文件 </span> 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值即可。</li>
-</ul>
-<p><strong>多说评论框自定义</strong> : <a href="https://github.com/cwyaml/code-useful/blob/master/%E5%A4%9A%E8%AF%B4%E8%AF%84%E8%AE%BA%E6%A1%86%E6%A0%B7%E5%BC%8F/index.css" rel="external nofollow noopener noreferrer" target="_blank">我的样式代码</a></p>
-<h4 id="多说分享"><a href="#多说分享" class="headerlink" title="多说分享"></a>多说分享</h4><p>在 <span id="inline-purple">主题配置文件</span> 中设置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># Share</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
-<p>禁用鼠标经过时分享更多功能（有bug）:<br>找到 <code>\themes\next\layout\_partials\share\duoshuo_share.swig</code> 文件，替换内容为：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share flat"</span> <span class="attr">data-thread-key</span>=<span class="string">"&#123;&#123; page.path &#125;&#125;"</span></span></div><div class="line">  <span class="attr">data-title</span>=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span></div><div class="line">  <span class="attr">data-content</span>=<span class="string">""</span></div><div class="line">  <span class="attr">data-url</span>=<span class="string">"&#123;&#123; page.permalink &#125;&#125;"</span>&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-inline"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>  <span class="attr">class</span>=<span class="string">"ds-share-icons-16"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds-more"</span>&gt;</span>分享到：<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-weibo"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"weibo"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qzone"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qzone"</span>&gt;</span>QQ空间<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-qqt"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"qqt"</span>&gt;</span>腾讯微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-wechat"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"wechat"</span>&gt;</span>微信<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-facebook"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"facebook"</span>&gt;</span>Facebook<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"ds-google"</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">data-service</span>=<span class="string">"google"</span>&gt;</span>Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-share-icons-more"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h3 id="博文压缩"><a href="#博文压缩" class="headerlink" title="博文压缩"></a>博文压缩</h3><p>目前知道的有两个插件可以压缩博文，<code>hexo-all-minifier</code> 插件和 <code>gulp</code>插件。<br><strong>hexo-all-minifier</strong> 虽然使用比较简单，而且也可以压缩图片，但是对文章缩进（输入法全拼模式下按 Tab）不支持，所以暂时使用 gulp 压缩手段。</p>
-<h4 id="hexo-all-minifier-使用方法"><a href="#hexo-all-minifier-使用方法" class="headerlink" title="hexo-all-minifier 使用方法"></a>hexo-all-minifier 使用方法</h4><p>安装 hexo-all-minifier，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install hexo-all-minifier --save</div></pre></td></tr></table></figure></p>
-<p><code>hexo g</code> 编译的时候就会自动压缩 HTML、JS、图片。详情参考插件介绍 <a href="https://github.com/chenzhutian/hexo-all-minifier" rel="external nofollow noopener noreferrer" target="_blank">hexo-all-minifier</a></p>
-<h4 id="glup-使用方法"><a href="#glup-使用方法" class="headerlink" title="glup 使用方法"></a>glup 使用方法</h4><p>hexo 依赖 gulp 插件安装，在站点的根目录下执行以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install gulp -g</div><div class="line">$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure></p>
-<p>在 <code>package.json</code> 同级目录下，新建 <code>gulpfile.js</code> 并填入以下内容：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">var minifycss = require(&apos;gulp-minify-css&apos;);</div><div class="line">var uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">var htmlmin = require(&apos;gulp-htmlmin&apos;);</div><div class="line">var htmlclean = require(&apos;gulp-htmlclean&apos;);</div><div class="line">// 压缩 public 目录 css</div><div class="line">gulp.task(&apos;minify-css&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.css&apos;)</div><div class="line">        .pipe(minifycss())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 压缩 public 目录 html</div><div class="line">gulp.task(&apos;minify-html&apos;, function() &#123;</div><div class="line">  return gulp.src(&apos;./public/**/*.html&apos;)</div><div class="line">    .pipe(htmlclean())</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">         removeComments: true,</div><div class="line">         minifyJS: true,</div><div class="line">         minifyCSS: true,</div><div class="line">         minifyURLs: true,</div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(&apos;./public&apos;))</div><div class="line">&#125;);</div><div class="line">// 压缩 public/js 目录 js</div><div class="line">gulp.task(&apos;minify-js&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.js&apos;)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 执行 gulp 命令时执行的任务</div><div class="line">gulp.task(&apos;default&apos;, [</div><div class="line">    &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
-<p>生成博文是执行 <code>hexo g &amp;amp;&amp;amp; gulp</code> 就会根据 <strong>gulpfile.js</strong> 中的配置，对 <strong>public</strong> 目录中的静态资源文件进行压缩。</p>
-<h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><ul>
-<li>修改 <code>hexo-generator-index</code> 插件。<br>替换文件：node_modules/hexo-generator-index/lib/generator.js 为：<a href="https://github.com/cwyaml/Useful-code/blob/master/generator%E6%8F%92%E4%BB%B6%E4%BF%AE%E6%94%B9/generator.js" rel="external nofollow noopener noreferrer" target="_blank">generator.js</a></li>
-<li>设置文章置顶<br>在文章 Front-matter 中添加 <strong>top 值</strong>，<u>数值越大文章越靠前</u>，如：<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">---</div><div class="line">title: cwyaml 图集</div><div class="line">categories: [图片]</div><div class="line">tags: [picture]</div><div class="line">date: 2015-04-02 14:36:04</div><div class="line">top: 10</div><div class="line">---</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="博文部署-message"><a href="#博文部署-message" class="headerlink" title="博文部署 message"></a>博文部署 message</h3><p>在 <code>\node_modules\hexo-deployer-git\lib\deployer.js</code> 文件末尾找到这一句：（记得个性一点）<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Lucky Boy: &#123;&#123; now(\&apos;YYYY-MM-DD HH:mm:ss\&apos;) &#125;&#125;.</div></pre></td></tr></table></figure></p>
-<h3 id="图片模式"><a href="#图片模式" class="headerlink" title="图片模式"></a>图片模式</h3><p>  新建博文，设置 <code>type: &quot;picture&quot;</code>，使用 <code>{\% gp x-x \%} ... {\% endgp \%}</code> 标签引用要展示的图片地址，如下所示：(其中的 x-x 为图片展示效果，可以自己尝试一下)<br>  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line">---</div><div class="line">title: Naruto-Pictures</div><div class="line">categories: [图片]</div><div class="line">tags: [picture]</div><div class="line">date: 2014-06-02 10:36:02</div><div class="line">type: "picture"</div><div class="line">comments: false</div><div class="line">---</div><div class="line">&#123;% gp 5-3 %&#125;</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/18210.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/196232.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/224147.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/199301.jpg)</div><div class="line">![](http://oapjp6spr.bkt.clouddn.com/213318.jpg)</div><div class="line">&#123;% endgp %&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;out-img-topic&quot;&gt;&lt;img src=&quot;http://p1.bqimg.com/583079/fc5b98d5c59a4660.jpg&quot; alt=&quot;Markdown&quot;&gt;&lt;/div&gt;
-
-&lt;p&gt;本篇文章主要介绍基于NexT主题的一些第三方功能的实现。&lt;br&gt;基本功能的设置可以参考&lt;a href=&quot;http://on5pjsxrv.bkt.clouddn.com/hexo1.jpg&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Next官网文档&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO+GitHub,搭建博客 - 配置</title>
-    <link href="http://www.baixiaojian.com/hexo1/"/>
-    <id>http://www.baixiaojian.com/hexo1/</id>
-    <published>2016-12-24T14:23:58.000Z</published>
-    <updated>2017-06-23T06:17:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本篇文章主要介绍怎样利用 <code>Hexo + Next</code> 在 <code>GitHub</code> 上搭建个人博客。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;&nbsp;<a href="https://hexo.io/zh-cn/" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 是一个快速、简洁且高效的静态站点生成框架，基于 <a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js</a> 。 它有以下特点：</p>
-<a id="more"></a>
-<ul>
-<li><i class="fa fa-bolt"></i>  <strong>超快速度</strong><br><i>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</i></li>
-<li><i class="fa fa-pencil"></i>  <strong>支持Markdown</strong><br><i>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</i></li>
-<li><i class="fa fa-cloud-upload"></i>  <strong>一件部署</strong><br><i>只需一条指令即可部署到Github Pages，或其他网站</i></li>
-<li><i class="fa fa-cog"></i>  <strong>丰富的插件</strong><br><i>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</i><br>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a href="https://hexo.io/zh-cn/docs/tag-plugins.html" rel="external nofollow noopener noreferrer" target="_blank">标签插件</a> 来快速的插入特定形式的内容。</li>
-</ul>
-<p>基于 Hexo 这个优秀的博客框架，很多优秀的开发者奉献出了它们基于 Hexo 开发的<a href="https://hexo.io/themes/" rel="external nofollow noopener noreferrer" target="_blank">主题</a>。<br><a href="http://theme-next.iissnan.com/" rel="external nofollow noopener noreferrer" target="_blank">NexT</a> 因其 &nbsp; <span id="yu-1">精于心，简于形</span> &nbsp; 的风格，一直被广大用户所喜爱。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序:</p>
-<blockquote>
-<p><a href="https://nodejs.org/en/" rel="external nofollow noopener noreferrer" target="_blank">Node.js</a><br><a href="http://git-scm.com/" rel="external nofollow noopener noreferrer" target="_blank">Git</a></p>
-</blockquote>
-<p>如果您的电脑中已经安装上述必备程序，跳过这一步。<br>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。</p>
-<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><ul>
-<li>Windows：下载安装 git 。<a id="download" href="https://git-scm.com/download/win" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span><br></a></li>
-<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" rel="external nofollow noopener noreferrer" target="_blank">Homebrew</a>，<a href="http://www.macports.org/" rel="external nofollow noopener noreferrer" target="_blank">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" rel="external nofollow noopener noreferrer" target="_blank">安装程序</a> 安装</li>
-<li>Linux（Ubuntu，Debian）：<code>sudo apt-get install git-core</code></li>
-<li>Linux（Fedora，Red Hat，CentOS）：<code>sudo yum install git-core</code></li>
-</ul>
-<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" rel="external nofollow noopener noreferrer" target="_blank">nvm</a>。（nvm：Node Version Manager）<br>windows 下使用 nvm 请看这里： <a href="https://github.com/coreybutler/nvm-windows" rel="external nofollow noopener noreferrer" target="_blank">nvm-windows</a> ，首先需要下载安装 nvm 。<a id="download" href="https://github.com/coreybutler/nvm-windows/releases" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span><br></a></p>
-<p>windows下安装完nvm以后，我们可以打开命令行中执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ nvm</div><div class="line">$ nvm install latest</div></pre></td></tr></table></figure></p>
-<p>执行完以后，重启命令行，执行命令 <code>node -v</code> ，如果出现版本号，那么 <code>Node.js</code> 就安装成功了。</p>
-<p></p><p id="border-red">如果没有安装成功，那可能就是墙的原因。建议下载 <code>Node.js</code> 直接安装。<a id="download" href="https://nodejs.org/en/download/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-download"></i><span> Download Now</span></a></p>
-<p>
-
-</p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>有了 Node.js ，我们可以使用 npm 安装 Hexo。（执行完以后，我们同样可以执行命令 <code>hexo -v</code> 查看是否安装成功就安装成功了。）<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>Hexo安装完成后，我们需要为我们的blog项目创建一个<span id="inline-green">指定文件夹</span>（例如我在 D 盘根目录下创建了一个文件夹 blog 。<code>D:\blog</code> ），在<span id="inline-red">该文件夹中</span>执行以下命令， Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>等待安装，安装完成后，<span id="inline-green">指定文件夹</span> 的目录如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└──</div></pre></td></tr></table></figure></p>
-<p>继续执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo g            //编译</div><div class="line">$ hexo s --debug    //开启本地服务</div></pre></td></tr></table></figure></p>
-<p>这个时候，我们在浏览器中访问 <code>http://localhost:4000/</code> ，就可以看到基于 Hexo 的默认主题的原型：</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/hexo001.png" alt="Markdown"></p>
-<p>到目前为止我们的本地博客已经部署完成。下面我们换上Next主题。</p>
-<h2 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><p>依旧是在当前目录下，使用 Git checkout 代码：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
-<p>等待下载完成。</p>
-<h3 id="启用-NexT-主题"><a href="#启用-NexT-主题" class="headerlink" title="启用 NexT 主题"></a>启用 NexT 主题</h3><p>打开 <span id="inline-blue">站点配置文件</span> (Hexo文件夹下的<span id="inline-green">_config.yml</span>文件)，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> 。<br>到此， NexT 主题安装完成。下一步我们依次执行以下命令验证主题是否正确启用。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<p>我们在浏览器中访问 <code>http://localhost:4000/</code> ，你将看到：<br><img src="http://on5sixmz1.bkt.clouddn.com/hexo002.png" alt="Markdown"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>本地调试三部曲：</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
-<p>这种带debug的运行，如果出现错误，可以在命令行中看到错误提示信息。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本篇文章主要介绍怎样利用 &lt;code&gt;Hexo + Next&lt;/code&gt; 在 &lt;code&gt;GitHub&lt;/code&gt; 上搭建个人博客。&lt;/p&gt;
-&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://hexo.io/zh-cn/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的静态站点生成框架，基于 &lt;a href=&quot;https://nodejs.org/en/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Node.js&lt;/a&gt; 。 它有以下特点：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
     
       <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
     
