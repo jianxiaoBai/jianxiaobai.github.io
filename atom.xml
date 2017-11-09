@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-09-09T14:34:17.000Z</updated>
+  <updated>2017-11-09T10:14:19.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,11 +16,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>node 笔记</title>
+    <link href="http://www.baixiaojian.com/node%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.baixiaojian.com/node笔记/</id>
+    <published>2017-11-02T13:57:04.000Z</published>
+    <updated>2017-11-09T10:14:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Node-js-开发环境"><a href="#Node-js-开发环境" class="headerlink" title="Node.js 开发环境"></a>Node.js 开发环境</h2><p>检查 <code>~/.profile</code> 或者 <code>~/.bash_profile</code> 中有没有这样两句</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">export NVM_DIR="/Users/YOURUSERNAME/.nvm"</div><div class="line">[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"  # This loads nvm</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="1-一个最简单的-express-应用"><a href="#1-一个最简单的-express-应用" class="headerlink" title="1. 一个最简单的 express 应用"></a>1. 一个最简单的 express 应用</h2><ul>
+<li>express 是 Node.js 应用最广泛的 web 框架</li>
+<li>express <a href="http://expressjs.com/" rel="external nofollow noopener noreferrer" target="_blank">官网</a> ，我常常上去看它的 API</li>
+</ul>
+<blockquote>
+<p>需求: 当访问 <code>http://localhost:3000/</code> 时，输出 <code>你好，世界</code><br>要点: 新建 express 实例并定义 routes 从而产生输出</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 引入 `express` 模块</span></div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="comment">// 调用 express 实例，不带参数调用时，会返回一个 express 实例</span></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="comment">// app 本身有很多方法，其中包括最常用的 get、post、put/patch、delete，在这里我们调用其中的 get 方法，为我们的 `/` 路径指定一个 handler 函数。</span></div><div class="line"><span class="comment">// 这个 handler 函数会接收 req 和 res 两个对象，他们分别是请求的 request 和 response 。</span></div><div class="line"><span class="comment">// request 中包含了浏览器传来的各种信息，比如 query 啊，body 啊，headers 啊之类的，都可以通过 req 对象访问到。</span></div><div class="line"><span class="comment">// res 对象，我们一般不从里面取信息，而是通过它来定制我们向浏览器输出的信息，比如 header 信息，比如想要向浏览器输出的内容。这里我们调用了它的 #send 方法，向浏览器输出一个字符串。</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello World'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 定义好我们 app 的行为之后，让它监听本地的 3000 端口。这里的第二个函数是个回调函数，会在 listen 动作成功后执行，我们这里执行了一个命令行输出操作，告诉我们监听动作已完成。</span></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'app is listening at port 3000'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>问:node代码监听了3000端口，然后通过访问 <code>http://localhost:3000/</code> 得到了内容，为什么呢？</p>
+<h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><p>端口的作用：通过 <code>端口区分</code> 电脑内不同应用或者进程，从而实现一条 <code>物理网线</code> 同时 <code>链接多个程序</code></p>
+<p><code>app.listen(3000)</code>，进程就被 <code>打标</code> ，当电脑接收到的3000端口的网络消息时就会启动对应打标的进程</p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p><code>RFC1738</code> 定义的url格式笼统版本<code>&lt;scheme&gt;:&lt;scheme-specific-part&gt;</code>，<br>scheme有我们很熟悉的<code>http</code>、<code>https</code>、<code>ftp</code>，以及著名的<code>ed2k</code>，<code>thunder</code>。</p>
+<p>精简版<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;</div></pre></td></tr></table></figure></p>
+<p>scheme=http, host=localhost, port=3000, url-path=/, 再联想对照一下浏览器端<code>window.location</code>对象。<br>著名的<code>localhost</code>，你可以在电脑的hosts文件上找到</p>
+<hr>
+<h2 id="2-学习使用外部模块"><a href="#2-学习使用外部模块" class="headerlink" title="2. 学习使用外部模块"></a>2. 学习使用外部模块</h2><blockquote>
+<p>需求: 访问 <code>http://localhost:3000/?q=alsotang</code> 时，输出 <code>alsotang</code> 的 sha1 值，即 <code>e3c766d71667567e18f77869c65cd62f6a1b9ab9</code><br>要点: 掌握 req.query 的用法</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 引入依赖</span></div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> utility = <span class="built_in">require</span>(<span class="string">'utility'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 建立 express 实例</span></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 从 req.query 中取出我们的 q 参数。</span></div><div class="line">  <span class="comment">// 如果是 post 传来的 body 数据，则是在 req.body 里面，不过 express 默认不处理 body 中的信息，需要引入 https://github.com/expressjs/body-parser 这个中间件才会处理，这个后面会讲到。</span></div><div class="line">  <span class="comment">// 如果分不清什么是 query，什么是 body 的话，那就需要补一下 http 的知识了</span></div><div class="line">  <span class="keyword">var</span> q = req.query.q;</div><div class="line"></div><div class="line">  <span class="comment">// 调用 utility.md5 方法，得到 md5 之后的值</span></div><div class="line">  <span class="comment">// 之所以使用 utility 这个库来生成 md5 值，其实只是习惯问题。每个人都有自己习惯的技术堆栈，</span></div><div class="line">  <span class="comment">// 我刚入职阿里的时候跟着苏千和朴灵混，所以也混到了不少他们的技术堆栈，仅此而已。</span></div><div class="line">  <span class="comment">// utility 的 github 地址：https://github.com/node-modules/utility</span></div><div class="line">  <span class="comment">// 里面定义了很多常用且比较杂的辅助方法，可以去看看</span></div><div class="line">  <span class="keyword">var</span> md5Value = utility.md5(q);</div><div class="line"></div><div class="line">  res.send(md5Value);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'app is running at port 3000'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="3-使用-superagent-与-cheerio-完成简单爬虫"><a href="#3-使用-superagent-与-cheerio-完成简单爬虫" class="headerlink" title="3. 使用 superagent 与 cheerio 完成简单爬虫"></a>3. 使用 <code>superagent</code> 与 <code>cheerio</code> 完成简单爬虫</h2><blockquote>
+<p>需求: 访问 <a href="http://localhost:3000/" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:3000/</a> 时，以 json 形式输出包括主题的作者</p>
+</blockquote>
+<p>例如:<br><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"title"</span>: <span class="string">"【公告】发招聘帖的同学留意一下这里"</span>,</div><div class="line">    <span class="attr">"href"</span>: <span class="string">"http://cnodejs.org/topic/541ed2d05e28155f24676a12"</span>,</div><div class="line">    <span class="attr">"author"</span>: <span class="string">"alsotang"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="attr">"title"</span>: <span class="string">"发布一款 Sublime Text 下的 JavaScript 语法高亮插件"</span>,</div><div class="line">    <span class="attr">"href"</span>: <span class="string">"http://cnodejs.org/topic/54207e2efffeb6de3d61f68f"</span>,</div><div class="line">    <span class="attr">"author"</span>: <span class="string">"otheruser"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>要点: 使用 superagent 抓取网页 、使用 cheerio 分析网页</p>
+</blockquote>
+<ul>
+<li><a href="http://visionmedia.github.io/superagent/" rel="external nofollow noopener noreferrer" target="_blank">superagent</a> 是 http 的一个库，可以发送 get/post 请求</li>
+<li><a href="https://github.com/cheeriojs/cheerio" rel="external nofollow noopener noreferrer" target="_blank">cheerio</a> 就是 Node.js 中的 jquery</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="comment">// 用 superagent 去抓取 https://cnodejs.org/ 的内容</span></div><div class="line">  superagent.get(<span class="string">'https://cnodejs.org/'</span>)</div><div class="line">    .end(<span class="function"><span class="keyword">function</span> (<span class="params">err, sres</span>) </span>&#123;</div><div class="line">      <span class="comment">// 常规的错误处理</span></div><div class="line">      <span class="keyword">if</span> (err) &#123;</div><div class="line">        <span class="keyword">return</span> next(err);</div><div class="line">      &#125;</div><div class="line">      <span class="comment">// sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load 之后</span></div><div class="line">      <span class="comment">// 就可以得到一个实现了 jquery 接口的变量，我们习惯性地将它命名为 `$`</span></div><div class="line">      <span class="comment">// 剩下就都是 jquery 的内容了</span></div><div class="line">      <span class="keyword">var</span> $ = cheerio.load(sres.text);</div><div class="line">      <span class="keyword">var</span> items = [];</div><div class="line">      $(<span class="string">'#topic_list .topic_title'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params">idx, element</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> $element = $(element);</div><div class="line">        items.push(&#123;</div><div class="line">          <span class="attr">title</span>: $element.attr(<span class="string">'title'</span>),</div><div class="line">          <span class="attr">href</span>: $element.attr(<span class="string">'href'</span>)</div><div class="line">        &#125;);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      res.send(items);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="4-使用-eventproxy-控制并发"><a href="#4-使用-eventproxy-控制并发" class="headerlink" title="4. 使用 eventproxy 控制并发"></a>4. 使用 eventproxy 控制并发</h2><blockquote>
+<p>需求: 以上文目标为基础，输出 comment1 的作者，以及他在 cnode 社区的积分值<br>要点: 体会 Node.js 的 回调地狱 之美 、使用 <code>eventproxy</code> 这一利器控制并发</p>
+</blockquote>
+<p>注意: cnodejs.org 网站有 <code>并发连接数</code> 的限制，当请求发送太快时会导致返回值为空或报错</p>
+<ol>
+<li>抓取所有的 a 链接</li>
+<li>访问 a 链接并收集所需数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventproxy = <span class="built_in">require</span>(<span class="string">'eventproxy'</span>);</div><div class="line"><span class="keyword">var</span> superagent = <span class="built_in">require</span>(<span class="string">'superagent'</span>);</div><div class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>);</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> cnodeUrl = <span class="string">'https://cnodejs.org/'</span>;</div><div class="line"></div><div class="line">superagent.get(cnodeUrl)</div><div class="line">  <span class="comment">// 请求结束后</span></div><div class="line">  .end(<span class="function"><span class="keyword">function</span> (<span class="params">err, res</span>) </span>&#123;</div><div class="line">    <span class="comment">// error 处理</span></div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">console</span>.error(err);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 初始化储存 a 链接的数组</span></div><div class="line">    <span class="keyword">var</span> topicUrls = [];</div><div class="line">    <span class="comment">// 成功返回信息 $ 化</span></div><div class="line">    <span class="keyword">var</span> $ = cheerio.load(res.text);</div><div class="line">    <span class="comment">// 处理信息中的 href 字段并放入数组中</span></div><div class="line">    $(<span class="string">'#topic_list .topic_title'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params">idx, element</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> $element = $(element);</div><div class="line">      <span class="keyword">var</span> href = url.resolve(cnodeUrl, $element.attr(<span class="string">'href'</span>));</div><div class="line">      topicUrls.push(href);</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">// 初始 eventProxy (事件代理)</span></div><div class="line">    <span class="keyword">var</span> ep = <span class="keyword">new</span> eventproxy();</div><div class="line">    <span class="comment">// 当 topic_html emit topicUrls.length 次时 , 回调函数就会触发</span></div><div class="line">    ep.after(<span class="string">'topic_html'</span>, topicUrls.length, <span class="function"><span class="keyword">function</span> (<span class="params">topics</span>) </span>&#123;</div><div class="line">      <span class="comment">// topics 是个二维数组，类似 [[url, text], [url,text]]</span></div><div class="line">      topics = topics.map(<span class="function"><span class="keyword">function</span> (<span class="params">topicPair</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> topicUrl = topicPair[<span class="number">0</span>];</div><div class="line">        <span class="keyword">var</span> topicHtml = topicPair[<span class="number">1</span>];</div><div class="line">        <span class="keyword">var</span> $ = cheerio.load(topicHtml);</div><div class="line">        <span class="keyword">return</span> (&#123;</div><div class="line">          <span class="attr">title</span>: $(<span class="string">'.topic_full_title'</span>).text().trim(),</div><div class="line">          <span class="attr">href</span>: topicUrl,</div><div class="line">          <span class="attr">comment1</span>: $(<span class="string">'.reply_content'</span>).eq(<span class="number">0</span>).text().trim(),</div><div class="line">        &#125;);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'final:'</span>);</div><div class="line">      <span class="built_in">console</span>.log(topics);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    topicUrls.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">topicUrl</span>) </span>&#123;</div><div class="line">      superagent.get(topicUrl)</div><div class="line">        .end(<span class="function"><span class="keyword">function</span> (<span class="params">err, res</span>) </span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'fetch '</span> + topicUrl + <span class="string">' successful'</span>);</div><div class="line">          <span class="comment">// 触发 topic_html 事件并发送响应的数据</span></div><div class="line">          ep.emit(<span class="string">'topic_html'</span>, [topicUrl, res.text]);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="5-使用-async-控制并发"><a href="#5-使用-async-控制并发" class="headerlink" title="5. 使用 async 控制并发"></a>5. 使用 async 控制并发</h2><blockquote>
+<p>需求: 当请求很多请求并发时, 有的网站有可能会因为发出的并发连接数太多而当做恶意请求，把其 IP 封掉。<br>要点: 使用 async 来 <code>控制并发连接数</code></p>
+</blockquote>
+<ul>
+<li><p>此次示例所用且常用到的 async 接口</p>
+<ul>
+<li>mapLimit(arr, limit, iterator, callback)</li>
+<li>queue(worker, concurrency) <code>控制并发连接数</code></li>
+</ul>
+<ul>
+<li>什么时候用 <code>eventproxy</code> ，什么时候使用 <code>async</code> 呢？它们不都是用来做异步流程控制的吗？</li>
+</ul>
+<ul>
+<li>当需要去多个源(一般是小于 10 个)汇总数据的时候，用 eventproxy 方便</li>
+<li>当你需要用到队列，需要控制并发数，使用 async。</li>
+</ul>
+</li>
+</ul>
+<p><img src="desktop/asdc.png" alt=""></p>
+<hr>
+<h2 id="6-测试用例：mocha，should，istanbul"><a href="#6-测试用例：mocha，should，istanbul" class="headerlink" title="6. 测试用例：mocha，should，istanbul"></a>6. 测试用例：mocha，should，istanbul</h2><p><em><a href="https://github.com/alsotang/node-lessons/blob/master/lesson6/README.md" rel="external nofollow noopener noreferrer" target="_blank">待掌握</a></em></p>
+<ul>
+<li><p>要点</p>
+<ul>
+<li>学习使用测试框架 <a href="http://mochajs.org/" rel="external nofollow noopener noreferrer" target="_blank">mocha</a></li>
+<li>学习使用断言库 <a href="https://github.com/tj/should.js" rel="external nofollow noopener noreferrer" target="_blank">should</a></li>
+<li>学习使用测试率覆盖工具 <a href="https://github.com/gotwarlost/istanbul" rel="external nofollow noopener noreferrer" target="_blank">istanbul</a></li>
+<li>简单 <a href="http://blog.csdn.net/haoel/article/details/2886" rel="external nofollow noopener noreferrer" target="_blank">Makefile</a> 的编写</li>
+</ul>
+</li>
+<li><p>mocha  输出测试结果</p>
+</li>
+<li>istanbul cover _mocha 输出覆盖率</li>
+<li>open coverage/lcov-report/index.html 浏览器查看</li>
+</ul>
+<h2 id="7-浏览器端测试-mocha-chai-phantomjs"><a href="#7-浏览器端测试-mocha-chai-phantomjs" class="headerlink" title="7. 浏览器端测试: mocha, chai, phantomjs"></a>7. 浏览器端测试: mocha, chai, phantomjs</h2><p><em><a href="https://github.com/alsotang/node-lessons/blob/master/lesson7/README.md" rel="external nofollow noopener noreferrer" target="_blank">待掌握</a></em></p>
+<ul>
+<li>要点<ul>
+<li>学习使用测试框架 <a href="http://mochajs.org/" rel="external nofollow noopener noreferrer" target="_blank">mocha</a> 进行前端测试</li>
+<li>了解全栈的断言库 <a href="http://chaijs.com/" rel="external nofollow noopener noreferrer" target="_blank">chai</a></li>
+<li>了解 headless 浏览器 <a href="http://phantomjs.org/" rel="external nofollow noopener noreferrer" target="_blank">phantomjs</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="8-测试用例-supertest"><a href="#8-测试用例-supertest" class="headerlink" title="8. 测试用例: supertest"></a>8. 测试用例: supertest</h2><p><em><a href="https://github.com/alsotang/node-lessons/blob/master/lesson8/README.md" rel="external nofollow noopener noreferrer" target="_blank">待掌握</a></em></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Node-js-开发环境&quot;&gt;&lt;a href=&quot;#Node-js-开发环境&quot; class=&quot;headerlink&quot; title=&quot;Node.js 开发环境&quot;&gt;&lt;/a&gt;Node.js 开发环境&lt;/h2&gt;&lt;p&gt;检查 &lt;code&gt;~/.profile&lt;/code&gt; 或者 &lt;code&gt;~/.bash_profile&lt;/code&gt; 中有没有这样两句&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;export NVM_DIR=&quot;/Users/YOURUSERNAME/.nvm&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;amp;&amp;amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;1-一个最简单的-express-应用&quot;&gt;&lt;a href=&quot;#1-一个最简单的-express-应用&quot; class=&quot;headerlink&quot; title=&quot;1. 一个最简单的 express 应用&quot;&gt;&lt;/a&gt;1. 一个最简单的 express 应用&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;express 是 Node.js 应用最广泛的 web 框架&lt;/li&gt;
+&lt;li&gt;express &lt;a href=&quot;http://expressjs.com/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;官网&lt;/a&gt; ，我常常上去看它的 API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需求: 当访问 &lt;code&gt;http://localhost:3000/&lt;/code&gt; 时，输出 &lt;code&gt;你好，世界&lt;/code&gt;&lt;br&gt;要点: 新建 express 实例并定义 routes 从而产生输出&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="快捷键" scheme="http://www.baixiaojian.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FEDAY3 笔记</title>
     <link href="http://www.baixiaojian.com/FEDAY3/"/>
     <id>http://www.baixiaojian.com/FEDAY3/</id>
     <published>2017-09-09T02:19:57.000Z</published>
-    <updated>2017-09-09T14:34:17.000Z</updated>
+    <updated>2017-09-10T09:36:31.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="构建大型应用"><a href="#构建大型应用" class="headerlink" title="构建大型应用"></a>构建大型应用</h2><p>分享人：孟红伦(钉钉)</p>
 <h3 id="重要的俩块"><a href="#重要的俩块" class="headerlink" title="重要的俩块"></a>重要的俩块</h3><ul>
@@ -234,6 +353,9 @@
 <li><a href="https://itunes.apple.com/cn/app/id1244996679?mt=8" rel="external nofollow noopener noreferrer" target="_blank"><code>独立调试IOS</code> APP</a></li>
 <li>本地IDE客户端</li>
 </ul>
+<hr>
+<h2 id="链家网前端工程实践"><a href="#链家网前端工程实践" class="headerlink" title="链家网前端工程实践"></a>链家网前端工程实践</h2><p>分享人：杨永林(链家)</p>
+<h3 id="都说了什么"><a href="#都说了什么" class="headerlink" title="都说了什么"></a>都说了什么</h3><p><img src="../imgs/lianjia.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -260,9 +382,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="FEDAY3" scheme="http://www.baixiaojian.com/tags/FEDAY3/"/>
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="记录" scheme="http://www.baixiaojian.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
@@ -614,9 +736,9 @@
     </summary>
     
     
-      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
-    
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
     
   </entry>
   
@@ -732,9 +854,9 @@
     </summary>
     
     
-      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
-    
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
     
   </entry>
   
@@ -958,7 +1080,7 @@
     <link href="http://www.baixiaojian.com/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://www.baixiaojian.com/快捷键/</id>
     <published>2017-07-06T06:57:04.000Z</published>
-    <updated>2017-08-13T09:13:46.000Z</updated>
+    <updated>2017-11-09T10:11:25.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/imgs/key1.jpg" alt=""></p>
 <p id="border">各类开发工具中一般有很多快捷键，但常用的就那么一些，以下种类快捷键前后是根据我的 <code>使用频率</code> 进行排序</p>
@@ -1251,7 +1373,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
@@ -2169,781 +2291,6 @@
   </entry>
   
   <entry>
-    <title>英语笔记</title>
-    <link href="http://www.baixiaojian.com/%E8%8B%B1%E8%AF%AD%E7%AC%94%E8%AE%B0/"/>
-    <id>http://www.baixiaojian.com/英语笔记/</id>
-    <published>2017-05-13T09:05:11.000Z</published>
-    <updated>2017-09-09T14:33:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="从属类别"><a href="#从属类别" class="headerlink" title="从属类别"></a>从属类别</h2><ul>
-<li>从属<ul>
-<li>n. 名词</li>
-<li>v. 动词</li>
-<li>adv. 副词</li>
-<li>adj. 形容词</li>
-<li>prop. 人称代词</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>关于我</th>
-<th>关于你</th>
-<th>关于Ta</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>I 我(主语)</td>
-<td>you 你</td>
-<td>she 她 ，her 她的</td>
-</tr>
-<tr>
-<td>me 我(用于宾语)</td>
-<td>your 你、你们</td>
-<td>him 他 ，his 他的</td>
-</tr>
-<tr>
-<td>we或us 我们</td>
-<td></td>
-<td>it 它 ，its 它的</td>
-</tr>
-<tr>
-<td>our 我们的</td>
-<td></td>
-<td>they或them 他们、她们、它们</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>their 他们的、她们的、它们的</td>
-</tr>
-</tbody>
-</table>
-<a id="more"></a>
-<hr>
-<h2 id="单词类别"><a href="#单词类别" class="headerlink" title="单词类别"></a>单词类别</h2><h3 id="名词-n"><a href="#名词-n" class="headerlink" title="名词(n.)"></a>名词(n.)</h3><table>
-<thead>
-<tr>
-<th>普通</th>
-<th>抽象</th>
-<th>集合</th>
-<th>时间</th>
-<th>地点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pen 钢笔</td>
-<td>love 爱</td>
-<td>calss 班级,同学</td>
-</tr>
-<tr>
-<td>pencli 铅笔</td>
-<td>danger 危险</td>
-<td>family 家庭,家人</td>
-</tr>
-<tr>
-<td>book 书</td>
-<td>music 音乐</td>
-<td>audience 听众</td>
-</tr>
-<tr>
-<td>watch 手表</td>
-<td>violence 暴力</td>
-<td></td>
-</tr>
-<tr>
-<td>coat 外套</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>dress 连衣裙</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>T-shirt T桖</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>car 汽车</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>house 房子</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>形容词(adj.)</th>
-<th>指示词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>very 非常</td>
-<td>that  那，那个</td>
-</tr>
-<tr>
-<td>much 多,大量</td>
-<td>the  这个、那个、这些、那些</td>
-</tr>
-<tr>
-<td>new 新</td>
-<td>this   这，这个</td>
-</tr>
-<tr>
-<td>old   老的，旧的</td>
-<td>there   那里</td>
-</tr>
-<tr>
-<td>high   高的</td>
-<td>then   那时候，然后</td>
-</tr>
-<tr>
-<td>long   长的</td>
-<td>than   比</td>
-</tr>
-<tr>
-<td>hot   热的，辣的</td>
-<td>these   这些</td>
-</tr>
-<tr>
-<td>cold   寒冷的，冷漠的</td>
-<td>those   那些</td>
-</tr>
-<tr>
-<td>small   小的</td>
-<td>here   这里</td>
-</tr>
-<tr>
-<td>big   大的</td>
-<td>such   那样的，如此的</td>
-</tr>
-<tr>
-<td>strong   强壮</td>
-<td>both   两者都</td>
-</tr>
-<tr>
-<td>simple   简单</td>
-</tr>
-<tr>
-<td>slow   慢的</td>
-</tr>
-<tr>
-<td>fast    快的，迅速</td>
-</tr>
-<tr>
-<td>quick   （动作）快的</td>
-</tr>
-<tr>
-<td>dark   黑暗的</td>
-</tr>
-<tr>
-<td>center   中心</td>
-</tr>
-<tr>
-<td>ease   安逸，使放松</td>
-</tr>
-<tr>
-<td>often   经常</td>
-</tr>
-<tr>
-<td>hard 坚硬的，努力的，猛烈的</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>副词(adv.)</th>
-<th>介词</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>but  但是</td>
-<td>in   在……里面，用……</td>
-</tr>
-<tr>
-<td>if  如果，是否</td>
-<td>as   作为，因为</td>
-</tr>
-<tr>
-<td>so  因此，如此的</td>
-<td>a  一…</td>
-</tr>
-<tr>
-<td>may  可以，可能</td>
-<td>of  ……的 ， 属于</td>
-</tr>
-<tr>
-<td>many  许多</td>
-<td>at  在</td>
-</tr>
-<tr>
-<td>much  许多（不可数事物）</td>
-<td>to  朝…，（在动词原形前）无词义</td>
-</tr>
-<tr>
-<td>few  极少（可数事物）</td>
-<td>for  为，替，因为</td>
-</tr>
-<tr>
-<td>very  非常</td>
-<td>on  在……上面</td>
-</tr>
-<tr>
-<td>must  必须，一定</td>
-<td>with  和…一起，用，带着</td>
-</tr>
-<tr>
-<td>don’t  不(构成否定句，在动词原形前面)</td>
-<td>have   有</td>
-</tr>
-<tr>
-<td>now  现在</td>
-<td>by   通过，在…旁边，被</td>
-</tr>
-<tr>
-<td>some  一些，某个</td>
-<td>from   来自，从</td>
-</tr>
-<tr>
-<td>seem  看上去，似乎</td>
-<td>or   或者，否则</td>
-</tr>
-<tr>
-<td>only  仅仅，唯一的</td>
-<td>too   太，也</td>
-</tr>
-<tr>
-<td>every  每一个</td>
-<td>can   能，罐头</td>
-</tr>
-<tr>
-<td>never  从不</td>
-<td>do   做,无词义（助动词）</td>
-</tr>
-<tr>
-<td>nothing  什么都没有</td>
-</tr>
-<tr>
-<td>should  应该</td>
-</tr>
-<tr>
-<td>will  将，愿意，遗嘱</td>
-</tr>
-<tr>
-<td>just  刚好，仅仅，正义的</td>
-</tr>
-<tr>
-<td>any  任何，一些</td>
-</tr>
-<tr>
-<td>always  总是，一直</td>
-</tr>
-<tr>
-<td>other  其它的</td>
-</tr>
-<tr>
-<td>best  最好的</td>
-</tr>
-<tr>
-<td>better  更好</td>
-</tr>
-<tr>
-<td>about  关于，大约</td>
-</tr>
-<tr>
-<td>yet  然而，已经</td>
-</tr>
-<tr>
-<td>together  一起</td>
-</tr>
-<tr>
-<td>mean  意味着，意思是</td>
-</tr>
-<tr>
-<td>lot  许多</td>
-</tr>
-<tr>
-<td>same  相同的</td>
-</tr>
-<tr>
-<td>perhaps  也许</td>
-</tr>
-<tr>
-<td>less  更少，更（次）的</td>
-</tr>
-<tr>
-<td>try  试着，努力去做</td>
-</tr>
-<tr>
-<td>use  使用，用途</td>
-</tr>
-<tr>
-<td>more  更多，更</td>
-</tr>
-<tr>
-<td>hear  听说，听到</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="语法概念"><a href="#语法概念" class="headerlink" title="语法概念"></a>语法概念</h2><ul>
-<li><p>常用 be 动词  一般是代表“是”的意思</p>
-<ul>
-<li>一般过去时<ul>
-<li>was</li>
-<li>were</li>
-</ul>
-</li>
-<li>一般现在<ul>
-<li>am  第一人称单数(只有 I am)</li>
-<li>are 现在时 <code>复数</code>,主语可以是 we,you,they</li>
-<li>is  (Ta是)</li>
-</ul>
-</li>
-<li>一般将来时<ul>
-<li>will</li>
-<li>be</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>一般疑问句<ul>
-<li>可以直接用 <code>yes 或 no</code> 回答</li>
-<li>最基本的含有be动词的句子吧be提至句首,首字母大写<ul>
-<li>例如: Is this your handbag</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>选择疑问句<ul>
-<li>回答时不用yes活no,而选择一句话</li>
-<li>仅仅在一般疑问句的末尾加or…即可<ul>
-<li>例如: Is this a French car or a German car ? (语调前升后降)</li>
-<li>例如: Are you English or Chinesewho</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>特殊疑问句</p>
-<ul>
-<li>what 什么<ul>
-<li>结构:What(+名词)+助动词+主语?</li>
-<li>例如:What make(名词) is(助动词) your car(主语)?  你的车(主语) 是(助动词) 什么(特殊疑问词) 牌子(名词)</li>
-<li>例如:What’s(其中 is是助动词) your name(主语)?   你的名字是什么</li>
-</ul>
-</li>
-<li>whose 谁的<ul>
-<li>结构:What+名词+助动词+主语?</li>
-<li>例如:Whose book is this?</li>
-<li>例如:Whose shift is that?</li>
-</ul>
-</li>
-<li>which 哪一个<ul>
-<li>结构:Which (名词或者人称代词) + 助动词 + …?</li>
-<li>例如:Which girl is your sister? 哪个女孩是你的妹妹</li>
-<li>例如:Which is your dog? 哪个是你的狗</li>
-<li>例如:Which car is dirty? 哪辆车脏吗</li>
-</ul>
-</li>
-<li>who 谁的</li>
-<li>how 怎么样</li>
-</ul>
-</li>
-<li><p>特殊疑问句变换三部曲:</p>
-<ol>
-<li>根据意思确定特殊疑问词;</li>
-<li>特殊疑问词置于句首;</li>
-<li>把助动词提至主语前;</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<p>注:特殊疑问词对主语进行提问时不倒装</p>
-<ul>
-<li><p>名词所有格和代词所有格</p>
-<ul>
-<li>一般用于 <code>有生命</code> 的人或物,翻译成 <code>&quot;...的&quot;</code><ul>
-<li>名词所有格: 人名+’s (如Tim’s=Tim的)<ul>
-<li>可相当于形容词或名词,也可做定语修饰名词,也可单独用</li>
-</ul>
-</li>
-<li>代词所有格: <code>形容词性</code> 物主代词(如my,your,his等)和 <code>名词性</code> 物主代词(mine,hers等)<ul>
-<li>代词所有格<code>后面必须有名词</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>否定句</p>
-<ul>
-<li>英文中否定句通过 <code>not</code> 来体现,not 需放在助动词后面<ul>
-<li>例如: This isn’t my umbrella . (这不是我的雨伞,isn’t 是 is not de 缩写)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>区分a/an</p>
-<ul>
-<li>a/an 意思为 ‘一个’,只放在 <code>可数名词</code> 单数前</li>
-<li>用a还是用an取决于后面单词的第一个音标.<code>元音用an</code>,<code>辅音用a</code></li>
-</ul>
-</li>
-<li><p>a/an/the</p>
-<ul>
-<li>a/an不定冠词(不一定指哪个),只能修饰可数名词且是单数,无法修饰可数名词复数</li>
-<li><p>the 定冠词(特指哪些),<code>可修饰任何名词</code>,无论是 单数/复数/不可数名词</p>
-<ol>
-<li>用于 <code>特指</code> 的人或者物前 .</li>
-<li>用于 <code>重新</code> 提到的或者物前.</li>
-<li>用于世界上 <code>独一无二</code> 的事物前 .<ol>
-<li>the sun/earth/moon = 太阳/地球/月亮</li>
-</ol>
-</li>
-</ol>
-<p>注:the的发音,辅音前读 偏”ze” , 元音前读的音偏重</p>
-</li>
-</ul>
-</li>
-<li><p>there be结构<br>  +</p>
-</li>
-<li><p>名词变复数</p>
-<ul>
-<li>英文中名词分 <code>可数名词</code> 和 <code>不可数名词</code>.<ul>
-<li>可数名词有单数复数俩种形式,<code>指一个以上</code> 事物时用复数</li>
-</ul>
-</li>
-<li>名词变复数规则<ol>
-<li>一般名词词尾加-s 构成复数. friends,cases,handbags</li>
-<li>以 -s,-x,-ch,-sh 和部分 o 结尾的词词尾加 -es . dress-dresses,box-boxes,watch-watches,dish-dishes</li>
-<li>以<code>辅音字母</code>+y结尾的单词,把y变为i再加-es. baby-babies , city-cities</li>
-<li>以-f,-fe结尾的名词把-f,-fe变为v再加-es. wife-wives , wolf-wolves</li>
-<li>man,woman 及以<code>其结尾的名词</code>把 man变为men,woman变为women.policeman-policemen,policewoman-policewomen<br>6.不规则名词复数需单独记忆. tooth-teeth,child-children</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>give 的用法</p>
-<ul>
-<li>give sb sth 授人予物</li>
-<li>give sth to sb 授物予人<ul>
-<li>give Jack a car=给杰克一辆车</li>
-<li>give me the book = 把这本书给我</li>
-<li>give sb a hand = 帮某人一个忙或给某人鼓掌(结合上下文)</li>
-<li>give it a try = 试一下</li>
-<li>give me a call = 给我打电话</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>be full of…  = be filled with  = 充满…</p>
-<ul>
-<li>The garden is full of flowers = 这花园里充满了花</li>
-<li>The room is full of smoke = 这房间充满了烟</li>
-</ul>
-</li>
-<li><p>on (从后往前翻译)</p>
-<ul>
-<li>(2.The box) (1.on the floor) (3.is heavy)=地板上的盒子很重</li>
-</ul>
-</li>
-<li><p>of  …的 (从后往前翻译)</p>
-<ul>
-<li>the middle of the room = 房间的中间<ul>
-<li>(3.the middle) (2.of) (1.the room)  = 1.房间 2.的 3.中间</li>
-</ul>
-</li>
-<li>the end of the street = 街道的尽头</li>
-</ul>
-</li>
-<li><p>the 句型</p>
-</li>
-<li><p>知识点</p>
-<ul>
-<li>当面介绍其他人时直接 this is 谁谁谁就可以了</li>
-<li>英文中的 <code>可数单数名词</code> 不能单独出现，必须加个 a 或 an<ul>
-<li>例如: an apple , a book</li>
-</ul>
-</li>
-<li>-or,-er,-eer,ist 都是 <code>名词后缀</code> ,通常指人</li>
-<li>-ess 表示女性</li>
-<li>不是句子开头还用大写就是专有名词<ul>
-<li>the White House 白宫</li>
-</ul>
-</li>
-<li>形容词没有单复数</li>
-<li>记住一句话，all，often，also都是放在be动词的后面，行为动词的前面</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Here you are,catch! 给你,接住</li>
-<li>Here you go,catch! 给你,接住</li>
-<li>a little 有一点</li>
-</ul>
-<h2 id="新东方概念英语单词"><a href="#新东方概念英语单词" class="headerlink" title="新东方概念英语单词"></a>新东方概念英语单词</h2><ul>
-<li>pen 钢笔</li>
-<li>pen+cli 铅笔</li>
-<li>book 书</li>
-<li>watch 手表</li>
-<li>coat 外套</li>
-<li>dress 连衣裙</li>
-<li>T-shirt T桖</li>
-<li>blouse 女衬衫</li>
-<li>car 汽车</li>
-<li>house 房子</li>
-<li>sure 当然</li>
-<li>good morning 早上好</li>
-<li>good afternoon 中午好</li>
-<li>good evening 晚上好</li>
-<li>good night 晚安</li>
-<li>Mr wang    王先生</li>
-<li>Miss li    李小姐</li>
-</ul>
-<ul>
-<li>stu+dent 学生</li>
-<li>new 新</li>
-<li>old 旧</li>
-<li>too 也</li>
-<li>nice 不错</li>
-<li>meet 遇见</li>
-<li>make 制造、牌子</li>
-<li>French 法国</li>
-<li>German 德国 Germany 德国人</li>
-<li>Japan 日本 Japanese 日本人</li>
-<li>Korea 韩国 Korean 韩国人</li>
-<li>China 中国 Chinese 中国人</li>
-<li>England 英国 English 英国人</li>
-<li>America 美国 American 美国人</li>
-<li>Russia 俄罗斯 Russian 俄罗斯人</li>
-<li>Den+mark 丹麦</li>
-<li><p>Norway 挪威</p>
-</li>
-<li><p>what 什么</p>
-</li>
-<li>job/可数 work/不可数,</li>
-<li>typist 打字员</li>
-<li>keyboard 键盘</li>
-<li>operator 操作员</li>
-<li>operate  操作</li>
-<li>engine  引擎,发动机</li>
-<li>engineer 工程师</li>
-<li>nation 国家,民族</li>
-<li>national 国家的</li>
-<li><p>national+ity 国籍</p>
-</li>
-<li><p>police+man 男警</p>
-</li>
-<li>police+women 女警</li>
-<li>police car 警车</li>
-<li>texi 出租汽车</li>
-<li>drive 开车</li>
-<li>driver 司机</li>
-<li>air 空气</li>
-<li>host+ess 女主人,女招待</li>
-<li>air hostess 空姐(空中的女招待)</li>
-<li>post 邮寄 postman邮寄员</li>
-<li>email 电子邮件</li>
-<li>nurse 护士 nursing home(养老院)</li>
-<li>mechanic 修理工</li>
-<li>hair 头发 dress穿衣打扮 头发+穿衣打扮+er(人) = 理发师</li>
-<li>hair salon(沙龙,客厅,展览馆)  美发厅</li>
-<li>house 住宅,家庭 wife 妻子,夫人  housewife 家庭主妇</li>
-<li>milk 牛奶</li>
-<li><p>coffee 咖啡</p>
-</li>
-<li><p>perhaps/maybe 也许 (放在句子开头)</p>
-</li>
-<li>catch 抓住,借助</li>
-<li>cold  寒冷</li>
-<li><p>bus 公共汽车</p>
-</li>
-<li><p>fa+ther 父亲 dad 爸爸</p>
-</li>
-<li>mo+ther 母亲 mom/mum 妈妈</li>
-<li>bro+ther 哥,弟 big/little</li>
-<li>sis+ter 姐,妹 big/little</li>
-<li>child+ren 孩子/孩子们</li>
-<li>parent 父母</li>
-<li>family 家庭</li>
-<li><p>tie n.领带 v.系,绑,捆 (tie a tie : 打领带,像是中文的画画)</p>
-</li>
-<li><p>cus+tom 风俗习惯,+s=海关</p>
-</li>
-<li>pass+port 通过+港口=护照</li>
-<li>ticket 票,入场券</li>
-<li>visa   签证</li>
-<li>tour+ist  旅游+ist 表示人的后缀 = 旅客</li>
-<li>art+ist  艺术+ist 表示人的后缀 = 艺术家</li>
-<li>scient+ist  科学+ist 表示人的后缀 = la科学家</li>
-<li>office 办公室,+r 官员 (在办公室办公的人)</li>
-<li>girl 女孩 , boy 男孩</li>
-<li>fri+end 朋友</li>
-<li>fri+end+ly 友好的  (a friendly smile 一个友好的微笑)</li>
-<li>smile 微笑</li>
-<li><p>in+deed 真正,的确,实在</p>
-</li>
-<li><p>wish 希望,祝福,心愿</p>
-</li>
-<li>wis 知道,以为</li>
-<li>shop 商店</li>
-<li>dirty 污秽,下流,脏</li>
-<li>clean 清洁,干净</li>
-<li>clear 清楚,清澈,晴朗</li>
-</ul>
-<ul>
-<li>these/this 这些/这个</li>
-<li>those/that 那些/那个</li>
-<li>grey/gray 灰色</li>
-<li>purple 紫色</li>
-<li>brown 褐色</li>
-<li>silver 银色</li>
-<li>dark 黑暗的,深色的(dark+grey=深灰色)</li>
-<li><p>light 光,光亮,浅色</p>
-</li>
-<li><p>ti+red 疲倦的,厌烦的,累的</p>
-</li>
-<li>thir+sty 口渴的,口干的</li>
-<li>heavy 沉重的,繁重的,巨大的</li>
-<li>light 轻的,浅的</li>
-<li>stai+r 楼梯,阶梯</li>
-<li>pic+ture 照片,图画,景色</li>
-<li>photo 照片</li>
-<li><p>open/shut 打开/关闭</p>
-</li>
-<li><p>give 给</p>
-</li>
-<li>sure 可靠地,当然</li>
-<li>try 尝试,试验,努力</li>
-<li><p>guy+s 家伙,男人+s = 伙计们</p>
-</li>
-<li><p>cup 杯子,奖杯,酒杯</p>
-</li>
-<li>g+lass 玻璃,镜子</li>
-<li>glasses 眼镜</li>
-<li>cup 茶杯,咖啡杯</li>
-<li>bottle 瓶子</li>
-<li>tin 罐头,易拉罐</li>
-<li>plate 金属板</li>
-<li>park 公园,停车场</li>
-<li>gar+den 菜园,花园</li>
-<li>flo+wer 花,精华</li>
-<li>sale/sell 出售,销售</li>
-<li>ma+tter 物质,事件,原因</li>
-<li><p>le+tter 字母,文字,信,字面意义</p>
-</li>
-<li><p>empty 空的,空旷的,空虚</p>
-</li>
-<li>full 完全的,完整的,满的,充满的</li>
-<li>fill 装满</li>
-<li>hungry 饿</li>
-<li>feel 感觉,认为</li>
-<li>street 街道</li>
-<li>big/large 大的(large一般用于尺寸的表达)</li>
-<li>little/small 小的(small一般用于尺寸的表达)</li>
-<li>k+ni+fe 刀,匕首</li>
-<li>fork 叉子</li>
-<li>chopsticks 筷子</li>
-<li>spoon 勺子</li>
-<li>cup+board 食厨,碗柜</li>
-<li>bottle 瓶子</li>
-<li>paper 纸,文件,论文</li>
-<li>ma+ga+zine 杂志,弹药库</li>
-<li>bike 自行车</li>
-<li>sha+rp/blu+nt 锋利/钝的</li>
-<li>sha+rp+en 销尖,磨快</li>
-<li>box+es(复数) 盒子,箱子,拳击</li>
-<li>box+er 拳击+人=运动员</li>
-<li>box+ing 拳击+进行时=拳击运动</li>
-<li><p>fat/thin/thick 肥的胖的/瘦的,薄的/最拥挤的,厚的</p>
-</li>
-<li><p>Mrs/Miss/Ms 夫人/小姐/女士</p>
-</li>
-<li>Mr 先生</li>
-<li>kitchen 厨房</li>
-<li>fridge 冰箱</li>
-<li>Right/Left 右边/左边(turn Right = 向右转)</li>
-<li>electric 带电的,可通电的</li>
-<li>cooker 炉子(虽然带er但不是指人)</li>
-<li>cook/chef 厨子/大厨</li>
-<li>middle 中间 (in the middle of room = 在房间的中间)</li>
-<li>room 房间</li>
-<li>bed+room 床+房间 = 卧室</li>
-<li>class+room 班级+房间 = 教室</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;从属类别&quot;&gt;&lt;a href=&quot;#从属类别&quot; class=&quot;headerlink&quot; title=&quot;从属类别&quot;&gt;&lt;/a&gt;从属类别&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;从属&lt;ul&gt;
-&lt;li&gt;n. 名词&lt;/li&gt;
-&lt;li&gt;v. 动词&lt;/li&gt;
-&lt;li&gt;adv. 副词&lt;/li&gt;
-&lt;li&gt;adj. 形容词&lt;/li&gt;
-&lt;li&gt;prop. 人称代词&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;关于我&lt;/th&gt;
-&lt;th&gt;关于你&lt;/th&gt;
-&lt;th&gt;关于Ta&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;I 我(主语)&lt;/td&gt;
-&lt;td&gt;you 你&lt;/td&gt;
-&lt;td&gt;she 她 ，her 她的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;me 我(用于宾语)&lt;/td&gt;
-&lt;td&gt;your 你、你们&lt;/td&gt;
-&lt;td&gt;him 他 ，his 他的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;we或us 我们&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;it 它 ，its 它的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;our 我们的&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;they或them 他们、她们、它们&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;their 他们的、她们的、它们的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-    
-    </summary>
-    
-    
-      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何才能成为很厉害的人</title>
     <link href="http://www.baixiaojian.com/rexue/"/>
     <id>http://www.baixiaojian.com/rexue/</id>
@@ -3441,11 +2788,11 @@
       <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
-    
       <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
     
       <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
     
   </entry>
   
