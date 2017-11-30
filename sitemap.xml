@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/git/</loc>
+    
+    <lastmod>2017-11-30T07:26:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/node%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2017-11-13T03:02:26.000Z</lastmod>
@@ -135,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/hexo2/</loc>
+    <loc>http://www.baixiaojian.com/markdown/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/markdown/</loc>
+    <loc>http://www.baixiaojian.com/hexo2/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     

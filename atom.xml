@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-09-10T09:36:31.000Z</updated>
+  <updated>2017-11-30T07:26:49.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -14,6 +14,141 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 常用操作</title>
+    <link href="http://www.baixiaojian.com/git/"/>
+    <id>http://www.baixiaojian.com/git/</id>
+    <published>2017-11-29T12:46:11.000Z</published>
+    <updated>2017-11-30T07:26:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
+<li><p><strong>工作区</strong></p>
+<ul>
+<li>丢弃 file.txt 中的修改 =&gt; git checkout – <code>file.txt</code></li>
+</ul>
+</li>
+<li><p><strong>暂存区</strong></p>
+<ul>
+<li>git reset HEAD <code>file.txt</code> =&gt; 回到未 add 状态</li>
+<li>git checkout – <code>file.txt</code> =&gt; 之前修改的已经不见</li>
+</ul>
+</li>
+<li><p><strong>删除文件</strong></p>
+<ul>
+<li>rm <code>file.txt</code> =&gt; 删除文件</li>
+<li>git checkout – <code>file.txt</code> =&gt; 撤销删除 (未commit之前)</li>
+</ul>
+</li>
+<li><p><strong>创建与合并分支</strong></p>
+<ul>
+<li>git checkout -b <code>dev</code> =&gt; 创建并且切换到dev分支</li>
+<li>git checkout <code>dev</code> =&gt; 切换到dev分支</li>
+<li>git branch =&gt; 查看所有的分支</li>
+<li>git branch -d <code>dev</code> =&gt; 删除dev分支(当前分支无法自行删除)</li>
+<li>git branch -D <code>dev</code> =&gt; 强制删除分支(用于未合并分支)</li>
+<li>git merge <code>dev</code> =&gt; 将dev分支合并到当前分支</li>
+</ul>
+</li>
+<li><p><strong>远程仓库的操作</strong></p>
+<ul>
+<li>git remote -v 查看远程仓库的详细信息</li>
+<li>git remote add <code>remote-name</code> <code>URL</code> =&gt; 添加远程仓库</li>
+<li>git push <code>origin</code> <code>master</code> =&gt; 将内容提交到远程仓库 origin 的 master 分支上</li>
+<li>git remote rm <code>origin</code> =&gt; 将远程仓库 origin 删除</li>
+<li>git remote rename <code>origin</code> <code>pb</code> =&gt; 将远程仓库 origin 改为 pb</li>
+<li>git clone <code>URL</code> =&gt; 克隆一个远程仓库，这里的URL是远程仓库的地址</li>
+<li>git pull origin =&gt; 将远程仓库中更新的数据拉到本地</li>
+<li>git push origin aaa =&gt; 将 aaa 分支推送到远程仓库</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>假如你新建一个文件夹，此时要在里面添加远程仓库，具体实现如下：</p>
+</blockquote>
+<ul>
+<li><p><strong>第一种方式</strong></p>
+<ul>
+<li>git clone URL =&gt; 将一个仓库克隆来的同时也具有推送的权限了</li>
+<li>git remote add origin URL =&gt; 来添加远程仓库了</li>
+</ul>
+</li>
+<li><p><strong>第二种方式</strong></p>
+<ul>
+<li>git init</li>
+<li>git remote add origin URL =&gt; 添加远程仓库</li>
+<li>git pull origin master =&gt; 来拉取远程仓库中内容</li>
+<li>当然这也可以分两步，使用如下：<ul>
+<li>git fetch origin master =&gt; 将远程仓库中的文件拉取到本地，但没有与本地的master合并，因此本地的master分支无法追踪远程仓库中的分支</li>
+<li>git merge origin/master =&gt; 将远程仓库和本地的master分支合并，那么就可以使用本地的master分支追踪远程仓库了.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>拉取远程仓库的次分支步骤如下：</strong></p>
+<ul>
+<li>git checkout -b dev origin/dev =&gt; 拉去远程仓库中的dev仓库到本地的dev分支</li>
+</ul>
+</li>
+</ul>
+<h2 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h2><ul>
+<li><a href="http://stackoverflow.com/questions/9282632/git-index-lock-file-exists-when-i-try-to-commit-but-cannot-delete-the-file" rel="external nofollow noopener noreferrer" target="_blank">fatal: Unable to create ‘project_path/.git/index.lock’: File exists.</a><ul>
+<li>删除该分支  =&gt;  <code>rm -f .git/index.lock</code></li>
+</ul>
+</li>
+<li>error: failed to push some refs to <code>&lt;URL&gt;</code><ul>
+<li>第一种解决方式:<ul>
+<li>强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容 =&gt; <code>git push -f</code></li>
+</ul>
+</li>
+<li>第二种解决方式:<ul>
+<li>这条命令等于合并远程分支，合并完成之后同目录会出现README.md目录 =&gt; git pull –rebase origin master</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fatal: remote origin already exists<ul>
+<li>先删除远程 Git 仓库 =&gt; git remote rm origin</li>
+<li>再添加远程 Git 仓库 =&gt; git remote add origin <code>&lt;URL&gt;</code><ul>
+<li>如果执行 git remote rm origin 还报错的话</li>
+<li>我们可以手动修改 gitconfig 文件的内容 =&gt; vi .git/config</li>
+<li>把 [remote “origin”] 那一行删掉就好了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>error: src refspec master does not match any<ul>
+<li>引起该错误的原因是，目录中没有文件，空目录是不能提交上去的</li>
+<li>touch README =&gt; git add README =&gt; git commit -m ‘first commit’ =&gt; git push origin maste</li>
+</ul>
+</li>
+<li>用 <code>git reset --hard</code> 命令导致目录下所有文件全部被清除。<ul>
+<li>首先用 <code>git reflog</code> 命令查找到对应的sha值,如：cd7b575</li>
+<li>通过“git reset –hard  cd7b575”<ul>
+<li>注意：第二步操作有时会报错, 如: fatal: Unable to create ‘D:/chenjunjun/.git/index.lock’: File exists.</li>
+<li>需要手动删除.git目录下的index.lock文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用操作&quot;&gt;&lt;a href=&quot;#常用操作&quot; class=&quot;headerlink&quot; title=&quot;常用操作&quot;&gt;&lt;/a&gt;常用操作&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;工作区&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;丢弃 file.txt 中的修改 =&amp;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://www.baixiaojian.com/tags/git/"/>
+    
+      <category term="命令" scheme="http://www.baixiaojian.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>FEDAY3 笔记</title>
@@ -2754,45 +2889,6 @@
     
     
       <category term="Markdown" scheme="http://www.baixiaojian.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单博文加密</title>
-    <link href="http://www.baixiaojian.com/encrypt/"/>
-    <id>http://www.baixiaojian.com/encrypt/</id>
-    <published>2017-02-07T02:16:31.000Z</published>
-    <updated>2017-07-10T02:16:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>即使是最简单的加密方式也足以阻止90%的访问者</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>由于 Hexo 最终编译出来的是静态文件，也就意味着文章的所有信息会原封不动展示在页面中，当你输入一篇文章的地址，所有的内容就已经跟随网络传输过来了。那么博客使用加密是怎么实现的呢？</p>
-<p>这就要讲到 js 的阻塞机制了，当调用 <code>alert();</code> 函数的时候，整个页面会停止运行，直到你点击确定之后，才会继续执行下去。我们这里需要的也是这样一个假象，阻止整个页面的渲染，直到你输入了正确的密码才能让页面继续渲染实际的文章。可是 <code>alert();</code> 只有提醒的功能，没有输入的功能，所以，这里要用到的是 <code>promt()</code> 方法。</p>
-<h3 id="promt-方法介绍"><a href="#promt-方法介绍" class="headerlink" title="promt()方法介绍"></a>promt()方法介绍</h3><p>这个 promt() 方法有什么作用呢？查看js文档可以知道：</p>
-<p></p><p id="border-red"><strong>prompt()方法 :</strong>   <em>用于<u>显示可提示用户进行输入的对话框</u>。<br>如果用户单击提示框的 <strong>取消</strong> 按钮，则返回 <strong>null</strong>。<br>如果用户单击 <strong>确认</strong>按钮，则返回 <strong>输入字段当前显示的文本</strong>（用户输入的文本）。</em></p>   我们就是利用 <code>promt()</code> 方法可以返回用户输入的文本这个特性，获取到返回数据，与我们设置的密码进行验证，从而实现文档加密的。。<p></p>
-<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>找到 <code>themes\next\layout\_partials\head.swig</code> 文件。<br>在 &lt;meta&gt; 标签之后添加以下代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    (function()&#123;</div><div class="line">        if(&apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">            if (prompt(&apos;请输入文章密码&apos;,&apos;&apos;) !== &apos;&#123;&#123; page.password &#125;&#125;&apos;)&#123;</div><div class="line">                alert(&apos;密码错误！&apos;);</div><div class="line">                history.back();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>这里有必要解释一下 <code>page.password</code> 是什么东西。以下我给出这篇文章的头部参考：<br>首先 <code>page</code> 是一个变量，你可以理解为这篇文章。以下面的代码为参考，那么 <code>page.title = 最简单的翻墙方法; page.comments = fasle;</code>（很好理解吧）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: 最简单的翻墙方法</div><div class="line">date: 2017-03-01 12:01:05</div><div class="line">tags: [翻墙,hosts]</div><div class="line">categories: [外面的世界]</div><div class="line">keywords: 翻墙,hosts</div><div class="line">comments: false</div></pre></td></tr></table></figure>
-<p>所以，要想加密博文，我们要为文章加上 <code>password</code> 属性。<code>description</code> 属性用于对文章进行描述。（加密下显示内容）<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">description: 文章访问密码：password</div><div class="line">password: password</div></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这种方式只能说是一点小技巧的应用吧，在大神面前可能不管用，但足以阻挡大多数用户。<br>更完美的博文加密方式请参考：<a href="http://edolphin.site/2016/05/31/encrypt-post/" rel="external nofollow noopener noreferrer" target="_blank">加密博客内容，使用密码访问</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      本文访问密码：123456
-    
-    </summary>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="encrypt" scheme="http://www.baixiaojian.com/tags/encrypt/"/>
     
   </entry>
   

@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/git/</loc>
+    <lastmod>2017-11-30T07:26:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 常用操作</title>
+        <pubTime>2017-11-29T12:46:11.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>命令</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/node%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-11-13T03:02:26.000Z</lastmod>
     <data>
@@ -356,19 +375,21 @@
 
     
   <url>
-    <loc>http://www.baixiaojian.com/markdown/</loc>
+    <loc>http://www.baixiaojian.com/hexo2/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
         <display>
-        <title>Markdown 使用中常见的问题及解决方法</title>
-        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
+        <title>HEXO+GitHub搭建博客 - 优化</title>
+        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
         
-        <tag>Markdown</tag>
+        <tag>Next+Hexo</tag>
+         
+        <tag>博客搭建</tag>
          
          
            
              
-              <breadCrumb title="Markdown" url="http://www.baixiaojian.com/categories/Markdown/"/>
+              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
@@ -398,21 +419,19 @@
 
     
   <url>
-    <loc>http://www.baixiaojian.com/hexo2/</loc>
+    <loc>http://www.baixiaojian.com/markdown/</loc>
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     <data>
         <display>
-        <title>HEXO+GitHub搭建博客 - 优化</title>
-        <pubTime>2017-01-25T13:37:01.000Z</pubTime>
+        <title>Markdown 使用中常见的问题及解决方法</title>
+        <pubTime>2017-02-14T13:05:06.000Z</pubTime>
         
-        <tag>Next+Hexo</tag>
-         
-        <tag>博客搭建</tag>
+        <tag>Markdown</tag>
          
          
            
              
-              <breadCrumb title="博客搭建" url="http://www.baixiaojian.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+              <breadCrumb title="Markdown" url="http://www.baixiaojian.com/categories/Markdown/"/>
           
         </display>
     </data>
