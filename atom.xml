@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-11-30T07:26:49.000Z</updated>
+  <updated>2017-12-04T06:38:26.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,80 +16,276 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>git 常用操作</title>
+    <title>git 笔记</title>
     <link href="http://www.baixiaojian.com/git/"/>
     <id>http://www.baixiaojian.com/git/</id>
     <published>2017-11-29T12:46:11.000Z</published>
-    <updated>2017-11-30T07:26:49.000Z</updated>
+    <updated>2017-12-04T06:38:26.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
-<li><p><strong>工作区</strong></p>
+    <content type="html"><![CDATA[<h2 id="回退相关操作"><a href="#回退相关操作" class="headerlink" title="回退相关操作"></a>回退相关操作</h2><h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git checkout – <code>file.txt</code></td>
+<td>丢弃 file.txt 中的修改</td>
+</tr>
+<tr>
+<td>git reset –hard</td>
+<td>重设暂存区所有文件并且还原工作区所有修改</td>
+</tr>
+</tbody>
+</table>
+<h3 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git reset</td>
+<td>重设暂存区所有文件</td>
+</tr>
+<tr>
+<td>git reset HEAD</td>
+<td>撤销最新一次的 add 状态</td>
+</tr>
+<tr>
+<td>git reset <code>file.txt</code></td>
+<td>把 <code>file.txt</code> 的放入工作区</td>
+</tr>
+<tr>
+<td>git reset –hard</td>
+<td>重设暂存区所有文件并且还原工作区所有修改</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h3 id="版本区"><a href="#版本区" class="headerlink" title="版本区"></a>版本区</h3><ul>
+<li>HEAD =&gt; 当前版本</li>
+<li>HEAD^ =&gt; 上一个版本</li>
+<li>HEAD^^ =&gt; 上上一个版本</li>
+<li>HEAD~100 =&gt; 上一100个版本</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git revert HEAD</td>
+<td>撤销最新一次的 commit ,分支没有改动文件才能执行(存在该commit记录)</td>
+</tr>
+<tr>
+<td>git reset <code>&lt;commit&gt;</code></td>
+<td>删除最新一次的 commit 并且重设暂存区所有文件 (不存在该commit版本号)</td>
+</tr>
+<tr>
+<td>git reset HEAD~2</td>
+<td>将当前分支倒退两个提交(高危操作)</td>
+</tr>
+<tr>
+<td>git reset –hard HEAD^</td>
+<td>回退上一个版本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rm <code>file.txt</code></td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>git checkout – <code>file.txt</code></td>
+<td>撤销删除 (未commit之前)</td>
+</tr>
+<tr>
+<td>git clean -n</td>
+<td>查看那些未被跟踪文件会被移除</td>
+</tr>
+<tr>
+<td>git clean -f</td>
+<td>移除当前目录下未被跟踪的文件</td>
+</tr>
+<tr>
+<td>git clean -df</td>
+<td>移除未跟踪的文件以及目录</td>
+</tr>
+<tr>
+<td>git clean -f <code>&lt;path&gt;</code></td>
+<td>移除未跟踪的文件，但限制在某个路径下</td>
+</tr>
+<tr>
+<td>git clean -xf</td>
+<td>移除当前目录下未跟踪的文件，以及 Git 一般忽略的文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git checkout -b <code>dev</code></td>
+<td>创建并且切换到dev分支</td>
+</tr>
+<tr>
+<td>git checkout -b <code>hotfix</code> dev</td>
+<td>基于dev分支创建一个hotfix分支</td>
+</tr>
+<tr>
+<td>git checkout <code>dev</code></td>
+<td>切换到dev分支</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>查看所有的分支</td>
+</tr>
+<tr>
+<td>git branch -d <code>dev</code></td>
+<td>删除dev分支(当前分支无法自行删除)</td>
+</tr>
+<tr>
+<td>git branch -D <code>dev</code></td>
+<td>强制删除分支(用于未合并分支)</td>
+</tr>
+<tr>
+<td>git merge <code>dev</code></td>
+<td>将dev分支合并到当前分支</td>
+</tr>
+</tbody>
+</table>
+<h2 id="远程仓库的操作"><a href="#远程仓库的操作" class="headerlink" title="远程仓库的操作"></a>远程仓库的操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git remote -v</td>
+<td>查看远程仓库的详细信息</td>
+</tr>
+<tr>
+<td>git remote add <code>remote-name</code> <code>URL</code></td>
+<td>添加远程仓库</td>
+</tr>
+<tr>
+<td>git push <code>origin</code> <code>master</code></td>
+<td>将内容提交到远程仓库 origin 的 master 分支上</td>
+</tr>
+<tr>
+<td>git remote rm <code>origin</code></td>
+<td>将远程仓库 origin 删除</td>
+</tr>
+<tr>
+<td>git remote rename <code>origin</code> <code>pb</code></td>
+<td>将远程仓库 origin 改为 pb</td>
+</tr>
+<tr>
+<td>git clone <code>URL</code></td>
+<td>克隆一个远程仓库，这里的URL是远程仓库的地址</td>
+</tr>
+<tr>
+<td>git pull origin</td>
+<td>将远程仓库中更新的数据拉到本地</td>
+</tr>
+<tr>
+<td>git pull origin dev</td>
+<td>拉取远程仓库dev分支到本地</td>
+</tr>
+<tr>
+<td>git push origin aaa</td>
+<td>将 aaa 分支推送到远程仓库</td>
+</tr>
+<tr>
+<td>git pull –rebase <code>URL</code></td>
+<td>git rebase 代替 git merge 合并本地分支</td>
+</tr>
+<tr>
+<td>git push –force</td>
+<td>强制推送</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git commit –amend</td>
+<td>和上一次 commit 合并,并在该基础上编辑commit信息</td>
+</tr>
+<tr>
+<td>git commit –amend –no-edit</td>
+<td>和上一次 commit 合并, 不编辑信息</td>
+</tr>
+<tr>
+<td>git commit -a -m “some modified”</td>
+<td>git add -A &amp;&amp; git commit -m ‘some modified’</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><blockquote>
+<p><code>&lt;base&gt;</code> 是可以使任何类型的提交引用（ID/分支名/标签/HEAD）</p>
+</blockquote>
+<p><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/5.1-%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%EF%BC%9AMerge%E3%80%81Rebase-%E7%9A%84%E9%80%89%E6%8B%A9" rel="external nofollow noopener noreferrer" target="_blank">参考文档1</a></p>
+<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA" rel="external nofollow noopener noreferrer" target="_blank">参考文档2</a></p>
 <ul>
-<li>丢弃 file.txt 中的修改 =&gt; git checkout – <code>file.txt</code></li>
+<li>什么是 git rebase(变基==改变基线)<ul>
+<li>变基是将分支移到一个新的基提交的过程, 产生的是一个快速向前的合并以及完美的线性历史</li>
+<li>rebase 就好像是说「我想将我的更改建立在其他人的进展之上」</li>
+<li>绝不要在公共的分支上使用它</li>
 </ul>
 </li>
-<li><p><strong>暂存区</strong></p>
-<ul>
-<li>git reset HEAD <code>file.txt</code> =&gt; 回到未 add 状态</li>
-<li>git checkout – <code>file.txt</code> =&gt; 之前修改的已经不见</li>
 </ul>
-</li>
-<li><p><strong>删除文件</strong></p>
 <ul>
-<li>rm <code>file.txt</code> =&gt; 删除文件</li>
-<li>git checkout – <code>file.txt</code> =&gt; 撤销删除 (未commit之前)</li>
-</ul>
-</li>
-<li><p><strong>创建与合并分支</strong></p>
-<ul>
-<li>git checkout -b <code>dev</code> =&gt; 创建并且切换到dev分支</li>
-<li>git checkout <code>dev</code> =&gt; 切换到dev分支</li>
-<li>git branch =&gt; 查看所有的分支</li>
-<li>git branch -d <code>dev</code> =&gt; 删除dev分支(当前分支无法自行删除)</li>
-<li>git branch -D <code>dev</code> =&gt; 强制删除分支(用于未合并分支)</li>
-<li>git merge <code>dev</code> =&gt; 将dev分支合并到当前分支</li>
-</ul>
-</li>
-<li><p><strong>远程仓库的操作</strong></p>
-<ul>
-<li>git remote -v 查看远程仓库的详细信息</li>
-<li>git remote add <code>remote-name</code> <code>URL</code> =&gt; 添加远程仓库</li>
-<li>git push <code>origin</code> <code>master</code> =&gt; 将内容提交到远程仓库 origin 的 master 分支上</li>
-<li>git remote rm <code>origin</code> =&gt; 将远程仓库 origin 删除</li>
-<li>git remote rename <code>origin</code> <code>pb</code> =&gt; 将远程仓库 origin 改为 pb</li>
-<li>git clone <code>URL</code> =&gt; 克隆一个远程仓库，这里的URL是远程仓库的地址</li>
-<li>git pull origin =&gt; 将远程仓库中更新的数据拉到本地</li>
-<li>git push origin aaa =&gt; 将 aaa 分支推送到远程仓库</li>
+<li>git rebase <code>&lt;base&gt;</code> =&gt; git merge <code>&lt;base&gt;</code> 相似</li>
+<li>git rebase –continue =&gt; 解决冲突后可执行的命令</li>
+<li>git rebase –abort =&gt; 终止rebase的行动，并且所在分支会回到rebase开始前的状态。</li>
+<li>git rebase -i <code>&lt;base&gt;</code> =&gt; 交互式<ul>
+<li>fixup</li>
+<li>startq</li>
+<li>squash</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>假如你新建一个文件夹，此时要在里面添加远程仓库，具体实现如下：</p>
+<h2 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h2><blockquote>
+<p>Git 用引用日志这种机制来记录分支顶端的更新</p>
 </blockquote>
 <ul>
-<li><p><strong>第一种方式</strong></p>
-<ul>
-<li>git clone URL =&gt; 将一个仓库克隆来的同时也具有推送的权限了</li>
-<li>git remote add origin URL =&gt; 来添加远程仓库了</li>
+<li>git reflog =&gt; 显示本地仓库的引用日志</li>
+<li>git reflog –relative-date =&gt; 用相对的日期显示引用日志</li>
+<li>git reset –hard <code>0254ea7</code> 配合使用</li>
 </ul>
-</li>
-<li><p><strong>第二种方式</strong></p>
-<ul>
-<li>git init</li>
-<li>git remote add origin URL =&gt; 添加远程仓库</li>
-<li>git pull origin master =&gt; 来拉取远程仓库中内容</li>
-<li>当然这也可以分两步，使用如下：<ul>
-<li>git fetch origin master =&gt; 将远程仓库中的文件拉取到本地，但没有与本地的master合并，因此本地的master分支无法追踪远程仓库中的分支</li>
-<li>git merge origin/master =&gt; 将远程仓库和本地的master分支合并，那么就可以使用本地的master分支追踪远程仓库了.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>拉取远程仓库的次分支步骤如下：</strong></p>
-<ul>
-<li>git checkout -b dev origin/dev =&gt; 拉去远程仓库中的dev仓库到本地的dev分支</li>
-</ul>
-</li>
+<p>注: <em>引用日志提供的安全网只对提交到本地仓库的更改有效，而且只有移动操作会被记录</em></p>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ul>
+<li>git log –oneline =&gt; 简洁的显示 log 记录</li>
 </ul>
 <h2 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h2><ul>
 <li><a href="http://stackoverflow.com/questions/9282632/git-index-lock-file-exists-when-i-try-to-commit-but-cannot-delete-the-file" rel="external nofollow noopener noreferrer" target="_blank">fatal: Unable to create ‘project_path/.git/index.lock’: File exists.</a><ul>
@@ -136,10 +332,50 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;常用操作&quot;&gt;&lt;a href=&quot;#常用操作&quot; class=&quot;headerlink&quot; title=&quot;常用操作&quot;&gt;&lt;/a&gt;常用操作&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;工作区&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;丢弃 file.txt 中的修改 =&amp;
+      &lt;h2 id=&quot;回退相关操作&quot;&gt;&lt;a href=&quot;#回退相关操作&quot; class=&quot;headerlink&quot; title=&quot;回退相关操作&quot;&gt;&lt;/a&gt;回退相关操作&lt;/h2&gt;&lt;h3 id=&quot;工作区&quot;&gt;&lt;a href=&quot;#工作区&quot; class=&quot;headerlink&quot; title=&quot;工作区&quot;&gt;&lt;/a&gt;工作区&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;git checkout – &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;丢弃 file.txt 中的修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;git reset –hard&lt;/td&gt;
+&lt;td&gt;重设暂存区所有文件并且还原工作区所有修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;暂存区&quot;&gt;&lt;a href=&quot;#暂存区&quot; class=&quot;headerlink&quot; title=&quot;暂存区&quot;&gt;&lt;/a&gt;暂存区&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;git reset&lt;/td&gt;
+&lt;td&gt;重设暂存区所有文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;git reset HEAD&lt;/td&gt;
+&lt;td&gt;撤销最新一次的 add 状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;git reset &lt;code&gt;file.txt&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;把 &lt;code&gt;file.txt&lt;/code&gt; 的放入工作区&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;git reset –hard&lt;/td&gt;
+&lt;td&gt;重设暂存区所有文件并且还原工作区所有修改&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
