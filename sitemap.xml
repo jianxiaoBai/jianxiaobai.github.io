@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2017-12-04T09:21:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2017-12-04T09:19:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/git/</loc>
     
-    <lastmod>2017-12-04T06:38:26.000Z</lastmod>
+    <lastmod>2017-12-04T07:25:39.000Z</lastmod>
     
   </url>
   
@@ -135,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/hexo2/</loc>
+    <loc>http://www.baixiaojian.com/hexo1/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
@@ -149,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/hexo1/</loc>
+    <loc>http://www.baixiaojian.com/hexo2/</loc>
     
     <lastmod>2017-06-23T06:17:39.000Z</lastmod>
     
