@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2017-12-31T10:31:57.000Z</updated>
+  <updated>2018-01-21T16:08:23.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,11 +16,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>busy recently</title>
+    <link href="http://www.baixiaojian.com/log-busy/"/>
+    <id>http://www.baixiaojian.com/log-busy/</id>
+    <published>2018-01-21T15:16:09.000Z</published>
+    <updated>2018-01-21T16:08:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近有点忙<br>一些想记的笔记<br>想吐的槽<br>都被忙碌的时间搁了浅<br>早九晚九+<br>周末单休+<br>今天也是在夜深人静后挤出的 “闲暇” 时光<br>可能忙碌中才能更好的积累与沉淀吧</p>
+<p>刚有空把书签栏整理一下<br>删掉了许多不在需要或者无效的书签<br>看起来更舒服了</p>
+<p><img src="/imgs/bookmarks.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近有点忙&lt;br&gt;一些想记的笔记&lt;br&gt;想吐的槽&lt;br&gt;都被忙碌的时间搁了浅&lt;br&gt;早九晚九+&lt;br&gt;周末单休+&lt;br&gt;今天也是在夜深人静后挤出的 “闲暇” 时光&lt;br&gt;可能忙碌中才能更好的积累与沉淀吧&lt;/p&gt;
+&lt;p&gt;刚有空把书签栏整理一下&lt;br&gt;删掉了许多不在需要或者无效
+    
+    </summary>
+    
+      <category term="东拉西扯" scheme="http://www.baixiaojian.com/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>charles 抓取 https</title>
+    <link href="http://www.baixiaojian.com/charlesConfig/"/>
+    <id>http://www.baixiaojian.com/charlesConfig/</id>
+    <published>2018-01-04T06:21:18.000Z</published>
+    <updated>2018-01-21T16:10:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>Charles</p>
+<ul>
+<li>电脑上下载证书</li>
+<li>始终相信</li>
+<li>保存并导出证书</li>
+<li>导入在手机中并安装</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;p&gt;Charles&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电脑上下载证书&lt;/li&gt;
+&lt;li&gt;始终相信&lt;/li&gt;
+&lt;li&gt;保存并导出证书&lt;/li&gt;
+&lt;
+    
+    </summary>
+    
+    
+      <category term="charles" scheme="http://www.baixiaojian.com/tags/charles/"/>
+    
+      <category term="https" scheme="http://www.baixiaojian.com/tags/https/"/>
+    
+      <category term="配置" scheme="http://www.baixiaojian.com/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>term</title>
+    <link href="http://www.baixiaojian.com/term/"/>
+    <id>http://www.baixiaojian.com/term/</id>
+    <published>2018-01-04T03:01:47.000Z</published>
+    <updated>2018-01-21T16:10:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>内存<br>带宽<br>单线程<br>多线程<br>进程<br>死锁<br>单点故障<br>三次握手<br>子网掩码<br>端口<br>集群<br><a id="more"></a><br>高并发<br>持续集成<br>内存泄漏<br>虚拟地址<br>物理地址<br>负载均衡<br>虚拟DOM<br>压力测试<br>前后端分离<br>反向代理<br>闭包<br>HTTP<br>HTTPS<br>es6新特性 new Proxy/async/await/map/set<br>docker<br>SEO<br>TPS<br>CPU<br>CPU 密集型<br>闭包<br>算法</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;p&gt;内存&lt;br&gt;带宽&lt;br&gt;单线程&lt;br&gt;多线程&lt;br&gt;进程&lt;br&gt;死锁&lt;br&gt;单点故障&lt;br&gt;三次握手&lt;br&gt;子网掩码&lt;br&gt;端口&lt;br&gt;集群&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="术语" scheme="http://www.baixiaojian.com/tags/%E6%9C%AF%E8%AF%AD/"/>
+    
+      <category term="进阶" scheme="http://www.baixiaojian.com/tags/%E8%BF%9B%E9%98%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2017 LastDay</title>
     <link href="http://www.baixiaojian.com/2017-last-day/"/>
     <id>http://www.baixiaojian.com/2017-last-day/</id>
     <published>2017-12-31T07:08:39.000Z</published>
-    <updated>2017-12-31T10:31:57.000Z</updated>
+    <updated>2018-01-21T15:20:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2017年的最后一天"><a href="#2017年的最后一天" class="headerlink" title="2017年的最后一天"></a>2017年的最后一天</h2><p>  时间过得好快，夜幕就要降临，我想我必须要离开,当我正要走时我看到一家…<br>  等等…<br>  这是什么节奏,明明要写年终总结，还是被神曲洗脑带偏了</p>
 <h2 id="关于90后的”18岁”"><a href="#关于90后的”18岁”" class="headerlink" title="关于90后的”18岁”"></a>关于90后的”18岁”</h2><p>  昨天朋友圈被许许多多的 “18岁” 要成为成年人的照片刷爆了屏，<br>  90后中最小的成员从明天开始也成为了成年人，开始扛起中国新时代的大旗，<br>  从某种层面上就意味着90后这个群体已 <code>不再年轻</code> 的同时肩上的责任更重了，<br>  相对于80后，90后的时代应该是比较幸运的，更过姿多彩的，<br>  在身处信息爆炸的时代，信息与知识的获取已经变得及其容易，<br>  一些像 “我吃的盐比你走的路都要多” 这样的话，已经变越来越不能证明什么了，<br>  之前在法治栏目看过一个毒贩就是在百度上通过搜索相关资料就可以自己制作出冰毒，<br>  网络是一把双刃剑，让人们生活变的便利的同时，风险和危险也会随之而来,<br>  呃，好像有点扯远了…</p>
@@ -43,7 +126,7 @@
 <p>  哇塞，刚打到2018时有种2008的既视感，<br>  转眼间已过十年，十年啊，<br>  十年之前我不认识你，你不属于我，我们还是一样，陪在一个陌生人左右…<br>  等等…<br>  咋又开始了，由此可见 <code>muisc</code> 的魔力，总是能被它影响</p>
 <p>  2017到2018，也就是由 咯咯咯到汪汪汪，而我是属汪汪汪的啊，那么就是我的本命年了啊！<br>  是不是就应该带红绳什么的，光想想就好激动的呢！</p>
 <p>  2018年要和2017年一样继续积累与沉淀。</p>
-<p>  <img src="https://pic3.zhimg.com/v2-09f8e29dc8cc04b5487467c610d565fe_r.jpg" alt=""></p>
+<p>  <img src="/imgs/strive.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -63,7 +146,7 @@
     <link href="http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://www.baixiaojian.com/mac终端常用命令/</id>
     <published>2017-12-04T08:56:04.000Z</published>
-    <updated>2017-12-31T10:29:05.000Z</updated>
+    <updated>2017-12-31T10:37:13.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Mac-终端常用命令"><a href="#Mac-终端常用命令" class="headerlink" title="Mac 终端常用命令"></a>Mac 终端常用命令</h1><table>
 <thead>
@@ -803,7 +886,7 @@
     <link href="http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     <id>http://www.baixiaojian.com/vim基本操作/</id>
     <published>2017-12-04T08:04:02.000Z</published>
-    <updated>2017-12-31T10:28:46.000Z</updated>
+    <updated>2017-12-31T10:37:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Vim的三种模式"><a href="#Vim的三种模式" class="headerlink" title="Vim的三种模式"></a>Vim的三种模式</h1><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
 <li>刚刚启动Vim时，便进入了命令模式。</li>
@@ -1610,7 +1693,7 @@
     <link href="http://www.baixiaojian.com/ReactES6/"/>
     <id>http://www.baixiaojian.com/ReactES6/</id>
     <published>2017-07-25T02:23:31.000Z</published>
-    <updated>2017-12-31T07:20:23.000Z</updated>
+    <updated>2018-01-12T16:12:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p id="border-blue">很多时候我们学会了很多东西,但是不知道 <code>怎么用、如何用、在哪用</code>这时这篇文章就显得 <code>很有用</code> 了。<br>参考依照：<a href="http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8" rel="external nofollow noopener noreferrer" target="_blank">ES5 ES6写法对照表</a></p>
 
@@ -3627,182 +3710,6 @@
     
     
       <category term="Hello" scheme="http://www.baixiaojian.com/tags/Hello/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO+GitHub,搭建博客 - 域名绑定</title>
-    <link href="http://www.baixiaojian.com/wwwyuming/"/>
-    <id>http://www.baixiaojian.com/wwwyuming/</id>
-    <published>2017-03-09T06:50:21.000Z</published>
-    <updated>2017-12-31T07:20:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。</p>
-<p>这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。</p>
-<a id="more"></a>
-<p><span id="inline-blue">解决方案：</span><br>我们知道 github 和 coding 的 pages 服务都提供 <code>自定义域名</code> 功能。我们可以利用这一点，绑定自己的域名。域名解析的时候实现国内访问 coding pages ，国外访问 github pages ,从而加快访问速度。 具体怎么实现，往下看：</p>
-<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>首先我们要购买一个域名，推荐到 <a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.25.nvxK84" rel="external nofollow noopener noreferrer" target="_blank">万网</a> 购买。（毕竟很方便）<br>具体步骤可以参考这篇文章：<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html" rel="external nofollow noopener noreferrer" target="_blank">万网域名注册教程</a>。</p>
-<p id="border-red">购买域名一定要实名认证，否则会停止解析</p>
-
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>这一步是最重要的，我们要把域名指向 github 和 coding 的服务器空间。</p>
-<ul>
-<li>登录阿里云，进入 <strong>控制台</strong> 。依次点击 <strong>域名与网站</strong> &gt; <strong>云解析DNS</strong> 就会出现你购买的域名信息</li>
-</ul>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D01.png" alt="Markdown"></p>
-<ul>
-<li>点击 <strong>解析</strong>，然后按照下图依次添加解析：（这张图片可以放大）</li>
-</ul>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D02.png" alt="Markdown"></p>
-<p id="border-red">从上图可以看出，我们的解析实现了分流。国内线路访问Coding pages，国际线路访问Github Pages。</p>
-
-<h3 id="托管平台设置"><a href="#托管平台设置" class="headerlink" title="托管平台设置"></a>托管平台设置</h3><h4 id="Coding平台"><a href="#Coding平台" class="headerlink" title="Coding平台"></a>Coding平台</h4><p>进入对应项目的 pages 设置页面（项目 &gt; 代码 &gt; pages服务）</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D04.png" alt="Markdown"></p>
-<p>成功后会显示：</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D03.png" alt="Markdown"></p>
-<h4 id="Github平台"><a href="#Github平台" class="headerlink" title="Github平台"></a>Github平台</h4><p>进入对应项目的 pages 设置页面（setting &gt; github pages &gt; Custom domain)</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D05.png" alt="Markdown"></p>
-<p>成功后会显示：</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D06.png" alt="Markdown"></p>
-<p>到此我们的博客就可以正常运行了！！</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一切搞定后，在回头看一下我们的问题：<br><strong>@</strong> 两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；</p>
-<blockquote>
-<p>从两个地址访问都会跳转到我们绑定的域名。统计信息自然也是绑定后域名的信息。</p>
-</blockquote>
-<p><strong>@</strong> github pages国内访问速度慢（300ms左右）</p>
-<blockquote>
-<p>我们测试一下 Ping：(表现不错)</p>
-</blockquote>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/%E5%9F%9F%E5%90%8D07.png" alt="Markdown"></p>
-<p><strong>@</strong> 托管平台给出的二级域名太丑。</p>
-<blockquote>
-<p>不存在的…..</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前面也讲过了，我们把博客同时托管到 Github 和 Coding。我们就有两个域名可以访问站点，但是又出现几个问题：使用的不是自己的域名；两个地址的统计信息（文章阅读量，访问量等）相互独立，不能合并；github pages国内访问速度慢（300ms左右，毕竟国外的服务器）。&lt;/p&gt;
-&lt;p&gt;这就有点坑爹了，强迫症怎么能忍。下面给出解决方法。。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.baixiaojian.com/categories/Hexo/"/>
-    
-    
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="域名" scheme="http://www.baixiaojian.com/tags/%E5%9F%9F%E5%90%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO 博客同时部署到 GitHub 和 Coding</title>
-    <link href="http://www.baixiaojian.com/github%E5%92%8Ccoding/"/>
-    <id>http://www.baixiaojian.com/github和coding/</id>
-    <published>2017-03-08T05:08:44.000Z</published>
-    <updated>2017-12-31T07:13:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以<u>利用域名解析实现国内的走 coding，海外的走github，</u>分流网站的访问。</p>
-<a id="more"></a>
-<h3 id="注册GitHub和Coding"><a href="#注册GitHub和Coding" class="headerlink" title="注册GitHub和Coding"></a>注册GitHub和Coding</h3><p><a href="https://github.com/" rel="external nofollow noopener noreferrer" target="_blank">github官网</a>  &nbsp;&nbsp;||&nbsp;&nbsp;   <a href="https://coding.net" rel="external nofollow noopener noreferrer" target="_blank">Coding官网</a> &nbsp;&nbsp;注册就不必多说，不会的可自行百度。<br><strong>需要注意的是</strong>：最好使用同一个 <strong>用户名</strong> 和 <strong>邮箱</strong> ，以免引起不必要的麻烦。</p>
-<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在GitHub上创建项目，名称为：<strong>yourname.github.io</strong><br>在Coding上创建项目，名称为：<strong>yourname</strong></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>配置 shh key 是让本地 git 项目与远程的 github 建立联系</p>
-<h4 id="获取ssh"><a href="#获取ssh" class="headerlink" title="获取ssh"></a>获取ssh</h4><ul>
-<li><p>检查是否已经有SSH Key，打开 <code>Git Bash</code>，输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">cd ~/.ssh</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果没有 <strong>.ssh</strong> 这个目录，则生成一个新的 SSH，输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your e-mail&quot;</div></pre></td></tr></table></figure>
-<p id="border-red"> <strong>注意:</strong>  此处的邮箱地址，是你注册 <strong>GitHub</strong> 和 <strong>coding</strong> 时的邮箱地址; 此处的<strong>「-C」</strong>的是大写的<strong>「C」</strong> 。</p>
-</li>
-<li><p>接下来几步都直接按回车键,然后系统会要你输入密码 (防止别人往你的项目里提交内容)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>成功后，我们打开 <em>C:\Users\cwyaml.ssh</em> 打开 <em>id_rsa.pub</em> 文件。里面的代码就是 ssh key。</p>
-<h4 id="添加-SSH-Key-到-GitHub-和-Coding"><a href="#添加-SSH-Key-到-GitHub-和-Coding" class="headerlink" title="添加 SSH Key 到 GitHub 和 Coding"></a>添加 SSH Key 到 GitHub 和 Coding</h4><p><strong>GitHub添加方法：</strong></p>
-<ul>
-<li>进入Github官网，点击头像，再按 <em>settings</em> 进入设置。</li>
-<li>点击 <em>New SSH key</em> 创建</li>
-<li>title输入邮箱，key里面粘贴刚才右击复制的内容,再点 <em>Add SSH key</em> 即可。（会让你输入密码）</li>
-</ul>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding01.png" alt="Markdown"></p>
-<p><strong>Coding添加方法：</strong></p>
-<ul>
-<li>登录账号后点击 <em>左侧账户</em></li>
-<li>在点 <em>SSH公钥</em> 设置即可 。（同样要输入密码）</li>
-</ul>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding02.png" alt="Markdown"></p>
-<h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开 <code>Git Bash</code>，首先测试 GitHub 是否成功？输入:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>(如配置了密码则要输入密码,输完按回车。)如果显示以下内容，则说明 Github 中的 ssh 配置成功。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
-<p>然后测试 Coding 是否成功？<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure></p>
-<p>如果显示以下则说明配置成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Hello username You&apos;ve connected to Coding.net by SSH successfully!</div></pre></td></tr></table></figure></p>
-<h3 id="上传博客文件"><a href="#上传博客文件" class="headerlink" title="上传博客文件"></a>上传博客文件</h3><p><strong>修改站点配置文件：</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: git@github.com:cwyaml/cwyaml.github.io.git,master</div><div class="line">    coding: git@git.coding.net:cwyaml/cwyaml.git,master</div></pre></td></tr></table></figure></p>
-<p>然后你就可以 <code>hexo c、hexo g、hexo d</code> 了。</p>
-<h3 id="开启pages服务"><a href="#开启pages服务" class="headerlink" title="开启pages服务"></a>开启pages服务</h3><p>GitHub 已经默认开启，就不必多说了。<br>Coding 进入对应项目，点击 <strong>代码&gt;pages服务</strong> ，把部署来源改为 <strong>master</strong> 即可。</p>
-<p><img src="http://on5sixmz1.bkt.clouddn.com/github&amp;coding03.png" alt="Markdown"></p>
-<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>这样我们整个部署过程就完成了。有两个地址可以访问我们的博客：<br>GitHub pages：<a href="https://cwyaml.github.io" rel="external nofollow noopener noreferrer" target="_blank">https://cwyaml.github.io</a><br>Coding pages：<a href="https://cwyaml.coding.me" rel="external nofollow noopener noreferrer" target="_blank">https://cwyaml.coding.me</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多人都把 hexo 托管到 Github 上，因为 Github 大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问 coding 比 github 是要快不少的。还可以&lt;u&gt;利用域名解析实现国内的走 coding，海外的走github，&lt;/u&gt;分流网站的访问。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.baixiaojian.com/categories/Hexo/"/>
-    
-    
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO+GitHub,搭建博客 - 备份</title>
-    <link href="http://www.baixiaojian.com/backup/"/>
-    <id>http://www.baixiaojian.com/backup/</id>
-    <published>2017-03-07T08:26:30.000Z</published>
-    <updated>2017-12-31T07:13:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/backup.png)</div> -->
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 <code>git</code> 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。<a id="more"></a> 最后索性简单粗暴点，<u><strong>在 GitHub 上创建一个仓库，把 blog 文件整个打包上传。</strong></u>使用过程中发现这个方法还不错，至少对于小白来说很容易理解，也很难出错，就一直沿用到现在。</p>
-<p id="border-red">这种方式虽然能够备份 Hexo 博客的源文件，但是对于博主这种懒人，每次更新博文都需要输入两三行重复的Git命令真是一件麻烦的事情。</p>
-
-<h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>本方法需要提前将 Hexo 加入 Git仓库 并与 Github 远程仓库绑定之后，才能正常工作。<br><strong>具体做法可以参考：</strong><a href="https://cwyaml.github.io/2017/01/08/update%20to%20github/" rel="external nofollow noopener noreferrer" target="_blank">上传本地项目到GitHub</a></p>
-<h4 id="安装-shelljs-模块"><a href="#安装-shelljs-模块" class="headerlink" title="安装 shelljs 模块"></a>安装 shelljs 模块</h4><p>要实现这个自动备份功能，需要依赖 <code>NodeJs</code> 的一个 <code>shelljs 模块</code>,该模块重新包装了 child_process,调用系统命令更加的方便。<br>使用以下命令，完成 shelljs 模块的安装：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install --save shelljs</div></pre></td></tr></table></figure></p>
-<h4 id="编写自动备份脚本"><a href="#编写自动备份脚本" class="headerlink" title="编写自动备份脚本"></a>编写自动备份脚本</h4><p>待到模块安装完成，在<strong>Hexo根目录</strong> 的 <strong>scripts</strong>文件夹下新建一个js文件，文件名随意取。<br><strong><em>如果没有scripts目录，请新建一个。</em></strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">require(&apos;shelljs/global&apos;);</div><div class="line">try &#123;</div><div class="line">    hexo.on(&apos;deployAfter&apos;, function() &#123;//当deploy完成后执行备份</div><div class="line">        run();</div><div class="line">    &#125;);</div><div class="line">&#125; catch (e) &#123;</div><div class="line">    console.log(&quot;产生了一个错误&lt;(￣3￣)&gt; !，错误详情为：&quot; + e.toString());</div><div class="line">&#125;</div><div class="line">function run() &#123;</div><div class="line">    if (!which(&apos;git&apos;)) &#123;</div><div class="line">        echo(&apos;Sorry, this script requires git&apos;);</div><div class="line">        exit(1);</div><div class="line">    &#125; else &#123;</div><div class="line">        echo(&quot;======================Auto Backup Begin===========================&quot;);</div><div class="line">        cd(&apos;C:/Blog&apos;);    //此处修改为Hexo根目录路径</div><div class="line">        if (exec(&apos;git add .&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git add failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        if (exec(&apos;git commit -m &quot;Form auto backup script\&apos;s commit&quot;&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git commit failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        if (exec(&apos;git push origin master&apos;).code !== 0) &#123;</div><div class="line">            echo(&apos;Error: Git push failed&apos;);</div><div class="line">            exit(1);</div><div class="line">        &#125;</div><div class="line">        echo(&quot;==================Auto Backup Complete============================&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><span id="inline-red">注意：</span></p>
-<ul>
-<li>其中，需要修改第17行的 <code>D:/hexo</code> 路径为 <code>Hexo的根目录</code> 路径。（脚本中的路径为博主的Hexo路径）</li>
-<li>如果你的Git远程仓库名称不为 <code>origin</code> 的话，还需要修改第28行执行的push命令，修改成自己的远程仓库名和相应的分支名。</li>
-</ul>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>保存脚本并退出，然后执行 <code>hexo d</code> 命令，将会得到类似以下结果:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">......</div><div class="line">======================Auto Backup Begin===========================</div><div class="line">warning: LF will be replaced by CRLF in package.json.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/hexo1.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/update to github.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/wangyimusic.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in themes/next-5.0.1/layout/_partials/head.swig.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/backup.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in source/_posts/encrypt.md.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">[master 1bb6cc5] Form auto backup script&apos;s commit</div><div class="line"> Committer: unknown</div><div class="line">Your name and email address were configured automatically based</div><div class="line">on your username and hostname. Please check that they are accurate.</div><div class="line">You can suppress this message by setting them explicitly. Run the</div><div class="line">following command and follow the instructions in your editor to edit</div><div class="line">your configuration file:</div><div class="line"></div><div class="line">    git config --global --edit</div><div class="line"></div><div class="line">After doing this, you may fix the identity used for this commit with:</div><div class="line"></div><div class="line">    git commit --amend --reset-author</div><div class="line"></div><div class="line"> 6 files changed, 177 insertions(+), 2 deletions(-)</div><div class="line"> create mode 100644 scripts/autobackup.js</div><div class="line"> create mode 100644 source/_posts/backup.md</div><div class="line"> create mode 100644 source/_posts/encrypt.md</div><div class="line">To https://github.com/cwyaml/blog-backup.git</div><div class="line">   d7bc718..1bb6cc5  master -&gt; master</div><div class="line">==================Auto Backup Complete============================</div></pre></td></tr></table></figure></p>
-<p>这样子，每次更新博文并 deploy 到服务器上之后，备份就自动启动并完成备份啦~是不是很方便呢？</p>
-<p><strong>Enjoy it！</strong></p>
-<blockquote>
-<p>参考：wanghao大神 <a href="https://notes.wanghao.work/2015-07-06-%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6.html" rel="external nofollow noopener noreferrer" target="_blank">自动备份Hexo博客源文件</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- &lt;div class=&quot;out-img-topic&quot;&gt;![Markdown](http://on5pjsxrv.bkt.clouddn.com/backup.png)&lt;/div&gt; --&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Hexo写博客是一件比较享受的事情，无奈如果换电脑或者系统崩了的话，你就会一脸懵B了，备份博客就显得尤为重要。先说说我的感受，博客刚搭建好的时候就想过这个问题，那时候对 &lt;code&gt;git&lt;/code&gt; 似懂非懂吧。在网上找了很多教程方法，大概就是说要创建一个分支来存放 blog 文件，但是翻腾来翻腾去还是没有搞定。
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.baixiaojian.com/categories/Hexo/"/>
-    
-    
-      <category term="Next+Hexo" scheme="http://www.baixiaojian.com/tags/Next-Hexo/"/>
-    
-      <category term="博客搭建" scheme="http://www.baixiaojian.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-      <category term="backup" scheme="http://www.baixiaojian.com/tags/backup/"/>
     
   </entry>
   

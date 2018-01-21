@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/term/</loc>
+    
+    <lastmod>2018-01-21T16:10:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/charlesConfig/</loc>
+    
+    <lastmod>2018-01-21T16:10:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/log-busy/</loc>
+    
+    <lastmod>2018-01-21T16:08:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/2017-last-day/</loc>
+    
+    <lastmod>2018-01-21T15:20:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/hexo1/</loc>
+    
+    <lastmod>2018-01-21T15:14:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/ReactES6/</loc>
+    
+    <lastmod>2018-01-12T16:12:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2017-12-31T10:37:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2017-12-31T10:37:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/node%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2017-12-31T10:34:28.000Z</lastmod>
@@ -9,30 +65,9 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/2017-last-day/</loc>
-    
-    <lastmod>2017-12-31T10:31:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/rexue/</loc>
     
     <lastmod>2017-12-31T10:29:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2017-12-31T10:29:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2017-12-31T10:28:46.000Z</lastmod>
     
   </url>
   
@@ -72,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/ReactES6/</loc>
-    
-    <lastmod>2017-12-31T07:20:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/React/</loc>
     
     <lastmod>2017-12-31T07:20:16.000Z</lastmod>
@@ -103,13 +131,6 @@
     <loc>http://www.baixiaojian.com/hexo2/</loc>
     
     <lastmod>2017-12-31T07:18:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/hexo1/</loc>
-    
-    <lastmod>2017-12-31T07:18:46.000Z</lastmod>
     
   </url>
   
