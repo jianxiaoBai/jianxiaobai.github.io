@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2018-01-21T16:08:23.000Z</updated>
+  <updated>2018-01-26T09:26:40.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,21 +16,62 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mongodb 安装与基本配置</title>
+    <link href="http://www.baixiaojian.com/mongodb/"/>
+    <id>http://www.baixiaojian.com/mongodb/</id>
+    <published>2018-01-26T07:24:36.000Z</published>
+    <updated>2018-01-26T09:26:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>brew list<br>brew search mongodb</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>brew install mongodb</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>首次执行 <code>mongod</code> 尝试启动 MongoDB , 但会失败 exiting:</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">➜  ~  mongod</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] MongoDB starting : pid=8954 port=27017 dbpath=/data/db 64-bit host=baixiaojiandeMacBook-Pro.local</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] db version v3.6.2</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c539420</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2n  7 Dec 2017</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] modules: none</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] build environment:</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line">2018-01-26T15:11:13.278+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2018-01-26T15:11:13.279+0800 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory /data/db not found., terminating</div><div class="line">2018-01-26T15:11:13.279+0800 I CONTROL  [initandlisten] now exiting</div><div class="line">2018-01-26T15:11:13.279+0800 I CONTROL  [initandlisten] shutting down with code:100</div></pre></td></tr></table></figure>
+<p>启动 MongoDB 之前, 要先新建一个 MongoDB 默认的数据写入目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">// sudo 并输入密码，重新新建目录</div><div class="line">$ sudo mkdir -p /data/db</div><div class="line">Password:</div></pre></td></tr></table></figure>
+<p>给刚才新建的数据库目录赋予权限:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ sudo chown -R baixiaojian /data</div></pre></td></tr></table></figure>
+<p>此时,执行 <code>mongod</code> 启动 MongoDB 服务:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">➜  ~ mongod</div><div class="line">2018-01-26T15:17:54.988+0800 I CONTROL  [initandlisten] MongoDB starting : pid=9551 port=27017 dbpath=/data/db 64-bit host=baixiaojiandeMacBook-Pro.local</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] db version v3.6.2</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c539420</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2n  7 Dec 2017</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] allocator: system</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] modules: none</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] build environment:</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten]     distarch: x86_64</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten]     target_arch: x86_64</div><div class="line">2018-01-26T15:17:54.989+0800 I CONTROL  [initandlisten] options: &#123;&#125;</div><div class="line">2018-01-26T15:17:54.990+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip &lt;address&gt; to specify which IP</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">2018-01-26T15:17:55.360+0800 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: acffed24-1106-4136-bf4d-d2894c0cb3e3</div><div class="line">2018-01-26T15:17:55.443+0800 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.6</div><div class="line">2018-01-26T15:17:55.447+0800 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 5414b600-b049-49b5-aad7-c20beb480c41</div><div class="line">2018-01-26T15:17:55.551+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory &apos;/data/db/diagnostic.data&apos;</div><div class="line">2018-01-26T15:17:55.551+0800 I NETWORK  [initandlisten] waiting for connections on port 27017</div></pre></td></tr></table></figure>
+<p>MongoDB 启动成功,等待被连接中…</p>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p>新建命令行窗口, 执行 <code>mongo</code> 进入 MongoDB 命令行模式: </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">➜  ~ mongo</div><div class="line">MongoDB shell version v3.6.2</div><div class="line">connecting to: mongodb://127.0.0.1:27017</div><div class="line">MongoDB server version: 3.6.2</div><div class="line">Server has startup warnings:</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip &lt;address&gt; to specify which IP</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.</div><div class="line">2018-01-26T15:17:55.353+0800 I CONTROL  [initandlisten]</div><div class="line">&gt; 4685*989</div><div class="line">4633465</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>连接成功, 然后就可以对数据库进行操作了.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;查看&quot;&gt;&lt;a href=&quot;#查看&quot; class=&quot;headerlink&quot; title=&quot;查看&quot;&gt;&lt;/a&gt;查看&lt;/h2&gt;&lt;p&gt;brew list&lt;br&gt;brew search mongodb&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;brew install mongodb&lt;/p&gt;
+&lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;p&gt;首次执行 &lt;code&gt;mongod&lt;/code&gt; 尝试启动 MongoDB , 但会失败 exiting:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="配置相关" scheme="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="mongod" scheme="http://www.baixiaojian.com/tags/mongod/"/>
+    
+      <category term="基本配置" scheme="http://www.baixiaojian.com/tags/%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>busy recently</title>
     <link href="http://www.baixiaojian.com/log-busy/"/>
     <id>http://www.baixiaojian.com/log-busy/</id>
     <published>2018-01-21T15:16:09.000Z</published>
-    <updated>2018-01-21T16:08:23.000Z</updated>
+    <updated>2018-01-26T09:27:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近有点忙<br>一些想记的笔记<br>想吐的槽<br>都被忙碌的时间搁了浅<br>早九晚九+<br>周末单休+<br>今天也是在夜深人静后挤出的 “闲暇” 时光<br>可能忙碌中才能更好的积累与沉淀吧</p>
+<a id="more"></a>
 <p>刚有空把书签栏整理一下<br>删掉了许多不在需要或者无效的书签<br>看起来更舒服了</p>
-<p><img src="/imgs/bookmarks.png" alt=""></p>
+<p><img src="/imgs/bookmarks.png" alt="书签"></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;最近有点忙&lt;br&gt;一些想记的笔记&lt;br&gt;想吐的槽&lt;br&gt;都被忙碌的时间搁了浅&lt;br&gt;早九晚九+&lt;br&gt;周末单休+&lt;br&gt;今天也是在夜深人静后挤出的 “闲暇” 时光&lt;br&gt;可能忙碌中才能更好的积累与沉淀吧&lt;/p&gt;
-&lt;p&gt;刚有空把书签栏整理一下&lt;br&gt;删掉了许多不在需要或者无效
     
     </summary>
     
@@ -44,7 +85,7 @@
     <link href="http://www.baixiaojian.com/charlesConfig/"/>
     <id>http://www.baixiaojian.com/charlesConfig/</id>
     <published>2018-01-04T06:21:18.000Z</published>
-    <updated>2018-01-21T16:10:10.000Z</updated>
+    <updated>2018-01-26T09:30:09.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>Charles</p>
 <ul>
@@ -66,6 +107,8 @@
     
     </summary>
     
+      <category term="配置相关" scheme="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
+    
     
       <category term="charles" scheme="http://www.baixiaojian.com/tags/charles/"/>
     
@@ -80,7 +123,7 @@
     <link href="http://www.baixiaojian.com/term/"/>
     <id>http://www.baixiaojian.com/term/</id>
     <published>2018-01-04T03:01:47.000Z</published>
-    <updated>2018-01-21T16:10:16.000Z</updated>
+    <updated>2018-01-26T09:31:17.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>内存<br>带宽<br>单线程<br>多线程<br>进程<br>死锁<br>单点故障<br>三次握手<br>子网掩码<br>端口<br>集群<br><a id="more"></a><br>高并发<br>持续集成<br>内存泄漏<br>虚拟地址<br>物理地址<br>负载均衡<br>虚拟DOM<br>压力测试<br>前后端分离<br>反向代理<br>闭包<br>HTTP<br>HTTPS<br>es6新特性 new Proxy/async/await/map/set<br>docker<br>SEO<br>TPS<br>CPU<br>CPU 密集型<br>闭包<br>算法</p>
 ]]></content>
@@ -90,6 +133,8 @@
       &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;p&gt;内存&lt;br&gt;带宽&lt;br&gt;单线程&lt;br&gt;多线程&lt;br&gt;进程&lt;br&gt;死锁&lt;br&gt;单点故障&lt;br&gt;三次握手&lt;br&gt;子网掩码&lt;br&gt;端口&lt;br&gt;集群&lt;br&gt;
     
     </summary>
+    
+      <category term="专业术语" scheme="http://www.baixiaojian.com/categories/%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD/"/>
     
     
       <category term="术语" scheme="http://www.baixiaojian.com/tags/%E6%9C%AF%E8%AF%AD/"/>
@@ -103,7 +148,7 @@
     <link href="http://www.baixiaojian.com/2017-last-day/"/>
     <id>http://www.baixiaojian.com/2017-last-day/</id>
     <published>2017-12-31T07:08:39.000Z</published>
-    <updated>2018-01-21T15:20:30.000Z</updated>
+    <updated>2018-01-26T09:29:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2017年的最后一天"><a href="#2017年的最后一天" class="headerlink" title="2017年的最后一天"></a>2017年的最后一天</h2><p>  时间过得好快，夜幕就要降临，我想我必须要离开,当我正要走时我看到一家…<br>  等等…<br>  这是什么节奏,明明要写年终总结，还是被神曲洗脑带偏了</p>
 <h2 id="关于90后的”18岁”"><a href="#关于90后的”18岁”" class="headerlink" title="关于90后的”18岁”"></a>关于90后的”18岁”</h2><p>  昨天朋友圈被许许多多的 “18岁” 要成为成年人的照片刷爆了屏，<br>  90后中最小的成员从明天开始也成为了成年人，开始扛起中国新时代的大旗，<br>  从某种层面上就意味着90后这个群体已 <code>不再年轻</code> 的同时肩上的责任更重了，<br>  相对于80后，90后的时代应该是比较幸运的，更过姿多彩的，<br>  在身处信息爆炸的时代，信息与知识的获取已经变得及其容易，<br>  一些像 “我吃的盐比你走的路都要多” 这样的话，已经变越来越不能证明什么了，<br>  之前在法治栏目看过一个毒贩就是在百度上通过搜索相关资料就可以自己制作出冰毒，<br>  网络是一把双刃剑，让人们生活变的便利的同时，风险和危险也会随之而来,<br>  呃，好像有点扯远了…</p>
@@ -1435,7 +1480,7 @@
     <link href="http://www.baixiaojian.com/FEDAY3/"/>
     <id>http://www.baixiaojian.com/FEDAY3/</id>
     <published>2017-09-09T02:19:57.000Z</published>
-    <updated>2017-12-31T07:13:41.000Z</updated>
+    <updated>2018-01-26T07:34:25.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="构建大型应用"><a href="#构建大型应用" class="headerlink" title="构建大型应用"></a>构建大型应用</h2><p>分享人：孟红伦(钉钉)</p>
 <h3 id="重要的俩块"><a href="#重要的俩块" class="headerlink" title="重要的俩块"></a>重要的俩块</h3><ul>
@@ -2472,7 +2517,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
@@ -3686,30 +3731,6 @@
     
     
       <category term="picture" scheme="http://www.baixiaojian.com/tags/picture/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.baixiaojian.com/hello-world/"/>
-    <id>http://www.baixiaojian.com/hello-world/</id>
-    <published>2017-04-05T02:15:10.000Z</published>
-    <updated>2017-12-31T07:24:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="历程"><a href="#历程" class="headerlink" title="历程"></a>历程</h3><p>还记得在 Github 上生成的第一个page时的新奇<br>还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋<br>如今在Github的page上生成了自己的博客，那可谓是即新奇 + 兴奋带来的激动<br>可以在自己的这块领地为所欲为，光想想就有一种迎风而来的酸爽</p>
-<h3 id="致敬"><a href="#致敬" class="headerlink" title="致敬"></a>致敬</h3><p>每一次的开始都仿佛打开一扇门<br>而每扇门的背后都有着无数默默付出和无私奉献的人<br>是他们让现在的这个圈子有了生态<br>没有他们的付出我不会这么顺利的把这个博客搭建起来<br>再次由衷的致敬这些人<br>我愿成为向你们一样的人</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;历程&quot;&gt;&lt;a href=&quot;#历程&quot; class=&quot;headerlink&quot; title=&quot;历程&quot;&gt;&lt;/a&gt;历程&lt;/h3&gt;&lt;p&gt;还记得在 Github 上生成的第一个page时的新奇&lt;br&gt;还记得在 CSDN 的第一次开通博客的 Hello world 的兴奋&lt;br&gt;
-    
-    </summary>
-    
-      <category term="东拉西扯" scheme="http://www.baixiaojian.com/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/"/>
-    
-    
-      <category term="Hello" scheme="http://www.baixiaojian.com/tags/Hello/"/>
     
   </entry>
   

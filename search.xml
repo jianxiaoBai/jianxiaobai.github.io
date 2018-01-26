@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mongodb 安装与基本配置]]></title>
+    <url>%2Fmongodb%2F</url>
+    <content type="text"><![CDATA[查看brew listbrew search mongodb 安装brew install mongodb 启动首次执行 mongod 尝试启动 MongoDB , 但会失败 exiting: ➜ ~ mongod2018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] MongoDB starting : pid=8954 port=27017 dbpath=/data/db 64-bit host=baixiaojiandeMacBook-Pro.local2018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] db version v3.6.22018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c5394202018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] OpenSSL version: OpenSSL 1.0.2n 7 Dec 20172018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] allocator: system2018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] modules: none2018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] build environment:2018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] distarch: x86_642018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] target_arch: x86_642018-01-26T15:11:13.278+0800 I CONTROL [initandlisten] options: &#123;&#125;2018-01-26T15:11:13.279+0800 I STORAGE [initandlisten] exception in initAndListen: NonExistentPath: Data directory /data/db not found., terminating2018-01-26T15:11:13.279+0800 I CONTROL [initandlisten] now exiting2018-01-26T15:11:13.279+0800 I CONTROL [initandlisten] shutting down with code:100 启动 MongoDB 之前, 要先新建一个 MongoDB 默认的数据写入目录 // sudo 并输入密码，重新新建目录$ sudo mkdir -p /data/dbPassword: 给刚才新建的数据库目录赋予权限: $ sudo chown -R baixiaojian /data 此时,执行 mongod 启动 MongoDB 服务: ➜ ~ mongod2018-01-26T15:17:54.988+0800 I CONTROL [initandlisten] MongoDB starting : pid=9551 port=27017 dbpath=/data/db 64-bit host=baixiaojiandeMacBook-Pro.local2018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] db version v3.6.22018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] git version: 489d177dbd0f0420a8ca04d39fd78d0a2c5394202018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] OpenSSL version: OpenSSL 1.0.2n 7 Dec 20172018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] allocator: system2018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] modules: none2018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] build environment:2018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] distarch: x86_642018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] target_arch: x86_642018-01-26T15:17:54.989+0800 I CONTROL [initandlisten] options: &#123;&#125;2018-01-26T15:17:54.990+0800 I STORAGE [initandlisten] wiredtiger_open config: create,cache_size=7680M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** WARNING: Access control is not enabled for the database.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Read and write access to data and configuration is unrestricted.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** WARNING: This server is bound to localhost.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Remote systems will be unable to connect to this server.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Start the server with --bind_ip &lt;address&gt; to specify which IP2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** addresses it should serve responses from, or with --bind_ip_all to2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** bind to all interfaces. If this behavior is desired, start the2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** server with --bind_ip 127.0.0.1 to disable this warning.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]2018-01-26T15:17:55.360+0800 I STORAGE [initandlisten] createCollection: admin.system.version with provided UUID: acffed24-1106-4136-bf4d-d2894c0cb3e32018-01-26T15:17:55.443+0800 I COMMAND [initandlisten] setting featureCompatibilityVersion to 3.62018-01-26T15:17:55.447+0800 I STORAGE [initandlisten] createCollection: local.startup_log with generated UUID: 5414b600-b049-49b5-aad7-c20beb480c412018-01-26T15:17:55.551+0800 I FTDC [initandlisten] Initializing full-time diagnostic data capture with directory &apos;/data/db/diagnostic.data&apos;2018-01-26T15:17:55.551+0800 I NETWORK [initandlisten] waiting for connections on port 27017 MongoDB 启动成功,等待被连接中… 连接新建命令行窗口, 执行 mongo 进入 MongoDB 命令行模式: ➜ ~ mongoMongoDB shell version v3.6.2connecting to: mongodb://127.0.0.1:27017MongoDB server version: 3.6.2Server has startup warnings:2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** WARNING: Access control is not enabled for the database.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Read and write access to data and configuration is unrestricted.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** WARNING: This server is bound to localhost.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Remote systems will be unable to connect to this server.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** Start the server with --bind_ip &lt;address&gt; to specify which IP2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** addresses it should serve responses from, or with --bind_ip_all to2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** bind to all interfaces. If this behavior is desired, start the2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten] ** server with --bind_ip 127.0.0.1 to disable this warning.2018-01-26T15:17:55.353+0800 I CONTROL [initandlisten]&gt; 4685*9894633465&gt; 连接成功, 然后就可以对数据库进行操作了.]]></content>
+      <categories>
+        <category>配置相关</category>
+      </categories>
+      <tags>
+        <tag>mongod</tag>
+        <tag>基本配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[busy recently]]></title>
     <url>%2Flog-busy%2F</url>
     <content type="text"><![CDATA[最近有点忙一些想记的笔记想吐的槽都被忙碌的时间搁了浅早九晚九+周末单休+今天也是在夜深人静后挤出的 “闲暇” 时光可能忙碌中才能更好的积累与沉淀吧 刚有空把书签栏整理一下删掉了许多不在需要或者无效的书签看起来更舒服了]]></content>
@@ -12,6 +24,9 @@
     <title><![CDATA[charles 抓取 https]]></title>
     <url>%2FcharlesConfig%2F</url>
     <content type="text"><![CDATA[待完善Charles 电脑上下载证书 始终相信 保存并导出证书 导入在手机中并安装]]></content>
+      <categories>
+        <category>配置相关</category>
+      </categories>
       <tags>
         <tag>charles</tag>
         <tag>https</tag>
@@ -22,6 +37,9 @@
     <title><![CDATA[term]]></title>
     <url>%2Fterm%2F</url>
     <content type="text"><![CDATA[待完善内存带宽单线程多线程进程死锁单点故障三次握手子网掩码端口集群高并发持续集成内存泄漏虚拟地址物理地址负载均衡虚拟DOM压力测试前后端分离反向代理闭包HTTPHTTPSes6新特性 new Proxy/async/await/map/setdockerSEOTPSCPUCPU 密集型闭包算法]]></content>
+      <categories>
+        <category>专业术语</category>
+      </categories>
       <tags>
         <tag>术语</tag>
         <tag>进阶</tag>
