@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2018-01-29T13:27:44.000Z</updated>
+  <updated>2018-01-29T13:38:09.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -20,15 +20,16 @@
     <link href="http://www.baixiaojian.com/spl%E8%AF%AD%E5%8F%A5/"/>
     <id>http://www.baixiaojian.com/spl语句/</id>
     <published>2018-01-26T12:10:26.000Z</published>
-    <updated>2018-01-29T13:27:44.000Z</updated>
+    <updated>2018-01-29T13:38:09.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p> “web” 表</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">| id | name         | url                       | alexa | country |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">|  1 | Google       | https://www.google.cm/    |     1 | USA     |</div><div class="line">|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |</div><div class="line">|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |</div><div class="line">|  4 | 微博          | http://weibo.com/         |    20 | CN      |</div><div class="line">|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div></pre></td></tr></table></figure>
 <blockquote>
-<p>“access_log” 表<br>+—–+———+——-+————+<br>| aid | site_id | count | date       |<br>+—–+———+——-+————+<br>|   1 |       1 |    45 | 2016-05-10 |<br>|   2 |       3 |   100 | 2016-05-13 |<br>|   3 |       1 |   230 | 2016-05-14 |<br>|   4 |       2 |    10 | 2016-05-14 |<br>|   5 |       5 |   205 | 2016-05-14 |<br>|   6 |       4 |    13 | 2016-05-15 |<br>|   7 |       3 |   220 | 2016-05-15 |<br>|   8 |       5 |   545 | 2016-05-16 |<br>|   9 |       3 |   201 | 2016-05-17 |<br>+—–+———+——-+————+</p>
+<p>“access_log” 表</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+-----+---------+-------+------------+</div><div class="line">| aid | site_id | count | date       |</div><div class="line">+-----+---------+-------+------------+</div><div class="line">|   1 |       1 |    45 | 2016-05-10 |</div><div class="line">|   2 |       3 |   100 | 2016-05-13 |</div><div class="line">|   3 |       1 |   230 | 2016-05-14 |</div><div class="line">|   4 |       2 |    10 | 2016-05-14 |</div><div class="line">|   5 |       5 |   205 | 2016-05-14 |</div><div class="line">|   6 |       4 |    13 | 2016-05-15 |</div><div class="line">|   7 |       3 |   220 | 2016-05-15 |</div><div class="line">|   8 |       5 |   545 | 2016-05-16 |</div><div class="line">|   9 |       3 |   201 | 2016-05-17 |</div><div class="line">+-----+---------+-------+------------+</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><p><strong>例子有限,要结合基础知识举一反三</strong></p>
 <h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><table>
@@ -309,8 +310,9 @@
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| id | name         | url                       | alexa | country |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  1 | Google       | https://www.google.cm/    |     1 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  4 | 微博          | http://weibo.com/         |    20 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
-&lt;p&gt;“access_log” 表&lt;br&gt;+—–+———+——-+————+&lt;br&gt;| aid | site_id | count | date       |&lt;br&gt;+—–+———+——-+————+&lt;br&gt;|   1 |       1 |    45 | 2016-05-10 |&lt;br&gt;|   2 |       3 |   100 | 2016-05-13 |&lt;br&gt;|   3 |       1 |   230 | 2016-05-14 |&lt;br&gt;|   4 |       2 |    10 | 2016-05-14 |&lt;br&gt;|   5 |       5 |   205 | 2016-05-14 |&lt;br&gt;|   6 |       4 |    13 | 2016-05-15 |&lt;br&gt;|   7 |       3 |   220 | 2016-05-15 |&lt;br&gt;|   8 |       5 |   545 | 2016-05-16 |&lt;br&gt;|   9 |       3 |   201 | 2016-05-17 |&lt;br&gt;+—–+———+——-+————+&lt;/p&gt;
+&lt;p&gt;“access_log” 表&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| aid | site_id | count | date       |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   1 |       1 |    45 | 2016-05-10 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   2 |       3 |   100 | 2016-05-13 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   3 |       1 |   230 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   4 |       2 |    10 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   5 |       5 |   205 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   6 |       4 |    13 | 2016-05-15 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   7 |       3 |   220 | 2016-05-15 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   8 |       5 |   545 | 2016-05-16 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   9 |       3 |   201 | 2016-05-17 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
