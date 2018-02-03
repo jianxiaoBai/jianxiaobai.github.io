@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2018-01-29T13:38:09.000Z</updated>
+  <updated>2018-02-03T05:19:07.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,13 +16,692 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vscode</title>
+    <link href="http://www.baixiaojian.com/vscode/"/>
+    <id>http://www.baixiaojian.com/vscode/</id>
+    <published>2018-02-02T06:12:40.000Z</published>
+    <updated>2018-02-03T05:19:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="待熟练"><a href="#待熟练" class="headerlink" title="待熟练"></a>待熟练</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + shift + P /<code>F1</code></td>
+<td>展开全局命令面板</td>
+</tr>
+<tr>
+<td>Commend + P</td>
+<td>查找文件/文件记录</td>
+</tr>
+<tr>
+<td>Commend + Shift + N</td>
+<td>新建窗口</td>
+</tr>
+<tr>
+<td>Commend + Shift + W</td>
+<td>关闭窗口</td>
+</tr>
+<tr>
+<td>Commend + K Commend + W</td>
+<td>关闭所有编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + Alt + S</td>
+<td>保存所有文件</td>
+</tr>
+<tr>
+<td><code>Commend + Alt + [/]</code></td>
+<td>折叠/展开区域代码</td>
+</tr>
+<tr>
+<td>Commend + D</td>
+<td>选中下一个相同</td>
+</tr>
+<tr>
+<td>Commend + K + Commend + F</td>
+<td>格式化选中部分的代码</td>
+</tr>
+<tr>
+<td><code>Commend + F2</code> / Control + Commend + G</td>
+<td>选中所有相同</td>
+</tr>
+<tr>
+<td>Commend + Shift + Click</td>
+<td>集选光标</td>
+</tr>
+<tr>
+<td>Commend + Shift + T</td>
+<td>撤销最近关闭的一个文件编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + Shift + F</td>
+<td>打开全局搜索</td>
+</tr>
+<tr>
+<td>Commend + Shift + `</td>
+<td>创建一个新的终端</td>
+</tr>
+<tr>
+<td><code>Ctrl + G</code></td>
+<td>跳转行</td>
+</tr>
+<tr>
+<td><code>Ctrl + R</code></td>
+<td>打开 Git Project 文件夹</td>
+</tr>
+<tr>
+<td><code>Shift + Alt + F</code></td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td><code>Shift + F12</code></td>
+<td>显示所有引用</td>
+</tr>
+<tr>
+<td>Alt + Enter</td>
+<td>选中所有查询结果</td>
+</tr>
+<tr>
+<td>Alt + F12</td>
+<td>代码片段显示定义</td>
+</tr>
+<tr>
+<td>F3 / Shift + F3</td>
+<td>查询下一个/上一个</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>跳转到定义处</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + X</td>
+<td>剪切</td>
+</tr>
+<tr>
+<td>Commend + C</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>Commend + V</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>Alt + up/down</td>
+<td>移动行上下</td>
+</tr>
+<tr>
+<td>Shift + Alt up/down</td>
+<td>在当前行上下复制当前行</td>
+</tr>
+<tr>
+<td>Commend + Enter</td>
+<td>在当前行下插入新的一行</td>
+</tr>
+<tr>
+<td>Commend + Shift + Enter</td>
+<td>在当前行上插入新的一行</td>
+</tr>
+<tr>
+<td>Commend + Alt + [/]</td>
+<td>折叠/展开区域代码</td>
+</tr>
+<tr>
+<td>Ctrl + K/O</td>
+<td>前缩进/后缩进</td>
+</tr>
+<tr>
+<td>Commend + /</td>
+<td>添加关闭行注释</td>
+</tr>
+<tr>
+<td>Shift + Alt +A</td>
+<td>块区域注释</td>
+</tr>
+</tbody>
+</table>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + G</td>
+<td>跳转行</td>
+</tr>
+<tr>
+<td>Commend + P</td>
+<td>跳转文件</td>
+</tr>
+<tr>
+<td>Commend + R</td>
+<td>查找方法或标签</td>
+</tr>
+<tr>
+<td>Commend + Shift + M</td>
+<td>打开问题展示面板</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>跳转到下一个错误或者警告</td>
+</tr>
+<tr>
+<td>Shift + F8</td>
+<td>跳转到上一个错误或者警告</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查询与替换"><a href="#查询与替换" class="headerlink" title="查询与替换"></a>查询与替换</h2><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + F</td>
+<td>查询</td>
+</tr>
+<tr>
+<td>Alt + Enter</td>
+<td>选中所有查询结果</td>
+</tr>
+<tr>
+<td>F3 / Shift + F3</td>
+<td>查询下一个/上一个</td>
+</tr>
+<tr>
+<td>Commend + D</td>
+<td>选中下一个相同</td>
+</tr>
+<tr>
+<td>Control + Commend + G / Commend + F2</td>
+<td>选中所有相同</td>
+</tr>
+</tbody>
+</table>
+<h2 id="多行光标操作于选择"><a href="#多行光标操作于选择" class="headerlink" title="多行光标操作于选择"></a>多行光标操作于选择</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + Click</td>
+<td>多选光标</td>
+</tr>
+<tr>
+<td>Commend + F2</td>
+<td>选中所有相同</td>
+</tr>
+<tr>
+<td>Commend + Alt + up/down</td>
+<td>上下插入光标</td>
+</tr>
+<tr>
+<td>Commend + Shift + Click</td>
+<td>集选光标</td>
+</tr>
+</tbody>
+</table>
+<h2 id="丰富的语言操作"><a href="#丰富的语言操作" class="headerlink" title="丰富的语言操作"></a>丰富的语言操作</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shift + Alt + F</td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>打开 Git Project 文件夹</td>
+</tr>
+<tr>
+<td>Commend + K + Commend + F</td>
+<td>格式化选中部分的代码</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>跳转到定义处</td>
+</tr>
+<tr>
+<td>Alt + F12</td>
+<td>代码片段显示定义</td>
+</tr>
+<tr>
+<td>Ctrl + K F12</td>
+<td>在其他窗口打开定义处</td>
+</tr>
+<tr>
+<td>Shift + F12</td>
+<td>显示所有引用</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>重命名符号</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编辑器管理"><a href="#编辑器管理" class="headerlink" title="编辑器管理"></a>编辑器管理</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + W</td>
+<td>关闭编辑器</td>
+</tr>
+<tr>
+<td>Commend + \</td>
+<td></td>
+<td>切割编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + Alt &lt;-/-&gt;</td>
+<td>切割窗口位置调换</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + N</td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td>Commend + O</td>
+<td>打开文件</td>
+</tr>
+<tr>
+<td>Commend + S</td>
+<td>保存文件</td>
+</tr>
+<tr>
+<td>Commend + Alt + S</td>
+<td>保存所有文件</td>
+</tr>
+<tr>
+<td>Commend + K Commend + W</td>
+<td>关闭所有编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + W</td>
+<td>关闭当前编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + Shift + T</td>
+<td>撤销最近关闭的一个文件编辑窗口</td>
+</tr>
+<tr>
+<td>Commend + Shift + S</td>
+<td>另存为</td>
+</tr>
+<tr>
+<td>Commend + K S</td>
+<td>键盘快捷方式指南</td>
+</tr>
+<tr>
+<td>Commend + K P</td>
+<td>复制当前打开文件的存放路径</td>
+</tr>
+<tr>
+<td>Commend + K R</td>
+<td>打开vscode官方快捷键指南</td>
+</tr>
+</tbody>
+</table>
+<h2 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Commend + F</td>
+<td>切换全屏模式</td>
+</tr>
+<tr>
+<td>Commend + =/-</td>
+<td>放大 / 缩小</td>
+</tr>
+<tr>
+<td>Commend + B</td>
+<td>侧边栏显示隐藏</td>
+</tr>
+<tr>
+<td>Commend + Shift + E</td>
+<td>资源视图和编辑视图的焦点切换</td>
+</tr>
+<tr>
+<td>Commend + Shift + F</td>
+<td>打开全局搜索</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + G</td>
+<td>打开Git可视管理</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + D</td>
+<td>打开DeBug面板</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + X</td>
+<td>打开插件市场面板</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + H</td>
+<td>在当前文件替换查询替换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + J</td>
+<td>开启详细查询</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + V</td>
+<td>预览Markdown文件【编译后】</td>
+</tr>
+<tr>
+<td>Ctrl + K v</td>
+<td>在边栏打开渲染后的视图【新建】</td>
+</tr>
+</tbody>
+</table>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F9</td>
+<td>添加解除断点</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>启动调试、继续</td>
+</tr>
+<tr>
+<td>F11 / Shift + F11</td>
+<td>单步进入/单步跳出</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>单步跳过</td>
+</tr>
+</tbody>
+</table>
+<h2 id="集成终端"><a href="#集成终端" class="headerlink" title="集成终端"></a>集成终端</h2><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commend + `</td>
+<td>打开集成终端</td>
+</tr>
+<tr>
+<td>Commend + Shift + `</td>
+<td>创建一个新的终端</td>
+</tr>
+<tr>
+<td>Commend + Shift + C</td>
+<td>复制所选</td>
+</tr>
+<tr>
+<td>Commend + Shift + V</td>
+<td>复制到当前激活的终端</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><table>
+<thead>
+<tr>
+<th>插件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guides</td>
+<td>括号高亮</td>
+</tr>
+<tr>
+<td>Beautiful</td>
+<td>格式化</td>
+</tr>
+<tr>
+<td>One Monokai Theme</td>
+<td>主题不错</td>
+</tr>
+<tr>
+<td>Path Autocomplete</td>
+<td>路径智能补全</td>
+</tr>
+<tr>
+<td>Path Intellisense</td>
+<td>路径智能提示</td>
+</tr>
+<tr>
+<td>Code Spell Checker</td>
+<td>检查单词拼写</td>
+</tr>
+<tr>
+<td>markdownlint</td>
+<td>markdown 语法检测</td>
+</tr>
+<tr>
+<td>ESLint</td>
+<td>可以配置自动格式代码规范</td>
+</tr>
+<tr>
+<td>Output Colorizer</td>
+<td>可以终端日志输出着色，实用</td>
+</tr>
+<tr>
+<td>Markdown All in One</td>
+<td>自动补全/格式化table/…</td>
+</tr>
+<tr>
+<td>Debugger for Chrome</td>
+<td>在vscode调试代码, 屌的一比</td>
+</tr>
+<tr>
+<td>Code Runner</td>
+<td>代码编译运行看结果支持多语言</td>
+</tr>
+<tr>
+<td>colorize</td>
+<td>会给当前颜色代码该颜色的背景</td>
+</tr>
+<tr>
+<td>Git Project Manager</td>
+<td>可以很方便的打开自己的 git 项目</td>
+</tr>
+<tr>
+<td>background</td>
+<td>自己敲代码时有一个妹子看的感觉不赖</td>
+</tr>
+<tr>
+<td>Version Lens</td>
+<td>可以及时看到package.json内部版本的变动</td>
+</tr>
+<tr>
+<td>Git Lens</td>
+<td>可以很方便的查看 git 的各种提交记录及成员间的更改</td>
+</tr>
+<tr>
+<td>Git History</td>
+<td>有 Git Lens 没有的功能, 比如查看某一个成员的历史提交</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/crper/article/details/54099319" rel="external nofollow noopener noreferrer" target="_blank">VS Code折腾记-快捷键</a><br><a href="http://blog.csdn.net/crper/article/details/55509477" rel="external nofollow noopener noreferrer" target="_blank">VS Code折腾记-必备插件</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h1&gt;&lt;h2 id=&quot;待熟练&quot;&gt;&lt;a href=&quot;#待熟练&quot; class=&quot;headerlink&quot; title=&quot;待熟练&quot;&gt;&lt;/a&gt;待熟练&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;按键&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + shift + P /&lt;code&gt;F1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;展开全局命令面板&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + P&lt;/td&gt;
+&lt;td&gt;查找文件/文件记录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + N&lt;/td&gt;
+&lt;td&gt;新建窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + W&lt;/td&gt;
+&lt;td&gt;关闭窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + K Commend + W&lt;/td&gt;
+&lt;td&gt;关闭所有编辑窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Alt + S&lt;/td&gt;
+&lt;td&gt;保存所有文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Commend + Alt + [/]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;折叠/展开区域代码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + D&lt;/td&gt;
+&lt;td&gt;选中下一个相同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + K + Commend + F&lt;/td&gt;
+&lt;td&gt;格式化选中部分的代码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Commend + F2&lt;/code&gt; / Control + Commend + G&lt;/td&gt;
+&lt;td&gt;选中所有相同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + Click&lt;/td&gt;
+&lt;td&gt;集选光标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + T&lt;/td&gt;
+&lt;td&gt;撤销最近关闭的一个文件编辑窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + F&lt;/td&gt;
+&lt;td&gt;打开全局搜索&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Commend + Shift + `&lt;/td&gt;
+&lt;td&gt;创建一个新的终端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + G&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;跳转行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + R&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;打开 Git Project 文件夹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift + Alt + F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;格式化代码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Shift + F12&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;显示所有引用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + Enter&lt;/td&gt;
+&lt;td&gt;选中所有查询结果&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + F12&lt;/td&gt;
+&lt;td&gt;代码片段显示定义&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F3 / Shift + F3&lt;/td&gt;
+&lt;td&gt;查询下一个/上一个&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F12&lt;/td&gt;
+&lt;td&gt;跳转到定义处&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="快捷键" scheme="http://www.baixiaojian.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="vscode" scheme="http://www.baixiaojian.com/tags/vscode/"/>
+    
+      <category term="插件" scheme="http://www.baixiaojian.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Structured Query Language</title>
     <link href="http://www.baixiaojian.com/spl%E8%AF%AD%E5%8F%A5/"/>
     <id>http://www.baixiaojian.com/spl语句/</id>
     <published>2018-01-26T12:10:26.000Z</published>
-    <updated>2018-01-29T13:38:09.000Z</updated>
+    <updated>2018-02-02T06:20:17.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><blockquote>
 <p> “web” 表</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">| id | name         | url                       | alexa | country |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">|  1 | Google       | https://www.google.cm/    |     1 | USA     |</div><div class="line">|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |</div><div class="line">|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |</div><div class="line">|  4 | 微博          | http://weibo.com/         |    20 | CN      |</div><div class="line">|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div></pre></td></tr></table></figure>
@@ -305,7 +984,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt; “web” 表&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| id | name         | url                       | alexa | country |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  1 | Google       | https://www.google.cm/    |     1 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  4 | 微博          | http://weibo.com/         |    20 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -3933,92 +4612,6 @@
     
     
       <category term="知乎" scheme="http://www.baixiaojian.com/tags/%E7%9F%A5%E4%B9%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Quotation</title>
-    <link href="http://www.baixiaojian.com/quotation/"/>
-    <id>http://www.baixiaojian.com/quotation/</id>
-    <published>2017-04-09T15:56:04.000Z</published>
-    <updated>2017-12-31T07:39:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<embed src="//music.163.com/style/swf/widget.swf?sid=26577096&type=2&auto=0&width=320&height=66" width="340" height="86" allownetworking="all">
-
-
-
-<div class="note info"><p>苟利国家生以死,岂因祸福趋避之<br><span style="margin-left: 50%"><strong><em>出自『林则徐』</em></strong></span></p>
-</div>
-<div class="note danger"><p>只比你努力一点的人,其实已经甩你很远<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
-</div>
-<div class="note primary"><p>主动往往能为你赢得更多机会<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
-</div>
-<div class="note danger"><p>世界的模样在于你看它的角度<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
-</div>
-<a id="more"></a>
-<div class="note primary"><p>真正成熟的人,脾气永远不会大于他的能力<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
-</div>
-<div class="note danger"><p>不要用 “作” 来找存在感<br><span style="margin-left: 50%"><strong><em>出自『☆』</em></strong></span></p>
-</div>
-<div class="note primary"><p>人不牺牲什么就什么也得不到，为了得到什么就要付出同样的代价，那就是炼金术的等价交换原则，那个时候，我们相信那是世界的真实。<br><span style="margin-left: 50%"><strong><em>出自『钢之炼金术师』</em></strong></span></p>
-</div>
-<div class="note danger"><p>思想中一旦有了依附，骨子里便失去了坚强；<br><span style="margin-left: 50%"><strong><em>出自『网络』</em></strong></span></p>
-</div>
-<div class="note info"><p>星星之火，可以燎原。<br><span style="margin-left: 50%"><strong><em>出自『张居正』</em></strong></span></p>
-</div>
-<div class="note danger"><p>纸上得来终觉浅，绝知此事要躬行。<br><span style="margin-left: 50%"><strong><em>出自『陆游』</em></strong></span></p>
-</div>
-<div class="note warning"><p>要保持剑的锋利就得时时磨拭，要保持头脑灵光就得看书。<br><span style="margin-left: 50%"><strong><em>出自『乔治·马丁』</em></strong></span></p>
-</div>
-<div class="note default"><p>俗话说不耻下问是一时之耻，耻而不问是一生之耻。<br><span style="margin-left: 50%"><strong><em>出自『白箱』</em></strong></span></p>
-</div>
-<div class="note default"><p>累过方得闲，苦过方知甜。<br><span style="margin-left: 50%"><strong><em>出自『网络』</em></strong></span></p>
-</div>
-<div class="note primary"><p>不以物喜，不以己悲。<br><span style="margin-left: 50%"><strong><em>出自『范仲淹』</em></strong></span></p>
-</div>
-<div class="note primary"><p>若有恒，何必三更眠五更起；最无益，莫过一日曝十日寒；<br><span style="margin-left: 50%"><strong><em>出自『毛泽东』</em></strong></span></p>
-</div>
-<div class="note default"><p>战略上藐视敌人，战术上重视敌人；<br><span style="margin-left: 50%"><strong><em>出自『毛泽东』</em></strong></span></p>
-</div>
-<div class="note default"><p>人生路很长，永远不要高兴太早。<br><span style="margin-left: 50%"><strong><em>出自『平常心』</em></strong></span></p>
-</div>
-<div class="note default"><p>人生就像一盒的巧克力，你永远不知道下一块是什么口味。<br><span style="margin-left: 50%"><strong><em>出自『阿甘正传』</em></strong></span></p>
-</div>
-<div class="note default"><p>如果你不努力，一天比一天容易，但一年比一年难；如果你努力了，一天比一天难，但一年比一年容易。<br><span style="margin-left: 50%"><strong><em>出自『网络』</em></strong></span></p>
-</div>
-<div class="note default"><p>只有内心强大，才能实现自我救赎；<br><span style="margin-left: 50%"><strong><em>出自『9.18』</em></strong></span></p>
-</div>
-<div class="note default"><p>富，亦指精神；强，亦指内心；<br><span style="margin-left: 50%"><strong><em>出自『9.18』</em></strong></span></p>
-</div>
-<div class="note default"><p>人一定要认清自己，自己能干什么，干得了什么，不要人云亦云。<br><span style="margin-left: 50%"><strong><em>出自『★』</em></strong></span></p>
-</div>
-<div class="note default"><p>对社会不要有太多的抱怨。创业的时候不要把自己当人看。有行动不一定能成功，没有行动就一定失败。<br><span style="margin-left: 50%"><strong><em>出自『俞敏洪』</em></strong></span></p>
-</div>
-<div class="note default"><p>那家伙永远都是挑战者<br><span style="margin-left: 50%"><strong><em>出自『棒球大联盟』</em></strong></span></p>
-</div>
-<div class="note default"><p>做没做过的事情是要建立在老老实实的成功之后的基础之上。<br><span style="margin-left: 50%"><strong><em>出自『★』</em></strong></span></p>
-</div>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;embed src=&quot;//music.163.com/style/swf/widget.swf?sid=26577096&amp;type=2&amp;auto=0&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot;&gt;
-
-
-
-&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;苟利国家生以死,岂因祸福趋避之&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『林则徐』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;只比你努力一点的人,其实已经甩你很远&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;主动往往能为你赢得更多机会&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;世界的模样在于你看它的角度&lt;br&gt;&lt;span style=&quot;margin-left: 50%&quot;&gt;&lt;strong&gt;&lt;em&gt;出自『☆』&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-    
-    </summary>
-    
-      <category term="零七碎八" scheme="http://www.baixiaojian.com/categories/%E9%9B%B6%E4%B8%83%E7%A2%8E%E5%85%AB/"/>
-    
     
   </entry>
   
