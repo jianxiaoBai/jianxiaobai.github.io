@@ -4,18 +4,18 @@
 
     
   <url>
-    <loc>http://www.baixiaojian.com/vscode/</loc>
-    <lastmod>2018-02-03T05:19:07.000Z</lastmod>
+    <loc>http://www.baixiaojian.com/mac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2018-02-28T14:49:48.000Z</lastmod>
     <data>
         <display>
-        <title>vscode</title>
-        <pubTime>2018-02-02T06:12:40.000Z</pubTime>
+        <title>mac 环境变量相关及开发相关文件解读</title>
+        <pubTime>2018-02-27T04:36:34.000Z</pubTime>
         
-        <tag>快捷键</tag>
+        <tag>mac</tag>
          
-        <tag>vscode</tag>
+        <tag>环境变量</tag>
          
-        <tag>插件</tag>
+        <tag>设置</tag>
          
          
            
@@ -29,7 +29,7 @@
     
   <url>
     <loc>http://www.baixiaojian.com/spl%E8%AF%AD%E5%8F%A5/</loc>
-    <lastmod>2018-02-02T06:20:17.000Z</lastmod>
+    <lastmod>2018-02-27T04:34:16.000Z</lastmod>
     <data>
         <display>
         <title>Structured Query Language</title>
@@ -38,6 +38,30 @@
         <tag>笔记</tag>
          
         <tag>spl</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术笔记" url="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.baixiaojian.com/vscode/</loc>
+    <lastmod>2018-02-27T04:26:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>vscode</title>
+        <pubTime>2018-02-02T06:12:40.000Z</pubTime>
+        
+        <tag>快捷键</tag>
+         
+        <tag>vscode</tag>
+         
+        <tag>插件</tag>
          
          
            
