@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[nginx 安装与基本操作]]></title>
+    <url>%2Fnginx%2F</url>
+    <content type="text"><![CDATA[Mac 安装brew search nginxbrew install nginx 安装完成后, 终端输出会显示相关 路径配置 ： /usr/local/etc/nginx/nginx.conf -&gt; 配置文件路径/usr/local/var/www -&gt; 服务器默认路径/usr/local/Cellar/nginx/1.8.0 -&gt; 安装路径 命令 作用 启动 sudo nginx 快速停止命令 sudo nginx -s stop 平稳退出命令 sudo nginx -s quit 查询nginx主进程号 ps -ef “I” grep nginx 正常停止 sudo kill -QUIT 主进程号 快速停止 sudo kill -TERM 主进程号 重启 sudo nginx -s reload CentOS 安装 1.添加Nginx到YUM源 sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 2.安装Nginx sudo yum install -y nginx 3.首次启动 sudo systemctl start nginx.service 4.验证是否成功 通过本机域名或者IP来访问web页面注意: 要关闭防火墙否则其他主机无法访问到 说明 命令 启动 service nginx start 停止 service nginx stop 重启 service nginx restart 开机自启 sudo systemctl enable nginx.service 查看 nginx 安装路径 rpm -ql nginx Nginx配置信息 作用 路径 网站文件存放默认目录 /usr/share/nginx/html 网站默认站点配置 /etc/nginx/conf.d/default.conf 自定义Nginx站点配置文件存放目录 /etc/nginx/conf.d/ Nginx全局配置 /etc/nginx/nginx.conf 防火墙操作 说明 命令 查看防火墙状态 firewall-cmd –state 关闭防火墙 systemctl stop firewalld 开启防火墙 systemctl start firewalld 参考资料1参考资料2]]></content>
+      <tags>
+        <tag>mac</tag>
+        <tag>nginx</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mac 环境变量相关及开发相关文件解读]]></title>
     <url>%2Fmac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[环境变量配置OS系统的配置文件加载顺序： /etc/profile /etc/paths ~/.bash_profile /etc/profile、/etc/bashrc 是针对系统所有用户的 全局变量, 如修改需权限,~/.bash_profile 是当前 用户级 的环境变量, 所以通常去修改它来设置环境变量. 操作步骤: 1. 终端输入 vi ~/.bash_profile2. 设置 PATH：export PATH=/usr/local/mysql/bin:$PATH3. 输入 :wq4. 立即生效 source ~/.bash_profile5. 查看变量值 echo $PATH 注: 删除环境变量需重启shell才能立即生效 开发相关文件 应用程序(Applications) 系统(System) 用户(User) 资料库(Library) 隐藏文件夹 文件夹 作用 usr unix 使用者专用文件夹 bin unix 储存基本指令 sbin unix 储存系统指令 etc 系统设定 储存位置 var 频繁改动 置放于此, 如监控、日志等 tmp 系统暂存档 其他 文件夹 作用 / 磁盘根目录 也就是 Macintosh HD 目录下 ~ 或者 /User/ 当前用户目录的顶级目录 /user/Shared 目录可以被本地的所有用户访问 Sites 用户个人站点网页文件。需设置 “系统预置-&gt;共享-&gt;Web共享” 中打开共享 Public 可以把需要与其它用户共享的文件放在这个目录中]]></content>
+    <content type="text"><![CDATA[环境变量配置OS系统的配置文件加载顺序： /etc/profile /etc/paths ~/.bash_profile /etc/profile、/etc/bashrc 是针对系统所有用户的 全局变量, 如修改需权限,~/.bash_profile 是当前 用户级 的环境变量, 所以通常去修改它来设置环境变量. 操作步骤: 1. 终端输入 vi ~/.bash_profile2. 设置 PATH：export PATH=/usr/local/mysql/bin:$PATH3. 输入 :wq4. 立即生效 source ~/.bash_profile5. 查看变量值 echo $PATH 注: 删除环境变量需重启shell才能立即生效 开发相关文件 应用程序(Applications) 系统(System) 用户(User) 资料库(Library) 隐藏文件夹 文件夹 作用 usr unix 使用者专用文件夹 bin unix 储存基本指令 sbin unix 储存系统指令 etc 系统设定 储存位置 var 频繁改动 置放于此, 如监控、日志等 tmp 系统暂存档 usr/local 本地文件系统配置相关文件 usr/local/etc 相关配置文件 其他 文件夹 作用 / 磁盘根目录 也就是 Macintosh HD 目录下 ~ 或者 /User/ 当前用户目录的顶级目录 /user/Shared 目录可以被本地的所有用户访问 Sites 用户个人站点网页文件。需设置 “系统预置-&gt;共享-&gt;Web共享” 中打开共享 Public 可以把需要与其它用户共享的文件放在这个目录中]]></content>
       <categories>
         <category>技术笔记</category>
       </categories>
@@ -335,9 +345,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>encrypt</tag>
         <tag>Next+Hexo</tag>
         <tag>博客搭建</tag>
-        <tag>encrypt</tag>
       </tags>
   </entry>
   <entry>
