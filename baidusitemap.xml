@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-03-04T14:58:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx 笔记</title>
+        <pubTime>2018-03-04T12:35:57.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>mac</tag>
+         
+        <tag>nginx</tag>
+         
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术笔记" url="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.baixiaojian.com/nginx/</loc>
-    <lastmod>2018-03-03T14:12:13.000Z</lastmod>
+    <lastmod>2018-03-04T12:36:29.000Z</lastmod>
     <data>
         <display>
         <title>nginx 安装与基本操作</title>
@@ -19,6 +45,9 @@
          
          
            
+             
+              <breadCrumb title="配置相关" url="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
+          
         </display>
     </data>
     </url>
@@ -26,7 +55,7 @@
     
   <url>
     <loc>http://www.baixiaojian.com/mac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
-    <lastmod>2018-03-03T14:06:41.000Z</lastmod>
+    <lastmod>2018-03-03T15:33:20.000Z</lastmod>
     <data>
         <display>
         <title>mac 环境变量相关及开发相关文件解读</title>
@@ -578,11 +607,11 @@
         <title>简单博文加密</title>
         <pubTime>2017-02-07T02:16:31.000Z</pubTime>
         
-        <tag>encrypt</tag>
-         
         <tag>Next+Hexo</tag>
          
         <tag>博客搭建</tag>
+         
+        <tag>encrypt</tag>
          
          
            

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2018-03-03T14:12:13.000Z</updated>
+  <updated>2018-03-04T14:58:00.000Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,15 +16,140 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nginx 笔记</title>
+    <link href="http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.baixiaojian.com/nginx笔记/</id>
+    <published>2018-03-04T12:35:57.000Z</published>
+    <updated>2018-03-04T14:58:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="../imgs/nginx-proxy.jpg" alt=""></p>
+<a id="more"></a>
+<p><a href="https://www.zhihu.com/question/24723688/answer/48369770" rel="external nofollow noopener noreferrer" target="_blank">图源来自知乎</a></p>
+<h2 id="反向代理的优点"><a href="#反向代理的优点" class="headerlink" title="反向代理的优点"></a>反向代理的优点</h2><ul>
+<li><code>保护</code>真实 web 服务器，其对外不可见；</li>
+<li><code>节约</code>了有限的 ip 地址资源；</li>
+<li><code>减少</code> web 服务器压力，提高响应速度；</li>
+<li>请求的统一控制，包括设置权限、过滤规则等；</li>
+<li>区分动态和静态可缓存内容；</li>
+<li>实现负载均衡，内部可以采用多台服务器来组成服务器集群，外部还是可以采用一个地址访问；</li>
+<li>解决 Ajax 跨域问题；</li>
+<li>作为真实服务器的缓冲，解决瞬间负载量大的问题；</li>
+</ul>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">main # 全局设置</div><div class="line">events &#123; # Nginx工作模式</div><div class="line">    ....</div><div class="line">&#125;</div><div class="line">http &#123; # http设置</div><div class="line">    ....</div><div class="line">    upstream myproject &#123; # 负载均衡服务器设置</div><div class="line">        .....</div><div class="line">    &#125;</div><div class="line">    server  &#123; # 主机设置</div><div class="line">        ....</div><div class="line">        location &#123; # URL匹配</div><div class="line">            ....</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    server  &#123;</div><div class="line">        ....</div><div class="line">        location &#123;</div><div class="line">            ....</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><h3 id="基于域名的虚拟主机"><a href="#基于域名的虚拟主机" class="headerlink" title="基于域名的虚拟主机"></a>基于域名的虚拟主机</h3><p>第一步: 假设我们在本地开发有3个项目，需要分别在 hosts 里<code>映射到本地</code>的127.0.0.1上：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">127.0.0.1 www.aaa.com</div><div class="line">127.0.0.1 www.bbb.com</div><div class="line">127.0.0.1 www.ccc.com</div></pre></td></tr></table></figure>
+<p>第二步: 分别对应于web根目录下的3个文件夹，用域名<code>对应文件夹</code>名字，为了好记：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/Users/baixiaojian/www/www.aaa.com/</div><div class="line">/Users/baixiaojian/www/www.bbb.com/</div><div class="line">/Users/baixiaojian/www/www.ccc.com/</div></pre></td></tr></table></figure>
+<p>每个目录都有一个 index.html 文件, 都是简单的输出自己的域名.</p>
+<p>第三步: 我们要新建3个server来<code>搭建对应个域名的虚拟主机</code>。</p>
+<blockquote>
+<p>这3个 server 配置信息都写成一个 .conf 的配置文件,然后在 http 模块统一导入,这样比较便于维护和管理</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">main</div><div class="line">events &#123;</div><div class="line">    ....</div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    ....</div><div class="line">    include servers/www.aaa.conf;</div><div class="line">    include servers/www.bbb.conf;</div><div class="line">    include servers/www.ccc.conf;</div><div class="line">    # 或者用 *.conf  包含</div><div class="line">    # include servers/*.conf</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>既然每一个conf都是一个server，下面就开始：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">### www.aaa.com</div><div class="line">  server &#123;</div><div class="line">      charset utf-8;</div><div class="line"></div><div class="line">      listen       80;</div><div class="line">      server_name  www.aaa.com;</div><div class="line"></div><div class="line">      location / &#123;</div><div class="line">          root   /Users/baixiaojian/www/www.aaa.com/;</div><div class="line">          index  index.html index.htm;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">### www.bbb.com</div><div class="line">  server &#123;</div><div class="line">      charset utf-8;</div><div class="line"></div><div class="line">      listen       80;</div><div class="line">      server_name  www.bbb.com;</div><div class="line"></div><div class="line">      location / &#123;</div><div class="line">          root   /Users/baixiaojian/www/www.bbb.com/;</div><div class="line">          index  index.html index.htm;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">### www.ccc.com</div><div class="line">  server &#123;</div><div class="line">      charset utf-8;</div><div class="line"></div><div class="line">      listen       80;</div><div class="line">      server_name  www.ccc.com;</div><div class="line"></div><div class="line">      location / &#123;</div><div class="line">          root   /Users/baixiaojian/www/www.ccc.com/;</div><div class="line">          index  index.html index.htm;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>这样3个很精简的虚拟域名就搭建好了。<br>重启下nginx，然后打开浏览器访问一下这3个域名，就能看到对应的域名内容了。</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p><strong>Nginx 使用反向代理，主要是使用location模块下的 <code>proxy_pass</code> 选项。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">来个最简单的。</div><div class="line">当我访问 mac 上的nginx 的 centos.com 的内容时候,</div><div class="line">就反向代理到虚拟机centos上的 10.211.55.5 的index.html页面。</div></pre></td></tr></table></figure>
+<p>第一步: 在 hosts 里新加域名:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#vi /etc/hosts </div><div class="line">127.0.0.1 centos.com</div></pre></td></tr></table></figure>
+<p>第二步: 在 servers 目录中新建一个 .conf 的配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#centos.conf</div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name centos.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://10.211.55.5;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行 <code>sudo nginx -s reload</code> 重启后访问 <code>centos.com</code></p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>啥是负载均衡 ?<br>比如我们有一个小网站，刚开始就一台nginx服务器，<br>后来，随着业务量增大，用户增多，一台服务器已经不够用了，<br>我们就又多加了几台服务器。那么这几台服务器 <code>如何调度</code> ？<code>如何均匀提供访问</code> ？<br>这就是负载均衡。</p>
+<p><strong>负载均衡的好处是可以集群多台机器一起工作，并且对外的IP和域名是一样的，外界看起来就好像一台机器一样。</strong></p>
+<h4 id="基于-weight-权重的负载"><a href="#基于-weight-权重的负载" class="headerlink" title="基于 weight 权重的负载"></a>基于 weight 权重的负载</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">upstream webservers&#123;</div><div class="line">    server 192.168.33.11 weight=10;</div><div class="line">    server 192.168.33.12 weight=10;</div><div class="line">    server 192.168.33.13 weight=10;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name upstream.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://webservers;</div><div class="line">        proxy_set_header  X-Real-IP  $remote_addr;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="基于-ip-hash-的负载"><a href="#基于-ip-hash-的负载" class="headerlink" title="基于 ip_hash 的负载"></a>基于 ip_hash 的负载</h4><p><strong>每个请求按访问IP的hash结果分配</strong>，这样来自同一个IP的访客固定访问一个后端服务器，有效解决了动态网页存在的session共享问题。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">upstream webservers&#123;</div><div class="line">    ip_hash;</div><div class="line">    server 192.168.33.11 weight=1 max_fails=2 fail_timeout=30s;</div><div class="line">    server 192.168.33.12 weight=1 max_fails=2 fail_timeout=30s;</div><div class="line">    server 192.168.33.13 down;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注: ip_hash 模式下，不要设置 <code>weight</code> 和 <code>backup</code> </p>
+<h3 id="页面缓存"><a href="#页面缓存" class="headerlink" title="页面缓存"></a>页面缓存</h3><p>只需要简单配置下，就能将指定的一个页面缓存起来.<br>原理就是<code>匹配当前访问的url, hash加密后，去指定的缓存目录查找</code>, 有的话就说明匹配到缓存.</p>
+<p><strong>先来看一下一个简单的页面缓存的配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">http &#123;</div><div class="line">    proxy_cache_path /data/nginx/cache levels=1:2 keys_zone=cache_zone:10m inactive=1d max_size=100m;</div><div class="line">    # proxy_cache_path path [levels=number] keys_zone=zone_name:zone_size [inactive=time] [max_size=size]; </div><div class="line">                                                    # path        =&gt; 缓存路径 </div><div class="line">                                                    # levels      =&gt; 文件夹级数 </div><div class="line">                                                    # keys_zone   =&gt; 指的是共享池的名称 </div><div class="line">                                                    # inactive    =&gt; 表示指定的时间内缓存的数据没有被请求则被删除</div><div class="line">                                                    # max_size    =&gt; 缓存区域的总大小</div><div class="line">                                                    # clean_time  =&gt; 表示每间隔自动清除的时间</div><div class="line">    upstream myproject &#123;</div><div class="line">        .....</div><div class="line">    &#125;</div><div class="line">    server  &#123;</div><div class="line">        ....</div><div class="line">        location ~ *\.php$ &#123;</div><div class="line">            proxy_cache cache_zone;                 # keys_zone的名字</div><div class="line">            proxy_cache_key $host$uri$is_args$args; # 缓存规则</div><div class="line">            proxy_cache_valid any 1d;               # 为不同的http响应状态码设置不同的缓存时间。</div><div class="line">            proxy_pass http://127.0.0.1:8080;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>开始进行实战</strong></p>
+<p>第一步: Parallels Desktop 上启动一台 linux 虚拟机(10.211.55.5)</p>
+<p>第二部: Mac hosts配置 <code>cache.com</code> 域名, 然后按照上面的配置在 servers 下新建一个 <code>cache.conf</code> 文件:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">proxy_cache_path /usr/local/var/cache levels=1:2 keys_zone=cache_zone:10m inactive=1d max_size=100m;</div><div class="line">server  &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name cache.com;</div><div class="line"></div><div class="line">    add_header X-Via $server_addr;</div><div class="line">    add_header X-Cache $upstream_cache_status;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header  X-Real-IP  $remote_addr;</div><div class="line">        proxy_cache cache_zone;</div><div class="line">        proxy_cache_key $host$uri$is_args$args;</div><div class="line">        proxy_cache_valid 200 304 1m;</div><div class="line">        proxy_pass http://10.211.55.5;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>访问 <code>cache.com</code> 查看 <code>network</code> 网络请求选项，我们可以看到，Response Headers，在这里我们可以看到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">X-Cache: MISS</div><div class="line">X-Via:  127.0.0.1</div></pre></td></tr></table></figure>
+<p>X-cache 为 MISS 表示未命中，请求被传送到后端。<br>因为是第一次访问，没有缓存，所以肯定是未命中。<br>我们再刷新下，就发现其变成了HIT, 表示命中。</p>
+<p>X-cache 的其他几种状态：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MISS</td>
+<td>未命中，请求被传送到后端</td>
+</tr>
+<tr>
+<td>HIT</td>
+<td>缓存命中</td>
+</tr>
+<tr>
+<td>EXPIRED</td>
+<td>缓存已经过期请求被传送到后端</td>
+</tr>
+<tr>
+<td>UPDATING</td>
+<td>正在更新缓存，将使用旧的应答</td>
+</tr>
+<tr>
+<td>STALE</td>
+<td>后端将得到过期的应答</td>
+</tr>
+<tr>
+<td>BYPASS</td>
+<td>缓存被绕过了</td>
+</tr>
+</tbody>
+</table>
+<p>我们再去看看缓存文件夹 /usr/local/var/cache里面是否有了文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">cache git:(master) cd a/13</div><div class="line">➜  13 git:(master) ls</div><div class="line">5bd1af99bcb0db45c8bd601d9ee9e13a</div><div class="line">➜  13 git:(master) pwd</div><div class="line">/usr/local/var/cache/a/13</div></pre></td></tr></table></figure>
+<p>已经生成了缓存文件。</p>
+<p>我们在url 后面随便加一个什么参数，<br>看会不会新生成一个缓存文件夹及文件：<a href="http://cache.com/?w=ww55" rel="external nofollow noopener noreferrer" target="_blank">http://cache.com/?w=ww55</a> 。<br>因为我们使用的生成规则是全部url转换(proxy_cache_key $host$uri$is_args$args;)</p>
+<p>查看 X-cache 为 MISS，再刷新 ，变成HIT。<br>缓存文件夹 /usr/local/var/cache 又会多出对应缓存文件.</p>
+<h3 id="Location-正则模块"><a href="#Location-正则模块" class="headerlink" title="Location 正则模块"></a>Location 正则模块</h3><p><code>location /</code> 表示匹配访问根目录。<br><code>location ~</code> 表示开启正则匹配。<br>还可以用这个来匹配静态资源，缓存它们，设置过期时间：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|mp3|mp4|swf)&#123;</div><div class="line">    expires 15d;</div><div class="line">&#125;</div><div class="line">location ~ .*\.(css|js)&#123;</div><div class="line">    expires 12d;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 运行用户</div><div class="line">user www-data;    </div><div class="line"># 启动进程,通常设置成和cpu的数量相等</div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line"># 全局错误日志及PID文件</div><div class="line">error_log  /var/log/nginx/error.log;</div><div class="line">pid        /var/run/nginx.pid;</div><div class="line"></div><div class="line"># 工作模式及连接数上限</div><div class="line">events &#123;</div><div class="line">    use epoll; #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能</div><div class="line">    worker_connections 1024; #单个后台worker process进程的最大并发链接数</div><div class="line">    # multi_accept on; </div><div class="line">&#125;</div><div class="line"></div><div class="line">#设定http服务器，利用它的反向代理功能提供负载均衡支持</div><div class="line">http &#123;</div><div class="line">    #设定mime类型,类型由mime.type文件定义</div><div class="line">    include       /etc/nginx/mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line">    #设定日志格式</div><div class="line">    access_log    /var/log/nginx/access.log;</div><div class="line"></div><div class="line">    #sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，对于普通应用，</div><div class="line">    #必须设为 on,如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，以平衡磁盘与网络I/O处理速度，降低系统的uptime.</div><div class="line">    sendfile        on;</div><div class="line">    #将tcp_nopush和tcp_nodelay两个指令设置为on用于防止网络阻塞</div><div class="line">    tcp_nopush      on;</div><div class="line">    tcp_nodelay     on;</div><div class="line">    #连接超时时间</div><div class="line">    keepalive_timeout  65;</div><div class="line">    </div><div class="line">    #开启gzip压缩</div><div class="line">    gzip  on;</div><div class="line">    gzip_disable &quot;MSIE [1-6]\.(?!.*SV1)&quot;;</div><div class="line"></div><div class="line">    #设定请求缓冲</div><div class="line">    client_header_buffer_size    1k;</div><div class="line">    large_client_header_buffers  4 4k;</div><div class="line"></div><div class="line">    include /etc/nginx/conf.d/*.conf;</div><div class="line">    include /etc/nginx/sites-enabled/*;</div><div class="line"></div><div class="line">    #设定负载均衡的服务器列表</div><div class="line">    upstream mysvr &#123;</div><div class="line">        #weigth参数表示权值，权值越高被分配到的几率越大</div><div class="line">        #本机上的Squid开启3128端口</div><div class="line">        server 192.168.8.1:3128 weight=5;</div><div class="line">        server 192.168.8.2:80  weight=1;</div><div class="line">        server 192.168.8.3:80  weight=6;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    server &#123;</div><div class="line">        #侦听80端口</div><div class="line">        listen       80;</div><div class="line">        #定义使用www.xx.com访问</div><div class="line">        server_name  www.xx.com;</div><div class="line"></div><div class="line">        #设定本虚拟主机的访问日志</div><div class="line">        access_log  logs/www.xx.com.access.log  main;</div><div class="line"></div><div class="line">        #默认请求</div><div class="line">        location / &#123;</div><div class="line">            root   /root;      #定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;   #定义首页索引文件的名称</div><div class="line"></div><div class="line">            fastcgi_pass  www.xx.com;</div><div class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name; </div><div class="line">            include /etc/nginx/fastcgi_params;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        # 定义错误提示页面</div><div class="line">        error_page   500 502 503 504 /50x.html;  </div><div class="line">            location = /50x.html &#123;</div><div class="line">            root   /root;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #静态文件，nginx自己处理</div><div class="line">        location ~ ^/(images|javascript|js|css|flash|media|static)/ &#123;</div><div class="line">            root /var/www/virtual/htdocs;</div><div class="line">            #过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。</div><div class="line">            expires 30d;</div><div class="line">        &#125;</div><div class="line">        #PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置.</div><div class="line">        location ~ \.php$ &#123;</div><div class="line">            root /root;</div><div class="line">            fastcgi_pass 127.0.0.1:9000;</div><div class="line">            fastcgi_index index.php;</div><div class="line">            fastcgi_param SCRIPT_FILENAME /home/www/www$fastcgi_script_name;</div><div class="line">            include fastcgi_params;</div><div class="line">        &#125;</div><div class="line">        #设定查看Nginx状态的地址</div><div class="line">        location /NginxStatus &#123;</div><div class="line">            stub_status            on;</div><div class="line">            access_log              on;</div><div class="line">            auth_basic              &quot;NginxStatus&quot;;</div><div class="line">            auth_basic_user_file  conf/htpasswd;</div><div class="line">        &#125;</div><div class="line">        #禁止访问 .htxxx 文件</div><div class="line">        location ~ /\.ht &#123;</div><div class="line">            deny all;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    #第一个虚拟服务器</div><div class="line">    server &#123;</div><div class="line">        #侦听192.168.8.x的80端口</div><div class="line">        listen       80;</div><div class="line">        server_name  192.168.8.x;</div><div class="line"></div><div class="line">        #对aspx后缀的进行负载均衡请求</div><div class="line">        location ~ .*\.aspx$ &#123;</div><div class="line">            root   /root;#定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;#定义首页索引文件的名称</div><div class="line"></div><div class="line">            proxy_pass  http://mysvr;#请求转向mysvr 定义的服务器列表</div><div class="line"></div><div class="line">            #以下是一些反向代理的配置可删除.</div><div class="line">            proxy_redirect off;</div><div class="line"></div><div class="line">            #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</div><div class="line">            proxy_set_header Host $host;</div><div class="line">            proxy_set_header X-Real-IP $remote_addr;</div><div class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">            client_max_body_size 10m;    #允许客户端请求的最大单文件字节数</div><div class="line">            client_body_buffer_size 128k;  #缓冲区代理缓冲用户端请求的最大字节数，</div><div class="line">            proxy_connect_timeout 90;  #nginx跟后端服务器连接超时时间(代理连接超时)</div><div class="line">            proxy_send_timeout 90;        #后端服务器数据回传时间(代理发送超时)</div><div class="line">            proxy_read_timeout 90;         #连接成功后，后端服务器响应时间(代理接收超时)</div><div class="line">            proxy_buffer_size 4k;             #设置代理服务器（nginx）保存用户头信息的缓冲区大小</div><div class="line">            proxy_buffers 4 32k;               #proxy_buffers缓冲区，网页平均在32k以下的话，这样设置</div><div class="line">            proxy_busy_buffers_size 64k;    #高负荷下缓冲大小（proxy_buffers*2）</div><div class="line">            proxy_temp_file_write_size 64k;  #设定缓存文件夹大小，大于这个值，将从upstream服务器传</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/bed000e1830b" rel="external nofollow noopener noreferrer" target="_blank">参考资料</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;../imgs/nginx-proxy.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="mac" scheme="http://www.baixiaojian.com/tags/mac/"/>
+    
+      <category term="nginx" scheme="http://www.baixiaojian.com/tags/nginx/"/>
+    
+      <category term="linux" scheme="http://www.baixiaojian.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nginx 安装与基本操作</title>
     <link href="http://www.baixiaojian.com/nginx/"/>
     <id>http://www.baixiaojian.com/nginx/</id>
     <published>2018-03-01T12:58:27.000Z</published>
-    <updated>2018-03-03T14:12:13.000Z</updated>
+    <updated>2018-03-04T12:36:29.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Mac-安装"><a href="#Mac-安装" class="headerlink" title="Mac 安装"></a>Mac 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew search nginx</div><div class="line">brew install nginx</div></pre></td></tr></table></figure>
 <p>安装完成后, 终端输出会显示相关 <code>路径配置</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/usr/local/etc/nginx/nginx.conf   -&gt; 配置文件路径</div><div class="line">/usr/local/var/www                -&gt; 服务器默认路径</div><div class="line">/usr/local/Cellar/nginx/1.8.0     -&gt; 安装路径</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/usr/local/etc/nginx/nginx.conf   -&gt; 配置文件路径`</div><div class="line">/usr/local/var/www                -&gt; 服务器默认路径</div><div class="line">/usr/local/Cellar/nginx/1.8.0     -&gt; 安装路径</div></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -63,6 +188,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <h2 id="CentOS-安装"><a href="#CentOS-安装" class="headerlink" title="CentOS 安装"></a>CentOS 安装</h2><blockquote>
 <p>1.添加Nginx到YUM源</p>
 </blockquote>
@@ -162,9 +288,51 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Mac-安装&quot;&gt;&lt;a href=&quot;#Mac-安装&quot; class=&quot;headerlink&quot; title=&quot;Mac 安装&quot;&gt;&lt;/a&gt;Mac 安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code
+      &lt;h2 id=&quot;Mac-安装&quot;&gt;&lt;a href=&quot;#Mac-安装&quot; class=&quot;headerlink&quot; title=&quot;Mac 安装&quot;&gt;&lt;/a&gt;Mac 安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;brew search nginx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;brew install nginx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装完成后, 终端输出会显示相关 &lt;code&gt;路径配置&lt;/code&gt; ：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/etc/nginx/nginx.conf   -&amp;gt; 配置文件路径`&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/var/www                -&amp;gt; 服务器默认路径&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/Cellar/nginx/1.8.0     -&amp;gt; 安装路径&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;启动&lt;/td&gt;
+&lt;td&gt;sudo nginx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;快速停止命令&lt;/td&gt;
+&lt;td&gt;sudo nginx -s stop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;平稳退出命令&lt;/td&gt;
+&lt;td&gt;sudo nginx -s quit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查询nginx主进程号&lt;/td&gt;
+&lt;td&gt;ps -ef “I” grep nginx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;正常停止&lt;/td&gt;
+&lt;td&gt;sudo kill -QUIT 主进程号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;快速停止&lt;/td&gt;
+&lt;td&gt;sudo kill -TERM 主进程号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重启&lt;/td&gt;
+&lt;td&gt;sudo nginx -s reload&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
+    
+      <category term="配置相关" scheme="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
     
     
       <category term="mac" scheme="http://www.baixiaojian.com/tags/mac/"/>
@@ -180,7 +348,7 @@
     <link href="http://www.baixiaojian.com/mac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     <id>http://www.baixiaojian.com/mac环境变量/</id>
     <published>2018-02-27T04:36:34.000Z</published>
-    <updated>2018-03-03T14:06:41.000Z</updated>
+    <updated>2018-03-03T15:33:20.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>OS系统的配置文件加载顺序：</p>
 <ol>
@@ -3653,7 +3821,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
@@ -4322,255 +4490,6 @@
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="ES6" scheme="http://www.baixiaojian.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flex</title>
-    <link href="http://www.baixiaojian.com/flex/"/>
-    <id>http://www.baixiaojian.com/flex/</id>
-    <published>2017-05-30T07:58:06.000Z</published>
-    <updated>2017-12-31T07:12:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Flex-布局是什么"><a href="#Flex-布局是什么" class="headerlink" title="Flex 布局是什么"></a>Flex 布局是什么</h3><blockquote>
-<p>Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。</p>
-</blockquote>
-<p><strong>任何一个容器都可以指定为 Flex 布局</strong></p>
-<p><em>注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用</em></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">    .box&#123;</div><div class="line">      display: flex;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .box&#123;</div><div class="line">    /* 行内元素也可以使用 Flex 布局。 */</div><div class="line">      display: inline-flex;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>#</p>
-<p><strong>flex-flow</strong>简写：这是flex-direction和flex-wrap两个属性的缩写,默认值是row nowrap。</p>
-<h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><p><strong>主轴方向：flex-direction:</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row（默认）；</td>
-<td>从左到右</td>
-</tr>
-<tr>
-<td>row-reverse；</td>
-<td>从右到左</td>
-</tr>
-<tr>
-<td>column；</td>
-<td>从上到下</td>
-</tr>
-<tr>
-<td>column-reverse；</td>
-<td>从下到上</td>
-</tr>
-</tbody>
-</table>
-<p><strong>flex-wrap：是否换行</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nowrap（默认）；</td>
-<td>不换行</td>
-</tr>
-<tr>
-<td>wrap；</td>
-<td>正常换行</td>
-</tr>
-<tr>
-<td>wrap-reverse；</td>
-<td>返向换行</td>
-</tr>
-</tbody>
-</table>
-<p><strong>justify-content：设伸缩项目在相对 <code>主轴</code> 水平上的对齐方式</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flex-start（默认）：</td>
-<td>左对齐</td>
-</tr>
-<tr>
-<td>flex-end：</td>
-<td>右对齐</td>
-</tr>
-<tr>
-<td>center：</td>
-<td>居中</td>
-</tr>
-<tr>
-<td>space-between：</td>
-<td>首尾对齐，项目之间的间隔相等。</td>
-</tr>
-<tr>
-<td>space-around：</td>
-<td>每个项目两侧的间隔相等。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>align-content:设伸缩项目在相对  <code>主轴</code> 水垂直的对齐方式</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flex-start：</td>
-<td>上对齐</td>
-</tr>
-<tr>
-<td>flex-end：</td>
-<td>下对齐</td>
-</tr>
-<tr>
-<td>center：</td>
-<td>居中</td>
-</tr>
-<tr>
-<td>space-between：</td>
-<td>首尾对齐，项目之间的间隔相等。</td>
-</tr>
-<tr>
-<td>space-around：</td>
-<td>每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</td>
-</tr>
-<tr>
-<td>stretch（默认）：</td>
-<td>每个项目两侧的间隔相等。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>align-items：管理伸缩容<code>器侧轴方向</code>的额外空间</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flex-start（默认）：</td>
-<td>左对齐</td>
-</tr>
-<tr>
-<td>flex-end：</td>
-<td>右对齐</td>
-</tr>
-<tr>
-<td>center：</td>
-<td>居中</td>
-</tr>
-<tr>
-<td>baseline:</td>
-<td>项目的第一行文字的基线对齐。</td>
-</tr>
-<tr>
-<td>stretch（默认）：</td>
-<td>如果项目未设置高度或设为auto，将占满整个容器的高度。</td>
-</tr>
-</tbody>
-</table>
-<p>#</p>
-<h3 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h3><table>
-<thead>
-<tr>
-<th>属性作用</th>
-<th>属性值说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order</td>
-<td>数值越小，排列越靠前，默认为0。</td>
-</tr>
-<tr>
-<td>flex-grow</td>
-<td>定义一个Flex项目的扩大比例，默认为0</td>
-</tr>
-<tr>
-<td>flex-shrink</td>
-<td>定义一个Flex项目的缩小比例，默认为0</td>
-</tr>
-<tr>
-<td>flex-basis</td>
-<td>定义了Flex项目在分配Flex容器剩余空间之前的一个默认尺寸，类似width</td>
-</tr>
-</tbody>
-</table>
-<p><strong>align-self：管理伸缩容<code>器侧轴方向</code>的额外空间</strong></p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>属性作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auto</td>
-<td>自动</td>
-</tr>
-<tr>
-<td>flex-start（默认）：</td>
-<td>左对齐</td>
-</tr>
-<tr>
-<td>flex-end：</td>
-<td>右对齐</td>
-</tr>
-<tr>
-<td>center：</td>
-<td>居中</td>
-</tr>
-<tr>
-<td>baseline:</td>
-<td>项目的第一行文字的基线对齐。</td>
-</tr>
-<tr>
-<td>stretch（默认）：</td>
-<td>如果项目未设置高度或设为auto，将占满整个容器的高度。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>简写：flex</strong></p>
-<p>　　flex是flex-grow，flex-shrink，flex-basis三个属性的缩写。第二个和第三个参数是可选值。默认值是0 1 auto。</p>
-<p>　　<code>建议使用缩写属性。如果flex取值为none，等于0 0 auto。</code></p>
-<p> <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" rel="external nofollow noopener noreferrer" target="_blank">参考一</a><br> <a href="http://www.cnblogs.com/fxycm/p/4649648.html" rel="external nofollow noopener noreferrer" target="_blank">参考二</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Flex-布局是什么&quot;&gt;&lt;a href=&quot;#Flex-布局是什么&quot; class=&quot;headerlink&quot; title=&quot;Flex 布局是什么&quot;&gt;&lt;/a&gt;Flex 布局是什么&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Flex 是 Flexble Box 的缩写，意为 “弹性布局”，用来为盒状提供最大的灵活性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;任何一个容器都可以指定为 Flex 布局&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注意，设为 Flex 布局以后，子元素 的loadt、cleat和vertical-align 将失去作用&lt;/em&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .box&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      display: flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .box&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    /* 行内元素也可以使用 Flex 布局。 */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      display: inline-flex;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="flex" scheme="http://www.baixiaojian.com/tags/flex/"/>
     
   </entry>
   
