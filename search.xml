@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[腾讯云服务器部署 Node 应用]]></title>
     <url>%2F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2node%E5%BA%94%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[前言就在前天，微信群里有人说腾讯云服务器搞活动 1核2G 一个月10块钱，一起拼团的话还有优惠，我就心动了，一下续了二年的，正好结合我所掌握的技术点，走通上线部署的流程，不仅可以巩固我所掌握的知识点，也是让自己学的东西有个输出。 云服务器我的云服务器主机的基本配置 服务器登录Mac 下可以使用自带的终端或者 iTerm2 通过命令方式进行登录 ssh root@&lt;公网IP&gt; 安装 Node 运行环境用 nvm 来管理 node 版本： curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash 安装 node： nvm install v8.9.5node -v Hello worldconst http = require('http');const server = http.createServer((req, res) =&gt; &#123; res.statusCode = 200; res.setHeader('Content-Type', 'text/plain'); res.end('Hello World\n');&#125;);server.listen(3000, () =&gt; &#123; console.log(`Server is running at port 3000`);&#125;); 在服务端执行： 在浏览器中打开: 域名解析虽然可以通过 IP 地址访问, 但是记忆起来比较困难, 可以通过配置域名来访问 node 应用。 我原本就有一个 baixiaojian.com 的域名,所以我再次基础上配一个二级域名指向自己的主机,如 ok.baixiaojian.com, 访问主机时 通过 nginx 反向代理到服务器指定端口应用,这样的一个好处就是可以使80端口共用, 域名解析默认是 80 端口, 如果不是 80 端口,就需要指定端口号, 就像这样 ok.baixiaojian.com:4000 这样的体验是非常差的,所以nginx使80端口可以共用是非常必要的。 安装nginx配置nginx TransmitTransmit 是 Mac下一款实用的FTP客户端软件，它使用起来非常的稳定，速度也比较理想。 使用教程 pm2 进程管理pm2入门指南]]></content>
+    <content type="text"><![CDATA[前言就在前天，微信群里有人说腾讯云服务器搞活动 1核2G 一个月10块钱，一起拼团的话还有优惠，我就心动了，一下续了二年的，正好结合我所掌握的技术点，走通上线部署的流程，不仅可以巩固我所掌握的知识点，也是让自己学的东西有个输出。 云服务器我的云服务器主机的基本配置 服务器登录Mac 下可以使用自带的终端或者 iTerm2 通过命令方式进行登录 ssh root@&lt;公网IP&gt; 安装 Node 运行环境用 nvm 来管理 node 版本： curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash 安装 node： nvm install v8.9.5node -v Hello worldconst http = require('http');const server = http.createServer((req, res) =&gt; &#123; res.statusCode = 200; res.setHeader('Content-Type', 'text/plain'); res.end('Hello World\n');&#125;);server.listen(3000, () =&gt; &#123; console.log(`Server is running at port 3000`);&#125;); 在服务端执行： 在浏览器`中打开: 域名解析虽然可以通过 IP 地址访问, 但是记忆起来比较困难, 可以通过配置域名来访问 node 应用。 我原本就有一个 baixiaojian.com 的域名,所以我再次基础上配一个二级域名指向自己的主机,如 ok.baixiaojian.com, 访问主机时 通过 nginx 反向代理到服务器指定端口应用,这样的一个好处就是可以使80端口共用, 域名解析默认是 80 端口, 如果不是 80 端口,就需要指定端口号, 就像这样 ok.baixiaojian.com:4000 这样的体验是非常差的,所以nginx使80端口可以共用是非常必要的。 安装nginx配置nginx TransmitTransmit 是 Mac下一款实用的FTP客户端软件，它使用起来非常的稳定，速度也比较理想。 使用教程 pm2 进程管理pm2入门指南]]></content>
       <categories>
         <category>快捷操作</category>
       </categories>
@@ -43,7 +43,7 @@
   <entry>
     <title><![CDATA[mac 环境变量相关及开发相关文件解读]]></title>
     <url>%2Fmac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[环境变量配置OS系统的配置文件加载顺序： /etc/profile /etc/paths ~/.bash_profile /etc/profile、/etc/bashrc 是针对系统所有用户的 全局变量, 如修改需权限,~/.bash_profile 是当前 用户级 的环境变量, 所以通常去修改它来设置环境变量. 操作步骤: 1. 终端输入 vi ~/.bash_profile2. 设置 PATH：export PATH=/usr/local/mysql/bin:$PATH3. 输入 :wq4. 立即生效 source ~/.bash_profile5. 查看变量值 echo $PATH 注: 删除环境变量需重启shell才能立即生效 开发相关文件 应用程序(Applications) 系统(System) 用户(User) 资料库(Library) 隐藏文件夹 文件夹 作用 usr unix 使用者专用文件夹 bin unix 储存基本指令 sbin unix 储存系统指令 etc 系统设定 储存位置 var 频繁改动 置放于此, 如监控、日志等 tmp 系统暂存档 usr/local 本地文件系统配置相关文件 usr/local/etc 相关配置文件 其他 文件夹 作用 / 磁盘根目录 也就是 Macintosh HD 目录下 ~ 或者 /User/ 当前用户目录的顶级目录 /user/Shared 目录可以被本地的所有用户访问 Sites 用户个人站点网页文件。需设置 “系统预置-&gt;共享-&gt;Web共享” 中打开共享 Public 可以把需要与其它用户共享的文件放在这个目录中]]></content>
+    <content type="text"><![CDATA[图解 环境变量配置OS系统的配置文件加载顺序： /etc/profile /etc/paths ~/.bash_profile /etc/profile、/etc/bashrc 是针对系统所有用户的 全局变量, 如修改需权限,~/.bash_profile 是当前 用户级 的环境变量, 所以通常去修改它来设置环境变量. 操作步骤: 1. 终端输入 vi ~/.bash_profile2. 设置 PATH：export PATH=/usr/local/mysql/bin:$PATH3. 输入 :wq4. 立即生效 source ~/.bash_profile5. 查看变量值 echo $PATH 注: 删除环境变量需重启shell才能立即生效 开发相关文件 应用程序(Applications) 系统(System) 用户(User) 资料库(Library) 隐藏文件夹 文件夹 作用 usr unix 使用者专用文件夹 bin unix 储存基本指令 sbin unix 储存系统指令 etc 系统设定 储存位置 var 频繁改动 置放于此, 如监控、日志等 tmp 系统暂存档 usr/local 本地文件系统配置相关文件 usr/local/etc 相关配置文件 其他 文件夹 作用 / 磁盘根目录 也就是 Macintosh HD 目录下 ~ 或者 /User/ 当前用户目录的顶级目录 /user/Shared 目录可以被本地的所有用户访问 Sites 用户个人站点网页文件。需设置 “系统预置-&gt;共享-&gt;Web共享” 中打开共享 Public 可以把需要与其它用户共享的文件放在这个目录中]]></content>
       <categories>
         <category>技术笔记</category>
       </categories>
@@ -402,6 +402,18 @@
       <tags>
         <tag>Next+Hexo</tag>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[What is Quantitative trading]]></title>
+    <url>%2F%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%2F</url>
+    <content type="text"><![CDATA[基本概念 盈利能力 : 策略收益与年化收益高，则说明盈利能力强。盈利能力不行说啥都没用。 盈利稳定性: 最大回撤要低。最大回撤是指最大亏损幅度，50%则意味着历史上看最大亏损率为50%。 回测可靠性: 交易次数要多。交易次数越多意味着经历了越多次的检验，回测的结果也越可靠。]]></content>
+      <categories>
+        <category>技术笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>量化</tag>
       </tags>
   </entry>
 </search>
