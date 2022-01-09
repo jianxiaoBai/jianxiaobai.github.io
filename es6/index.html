@@ -517,7 +517,7 @@
 <hr>
 <h3 id="正则的扩展–后行断言"><a href="#正则的扩展–后行断言" class="headerlink" title="正则的扩展–后行断言"></a>正则的扩展–后行断言</h3><p id="border-yellow">目前，有一个 <span id="inline-red">提案</span> ，引入后行断言。</p>
 
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?<span class="xml"><span class="tag">&lt;<span class="name">=\$)\d+</span>/<span class="attr">.exec</span>('<span class="attr">Benjamin</span> <span class="attr">Franklin</span> <span class="attr">is</span> <span class="attr">on</span> <span class="attr">the</span> $<span class="attr">100</span> <span class="attr">bill</span>') //["<span class="attr">100</span>"]</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 先行断言 ,只匹配百分号之前的数字 */</span></div><div class="line">/\d+(?=%)/.exec(<span class="string">'of US presidents 100%  have been male'</span>)  <span class="comment">//["100"]</span></div><div class="line"></div><div class="line"><span class="comment">/* 后行断言 ,只匹配百分号之后的数字 */</span></div><div class="line">/(?&lt;=\$)\d+/.exec('Benjamin Franklin is on the $100 bill') //["100"]</div></pre></td></tr></table></figure>
 <hr>
 <h3 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h3><table>
 <thead>
