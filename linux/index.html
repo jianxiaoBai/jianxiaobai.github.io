@@ -1,0 +1,2018 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码','') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Berkshire Swash:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="笔记,linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Swhite ★ Notes" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="系统结构目录   目录路径 作用     /usr： 用户的很多应用程序和文件都放在此目录下。   /usr/bin： 系统用户 使用的应用程序。   /usr/sbin： 超级用户 使用的比较高级的管理程序和系统守护程序。   /usr/src： 内核源代码默认的放置目录。   /home： 用户的主目录，该目录名一般是以用户的账号命名的。   /bin： Binary 的缩写, 存放着最经常使">
+<meta name="keywords" content="笔记,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 笔记">
+<meta property="og:url" content="http://www.baixiaojian.com/linux/index.html">
+<meta property="og:site_name" content="Swhite ★ Notes">
+<meta property="og:description" content="系统结构目录   目录路径 作用     /usr： 用户的很多应用程序和文件都放在此目录下。   /usr/bin： 系统用户 使用的应用程序。   /usr/sbin： 超级用户 使用的比较高级的管理程序和系统守护程序。   /usr/src： 内核源代码默认的放置目录。   /home： 用户的主目录，该目录名一般是以用户的账号命名的。   /bin： Binary 的缩写, 存放着最经常使">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fvv3sko7yxj30nx0dkq46.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fvv3rr5mnaj30nx06bdg1.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3wr254lj30hq041t8t.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvv3xt2jqfj30dy076q33.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3y1jzq8j30b60etdg5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvv41w2wvtj30vl0agwf4.jpg">
+<meta property="og:updated_time" content="2018-10-04T16:35:45.807Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux 笔记">
+<meta name="twitter:description" content="系统结构目录   目录路径 作用     /usr： 用户的很多应用程序和文件都放在此目录下。   /usr/bin： 系统用户 使用的应用程序。   /usr/sbin： 超级用户 使用的比较高级的管理程序和系统守护程序。   /usr/src： 内核源代码默认的放置目录。   /home： 用户的主目录，该目录名一般是以用户的账号命名的。   /bin： Binary 的缩写, 存放着最经常使">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fvv3sko7yxj30nx0dkq46.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.baixiaojian.com/linux/">
+
+
+
+
+
+  <title> linux 笔记 | Swhite ★ Notes </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2e2ea0c567fca8cb3fc444da04407e71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Swhite ★ Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">星火燎原</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.baixiaojian.com/linux/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Small white">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/smile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Swhite ★ Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux 笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T11:52:04+08:00">
+                2018-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+             <span id="/linux/" class="leancloud_visitors" data-flag-title="linux 笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="系统结构目录"><a href="#系统结构目录" class="headerlink" title="系统结构目录"></a>系统结构目录</h2><table>
+<thead>
+<tr>
+<th>目录路径</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/usr：</td>
+<td>用户的很多应用程序和文件都放在此目录下。</td>
+</tr>
+<tr>
+<td>/usr/bin：</td>
+<td><strong>系统用户</strong> 使用的应用程序。</td>
+</tr>
+<tr>
+<td>/usr/sbin：</td>
+<td><strong>超级用户</strong> 使用的比较高级的管理程序和系统守护程序。</td>
+</tr>
+<tr>
+<td>/usr/src：</td>
+<td>内核源代码默认的放置目录。</td>
+</tr>
+<tr>
+<td>/home：</td>
+<td>用户的主目录，该目录名一般是以用户的账号命名的。</td>
+</tr>
+<tr>
+<td>/bin：</td>
+<td>Binary 的缩写, 存放着最经常使用的终端命令。</td>
+</tr>
+<tr>
+<td>/root：</td>
+<td>该目录为系统管理员，也称作 <strong>超级权限者</strong> 的用户主目录。</td>
+</tr>
+<tr>
+<td>/boot：</td>
+<td>启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</td>
+</tr>
+<tr>
+<td>/etc：</td>
+<td>存放所有的系统管理所需要的 <strong>配置文件</strong> 和子目录。</td>
+</tr>
+<tr>
+<td>/dev ：</td>
+<td>Device (设备)的缩写, 该目录下存放的是Linux的外部设备</td>
+</tr>
+<tr>
+<td>/proc：</td>
+<td>一个映射 <strong>系统内存</strong> 的虚拟目录，可以通过直接访问此目录获取系统信息。</td>
+</tr>
+<tr>
+<td>/sbin：</td>
+<td>存放 <strong>系统管理员</strong> 使用的系统管理程序。</td>
+</tr>
+<tr>
+<td>/tmp：</td>
+<td>存放一些临时文件的。</td>
+</tr>
+<tr>
+<td>/var：</td>
+<td>不断扩充或者 <strong>经常被修改</strong> 的文件会存放在此目录下，比如各种日志文件。</td>
+</tr>
+<tr>
+<td>/media：</td>
+<td>Linux 会把识别的设备挂载到这个目录下。</td>
+</tr>
+<tr>
+<td>/lost+found：</td>
+<td>当系统非法关机后，这里就存放了一些文件。</td>
+</tr>
+<tr>
+<td>/lib：</td>
+<td>存放系统最基本的动态连接共享库。几乎所有的应用程序都需要用到这些共享库。</td>
+</tr>
+<tr>
+<td>/mnt：</td>
+<td>该目录是为了让用户临时挂载其他文件系统的，可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</td>
+</tr>
+<tr>
+<td>/opt：</td>
+<td>这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</td>
+</tr>
+<tr>
+<td>/selinux：</td>
+<td>这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙。</td>
+</tr>
+<tr>
+<td>/srv：</td>
+<td>该目录存放一些服务启动之后需要提取的数据。</td>
+</tr>
+<tr>
+<td>/sys：</td>
+<td>该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="网卡与-IP-知识点"><a href="#网卡与-IP-知识点" class="headerlink" title="网卡与 IP 知识点"></a>网卡与 IP 知识点</h2><ul>
+<li><strong>网卡</strong> 是一个专门负责 <code>网络通讯</code> 的硬件设备</li>
+<li><strong>IP 地址</strong> 是设置在网卡上的 <code>地址信息</code>, 是保证电脑之间正常通讯的重要设置</li>
+<li><strong>127.0.0.1</strong> 被称为 <code>本地回环/环回地址</code>，一般用来测试本机网卡是否正常</li>
+<li><strong>ping</strong> 一般用于检测当前计算机到目标计算机之间的网络 <code>是否通畅</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 可以这样类比: --&gt;</span></div><div class="line">电脑   =&gt; 电话</div><div class="line">网卡   =&gt; SIM 卡</div><div class="line">IP    =&gt; 电话号码</div><div class="line">ping  =&gt; 电话能不能打通</div></pre></td></tr></table></figure>
+<blockquote>
+<p>tips：一台计算机中有可能会有一个 <strong>物理网卡</strong> 和 <strong>多个虚拟网卡</strong>，在 Linux 中物理网卡的名字通常以 <code>ensXX</code> 表示</p>
+</blockquote>
+<h2 id="SSH-基础"><a href="#SSH-基础" class="headerlink" title="SSH 基础"></a><code>SSH</code> 基础</h2><p>在 Linux 中 SSH 是 <strong>非常常用</strong> 的工具，通过 <strong>SSH 客户端</strong> 我们可以连接到运行了 <strong>SSH 服务器</strong> 的远程机器上</p>
+<ul>
+<li><strong>SSH 客户端</strong>是一种使用 <code>Secure Shell（SSH）</code> 协议连接到远程计算机的软件程序</li>
+<li><code>SSH</code> 是目前较可靠，<strong>专为远程登录会话和其他网络服务</strong> 提供安全性的协议<ul>
+<li>利用 <code>SSH 协议</code> 可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
+<li>通过 <code>SSH 协议</code> 可以对所有传输的数据进行加密，也能够防止 DNS 欺骗和 IP 欺骗</li>
+</ul>
+</li>
+<li><code>SSH</code> 的另一项优点是传输的数据可以是经过压缩的，所以可以加快传输的速度</li>
+</ul>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><ul>
+<li>由一串 <strong>用点分隔</strong> 的名字组成，例如：<code>www.itcast.cn</code></li>
+<li>是 <strong>IP 地址</strong> 的别名，方便用户记忆</li>
+</ul>
+<h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><ul>
+<li><strong>IP 地址</strong>：通过 <strong>IP 地址</strong> 找到网络上的 <strong>计算机</strong></li>
+<li><p><strong>端口号</strong>：通过 <strong>端口号</strong> 可以找到 <strong>计算机上运行的应用程序</strong></p>
+<ul>
+<li><strong>SSH 服务器</strong> 的默认端口号是 <code>22</code>，如果是默认端口号，在连接的时候，可以省略</li>
+</ul>
+</li>
+<li><p>常见服务端口号列表：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH 服务器</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Web 服务器</td>
+<td>80</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>443</td>
+</tr>
+<tr>
+<td>FTP 服务器</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+<h3 id="客户端的简单使用"><a href="#客户端的简单使用" class="headerlink" title="客户端的简单使用"></a>客户端的简单使用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">ssh [-p port] user@remote</div></pre></td></tr></table></figure>
+<ul>
+<li><code>user</code> 是在远程机器上的用户名，如果不指定的话默认为当前用户</li>
+<li><code>remote</code> 是远程机器的地址，可以是 <strong>IP</strong>／<strong>域名</strong>，或者是 <strong>后面会提到的别名</strong></li>
+<li><code>port</code> 是 <strong>SSH Server 监听的端口</strong>，如果不指定，就为默认值 <code>22</code></li>
+</ul>
+<blockquote>
+<ul>
+<li>在工作中，SSH 服务器的端口号很有可能<strong>不是 22</strong>，如果遇到这种情况就需要使用 <code>-p</code> 选项，指定正确的端口号，否则无法正常连接到服务器</li>
+</ul>
+</blockquote>
+<h3 id="SSH-高级"><a href="#SSH-高级" class="headerlink" title="SSH 高级"></a>SSH 高级</h3><ul>
+<li>免密码登录</li>
+<li>配置别名</li>
+</ul>
+<blockquote>
+<p>提示：有关 SSH 配置信息都保存在用户家目录下的 <code>.ssh</code> 目录下</p>
+</blockquote>
+<h3 id="免密码登录"><a href="#免密码登录" class="headerlink" title="免密码登录"></a>免密码登录</h3><p><strong>步骤</strong></p>
+<ul>
+<li>配置公钥<ul>
+<li>执行 <code>ssh-keygen</code> 即可生成 SSH 钥匙，一路回车即可</li>
+</ul>
+</li>
+<li>上传公钥到服务器<ul>
+<li>执行 <code>ssh-copy-id -p port user@remote</code>，可以让远程服务器记住我们的公钥</li>
+</ul>
+</li>
+</ul>
+<h4 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h4><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvv3sko7yxj30nx0dkq46.jpg" alt=""></p>
+<h3 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h3><p>每次都输入 <code>ssh -p port user@remote</code>，时间久了会觉得很麻烦，特别是当 <code>user</code>, <code>remote</code> 和 <code>port</code> 都得输入，而且还不好记忆</p>
+<p>而 <strong>配置别名</strong> 可以让我们进一步偷懒，譬如用：<code>ssh mac</code> 来替代上面这么一长串，那么就在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Host mac</div><div class="line">    HostName ip地址</div><div class="line">    User itheima</div><div class="line">    Port 22</div></pre></td></tr></table></figure>
+<p><strong>保存之后，即可用 <code>ssh mac</code> 实现远程登录了，<code>scp</code> 同样可以使用</strong></p>
+<h2 id="SCP-基础"><a href="#SCP-基础" class="headerlink" title="SCP 基础"></a>SCP 基础</h2><ul>
+<li>scp 就是 <code>secure copy</code>，是一个在 Linux 下用来进行 <strong>远程拷贝文件</strong> 的命令</li>
+<li>它的<strong>地址格式与 ssh 基本相同</strong>，<strong>需要注意的是</strong>，在指定端口时用的是大写的 <code>-P</code> 而不是小写的</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fvv3rr5mnaj30nx06bdg1.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 把本地当前目录下的 01.py 文件 复制到 远程 家目录下的 Desktop/01.py</span></div><div class="line"><span class="comment"># 注意：`:` 后面的路径如果不是绝对路径，则以用户的家目录作为参照路径</span></div><div class="line">scp -P port 01.py user@remote:Desktop/01.py</div><div class="line"></div><div class="line"><span class="comment"># 把远程 家目录下的 Desktop/01.py 文件 复制到 本地当前目录下的 01.py</span></div><div class="line">scp -P port user@remote:Desktop/01.py 01.py</div><div class="line"></div><div class="line"><span class="comment"># 加上 -r 选项可以传送文件夹</span></div><div class="line"><span class="comment"># 把当前目录下的 demo 文件夹 复制到 远程 家目录下的 Desktop</span></div><div class="line">scp -r demo user@remote:Desktop</div><div class="line"></div><div class="line"><span class="comment"># 把远程 家目录下的 Desktop 复制到 当前目录下的 demo 文件夹</span></div><div class="line">scp -r user@remote:Desktop demo</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件，则 scp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>若远程 SSH 服务器的端口不是 22，需要使用大写字母 -P 选项指定端口</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li><code>scp</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+</ul>
+</blockquote>
+<h2 id="用户权限相关命令"><a href="#用户权限相关命令" class="headerlink" title="用户权限相关命令"></a>用户权限相关命令</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><strong>用户</strong> 是 Linux 系统工作中重要的一环，用户管理包括 <strong>用户</strong> 与 <strong>组</strong> 管理</li>
+<li>在 Linux 系统中，不论是由本机或是远程登录系统，每个系统都<strong>必须拥有一个账号</strong>，并且<strong>对于不同的系统资源拥有不同的使用权限</strong></li>
+<li>在 Linux 中，可以指定 <strong>每一个用户</strong> 针对 <strong>不同的文件或者目录</strong> 的 <strong>不同权限</strong></li>
+<li>对 <strong>文件／目录</strong> 的权限包括：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">英文</th>
+<th style="text-align:center">缩写</th>
+<th style="text-align:center">数字代号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">01</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center">read</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">02</td>
+<td style="text-align:center">写</td>
+<td style="text-align:center">write</td>
+<td style="text-align:center">w</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">03</td>
+<td style="text-align:center">执行</td>
+<td style="text-align:center">excute</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="组"><a href="#组" class="headerlink" title="组"></a>组</h3><ul>
+<li>为了方便用户管理，提出了 <strong>组</strong> 的概念，如下图所示</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg" alt="001_组示意图"></p>
+<ul>
+<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
+</ul>
+<h3 id="ls-l-扩展"><a href="#ls-l-扩展" class="headerlink" title="ls -l 扩展"></a>ls -l 扩展</h3><ul>
+<li><p><code>ls -l</code> 可以查看文件夹下文件的详细信息，从左到右依次是：</p>
+<ul>
+<li><strong>权限</strong>，第 1 个字符如果是 <code>d</code> 表示目录</li>
+<li><strong>硬链接数</strong>，通俗地讲，就是有多少种方式，可以访问到当前目录／文件</li>
+<li><strong>拥有者</strong>，家目录下 文件／目录 的拥有者通常都是当前用户</li>
+<li><strong>组</strong>，在 Linux 中，很多时候，会出现组名和用户名相同的情况，后续会讲</li>
+<li><strong>大小</strong></li>
+<li><strong>时间</strong></li>
+<li><strong>名称</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3wr254lj30hq041t8t.jpg" alt="002_权限示意图"></p>
+<h3 id="chmod-简单使用（重要）"><a href="#chmod-简单使用（重要）" class="headerlink" title="chmod 简单使用（重要）"></a><code>chmod</code> 简单使用（重要）</h3><ul>
+<li><code>chmod</code> 可以修改 <strong>用户／组</strong> 对 <strong>文件／目录</strong> 的权限</li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">chmod +/-rwx 文件名|目录名</div></pre></td></tr></table></figure>
+<blockquote>
+<p>提示：以上方式会一次性修改 <code>拥有者</code> / <code>组</code> 权限，有关 <code>chmod</code> 的高级用法，后续会讲</p>
+</blockquote>
+<h3 id="超级用户"><a href="#超级用户" class="headerlink" title="超级用户"></a>超级用户</h3><ul>
+<li>Linux 系统中的 <code>root</code> 账号通常 <strong>用于系统的维护和管理</strong>，对操作系统的所有资源 <strong>具有所有访问权限</strong></li>
+<li>在大多数版本的 Linux 中，都不推荐 <strong>直接使用 root 账号登录系统</strong></li>
+<li>在 Linux 安装的过程中，系统会自动创建一个用户账号，而这个默认的用户就称为“标准用户”</li>
+</ul>
+<h4 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h4><ul>
+<li><code>su</code> 是 <code>substitute user</code> 的缩写，表示 <strong>使用另一个用户的身份</strong></li>
+<li><code>sudo</code> 命令用来以其他身份来执行命令，预设的身份为 <code>root</code></li>
+<li>用户使用 <code>sudo</code> 时，必须先输入密码，之后有 <strong>5 分钟的有效期限</strong>，超过期限则必须重新输入密码</li>
+</ul>
+<blockquote>
+<p>若其未经授权的用户企图使用 <code>sudo</code>，则会发出警告邮件给管理员</p>
+</blockquote>
+<h2 id="组管理-终端命令"><a href="#组管理-终端命令" class="headerlink" title="组管理 终端命令"></a><strong>组管理</strong> 终端命令</h2><blockquote>
+<p>提示：<strong>创建组</strong> / <strong>删除组</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupadd 组名</td>
+<td>添加组</td>
+</tr>
+<tr>
+<td>groupdel 组名</td>
+<td>删除组</td>
+</tr>
+<tr>
+<td>cat /etc/group</td>
+<td>确认组信息</td>
+</tr>
+<tr>
+<td>chgrp -R 组名 文件/目录名</td>
+<td>递归修改文件/目录的所属组</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li>组信息保存在 <code>/etc/group</code> 文件中</li>
+<li><code>/etc</code> 目录是专门用来保存 <strong>系统配置信息</strong> 的目录</li>
+</ul>
+</blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg" alt="001_组示意图"></p>
+<ul>
+<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
+</ul>
+<h3 id="演练目标"><a href="#演练目标" class="headerlink" title="演练目标"></a>演练目标</h3><ol>
+<li>在 <code>python</code> 用户的桌面文件夹下创建 <code>Python学习</code> 目录</li>
+<li>新建 <code>dev</code> 组</li>
+<li>将 <code>Python学习</code> 目录的组修改为 <code>dev</code></li>
+</ol>
+<h3 id="用户管理-终端命令"><a href="#用户管理-终端命令" class="headerlink" title="用户管理 终端命令"></a><strong>用户管理</strong> 终端命令</h3><blockquote>
+<p>提示：<strong>创建用户</strong> / <strong>删除用户</strong> / <strong>修改其他用户密码</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
+</blockquote>
+<h3 id="创建用户／设置密码／删除用户"><a href="#创建用户／设置密码／删除用户" class="headerlink" title="创建用户／设置密码／删除用户"></a>创建用户／设置密码／删除用户</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>useradd -m -g 组 新建用户名</td>
+<td>添加新用户</td>
+<td><ul><li>-m 自动建立用户家目录</li><li>-g 指定用户所在的组，否则会建立一个和同名的组</li></ul></td>
+</tr>
+<tr>
+<td>passwd 用户名</td>
+<td>设置用户密码</td>
+<td>如果是普通用户，直接用 passwd 可以修改自己的账户密码</td>
+</tr>
+<tr>
+<td>userdel -r 用户名</td>
+<td>删除用户</td>
+<td>-r 选项会自动删除用户家目录</td>
+</tr>
+<tr>
+<td>cat /etc/passwd &#124; grep 用户名</td>
+<td>确认用户信息</td>
+<td>新建用户后，用户信息会保存在 /etc/passwd 文件中</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li>创建用户时，如果忘记添加 <code>-m</code> 选项指定新用户的家目录 —— 最简单的方法就是<strong>删除用户，重新创建</strong></li>
+<li>创建用户时，默认会创建一个和<strong>用户名</strong>同名的<strong>组名</strong></li>
+<li>用户信息保存在 <code>/etc/passwd</code> 文件中</li>
+</ul>
+</blockquote>
+<h3 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>id [用户名]</td>
+<td>查看用户 UID 和 GID 信息</td>
+</tr>
+<tr>
+<td>02</td>
+<td>who</td>
+<td>查看当前所有登录的用户列表</td>
+</tr>
+<tr>
+<td>03</td>
+<td>whoami</td>
+<td>查看当前登录用户的账户名</td>
+</tr>
+</tbody>
+</table>
+<h4 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h4><p><code>/etc/passwd</code> 文件存放的是用户的信息，由 6 个分号组成的 7 个信息，分别是</p>
+<ol>
+<li>用户名</li>
+<li>密码（x，表示加密的密码）</li>
+<li>UID（用户标识）</li>
+<li>GID（组标识）</li>
+<li>用户全名或本地帐号</li>
+<li>家目录</li>
+<li>登录使用的 Shell，就是登录之后，使用的终端命令，<code>ubuntu</code> 默认是 <code>dash</code></li>
+</ol>
+<h4 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h4><ul>
+<li><code>usermod</code> 可以用来设置 <strong>用户</strong> 的 <strong>主组</strong> ／ <strong>附加组</strong> 和 <strong>登录 Shell</strong>，命令格式如下：</li>
+<li><strong>主组</strong>：通常在新建用户时指定，在 <code>etc/passwd</code> 的第 4 列 <strong>GID 对应的组</strong></li>
+<li><strong>附加组</strong>：在 <code>etc/group</code> 中最后一列表示该组的用户列表，用于指定 <strong>用户的附加权限</strong></li>
+</ul>
+<blockquote>
+<p>提示：设置了用户的附加组之后，需要重新登录才能生效！</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 修改用户的主组（passwd 中的 GID）</span></div><div class="line">usermod -g 组 用户名</div><div class="line"></div><div class="line"><span class="comment"># 修改用户的附加组</span></div><div class="line">usermod -G 组 用户名</div><div class="line"></div><div class="line"><span class="comment"># 修改用户登录 Shell</span></div><div class="line">usermod -s /bin/bash 用户名</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：默认使用 <code>useradd</code> 添加的用户是没有权限使用 <code>sudo</code> 以 <code>root</code> 身份执行命令的，可以使用以下命令，将用户添加到 <code>sudo</code> 附加组中</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">usermod -G sudo 用户名</div></pre></td></tr></table></figure>
+<h4 id="which（重要）"><a href="#which（重要）" class="headerlink" title="which（重要）"></a>which（重要）</h4><blockquote>
+<p>提示</p>
+<ul>
+<li><code>/etc/passwd</code> 是用于保存用户信息的文件</li>
+<li><code>/usr/bin/passwd</code> 是用于修改用户密码的程序</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>which</code> 命令可以查看执行命令所在位置，例如：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">which</span> ls</div><div class="line"></div><div class="line"><span class="comment"># 输出</span></div><div class="line"><span class="comment"># /bin/ls</span></div><div class="line"></div><div class="line"><span class="built_in">which</span> useradd</div><div class="line"></div><div class="line"><span class="comment"># 输出</span></div><div class="line"><span class="comment"># /usr/sbin/useradd</span></div></pre></td></tr></table></figure>
+<h5 id="bin-和-sbin"><a href="#bin-和-sbin" class="headerlink" title="bin 和 sbin"></a><code>bin</code> 和 <code>sbin</code></h5><ul>
+<li>在 <code>Linux</code> 中，绝大多数可执行文件都是保存在 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code></li>
+<li><code>/bin</code>（<code>binary</code>）是二进制执行文件目录，主要用于具体应用</li>
+<li><code>/sbin</code>（<code>system binary</code>）是系统管理员专用的二进制代码存放目录，主要用于系统管理</li>
+<li><code>/usr/bin</code>（<code>user commands for applications</code>）后期安装的一些软件</li>
+<li><code>/usr/sbin</code>（<code>super user commands for applications</code>）超级用户的一些管理程序</li>
+</ul>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li><code>cd</code> 这个终端命令是内置在系统内核中的，没有独立的文件，因此用 <code>which</code> 无法找到 <code>cd</code> 命令的位置</li>
+</ul>
+</blockquote>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>su - 用户名</td>
+<td>切换用户，并且切换目录</td>
+<td>- 可以切换到用户家目录，否则保持位置不变</td>
+</tr>
+<tr>
+<td>02</td>
+<td>exit</td>
+<td>退出当前登录账户</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>su</code> 不接用户名，可以切换到 <code>root</code>，但是不推荐使用，因为不安全</li>
+<li><code>exit</code> 示意图如下：</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvv3xt2jqfj30dy076q33.jpg" alt="003_su和exit示意图"></p>
+<h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chown</td>
+<td>修改拥有者</td>
+</tr>
+<tr>
+<td>chgrp</td>
+<td>修改组</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>修改权限</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 修改文件|目录的拥有者</span></div><div class="line">chown 用户名 文件名|目录名</div><div class="line"></div><div class="line"><span class="comment"># 递归修改文件|目录的组</span></div><div class="line">chgrp -R 组名 文件名|目录名</div><div class="line"></div><div class="line"><span class="comment"># 递归修改文件权限</span></div><div class="line">chmod -R 755 文件名|目录名</div></pre></td></tr></table></figure>
+<ul>
+<li><code>chmod</code> 在设置权限时，可以简单地使用三个数字分别对应 <strong>拥有者</strong> ／ <strong>组</strong> 和 <strong>其他</strong> 用户的权限</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 直接修改文件|目录的 读|写|执行 权限，但是不能精确到 拥有者|组|其他</span></div><div class="line">chmod +/-rwx 文件名|目录名</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3y1jzq8j30b60etdg5.jpg" alt="004_文件权限示意图"></p>
+<ul>
+<li>常见数字组合有（<code>u</code>表示用户／<code>g</code>表示组／<code>o</code>表示其他）：<ul>
+<li><code>777</code> ===&gt; <code>u=rwx,g=rwx,o=rwx</code></li>
+<li><code>755</code> ===&gt; <code>u=rwx,g=rx,o=rx</code></li>
+<li><code>644</code> ===&gt; <code>u=rw,g=r,o=r</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="chmod-演练目标"><a href="#chmod-演练目标" class="headerlink" title="chmod 演练目标"></a><code>chmod</code> 演练目标</h4><ol>
+<li>将 <code>01.py</code> 的权限修改为 <code>u=rwx,g=rx,o=r</code></li>
+<li>将 <code>123.txt</code> 的权限修改为 <code>u=rw,g=r,o=-</code></li>
+<li>将 <code>test</code> 目录以及目录下的 <strong>所有</strong> 文件权限修改为 <code>u=rwx,g=rwx,o=rx</code></li>
+</ol>
+<h2 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h2><h3 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>查看系统时间</td>
+</tr>
+<tr>
+<td>cal</td>
+<td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td>
+</tr>
+</tbody>
+</table>
+<h3 id="磁盘信息"><a href="#磁盘信息" class="headerlink" title="磁盘信息"></a>磁盘信息</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>df -h</td>
+<td><code>disk free</code> 显示磁盘剩余空间</td>
+</tr>
+<tr>
+<td>du -h [目录名]</td>
+<td><code>disk usage</code> 显示目录下的文件大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>以人性化的方式显示文件大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="进程信息"><a href="#进程信息" class="headerlink" title="进程信息"></a>进程信息</h3><ul>
+<li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ps aux</td>
+<td><code>process status</code> 查看进程的详细状况</td>
+</tr>
+<tr>
+<td>top</td>
+<td>动态显示运行中的进程并且排序</td>
+</tr>
+<tr>
+<td>kill [-9] 进程代号</td>
+<td>终止指定代号的进程，<code>-9</code> 表示强行终止</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p>
+</blockquote>
+<ul>
+<li><code>ps</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>显示终端上的所有进程，包括其他用户的进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示进程的详细状态</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示没有控制终端的进程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ul>
+<li>要退出 <code>top</code> 可以直接输入 <code>q</code></li>
+</ul>
+</blockquote>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><h3 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h3><ul>
+<li><code>find</code> 命令功能非常强大，通常用来在 <strong>特定的目录下</strong> <strong>搜索</strong> 符合条件的文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>find [路径] -name “*.py”</td>
+<td>查找指定路径下扩展名是 <code>.py</code> 的文件，包括子目录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>如果省略路径，表示在当前文件夹下查找</li>
+<li>之前学习的通配符，在使用 <code>find</code> 命令时同时可用</li>
+<li>有关 <code>find</code> 的高级使用，在就业班会讲</li>
+</ul>
+<h4 id="演练目标-1"><a href="#演练目标-1" class="headerlink" title="演练目标"></a>演练目标</h4><ul>
+<li><ol>
+<li>搜索桌面目录下，文件名包含 <code>1</code> 的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"*1*"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>搜索桌面目录下，所有以 <code>.txt</code> 为扩展名的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"*.txt"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>搜索桌面目录下，以数字 <code>1</code> 开头的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"1*"</span></div></pre></td></tr></table></figure>
+<h3 id="02-软链接"><a href="#02-软链接" class="headerlink" title="02. 软链接"></a>02. 软链接</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ln -s 被链接的源文件 链接文件</td>
+<td>建立文件的软链接，用通俗的方式讲<strong>类似于</strong> Windows 下的<strong>快捷方式</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>注意：</li>
+<li><ol>
+<li>没有 <code>-s</code> 选项建立的是一个 <strong>硬链接文件</strong><ul>
+<li>两个文件占用相同大小的硬盘空间，<strong>工作中几乎不会建立文件的硬链接</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li><strong>源文件要使用绝对路径</strong>，不能使用相对路径，这样可以方便移动链接文件后，仍然能够正常使用</li>
+</ol>
+</li>
+</ul>
+<h3 id="演练目标-2"><a href="#演练目标-2" class="headerlink" title="演练目标"></a>演练目标</h3><ul>
+<li><ol>
+<li>将桌面目录下的 <code>01.py</code> <strong>移动</strong>到 <code>demo/b/c</code> 目录下</li>
+</ol>
+</li>
+<li><ol>
+<li>在桌面目录下新建 <code>01.py</code> 的 <strong>软链接</strong> <code>FirstPython</code><ul>
+<li>分别使用 <strong>相对路径</strong> 和 <strong>绝对路径</strong> 建立 <code>FirstPython</code> 的软链接</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>将 <code>FirstPython</code> <strong>移动</strong>到 <code>demo</code> 目录下，对比使用 <strong>相对路径</strong> 和 <strong>绝对路径</strong> 的区别</li>
+</ol>
+</li>
+</ul>
+<h3 id="硬链接简介（知道）"><a href="#硬链接简介（知道）" class="headerlink" title="硬链接简介（知道）"></a>硬链接简介（知道）</h3><ul>
+<li>在使用 <code>ln</code> 创建链接时，如果没有 <code>-s</code> 选项，会创建一个 <strong>硬链接</strong>，而不是软链接</li>
+</ul>
+<h4 id="硬链接演练"><a href="#硬链接演练" class="headerlink" title="硬链接演练"></a>硬链接演练</h4><ul>
+<li><ol>
+<li>在 <code>~/Desktop/demo</code> 目录下建立 <code>~/Desktop/demo/b/c/01.py</code> 的硬链接 <code>01_hard</code></li>
+</ol>
+</li>
+<li><ol>
+<li>使用 <code>ls -l</code> 查看文件的<strong>硬链接数</strong>（硬链接——有多少种方式可以访问文件或者目录）</li>
+</ol>
+</li>
+<li><ol>
+<li>删除 <code>~/Desktop/demo/b/c/01.py</code>，并且使用 <code>tree</code> 来确认 <code>demo</code> 目录下的三个链接文件</li>
+</ol>
+</li>
+</ul>
+<h4 id="文件软硬链接的示意图"><a href="#文件软硬链接的示意图" class="headerlink" title="文件软硬链接的示意图"></a>文件软硬链接的示意图</h4><p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvv41w2wvtj30vl0agwf4.jpg" alt="001_文件软硬链接示意图"></p>
+<blockquote>
+<p>在 Linux 中，<strong>文件名</strong> 和 <strong>文件的数据</strong> 是分开存储的</p>
+</blockquote>
+<ul>
+<li>提示：<ul>
+<li>在 Linux 中，只有文件的 <code>硬链接数 == 0</code> 才会被删除</li>
+<li>使用 <code>ls -l</code> 可以查看一个文件的硬链接的数量</li>
+<li>在日常工作中，几乎不会建立文件的硬链接，知道即可</li>
+</ul>
+</li>
+</ul>
+<h2 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h2><ul>
+<li><strong>打包压缩</strong> 是日常工作中备份文件的一种方式</li>
+<li>在不同操作系统中，常用的打包压缩方式是不同的<ul>
+<li><code>Windows</code> 常用 <code>rar</code></li>
+<li><code>Mac</code> 常用 <code>zip</code></li>
+<li><code>Linux</code> 常用 <code>tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="打包-／-解包"><a href="#打包-／-解包" class="headerlink" title="打包 ／ 解包"></a>打包 ／ 解包</h3><ul>
+<li><code>tar</code> 是 Linux 中最常用的 <strong>备份</strong>工具，此命令可以 <strong>把一系列文件</strong> 打包到 <strong>一个大文件中</strong>，也可以把一个 <strong>打包的大文件恢复成一系列文件</strong></li>
+<li><code>tar</code> 的命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 打包文件</span></div><div class="line">tar -cvf 打包文件.tar 被打包的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解包文件</span></div><div class="line">tar -xvf 打包文件.tar</div></pre></td></tr></table></figure>
+<ul>
+<li><code>tar</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c</td>
+<td>生成档案文件，创建打包文件</td>
+</tr>
+<tr>
+<td>x</td>
+<td>解开档案文件</td>
+</tr>
+<tr>
+<td>v</td>
+<td>列出归档解档的详细过程，显示进度</td>
+</tr>
+<tr>
+<td>f</td>
+<td>指定档案文件名称，f 后面一定是 .tar 文件，所以必须放选项最后</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：<code>f</code> 选项必须放在最后，其他选项顺序可以随意</p>
+</blockquote>
+<h4 id="打包解包演练"><a href="#打包解包演练" class="headerlink" title="打包解包演练"></a>打包解包演练</h4><ol>
+<li>删除桌面下的所有内容</li>
+<li>在桌面下新建三个空白文件 <code>01.py</code>、<code>02.py</code>、<code>03.py</code></li>
+<li>将这三个文件打一个 <code>py.tar</code> 的包</li>
+<li>新建 <code>tar</code> 目录，并且将 <code>py.tar</code> 移动到 <code>tar</code> 目录下</li>
+<li>解包 <code>py.tar</code></li>
+</ol>
+<h3 id="压缩／解压缩"><a href="#压缩／解压缩" class="headerlink" title="压缩／解压缩"></a>压缩／解压缩</h3><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a><code>gzip</code></h4><ul>
+<li><code>tar</code> 与 <code>gzip</code> 命令结合可以使用实现文件 <strong>打包和压缩</strong><ul>
+<li><code>tar</code> 只负责打包文件，但不压缩</li>
+<li>用 <code>gzip</code> 压缩 <code>tar</code> 打包后的文件，其扩展名一般用 <code>xxx.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在 <code>Linux</code> 中，最常见的压缩文件格式就是 <code>xxx.tar.gz</code></p>
+</blockquote>
+<ul>
+<li><p>在 <code>tar</code> 命令中有一个选项 <strong>-z</strong> 可以调用 <code>gzip</code>，从而可以方便的实现压缩和解压缩的功能</p>
+</li>
+<li><p>命令格式如下：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 压缩文件</span></div><div class="line">tar -zcvf 打包文件.tar.gz 被压缩的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解压缩文件</span></div><div class="line">tar -zxvf 打包文件.tar.gz</div><div class="line"></div><div class="line"><span class="comment"># 解压缩到指定路径</span></div><div class="line">tar -zxvf 打包文件.tar.gz -C 目标路径</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-C</td>
+<td>解压缩到指定目录，注意：要解压缩的目录必须存在</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bzip2-two"><a href="#bzip2-two" class="headerlink" title="bzip2(two)"></a><code>bzip2(two)</code></h4><ul>
+<li><p><code>tar</code> 与 <code>bzip2</code> 命令结合可以使用实现文件 <strong>打包和压缩</strong>（用法和 <code>gzip</code> 一样）</p>
+<ul>
+<li><code>tar</code> 只负责打包文件，但不压缩，</li>
+<li>用 <code>bzip2</code> 压缩 <code>tar</code> 打包后的文件，其扩展名一般用 <code>xxx.tar.bz2</code></li>
+</ul>
+</li>
+<li><p>在 <code>tar</code> 命令中有一个选项 <strong>-j</strong> 可以调用 <code>bzip2</code>，从而可以方便的实现压缩和解压缩的功能</p>
+</li>
+<li><p>命令格式如下：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 压缩文件</span></div><div class="line">tar -jcvf 打包文件.tar.bz2 被压缩的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解压缩文件</span></div><div class="line">tar -jxvf 打包文件.tar.bz2</div></pre></td></tr></table></figure>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h2 id="通过-apt-安装／卸载软件"><a href="#通过-apt-安装／卸载软件" class="headerlink" title="通过 apt 安装／卸载软件"></a>通过 apt 安装／卸载软件</h2><ul>
+<li>apt 是 <code>Advanced Packaging Tool</code>，是 Linux 下的一款安装包管理工具</li>
+<li>可以在终端中方便的 <strong>安装</strong>／<strong>卸载</strong>／<strong>更新软件包</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 1. 安装软件</span></div><div class="line">$ sudo apt install 软件包</div><div class="line"></div><div class="line"><span class="comment"># 2. 卸载软件</span></div><div class="line">$ sudo apt remove 软件名</div><div class="line"></div><div class="line"><span class="comment"># 3. 更新已安装的包</span></div><div class="line">$ sudo apt upgrade</div></pre></td></tr></table></figure>
+<h3 id="安装演练"><a href="#安装演练" class="headerlink" title="安装演练"></a>安装演练</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 一个小火车提示</span></div><div class="line">$ sudo apt install sl</div><div class="line"></div><div class="line"><span class="comment"># 一个比较漂亮的查看当前进程排名的软件</span></div><div class="line">$ sudo apt install htop</div></pre></td></tr></table></figure>
+<p>压缩解压 tar<br>如果要在服务器之间发送大量数据，肯定少不了压缩和解压这两步，但是 tar 这个命令的参数之多，让我很绝望，于是我发明了一个简单的记忆方法。</p>
+<p>使用 tar 命令只要记得参数是『必选+自选+f』即可，我们先来看看『必选！五选一』:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-c 意为 create，表示创建压缩包</div><div class="line">-x 意为 extract，表示解压</div><div class="line">-t 表示查看内容</div><div class="line">-r 给压缩包追加文件</div><div class="line">-u 意为 update，更新压缩包中的文件</div></pre></td></tr></table></figure></p>
+<p>注意了，上面是一定要五选一的，不能一个都不选，也不能同时选俩。但是自选的部分就可以按照需要挑选了，比如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-z 使用 gzip 属性</div><div class="line">-j 使用 bz2 属性</div><div class="line">-Z 使用 compress 属性</div><div class="line">-v 意为 verbose，显示详细的操作过程</div><div class="line">-O 将文件输出到标准输出</div></pre></td></tr></table></figure>
+<p>然后最后一个一定要是 f 后面跟压缩包名（无论是要解压还是要压缩，都是指压缩包的名字）。接下来我们看看具体实例，就很容易理解具体的用法了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 假设我们有很多 .md 文件需要打包，那么可以使用</div><div class="line">tar -cf posts.tar *.md # c 是创建压缩包，也就是压缩，然后是 f，给出压缩包名，最后是要压缩的文件</div><div class="line"># 然后我们发现还有一些 .txt 文件也需要打包进去，那么可以使用</div><div class="line">tar -rf posts.tar *.txt # r 是追加文件</div><div class="line"># 然后我们发现 hello.md 弄错了，修正后需要更新到压缩包中，可以使用</div><div class="line">tar -uf post.tar hello.md # u 是更新</div><div class="line"># 压缩好了，我们来看看压缩包的内容，可以使用</div><div class="line">tar -tf posts.tar # t 是列出文件内容</div><div class="line"># 把压缩包发送到其他位置之后，需要解压，可以使用</div><div class="line">tar -xf posts.tar # x 是解压</div><div class="line">加入自选参数后的用法（要不要加 v 可以看个人喜好）</div></pre></td></tr></table></figure>
+<h2 id="tar-gz-相关"><a href="#tar-gz-相关" class="headerlink" title="tar.gz 相关"></a>tar.gz 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -czf posts.tar.gz *.md # 压缩</div><div class="line">tar -xzf posts.tar.gz # 解压</div></pre></td></tr></table></figure>
+<h2 id="tar-bz2-相关"><a href="#tar-bz2-相关" class="headerlink" title="tar.bz2 相关"></a>tar.bz2 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -cjf posts.tar.bz2 *.md # 压缩</div><div class="line">tar -xjf posts.tar.bz2 # 解压</div></pre></td></tr></table></figure>
+<h2 id="tar-Z-相关"><a href="#tar-Z-相关" class="headerlink" title="tar.Z 相关"></a>tar.Z 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -cZf posts.tar.Z *.md # 压缩</div><div class="line">tar -xZf posts.tar.Z # 解压</div></pre></td></tr></table></figure>
+<p>总结一波，遇到不同类型的文件，请用不同的套路来应对：</p>
+<ul>
+<li>.tar -&gt; tar -xf</li>
+<li>.tar.gz -&gt; tar -xzf</li>
+<li>.tar.bz2 -&gt; tar -xjf</li>
+<li>.tar.Z -&gt; tar -xZf</li>
+<li>.gz -&gt; gzip -d</li>
+<li>.rar -&gt; unrar e</li>
+<li>.zip -&gt; unzip</li>
+</ul>
+<p>空间占用 du<br>很多时候磁盘被写满了是各种奇怪错误的源头，所以如何快速找到问题所在就很重要了，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 显示当前文件下 Top 10 空间占用的文件/目录，</div><div class="line"># s 表示不显示每个子目录或文件的大小</div><div class="line"># h 表示用更加自然的方式显示（比如 K/M/G 这样）</div><div class="line">du -sh * | sort -nr | head</div></pre></td></tr></table></figure>
+<p>系统状态 top<br>了解系统状态一般少不了 top 命令，虽然基本上不需要做任何操作，但是还是有一些可以自定义的内容的，比如<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 查看某用户的进程</div><div class="line">top -u wdxtub</div><div class="line"># 进入系统状态显示后，具体值代表的意思是</div><div class="line"># PR    进程优先级，越小优先级越高</div><div class="line"># VIRT  占用的虚拟内存</div><div class="line"># RES   占用的物理内存</div><div class="line"># SHR   占用的共享内存</div><div class="line"># S     进程状态（S - 休眠，R - 正在运行，Z - 僵死状态，N - 优先级为负数）</div><div class="line"># TIME+ 进程启动后占用的总 CPU 时间</div><div class="line"># 可以按照不同的指标排序显示，按对应键即可</div><div class="line"># P 按照 CPU 使用率排序</div><div class="line"># T 按照 MITE+ 排序</div><div class="line"># M 按内存使用占比排序</div></pre></td></tr></table></figure></p>
+<p>其他查看进程相关信息的命令有</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 查看进程内存分布</div><div class="line">pmap -d 12345 # 12345 是进程号</div><div class="line"># 按照内存排序，这里的 grep 可以过滤特定的用户</div><div class="line">ps -e -o &apos;pid,comm,srgs,pcpu,rsz,vsz,stime,user,uid&apos; | grep wdxtub | sort nrk5</div></pre></td></tr></table></figure>
+<p>查找 find<br>在命令行界面中进行查找是每个需要在服务器上执行操作的同学都必备的技能，这里用实例来说明常见的实用用法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 找出七天前的文件</div><div class="line">find / -type f -mtime +7 -print</div><div class="line"># / 表示从根目录中查找</div><div class="line"># -type f 表示找出系统普通文件，不包含目录</div><div class="line"># -mtime +n 表示寻找 n 天前的数据</div><div class="line"># -print 打印文件名称</div><div class="line"># 找出并删除七天前的文件</div><div class="line">find /temp/ -type f -mtime +7 -print -exec rm -f &#123;&#125; \;</div><div class="line"># -exec 表示后面执行系统命令</div><div class="line"># &#123;&#125; 只有该符号能跟在命令你后面</div><div class="line"># \; 结束符号</div><div class="line">find /temp/ -type f -mtime +7 -print | xargs rm -f</div><div class="line"># 使用管道和 xargs = -exec</div><div class="line"># 查找 /var 下最大的十个文件</div><div class="line">find /var -type f -ls | sort -k 7 -r -n | head</div><div class="line"># 查找 /var/log 下大于 5GB 的文件</div><div class="line">find /var/log/ -type f -size +5120M -exec ls -lh &#123;&#125; \;</div><div class="line"># 找出今天所有文件并将它们拷贝到另一个目录</div><div class="line">find /home/wdxtub/ -ctime 0 -print -exec cp &#123;&#125; /mnt/backup/&#123;&#125; \;</div></pre></td></tr></table></figure>
+<p>远程登录 ssh</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">`ssh -vvv username@ip` ssh 的 debug 模式</div><div class="line">`ssh -i key.pem username@ip` 用 pem key 登录 ssh</div></pre></td></tr></table></figure>
+<p>奇技淫巧<br>这里是一些比较零碎的命令行技巧</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">openssl rand -hex n 产生随机的十六进制数，n 是字符数</div><div class="line">source /path/to/filename 在当前 shell 里执行一个文件里的命令</div><div class="line">$&#123;variable:0:5&#125; 截取变量的前五个字符</div><div class="line">wget -r --no-parent --reject &quot;index.html*&quot; http://hostname/ -P /home/user/dirs 用 wget 抓取完整的网站目录结构，存放到本地目录中</div><div class="line">mkdir -p /home/wdxtub/&#123;test0,test1,test2&#125; 一次创建多个目录</div><div class="line">dd if=/dev/zero of=/tmp/output.img bs=8k count=256k; rm -rf /tmp/output.img 测试硬盘写入速度</div><div class="line">hdparm -Tt /dev/sda 测试硬盘读取速度</div><div class="line">echo -n &quot;test&quot; | md5sum 获取文本的 md5</div><div class="line">curl -I http://wdxtub.com 获取 HTTP 头信息</div><div class="line">netstat -tln4 | awk &apos;&#123;print $4&#125;&apos; | cut -f2 -d: | grep -o &apos;[0-9]*&apos; 显示所有 tcp4 监听端口</div><div class="line">time command 查看命令的运行时间</div><div class="line">export 查看所有的环境变量</div><div class="line">cmp file1 file2 文件内容对比</div><div class="line">cat -n file 内容前面会显示行号</div><div class="line">lsof -i:22 查看 22 端口现在运行的程序</div><div class="line">lsof -c abc 显示 abc 进程现在打开的文件</div><div class="line">lsof -p 12 看进程号为 12 的进程打开了哪些文件</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/eth/" rel="next" title="以太坊 笔记">
+                <i class="fa fa-chevron-left"></i> 以太坊 笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/python/" rel="prev" title="python">
+                python <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/smile.jpg" alt="Small white">
+          <p class="site-author-name" itemprop="name">Small white</p>
+           
+              <p class="site-description motion-element" itemprop="description">不进则退</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jianxiaoBai" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3944356204/profile" target="_blank" title="微博" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow noopener noreferrer">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank" rel="external nofollow noopener noreferrer">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai/" title="叶小钗" target="_blank" rel="external nofollow noopener noreferrer">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/e347b97e2f0c" title="weishu" target="_blank" rel="external nofollow noopener noreferrer">weishu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/PeunZhang/p/3407453.html#question_11" title="白树" target="_blank" rel="external nofollow noopener noreferrer">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://ehlxr.me/categories/" title="ehlxr" target="_blank" rel="external nofollow noopener noreferrer">ehlxr</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://notes.iissnan.com/tags/" title="iissnan" target="_blank" rel="external nofollow noopener noreferrer">iissnan</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统结构目录"><span class="nav-number">1.</span> <span class="nav-text">系统结构目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡与-IP-知识点"><span class="nav-number">2.</span> <span class="nav-text">网卡与 IP 知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-基础"><span class="nav-number">3.</span> <span class="nav-text">SSH 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#域名"><span class="nav-number">3.1.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口号"><span class="nav-number">3.2.</span> <span class="nav-text">端口号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端的简单使用"><span class="nav-number">3.3.</span> <span class="nav-text">客户端的简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-高级"><span class="nav-number">3.4.</span> <span class="nav-text">SSH 高级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#免密码登录"><span class="nav-number">3.5.</span> <span class="nav-text">免密码登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示意图"><span class="nav-number">3.5.1.</span> <span class="nav-text">示意图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置别名"><span class="nav-number">3.6.</span> <span class="nav-text">配置别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCP-基础"><span class="nav-number">4.</span> <span class="nav-text">SCP 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户权限相关命令"><span class="nav-number">5.</span> <span class="nav-text">用户权限相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">5.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组"><span class="nav-number">5.2.</span> <span class="nav-text">组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-l-扩展"><span class="nav-number">5.3.</span> <span class="nav-text">ls -l 扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod-简单使用（重要）"><span class="nav-number">5.4.</span> <span class="nav-text">chmod 简单使用（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超级用户"><span class="nav-number">5.5.</span> <span class="nav-text">超级用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sudo"><span class="nav-number">5.5.1.</span> <span class="nav-text">sudo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组管理-终端命令"><span class="nav-number">6.</span> <span class="nav-text">组管理 终端命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演练目标"><span class="nav-number">6.1.</span> <span class="nav-text">演练目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理-终端命令"><span class="nav-number">6.2.</span> <span class="nav-text">用户管理 终端命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户／设置密码／删除用户"><span class="nav-number">6.3.</span> <span class="nav-text">创建用户／设置密码／删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看用户信息"><span class="nav-number">6.4.</span> <span class="nav-text">查看用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd-文件"><span class="nav-number">6.4.1.</span> <span class="nav-text">passwd 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usermod"><span class="nav-number">6.4.2.</span> <span class="nav-text">usermod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#which（重要）"><span class="nav-number">6.4.3.</span> <span class="nav-text">which（重要）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#bin-和-sbin"><span class="nav-number">6.4.3.1.</span> <span class="nav-text">bin 和 sbin</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换用户"><span class="nav-number">6.4.4.</span> <span class="nav-text">切换用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件权限"><span class="nav-number">6.5.</span> <span class="nav-text">修改文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod-演练目标"><span class="nav-number">6.5.1.</span> <span class="nav-text">chmod 演练目标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息相关命令"><span class="nav-number">7.</span> <span class="nav-text">系统信息相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间和日期"><span class="nav-number">7.1.</span> <span class="nav-text">时间和日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘信息"><span class="nav-number">7.2.</span> <span class="nav-text">磁盘信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程信息"><span class="nav-number">7.3.</span> <span class="nav-text">进程信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">8.</span> <span class="nav-text">其他命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找文件"><span class="nav-number">8.1.</span> <span class="nav-text">查找文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#演练目标-1"><span class="nav-number">8.1.1.</span> <span class="nav-text">演练目标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-软链接"><span class="nav-number">8.2.</span> <span class="nav-text">02. 软链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演练目标-2"><span class="nav-number">8.3.</span> <span class="nav-text">演练目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬链接简介（知道）"><span class="nav-number">8.4.</span> <span class="nav-text">硬链接简介（知道）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接演练"><span class="nav-number">8.4.1.</span> <span class="nav-text">硬链接演练</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件软硬链接的示意图"><span class="nav-number">8.4.2.</span> <span class="nav-text">文件软硬链接的示意图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包压缩"><span class="nav-number">9.</span> <span class="nav-text">打包压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打包-／-解包"><span class="nav-number">9.1.</span> <span class="nav-text">打包 ／ 解包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打包解包演练"><span class="nav-number">9.1.1.</span> <span class="nav-text">打包解包演练</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩／解压缩"><span class="nav-number">9.2.</span> <span class="nav-text">压缩／解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gzip"><span class="nav-number">9.2.1.</span> <span class="nav-text">gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bzip2-two"><span class="nav-number">9.2.2.</span> <span class="nav-text">bzip2(two)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装"><span class="nav-number">10.</span> <span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-apt-安装／卸载软件"><span class="nav-number">11.</span> <span class="nav-text">通过 apt 安装／卸载软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装演练"><span class="nav-number">11.1.</span> <span class="nav-text">安装演练</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar-gz-相关"><span class="nav-number">12.</span> <span class="nav-text">tar.gz 相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar-bz2-相关"><span class="nav-number">13.</span> <span class="nav-text">tar.bz2 相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar-Z-相关"><span class="nav-number">14.</span> <span class="nav-text">tar.Z 相关</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Small white</span>
+</div>
+
+
+<div class="theme-info">
+  <a class="theme-link" href="http://beian.miit.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">
+    京ICP备18031196号-1
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d7fc427135771174e329354a1af0c4eb",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("pmKuf9FxJ3pNKmC61A0BYU8M-gzGzoHsz", "doD5OvgL7C33G6uGzHBLfxMR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

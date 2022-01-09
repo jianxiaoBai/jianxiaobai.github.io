@@ -1,1 +1,1151 @@
-<!doctype html><html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Berkshire Swash:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="Markdown,"><link rel="alternate" href="/atom.xml" title="Swhite ★ Notes" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0"><meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。"><meta name="keywords" content="Markdown"><meta property="og:type" content="article"><meta property="og:title" content="Markdown 使用中常见的问题及解决方法"><meta property="og:url" content="http://www.baixiaojian.com/markdown/index.html"><meta property="og:site_name" content="Swhite ★ Notes"><meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown01.png"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown02.png"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown03.png"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown04.gif"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown05.png"><meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown06.png"><meta property="og:updated_time" content="2017-12-31T07:42:03.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Markdown 使用中常见的问题及解决方法"><meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。"><meta name="twitter:image" content="http://on5sixmz1.bkt.clouddn.com/markdown01.png"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Pisces",sidebar:{position:"left",display:"post",offset:12,offset_float:0,b2t:!1,scrollpercent:!1},fancybox:!0,motion:!0,duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://www.baixiaojian.com/markdown/"><title> Markdown 使用中常见的问题及解决方法 | Swhite ★ Notes</title></head><body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans"><script type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2e2ea0c567fca8cb3fc444da04407e71";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Swhite ★ Notes</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">星火燎原</p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://www.baixiaojian.com/markdown/"><span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="name" content="Small white"><meta itemprop="description" content=""><meta itemprop="image" content="/images/smile.jpg"></span><span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta itemprop="name" content="Swhite ★ Notes"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> Markdown 使用中常见的问题及解决方法</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T21:05:06+08:00">2017-02-14</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/零七碎八/" itemprop="url" rel="index"><span itemprop="name">零七碎八</span></a></span></span> <span id="/markdown/" class="leancloud_visitors" data-flag-title="Markdown 使用中常见的问题及解决方法"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数</span><span class="leancloud-visitors-count"></span></span></div></header><div class="post-body" itemprop="articleBody"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就像 Markdown 官方文档里描述的一样：<strong><em>可读性，无论如何，都是最重要的。</em></strong> Markdown 的目标是实现 &nbsp; <span id="yu-1">『易读易写』</span> 。&nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。</p><a id="more"></a><h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>其实自己喜欢的才是最好的。(像 vim 、emacs什么的不推荐，因为我也不会用)</p><h3 id="MAC平台"><a href="#MAC平台" class="headerlink" title="MAC平台"></a>MAC平台</h3><p>自己没用过，不做推荐。你可以看看这个帖子：<a href="https://www.zhihu.com/question/28886671" rel="external nofollow noopener noreferrer" target="_blank">Mac 上适合码农用的 Markdown 编辑器是什么？</a></p><h3 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h3><h4 id="印象笔记"><a href="#印象笔记" class="headerlink" title="印象笔记"></a>印象笔记</h4><p><a href="https://maxiang.io/" rel="external nofollow noopener noreferrer" target="_blank">马克飞象传送门</a>，界面不是很好看，书写的时候感觉很别扭</p><h4 id="有道云笔记"><a href="#有道云笔记" class="headerlink" title="有道云笔记"></a>有道云笔记</h4><p><a href="http://note.youdao.com/" rel="external nofollow noopener noreferrer" target="_blank">有道传送门</a>，同样很丑，强迫症受不了</p><h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><p>强大的 Sublime Text 总是能给我们很多惊喜，经过各种对比，sublime 满足了我对审美的要求。首先我们需要安装两个插件：（至于怎么安装就不说了）</p><ul><li><strong>markdownEditing</strong> 用来书写</li><li><strong>markdownPreview</strong> 用来预览</li></ul><h4 id="Atom（强烈推荐）"><a href="#Atom（强烈推荐）" class="headerlink" title="Atom（强烈推荐）"></a>Atom（强烈推荐）</h4><p>GitHub 推出的编辑器，界面很好（就是启动有点慢），必须支持一下。默认继承了 markdown 预览，快捷键为 <code>Ctrl+shift+M</code>。推荐插件：</p><ul><li><strong>markdown-preview</strong> 实时预览</li><li><strong>markdown-scroll-sync</strong> 编辑区和预览区同步滚动</li><li><strong>markdown-writer</strong> 方便管理图片链接等</li><li><strong>markdown-table-formatte</strong> 表格格式化</li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><a href="http://www.markdown.cn/" rel="external nofollow noopener noreferrer" target="_blank">Markdown官方文档</a></p><h2 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h2><h3 id="html标签显示"><a href="#html标签显示" class="headerlink" title="html标签显示"></a>html标签显示</h3><p>比如说我要写一篇博客，标题为“html中 &lt;canvas&gt; 的使用”<br></p><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">## html中 &lt;canvas&gt; 的使用</div></pre></td></tr></table></figure><p></p><p>如果这样写就会出现排版上的问题（不信你试一下），那么怎么解决呢？其实认真想一下就能明白，Markdown 的语法是基于 html 的，我们直接写 &lt;canvas&gt;，自然会被理解为一个标签，而不是要显示的文本。。所以，问题回归到 html 上。在网页中，我们要显示 &lt;canvas&gt; 时要用到 <code>转义字符</code>, 所以 Markdown 中也一样，我们应该这样写：<br></p><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">## html中 &amp;lt;canvas&amp;gt; 的使用</div></pre></td></tr></table></figure><p></p><h3 id="代码语法高亮"><a href="#代码语法高亮" class="headerlink" title="代码语法高亮"></a>代码语法高亮</h3><p>这个问题困扰了我好久，官方文档里竟然没有说明！只好自己去查找方法。Markdown 中显示代码块是这样的格式：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown01.png" alt="Markdown"><br>显示为：<br></p><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;p&gt;这是一个p标签&lt;/p&gt;</div></pre></td></tr></table></figure><p></p><p>而我们这样写：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown02.png" alt="Markdown"><br>就可以实现代码高亮了<br></p><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个p标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure><p></p><p>据说这种方式一共支持四十多种语言，有兴趣的话你可以研究一下。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>Markdown 中嵌入图片，如果使用本地图片就要用到 html 标签来引用，这种方法很稳定，但是使文档变得很大（一张图片最少几百k吧）。所以我们要用到 <strong>图床</strong> 。</p><h4 id="贴图库"><a href="#贴图库" class="headerlink" title="贴图库"></a>贴图库</h4><p>推荐使用 &nbsp; <a href="http://www.tietuku.com/" rel="external nofollow noopener noreferrer" target="_blank">贴图库</a> &nbsp;快速，免费（我使用过程中没掉过链子）</p><p><img src="http://on5sixmz1.bkt.clouddn.com/markdown03.png" alt="Markdown"></p><p>注册登录，就可以上传图片，每张图片自动生成 <strong>原图</strong>、<strong>展示图</strong>和 <strong>缩略图</strong>的<u>图片外链</u>、<u>html代码</u>、<u>Markdown外链</u>等。只要把对应的代码粘贴到你的文档中就可以了。。</p><h4 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h4><p>这个最近很火，可靠、可扩展、低成本等等有很多优点。你可以试一下。<br>我们主要用到他的 <strong>对象存储</strong> 服务，创建一个公开仓库，把图片上传就可以生成外链了。</p><h3 id="gif"><a href="#gif" class="headerlink" title="gif"></a>gif</h3><p>Github 上的开源项目，ReadMe.md 是也支持 Markdown 语法的，通常会看到很多开源项目的 ReadMe 中有 <strong>动态演示</strong>效果，看到这个项目的人一目了然，非常方便，gif本身也是一种图片格式，在 Markdown 中 <em>引用时和正常图片的引用一样</em>，但需要专门的工具生成 gif 格式的图片才行，在这里强烈推荐 <a href="http://www.cockos.com/licecap/" rel="external nofollow noopener noreferrer" target="_blank">LICEcap</a>，它是一款 windows 上的录屏软件，录制后保存的格式为 gif，体积小并且同样也可以在图床上生成链接。</p><p><img src="http://on5sixmz1.bkt.clouddn.com/markdown04.gif" alt="Markdown"></p><h3 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h3><p>你可以把音乐文件下载到本地，然后简单粗暴的使用 html 中的 &lt;video&gt; 标签。当然，如果这样就不必写下去了，告诉你简单的方法：<strong>网易云音乐</strong></p><p>打开网易云音乐网页版，搜索自己喜欢的音乐，比如我找到 <strong>告白气球</strong></p><p><img src="http://on5sixmz1.bkt.clouddn.com/markdown05.png" alt="Markdown"><br>我们可以看到在图片的下边有一个 <code>生成外链播放器</code> , 点击会出现</p><p><img src="http://on5sixmz1.bkt.clouddn.com/markdown06.png" alt="Markdown"><br>选择 <strong>合适的尺寸</strong> 和 <strong>播放模式</strong> 之后。把下边的代码复制到你的 Markdown 文档中就可以了。试着听一下吧！！(我选择了最小尺寸)</p><p></p><div style="max-width:450px;max-height:180px;margin:0 auto 40px"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=423015566&auto=0&height=32"></iframe></div><p></p><p></p><p id="border-red" style="text-indent:30px">试着去把一个 <strong>歌单生成外链播放器</strong> 插入到你的 Markdown 中，这样你跟新歌单你的博文也会跟着变化，而不必在想跟换歌曲时头疼</p><p></p></div><div></div><div></div><div></div><footer class="post-footer"><div class="post-tags"> <a href="/tags/Markdown/" rel="tag"># Markdown</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/encrypt/" rel="next" title="简单博文加密"><i class="fa fa-chevron-left"></i> 简单博文加密</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/backup/" rel="prev" title="HEXO+GitHub,搭建博客 - 备份">HEXO+GitHub,搭建博客 - 备份<i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/smile.jpg" alt="Small white"><p class="site-author-name" itemprop="name">Small white</p><p class="site-description motion-element" itemprop="description">不进则退</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives"><span class="site-state-item-count">35</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">8</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">42</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/jianxiaoBai" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="http://weibo.com/3944356204/profile" target="_blank" title="微博" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-weibo"></i> 微博</a></span></div><div class="cc-license motion-element" itemprop="license"> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-globe"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="http://macshuo.com/" title="MacTalk" target="_blank" rel="external nofollow noopener noreferrer">MacTalk</a></li><li class="links-of-blogroll-item"> <a href="http://www.cnblogs.com/yexiaochai/" title="叶小钗" target="_blank" rel="external nofollow noopener noreferrer">叶小钗</a></li><li class="links-of-blogroll-item"> <a href="http://www.jianshu.com/u/e347b97e2f0c" title="weishu" target="_blank" rel="external nofollow noopener noreferrer">weishu</a></li><li class="links-of-blogroll-item"> <a href="http://www.cnblogs.com/PeunZhang/p/3407453.html#question_11" title="白树" target="_blank" rel="external nofollow noopener noreferrer">白树</a></li><li class="links-of-blogroll-item"> <a href="https://ehlxr.me/categories/" title="ehlxr" target="_blank" rel="external nofollow noopener noreferrer">ehlxr</a></li><li class="links-of-blogroll-item"> <a href="http://notes.iissnan.com/tags/" title="iissnan" target="_blank" rel="external nofollow noopener noreferrer">iissnan</a></li></ul></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器"><span class="nav-number">1.</span> <span class="nav-text">编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC平台"><span class="nav-number">1.1.</span> <span class="nav-text">MAC平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows平台"><span class="nav-number">1.2.</span> <span class="nav-text">Windows平台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#印象笔记"><span class="nav-number">1.2.1.</span> <span class="nav-text">印象笔记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有道云笔记"><span class="nav-number">1.2.2.</span> <span class="nav-text">有道云笔记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime-Text"><span class="nav-number">1.2.3.</span> <span class="nav-text">Sublime Text</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Atom（强烈推荐）"><span class="nav-number">1.2.4.</span> <span class="nav-text">Atom（强烈推荐）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题汇总"><span class="nav-number">3.</span> <span class="nav-text">常见问题汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html标签显示"><span class="nav-number">3.1.</span> <span class="nav-text">html标签显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码语法高亮"><span class="nav-number">3.2.</span> <span class="nav-text">代码语法高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.3.</span> <span class="nav-text">图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#贴图库"><span class="nav-number">3.3.1.</span> <span class="nav-text">贴图库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七牛云存储"><span class="nav-number">3.3.2.</span> <span class="nav-text">七牛云存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gif"><span class="nav-number">3.4.</span> <span class="nav-text">gif</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入音乐"><span class="nav-number">3.5.</span> <span class="nav-text">插入音乐</span></a></li></ol></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2018</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">Small white</span></div><div class="powered-by"> 由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动</div><div class="theme-info"> 主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">NexT.Pisces</a></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script><script>var cloudTieConfig={url:document.location.href,sourceId:"",productKey:"d7fc427135771174e329354a1af0c4eb",target:"cloud-tie-wrapper"}</script><script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script><script type="text/javascript">function proceedsearch(){$("body").append('<div class="search-popup-overlay local-search-pop-overlay"></div>').css("overflow","hidden"),$(".popup").toggle()}var isfetched=!1,search_path="search.xml";0==search_path.length&&(search_path="search.xml");var path="/"+search_path,searchFunc=function(e,t,a){"use strict";$.ajax({url:e,dataType:"xml",async:!0,success:function(e){isfetched=!0,$(".popup").detach().appendTo(".header-inner");var r=$("entry",e).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),c=document.getElementById(t),s=document.getElementById(a);c.addEventListener("input",function(){var e=0,t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);s.innerHTML="",this.value.trim().length>1&&r.forEach(function(r){var c=!1,s=r.title.trim().toLowerCase(),o=r.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),n=decodeURIComponent(r.url),i=-1,l=-1,p=-1;if(""!=s&&a.forEach(function(e,t){i=s.indexOf(e),l=o.indexOf(e),(i>=0||l>=0)&&(c=!0,0==t&&(p=l))}),c){e+=1,t+="<li><a href='"+n+"' class='search-result-title'>"+s+"</a>";var h=r.content.trim().replace(/<[^>]+>/g,"");if(p>=0){var u=p-20,d=p+80;u<0&&(u=0),0==u&&(d=50),d>h.length&&(d=h.length);var f=h.substring(u,d);a.forEach(function(e){var t=new RegExp(e,"gi");f=f.replace(t,'<b class="search-keyword">'+e+"</b>")}),t+='<p class="search-result">'+f+"...</p>"}t+="</li>"}}),t+="</ul>",0==e&&(t='<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'),""==a&&(t='<div id="no-result"><i class="fa fa-search fa-5x" /></div>'),s.innerHTML=t}),proceedsearch()}})};$(".popup-trigger").click(function(e){e.stopPropagation(),0==isfetched?searchFunc(path,"local-search-input","local-search-result"):proceedsearch()}),$(".popup-btn-close").click(function(e){$(".popup").hide(),$(".local-search-pop-overlay").remove(),$("body").css("overflow","")}),$(".popup").click(function(e){e.stopPropagation()})</script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script><script>AV.initialize("pmKuf9FxJ3pNKmC61A0BYU8M-gzGzoHsz","doD5OvgL7C33G6uGzHBLfxMR")</script><script>function showTime(e){var t=new AV.Query(e),n=[],o=$(".leancloud_visitors");o.each(function(){n.push($(this).attr("id").trim())}),t.containedIn("url",n),t.find().done(function(e){if(0!==e.length){for(c=0;c<e.length;c++){var t=e[c],i=t.get("url"),s=t.get("time"),l=document.getElementById(i);$(l).find(".leancloud-visitors-count").text(s)}for(var c=0;c<n.length;c++){var i=n[c],l=document.getElementById(i),r=$(l).find(".leancloud-visitors-count");""==r.text()&&r.text(0)}}else o.find(".leancloud-visitors-count").text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(e){var t=$(".leancloud_visitors"),n=t.attr("id").trim(),o=t.attr("data-flag-title").trim(),i=new AV.Query(e);i.equalTo("url",n),i.find({success:function(t){if(t.length>0){var i=t[0];i.fetchWhenSave(!0),i.increment("time"),i.save(null,{success:function(e){$(document.getElementById(n)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var s=new e,l=new AV.ACL;l.setPublicReadAccess(!0),l.setPublicWriteAccess(!0),s.setACL(l),s.set("title",o),s.set("url",n),s.set("time",1),s.save(null,{success:function(e){$(document.getElementById(n)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></body></html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码','') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Berkshire Swash:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Markdown,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Swhite ★ Notes" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。">
+<meta name="keywords" content="Markdown">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 使用中常见的问题及解决方法">
+<meta property="og:url" content="http://www.baixiaojian.com/markdown/index.html">
+<meta property="og:site_name" content="Swhite ★ Notes">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown01.png">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown02.png">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown03.png">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown04.gif">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown05.png">
+<meta property="og:image" content="http://on5sixmz1.bkt.clouddn.com/markdown06.png">
+<meta property="og:updated_time" content="2017-12-31T07:42:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown 使用中常见的问题及解决方法">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;就像 Markdown 官方文档里描述的一样：可读性，无论如何，都是最重要的。 Markdown 的目标是实现 &amp;nbsp; 『易读易写』 。&amp;nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。">
+<meta name="twitter:image" content="http://on5sixmz1.bkt.clouddn.com/markdown01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.baixiaojian.com/markdown/">
+
+
+
+
+
+  <title> Markdown 使用中常见的问题及解决方法 | Swhite ★ Notes </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2e2ea0c567fca8cb3fc444da04407e71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Swhite ★ Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">星火燎原</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.baixiaojian.com/markdown/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Small white">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/smile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Swhite ★ Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Markdown 使用中常见的问题及解决方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T21:05:06+08:00">
+                2017-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/零七碎八/" itemprop="url" rel="index">
+                    <span itemprop="name">零七碎八</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+             <span id="/markdown/" class="leancloud_visitors" data-flag-title="Markdown 使用中常见的问题及解决方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- <div class="out-img-topic">![Markdown](http://on5pjsxrv.bkt.clouddn.com/markdown.jpg)</div> -->
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就像 Markdown 官方文档里描述的一样：<strong><em>可读性，无论如何，都是最重要的。</em></strong> Markdown 的目标是实现 &nbsp; <span id="yu-1">『易读易写』</span> 。&nbsp;Markdown 从发布到现在备受好评，经过这一段的使用，整体感觉挺顺手，不过还是存在很多问题，所以总结一下喽。。</p>
+<a id="more"></a>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>其实自己喜欢的才是最好的。(像 vim 、emacs什么的不推荐，因为我也不会用)</p>
+<h3 id="MAC平台"><a href="#MAC平台" class="headerlink" title="MAC平台"></a>MAC平台</h3><p>自己没用过，不做推荐。你可以看看这个帖子：<a href="https://www.zhihu.com/question/28886671" rel="external nofollow noopener noreferrer" target="_blank">Mac 上适合码农用的 Markdown 编辑器是什么？</a></p>
+<h3 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h3><h4 id="印象笔记"><a href="#印象笔记" class="headerlink" title="印象笔记"></a>印象笔记</h4><p><a href="https://maxiang.io/" rel="external nofollow noopener noreferrer" target="_blank">马克飞象传送门</a>，界面不是很好看，书写的时候感觉很别扭</p>
+<h4 id="有道云笔记"><a href="#有道云笔记" class="headerlink" title="有道云笔记"></a>有道云笔记</h4><p><a href="http://note.youdao.com/" rel="external nofollow noopener noreferrer" target="_blank">有道传送门</a>，同样很丑，强迫症受不了</p>
+<h4 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h4><p>强大的 Sublime Text 总是能给我们很多惊喜，经过各种对比，sublime 满足了我对审美的要求。首先我们需要安装两个插件：（至于怎么安装就不说了）</p>
+<ul>
+<li><strong>markdownEditing</strong> 用来书写</li>
+<li><strong>markdownPreview</strong> 用来预览</li>
+</ul>
+<h4 id="Atom（强烈推荐）"><a href="#Atom（强烈推荐）" class="headerlink" title="Atom（强烈推荐）"></a>Atom（强烈推荐）</h4><p>GitHub 推出的编辑器，界面很好（就是启动有点慢），必须支持一下。默认继承了 markdown 预览，快捷键为 <code>Ctrl+shift+M</code>。推荐插件：</p>
+<ul>
+<li><strong>markdown-preview</strong> 实时预览</li>
+<li><strong>markdown-scroll-sync</strong>  编辑区和预览区同步滚动</li>
+<li><strong>markdown-writer</strong> 方便管理图片链接等</li>
+<li><strong>markdown-table-formatte</strong> 表格格式化</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><a href="http://www.markdown.cn/" rel="external nofollow noopener noreferrer" target="_blank">Markdown官方文档</a></p>
+<h2 id="常见问题汇总"><a href="#常见问题汇总" class="headerlink" title="常见问题汇总"></a>常见问题汇总</h2><h3 id="html标签显示"><a href="#html标签显示" class="headerlink" title="html标签显示"></a>html标签显示</h3><p>比如说我要写一篇博客，标题为“html中 &lt;canvas&gt; 的使用”<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">## html中 &lt;canvas&gt; 的使用</div></pre></td></tr></table></figure></p>
+<p>如果这样写就会出现排版上的问题（不信你试一下），那么怎么解决呢？其实认真想一下就能明白，Markdown 的语法是基于 html 的，我们直接写 &lt;canvas&gt;，自然会被理解为一个标签，而不是要显示的文本。。所以，问题回归到 html 上。在网页中，我们要显示 &lt;canvas&gt; 时要用到 <code>转义字符</code>, 所以 Markdown 中也一样，我们应该这样写：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">## html中 &amp;lt;canvas&amp;gt; 的使用</div></pre></td></tr></table></figure></p>
+<h3 id="代码语法高亮"><a href="#代码语法高亮" class="headerlink" title="代码语法高亮"></a>代码语法高亮</h3><p>这个问题困扰了我好久，官方文档里竟然没有说明！只好自己去查找方法。Markdown 中显示代码块是这样的格式：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown01.png" alt="Markdown"><br>显示为：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;p&gt;这是一个p标签&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>而我们这样写：<br><img src="http://on5sixmz1.bkt.clouddn.com/markdown02.png" alt="Markdown"><br>就可以实现代码高亮了<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个p标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>据说这种方式一共支持四十多种语言，有兴趣的话你可以研究一下。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>Markdown 中嵌入图片，如果使用本地图片就要用到 html 标签来引用，这种方法很稳定，但是使文档变得很大（一张图片最少几百k吧）。所以我们要用到 <strong>图床</strong> 。</p>
+<h4 id="贴图库"><a href="#贴图库" class="headerlink" title="贴图库"></a>贴图库</h4><p>推荐使用 &nbsp; <a href="http://www.tietuku.com/" rel="external nofollow noopener noreferrer" target="_blank">贴图库</a>  &nbsp;快速，免费（我使用过程中没掉过链子）</p>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/markdown03.png" alt="Markdown"></p>
+<p>注册登录，就可以上传图片，每张图片自动生成 <strong>原图</strong>、<strong>展示图</strong>和 <strong>缩略图</strong>的<u>图片外链</u>、<u>html代码</u>、<u>Markdown外链</u>等。只要把对应的代码粘贴到你的文档中就可以了。。</p>
+<h4 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h4><p>这个最近很火，可靠、可扩展、低成本等等有很多优点。你可以试一下。<br>我们主要用到他的 <strong>对象存储</strong> 服务，创建一个公开仓库，把图片上传就可以生成外链了。</p>
+<h3 id="gif"><a href="#gif" class="headerlink" title="gif"></a>gif</h3><p>Github 上的开源项目，ReadMe.md 是也支持 Markdown 语法的，通常会看到很多开源项目的 ReadMe 中有 <strong>动态演示</strong>效果，看到这个项目的人一目了然，非常方便，gif本身也是一种图片格式，在 Markdown 中 <em>引用时和正常图片的引用一样</em>，但需要专门的工具生成 gif 格式的图片才行，在这里强烈推荐 <a href="http://www.cockos.com/licecap/" rel="external nofollow noopener noreferrer" target="_blank">LICEcap</a>，它是一款 windows 上的录屏软件，录制后保存的格式为 gif，体积小并且同样也可以在图床上生成链接。</p>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/markdown04.gif" alt="Markdown"></p>
+<h3 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h3><p>你可以把音乐文件下载到本地，然后简单粗暴的使用 html 中的 &lt;video&gt; 标签。当然，如果这样就不必写下去了，告诉你简单的方法：<strong>网易云音乐</strong></p>
+<p>打开网易云音乐网页版，搜索自己喜欢的音乐，比如我找到 <strong>告白气球</strong></p>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/markdown05.png" alt="Markdown"><br>我们可以看到在图片的下边有一个 <code>生成外链播放器</code> , 点击会出现</p>
+<p><img src="http://on5sixmz1.bkt.clouddn.com/markdown06.png" alt="Markdown"><br>选择 <strong>合适的尺寸</strong> 和 <strong>播放模式</strong> 之后。把下边的代码复制到你的 Markdown 文档中就可以了。试着听一下吧！！(我选择了最小尺寸)</p>
+<p><div style="max-width: 450px;max-height: 180px;margin: 0 auto 40px;"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=423015566&auto=0&height=32"></iframe></div></p>
+<p></p><p id="border-red" style="text-indent: 30px">试着去把一个 <strong>歌单生成外链播放器</strong> 插入到你的 Markdown 中，这样你跟新歌单你的博文也会跟着变化，而不必在想跟换歌曲时头疼</p><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/encrypt/" rel="next" title="简单博文加密">
+                <i class="fa fa-chevron-left"></i> 简单博文加密
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/backup/" rel="prev" title="HEXO+GitHub,搭建博客 - 备份">
+                HEXO+GitHub,搭建博客 - 备份 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/smile.jpg" alt="Small white">
+          <p class="site-author-name" itemprop="name">Small white</p>
+           
+              <p class="site-description motion-element" itemprop="description">不进则退</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jianxiaoBai" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3944356204/profile" target="_blank" title="微博" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow noopener noreferrer">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="MacTalk" target="_blank" rel="external nofollow noopener noreferrer">MacTalk</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yexiaochai/" title="叶小钗" target="_blank" rel="external nofollow noopener noreferrer">叶小钗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/e347b97e2f0c" title="weishu" target="_blank" rel="external nofollow noopener noreferrer">weishu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/PeunZhang/p/3407453.html#question_11" title="白树" target="_blank" rel="external nofollow noopener noreferrer">白树</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://ehlxr.me/categories/" title="ehlxr" target="_blank" rel="external nofollow noopener noreferrer">ehlxr</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://notes.iissnan.com/tags/" title="iissnan" target="_blank" rel="external nofollow noopener noreferrer">iissnan</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器"><span class="nav-number">1.</span> <span class="nav-text">编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC平台"><span class="nav-number">1.1.</span> <span class="nav-text">MAC平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows平台"><span class="nav-number">1.2.</span> <span class="nav-text">Windows平台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#印象笔记"><span class="nav-number">1.2.1.</span> <span class="nav-text">印象笔记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有道云笔记"><span class="nav-number">1.2.2.</span> <span class="nav-text">有道云笔记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime-Text"><span class="nav-number">1.2.3.</span> <span class="nav-text">Sublime Text</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Atom（强烈推荐）"><span class="nav-number">1.2.4.</span> <span class="nav-text">Atom（强烈推荐）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题汇总"><span class="nav-number">3.</span> <span class="nav-text">常见问题汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html标签显示"><span class="nav-number">3.1.</span> <span class="nav-text">html标签显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码语法高亮"><span class="nav-number">3.2.</span> <span class="nav-text">代码语法高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.3.</span> <span class="nav-text">图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#贴图库"><span class="nav-number">3.3.1.</span> <span class="nav-text">贴图库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七牛云存储"><span class="nav-number">3.3.2.</span> <span class="nav-text">七牛云存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gif"><span class="nav-number">3.4.</span> <span class="nav-text">gif</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入音乐"><span class="nav-number">3.5.</span> <span class="nav-text">插入音乐</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Small white</span>
+</div>
+
+
+<div class="theme-info">
+  <a class="theme-link" href="http://beian.miit.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">
+    京ICP备18031196号-1
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "d7fc427135771174e329354a1af0c4eb",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("pmKuf9FxJ3pNKmC61A0BYU8M-gzGzoHsz", "doD5OvgL7C33G6uGzHBLfxMR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

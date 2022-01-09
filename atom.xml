@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.baixiaojian.com/"/>
-  <updated>2018-03-28T08:21:17.000Z</updated>
+  <updated>2018-10-12T06:50:32.490Z</updated>
   <id>http://www.baixiaojian.com/</id>
   
   <author>
@@ -16,11 +16,1302 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript-OOP-笔记</title>
+    <title>python</title>
+    <link href="http://www.baixiaojian.com/python/"/>
+    <id>http://www.baixiaojian.com/python/</id>
+    <published>2018-10-05T05:20:53.000Z</published>
+    <updated>2018-10-12T06:50:32.490Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>#开头，注释</li>
+<li>缩进的语句视为代码块</li>
+<li>大小写敏感</li>
+</ul>
+<h2 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h2><ul>
+<li>True 和 False 首字母大写</li>
+<li>and、or 和 not</li>
+<li>空值：None</li>
+</ul>
+<h2 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化%"></a>字符串格式化%</h2><ul>
+<li>%d 整数</li>
+<li>%f 浮点数</li>
+<li>%s 字符串</li>
+<li>%x 十六进制整数</li>
+<li>补位</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%2d-%02d'</span> % (<span class="number">3</span>, <span class="number">1</span>)</div><div class="line"><span class="string">' 3-01'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%.2f'</span> % <span class="number">3.1415926</span></div><div class="line"><span class="string">'3.14'</span></div></pre></td></tr></table></figure>
+<h2 id="数组：list-和-tuple"><a href="#数组：list-和-tuple" class="headerlink" title="数组：list 和 tuple"></a>数组：list 和 tuple</h2><ul>
+<li>list 数组<ul>
+<li>len(list)得到长度</li>
+<li>list[-2]获得倒数第二个元素</li>
+<li>list.append(ele)往 list 中追加元素到末尾</li>
+<li>list.insert(1, ele)，把元素插入到指定的位置，比如索引号为 1 的位置</li>
+<li>list.pop()，删除 list 末尾的元素，用 pop()方法</li>
+<li>list.pop(i)删除指定位置的元素，用 pop(i)方法，其中 i 是索引位置</li>
+<li>元素的数据类型也可以不同，L = [‘Apple’, 123, True]</li>
+</ul>
+</li>
+<li>tuple 数组：classmates = (‘Michael’, ‘Bob’, ‘Tracy’)<ul>
+<li>tuple 一旦初始化就不能修改，代码更安全</li>
+</ul>
+</li>
+</ul>
+<h2 id="条件判断和循环"><a href="#条件判断和循环" class="headerlink" title="条件判断和循环"></a>条件判断和循环</h2><ul>
+<li>if elif else</li>
+<li>for in</li>
+<li>while</li>
+<li><p>range()函数</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>,<span class="number">5</span>) <span class="comment">#代表从1到5(不包含5)</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>) <span class="comment">#代表从1到5，间隔2(不包含5)</span></div><div class="line">[<span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">5</span>) <span class="comment">#代表从0到5(不包含5)</span></div><div class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure>
+</li>
+<li><p>raw_inpit(str)读取的内容永远以字符串的形式返回</p>
+</li>
+</ul>
+<h2 id="dict-和-set"><a href="#dict-和-set" class="headerlink" title="dict 和 set"></a>dict 和 set</h2><ul>
+<li>dict 就是 map，用 key-value 的形式存储。</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line">d = &#123;<span class="string">'Michael'</span>: <span class="number">95</span>, <span class="string">'Bob'</span>: <span class="number">75</span>, <span class="string">'Tracy'</span>: <span class="number">85</span>&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>根据 key 获得 value<ul>
+<li>[]：一旦 key 不存在就会报错</li>
+<li>get()函数：如果 key 不存在，可以返回 None，或者自己指定的 value（作为第二个参数传入）</li>
+<li>‘Thomas’ in d 如果不存在则返回 False</li>
+</ul>
+</li>
+<li>set 是一组 key 的集合，但不存储 value，key 不能重复。<ul>
+<li>需要 list 作为输入</li>
+<li>add(key)函数用来往里面添加元素，自动忽略重复</li>
+<li>remove(key)函数用来删除元素</li>
+<li>&amp;操作用来做交集</li>
+<li>|操作用来做并集</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p><a href="https://docs.python.org/2/library/functions.html" rel="external nofollow noopener noreferrer" target="_blank">所有内置函数</a></p>
+<ul>
+<li>类型检查 <code>isinstance</code></li>
+<li>可变参数 <strong>*</strong></li>
+<li>关键字参数 ** ,</li>
+<li>参数定义的顺序必须</li>
+</ul>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">power</span><span class="params">(x, n = <span class="number">2</span>)</span>:</span></div><div class="line">    s = <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</div><div class="line">        n = n - <span class="number">1</span></div><div class="line">        s = s * x</div><div class="line">    <span class="keyword">return</span> s</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>定义默认参数要牢记一点：默认参数必须指向不变对象！</strong></p>
+</blockquote>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line">a = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(*numbers)</span>:</span></div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> numbers:</div><div class="line">        sum = sum + n * n</div><div class="line">    <span class="keyword">return</span> sum</div><div class="line">calc(<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>) <span class="comment"># 10</span></div><div class="line">calc(*a) <span class="comment"># 10</span></div></pre></td></tr></table></figure>
+<h3 id="关键参数"><a href="#关键参数" class="headerlink" title="关键参数"></a>关键参数</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line">extra = &#123;<span class="string">'city'</span>: <span class="string">'Beijing'</span>, <span class="string">'job'</span>: <span class="string">'Engineer'</span>&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, **kw)</span>:</span></div><div class="line">    print(<span class="string">'name:'</span>, name, <span class="string">'age:'</span>, age, <span class="string">'other:'</span>, kw)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>person(<span class="string">'Michael'</span>, <span class="number">30</span>)</div><div class="line"><span class="comment"># name: Michael age: 30 other: &#123;&#125;</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>person(<span class="string">'Adam'</span>, <span class="number">45</span>, gender = <span class="string">'M'</span>, job = <span class="string">'Engineer'</span>)</div><div class="line"><span class="comment"># name: Adam age: 45 other: &#123;'gender': 'M', 'job': 'Engineer'&#125;</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>person(<span class="string">'Jack'</span>, <span class="number">24</span>, city = extra[<span class="string">'city'</span>], job = extra[<span class="string">'job'</span>])</div><div class="line"><span class="comment"># name: Jack age: 24 other: &#123;'city': 'Beijing', 'job': 'Engineer'&#125;</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>person(<span class="string">'Jack'</span>, <span class="number">24</span>, **extra)</div><div class="line"><span class="comment"># name: Jack age: 24 other: &#123;'city': 'Beijing', 'job': 'Engineer'&#125;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>kw 获得的 dict 是 extra 的一份拷贝，对 kw 的改动不会影响到函数外的 extra。</p>
+</blockquote>
+<h3 id="命名关键字参数"><a href="#命名关键字参数" class="headerlink" title="命名关键字参数"></a>命名关键字参数</h3><p><code>*号</code> 后面的参数被视为 <strong>命名关键字参数</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city = <span class="string">'shanghai'</span>, job)</span>:</span></div><div class="line">    <span class="comment"># 没有 city 和 job 字段或多了其他字段则会报错</span></div><div class="line">    print(name, age, city, job)</div><div class="line"></div><div class="line">person(<span class="string">'Jack'</span>, <span class="number">24</span>, city=<span class="string">'Beijing'</span>, job=<span class="string">'Engineer'</span>)</div><div class="line"><span class="comment"># Jack 24 Beijing Engineer</span></div></pre></td></tr></table></figure>
+<p>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符 * 了：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *args, city, job)</span>:</span></div><div class="line">    print(name, age, args, city, job)</div><div class="line"></div><div class="line">person(<span class="string">'张三'</span>, <span class="number">12</span>, <span class="number">213</span>, city=<span class="string">'北京'</span>, job=<span class="string">'frontEnd'</span>)</div><div class="line"><span class="comment"># 张三 12 (12, 213) 北京 frontEnd</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果没有 <strong>可变参数</strong>，就必须加一个 <code>*</code> 作为特殊分隔符。如果缺少*，Python 解释器将无法识别 <strong>位置参数</strong> 和 <strong>命名关键字参数</strong></p>
+</blockquote>
+<h3 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h3><p>在 Python 中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这 5 种参数都可以组合使用。</p>
+<p>但是请注意，参数定义的顺序必须是：</p>
+<ol>
+<li>必选参数</li>
+<li>默认参数 <code>x = 5</code></li>
+<li>可变参数 <code>*num</code></li>
+<li>命名关键字参数 <code>**ak</code></li>
+<li>关键字参数 <code>*</code> (如存在可变参数则不需声明)</li>
+</ol>
+<h3 id="定义空函数"><a href="#定义空函数" class="headerlink" title="定义空函数"></a>定义空函数</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">nop</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><em>pass 可以用来作为占位符</em></p>
+</blockquote>
+<h2 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h2><h3 id="切片（Slice-）"><a href="#切片（Slice-）" class="headerlink" title="切片（Slice ）"></a>切片（Slice ）</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>L = [<span class="string">'Michael'</span>, <span class="string">'Sarah'</span>, <span class="string">'Tracy'</span>, <span class="string">'Bob'</span>, <span class="string">'Jack'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>L[<span class="number">0</span>:<span class="number">3</span>]</div><div class="line">[<span class="string">'Michael'</span>, <span class="string">'Sarah'</span>, <span class="string">'Tracy'</span>]</div></pre></td></tr></table></figure>
+<ul>
+<li><code>L[0:3]</code> 表示，从索引 0 开始取，直到索引 3 为止，但不包括索引 3。即索引 0，1，2，正好是 3 个元素。</li>
+<li>如果第一个索引是 0，还可以省略。</li>
+<li><code>L[-1]</code> 取倒数第一个元素，也支持倒数切片：L(-2:)</li>
+<li><code>只写[:]</code> 就可以原样复制一个 list</li>
+<li><code>L[:10:2]</code> 表示前十个元素，每两个取一个：[0,2,4,6,8]</li>
+<li><code>L[:10:2]</code> 前 10 个数，每两个取一个</li>
+<li><code>L[::5]</code> 所有数，每 5 个取一个：</li>
+<li><code>tuple</code> 也可以用切片，操作结果也是 tuple</li>
+<li>字符串也支持切片</li>
+</ul>
+<h3 id="迭代（Iteration）"><a href="#迭代（Iteration）" class="headerlink" title="迭代（Iteration）"></a>迭代（Iteration）</h3><ul>
+<li>只要是可迭代对象（list，tuple，dict，set，字符串）都可以用 for…in…迭代</li>
+<li>默认情况下，dict 迭代的是 key。<ul>
+<li>如果要迭代 value，可以用 for value in d.itervalues()</li>
+<li>如果要同时迭代 key 和 value，可以用 for k, v in d.iteritems()。</li>
+</ul>
+</li>
+<li>判断一个对象是否是可迭代对象：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable</div><div class="line">isinstance(<span class="string">'abc'</span>, Iterable) <span class="comment"># str是否可迭代 True</span></div><div class="line">isinstance([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], Iterable) <span class="comment"># list是否可迭代 True</span></div><div class="line">isinstance(<span class="number">123</span>, Iterable) <span class="comment"># 整数是否可迭代 False</span></div></pre></td></tr></table></figure>
+<p><strong>拥有下标的循环：</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> i, value <span class="keyword">in</span> enumerate([<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]):</div><div class="line">  <span class="keyword">print</span> i, value</div></pre></td></tr></table></figure>
+<p><strong>for 循环同时引用两个变量：</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> x, y <span class="keyword">in</span> [(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">4</span>), (<span class="number">3</span>, <span class="number">9</span>)]:</div><div class="line">	<span class="keyword">print</span> x, y</div></pre></td></tr></table></figure>
+<h3 id="列表生成式（List-Comprehensions）"><a href="#列表生成式（List-Comprehensions）" class="headerlink" title="列表生成式（List Comprehensions）"></a>列表生成式（List Comprehensions）</h3><ul>
+<li>[x * x for x in range(1, 11)] =&gt; [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</li>
+<li>加上判断：[x * x for x in range(1, 11) if x % 2 == 0] =&gt; [4, 16, 36, 64, 100]</li>
+<li>两层循环（可以用来生成<code>全排列</code>）：[m + n for m in ‘ABC’ for n in ‘XYZ’] =&gt; [‘AX’, ‘AY’, ‘AZ’, ‘BX’, ‘BY’, ‘BZ’, ‘CX’, ‘CY’, ‘CZ’]</li>
+</ul>
+<h3 id="生成器（Generator）"><a href="#生成器（Generator）" class="headerlink" title="生成器（Generator）"></a>生成器（Generator）</h3><blockquote>
+<p>在 Python 中，这种一边循环一边计算的机制，称为生成器：generator。</p>
+</blockquote>
+<p>生成器里面装了用来生成一个 list 的<code>算法</code>，这样就不必创建完整的 list，从而大量的<code>节省空间</code>。</p>
+<ul>
+<li>如何创建 generator<ul>
+<li>把列表生成的 [] 改成 ()</li>
+<li>函数内使用 <code>yield</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>))</div><div class="line">g.next() <span class="comment"># 0</span></div><div class="line">g.next() <span class="comment"># 1</span></div><div class="line">g.next() <span class="comment"># 4</span></div><div class="line">g.next() <span class="comment"># StopIteration</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> n <span class="keyword">in</span> g:</div><div class="line">  <span class="keyword">print</span> n</div></pre></td></tr></table></figure>
+<p>定义 generator 的另一种方法，yield：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></div><div class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></div><div class="line">    <span class="keyword">while</span> n &lt; max:</div><div class="line">        <span class="keyword">yield</span> b</div><div class="line">        a, b = b, a + b</div><div class="line">        n = n + <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'done'</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果一个函数定义中包含 <code>yield</code> 关键字，那么这个函数就不再是一个普通函数，而是一个 <code>generator</code></p>
+</blockquote>
+<p>可以直接使用 for 循环来迭代, 但是那样获取不到返回值, 必须使用捕获 <code>StopIteration</code> 错误, 返回值包含在 StopIteration 的 value 中：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line">g = fib(<span class="number">6</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">     <span class="keyword">try</span>:</div><div class="line">         x = next(g)</div><div class="line">         print(<span class="string">'g:'</span>, x)</div><div class="line">     <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</div><div class="line">         print(<span class="string">'Generator return value:'</span>, e.value)</div><div class="line">         <span class="keyword">break</span></div><div class="line"><span class="comment"># g: 1</span></div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="comment"># Generator return value: done</span></div></pre></td></tr></table></figure>
+<h4 id="Generator-的执行顺序"><a href="#Generator-的执行顺序" class="headerlink" title="Generator 的执行顺序"></a>Generator 的执行顺序</h4><p><code>generator</code> 函数在每次调用 next()时时候执行到 <code>yield</code> 语句返回，再次执行时从上次返回的 yield 语句处继续执行。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">odd</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'step 1'</span>)</div><div class="line">    <span class="keyword">yield</span> <span class="number">1</span></div><div class="line">    print(<span class="string">'step 2'</span>)</div><div class="line">    <span class="keyword">yield</span>(<span class="number">3</span>)</div><div class="line">    print(<span class="string">'step 3'</span>)</div><div class="line">    <span class="keyword">yield</span>(<span class="number">5</span>)</div><div class="line">o = odd()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</div><div class="line"><span class="comment"># step 1</span></div><div class="line"><span class="comment"># 返回值 1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</div><div class="line"><span class="comment"># step 2</span></div><div class="line"><span class="comment"># 返回值 3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</div><div class="line"><span class="comment"># step 3</span></div><div class="line"><span class="comment"># 返回值 5</span></div></pre></td></tr></table></figure>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul>
+<li>凡是可作用于 for 循环的对象都是 Iterable 类型；</li>
+<li>凡是可作用于 next()函数的对象都是 Iterator 类型，它们表示一个惰性计算的序列；</li>
+<li>list =&gt; []、dict =&gt; {}、str = ‘aaa’ 是 <strong>Iterable</strong> 但不是 <strong>Iterator</strong></li>
+<li>非 <strong>Iterator</strong> 可以通过 <code>iter()</code> 函数获得一个该对象。</li>
+</ul>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">mycompany</div><div class="line">├─ __init__.py</div><div class="line">├─ abc.py</div><div class="line">└─ xyz.py</div></pre></td></tr></table></figure>
+<p>引入了包以后，只要顶层的包名不与别人冲突，那所有模块都不会与别人冲突。现在，abc.py 模块的名字就变成了 mycompany.abc，类似的，xyz.py 的模块名变成了 mycompany.xyz。</p>
+<p>每一个包目录下面都 <strong>必须有一个</strong> <code>__init__.py</code> 的文件，否则，Python 就把这个目录当成普通目录，而不是一个包。<code>__init.py__</code> 可以是空文件，也可以有 Python 代码，因为<code>__init.py__</code> 本身就是一个模块，而它的模块名就是 mycompany。</p>
+<p>类似的，可以有多级目录，组成多级层次的包结构。比如如下的目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">mycompany</div><div class="line"> ├─ web</div><div class="line"> │  ├─ __init__.py</div><div class="line"> │  ├─ utils.py</div><div class="line"> │  └─ www.py</div><div class="line"> ├─ __init__.py</div><div class="line"> ├─ abc.py</div><div class="line"> └─ xyz.py</div></pre></td></tr></table></figure>
+<p>文件 www.py 的模块名就是 mycompany.web.www，两个文件 utils.py 的模块名分别是 mycompany.utils 和 mycompany.web.utils。</p>
+<p>模块是一组 Python 代码的集合，可以使用其他模块，也可以被其他模块使用。</p>
+<ul>
+<li>创建自己的模块时，要注意：<ul>
+<li>模块名要遵循 Python 变量命名规范，不要使用中文、特殊字符；</li>
+<li>模块名不要和系统模块名冲突，最好先查看系统是否已存在该模块，检查方法是在 Python 交互环境执行 import abc，若成功则说明系统存在此模块。</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块模板"><a href="#模块模板" class="headerlink" title="模块模板"></a>模块模板</h3><figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python3  # 可以让这个hello.py文件直接在Unix/Linux/Mac上运行</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*- # 文件本身使用标准UTF-8编码；</span></div><div class="line"><span class="string">' a test module '</span> <span class="comment"># 任何模块代码的第一行字符串都被视为模块的文档注释；</span></div><div class="line">__author__ = <span class="string">'Michael Liao'</span> <span class="comment"># 把作者写进去，这样当你公开源代码后别人就可以瞻仰你的大名</span></div><div class="line"></div><div class="line"><span class="comment"># 以上就是Python模块的标准文件模板</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></div><div class="line">    args = sys.argv</div><div class="line">    <span class="keyword">if</span> len(args)==<span class="number">1</span>:</div><div class="line">        print(<span class="string">'Hello, world!'</span>)</div><div class="line">    <span class="keyword">elif</span> len(args)==<span class="number">2</span>:</div><div class="line">        print(<span class="string">'Hello, %s!'</span> % args[<span class="number">1</span>])</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">'Too many arguments!'</span>)</div><div class="line"><span class="comment"># 当我们在 命令行运行 hello 模块文件时，Python 解释器把一个特殊变量 __name__ 置为 __main__</span></div><div class="line"><span class="comment"># 也就是下面的这个 if 只有用命令行运行才会执行</span></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    test()</div></pre></td></tr></table></figure>
+<p><strong>作用域</strong></p>
+<ul>
+<li>类似<code>__xxx__</code>这样的变量是特殊变量，可以被直接引用，但是有特殊用途，我们自己的变量一般不要用这种变量名；</li>
+<li>类似<code>_xxx</code> 和 <code>__xxx__</code> 这样的函数或变量就是非公开的（private），不应该被直接引用</li>
+</ul>
+<p>private 函数或变量不应该被别人引用，那它们有什么用呢？请看例子：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_1</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hello, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_2</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hi, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(name) &gt; <span class="number">3</span>:</div><div class="line">        <span class="keyword">return</span> _private_1(name)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> _private_2(name)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>外部不需要引用的函数全部定义成 <code>private</code>，只有外部需要引用的函数才定义为 <code>public</code></p>
+</blockquote>
+<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><p>未完待续…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;#开头，注释&lt;/li&gt;
+&lt;li&gt;缩进的语句视为代码块&lt;/li&gt;
+&lt;li&gt;大小写敏感&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据类型和变量&quot;&gt;&lt;a href=&quot;#数据类型和变量&quot; class=&quot;headerlink&quot; title=&quot;数据类型和变量&quot;&gt;&lt;/a&gt;数据类型和变量&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;True 和 False 首字母大写&lt;/li&gt;
+&lt;li&gt;and、or 和 not&lt;/li&gt;
+&lt;li&gt;空值：None&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;字符串格式化&quot;&gt;&lt;a href=&quot;#字符串格式化&quot; class=&quot;headerlink&quot; title=&quot;字符串格式化%&quot;&gt;&lt;/a&gt;字符串格式化%&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;%d 整数&lt;/li&gt;
+&lt;li&gt;%f 浮点数&lt;/li&gt;
+&lt;li&gt;%s 字符串&lt;/li&gt;
+&lt;li&gt;%x 十六进制整数&lt;/li&gt;
+&lt;li&gt;补位&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="vim" scheme="http://www.baixiaojian.com/tags/vim/"/>
+    
+      <category term="基本操作" scheme="http://www.baixiaojian.com/tags/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux 笔记</title>
+    <link href="http://www.baixiaojian.com/linux/"/>
+    <id>http://www.baixiaojian.com/linux/</id>
+    <published>2018-09-29T03:52:04.000Z</published>
+    <updated>2018-10-04T16:35:45.807Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="系统结构目录"><a href="#系统结构目录" class="headerlink" title="系统结构目录"></a>系统结构目录</h2><table>
+<thead>
+<tr>
+<th>目录路径</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/usr：</td>
+<td>用户的很多应用程序和文件都放在此目录下。</td>
+</tr>
+<tr>
+<td>/usr/bin：</td>
+<td><strong>系统用户</strong> 使用的应用程序。</td>
+</tr>
+<tr>
+<td>/usr/sbin：</td>
+<td><strong>超级用户</strong> 使用的比较高级的管理程序和系统守护程序。</td>
+</tr>
+<tr>
+<td>/usr/src：</td>
+<td>内核源代码默认的放置目录。</td>
+</tr>
+<tr>
+<td>/home：</td>
+<td>用户的主目录，该目录名一般是以用户的账号命名的。</td>
+</tr>
+<tr>
+<td>/bin：</td>
+<td>Binary 的缩写, 存放着最经常使用的终端命令。</td>
+</tr>
+<tr>
+<td>/root：</td>
+<td>该目录为系统管理员，也称作 <strong>超级权限者</strong> 的用户主目录。</td>
+</tr>
+<tr>
+<td>/boot：</td>
+<td>启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</td>
+</tr>
+<tr>
+<td>/etc：</td>
+<td>存放所有的系统管理所需要的 <strong>配置文件</strong> 和子目录。</td>
+</tr>
+<tr>
+<td>/dev ：</td>
+<td>Device (设备)的缩写, 该目录下存放的是Linux的外部设备</td>
+</tr>
+<tr>
+<td>/proc：</td>
+<td>一个映射 <strong>系统内存</strong> 的虚拟目录，可以通过直接访问此目录获取系统信息。</td>
+</tr>
+<tr>
+<td>/sbin：</td>
+<td>存放 <strong>系统管理员</strong> 使用的系统管理程序。</td>
+</tr>
+<tr>
+<td>/tmp：</td>
+<td>存放一些临时文件的。</td>
+</tr>
+<tr>
+<td>/var：</td>
+<td>不断扩充或者 <strong>经常被修改</strong> 的文件会存放在此目录下，比如各种日志文件。</td>
+</tr>
+<tr>
+<td>/media：</td>
+<td>Linux 会把识别的设备挂载到这个目录下。</td>
+</tr>
+<tr>
+<td>/lost+found：</td>
+<td>当系统非法关机后，这里就存放了一些文件。</td>
+</tr>
+<tr>
+<td>/lib：</td>
+<td>存放系统最基本的动态连接共享库。几乎所有的应用程序都需要用到这些共享库。</td>
+</tr>
+<tr>
+<td>/mnt：</td>
+<td>该目录是为了让用户临时挂载其他文件系统的，可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</td>
+</tr>
+<tr>
+<td>/opt：</td>
+<td>这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</td>
+</tr>
+<tr>
+<td>/selinux：</td>
+<td>这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙。</td>
+</tr>
+<tr>
+<td>/srv：</td>
+<td>该目录存放一些服务启动之后需要提取的数据。</td>
+</tr>
+<tr>
+<td>/sys：</td>
+<td>该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="网卡与-IP-知识点"><a href="#网卡与-IP-知识点" class="headerlink" title="网卡与 IP 知识点"></a>网卡与 IP 知识点</h2><ul>
+<li><strong>网卡</strong> 是一个专门负责 <code>网络通讯</code> 的硬件设备</li>
+<li><strong>IP 地址</strong> 是设置在网卡上的 <code>地址信息</code>, 是保证电脑之间正常通讯的重要设置</li>
+<li><strong>127.0.0.1</strong> 被称为 <code>本地回环/环回地址</code>，一般用来测试本机网卡是否正常</li>
+<li><strong>ping</strong> 一般用于检测当前计算机到目标计算机之间的网络 <code>是否通畅</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 可以这样类比: --&gt;</span></div><div class="line">电脑   =&gt; 电话</div><div class="line">网卡   =&gt; SIM 卡</div><div class="line">IP    =&gt; 电话号码</div><div class="line">ping  =&gt; 电话能不能打通</div></pre></td></tr></table></figure>
+<blockquote>
+<p>tips：一台计算机中有可能会有一个 <strong>物理网卡</strong> 和 <strong>多个虚拟网卡</strong>，在 Linux 中物理网卡的名字通常以 <code>ensXX</code> 表示</p>
+</blockquote>
+<h2 id="SSH-基础"><a href="#SSH-基础" class="headerlink" title="SSH 基础"></a><code>SSH</code> 基础</h2><p>在 Linux 中 SSH 是 <strong>非常常用</strong> 的工具，通过 <strong>SSH 客户端</strong> 我们可以连接到运行了 <strong>SSH 服务器</strong> 的远程机器上</p>
+<ul>
+<li><strong>SSH 客户端</strong>是一种使用 <code>Secure Shell（SSH）</code> 协议连接到远程计算机的软件程序</li>
+<li><code>SSH</code> 是目前较可靠，<strong>专为远程登录会话和其他网络服务</strong> 提供安全性的协议<ul>
+<li>利用 <code>SSH 协议</code> 可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
+<li>通过 <code>SSH 协议</code> 可以对所有传输的数据进行加密，也能够防止 DNS 欺骗和 IP 欺骗</li>
+</ul>
+</li>
+<li><code>SSH</code> 的另一项优点是传输的数据可以是经过压缩的，所以可以加快传输的速度</li>
+</ul>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><ul>
+<li>由一串 <strong>用点分隔</strong> 的名字组成，例如：<code>www.itcast.cn</code></li>
+<li>是 <strong>IP 地址</strong> 的别名，方便用户记忆</li>
+</ul>
+<h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><ul>
+<li><strong>IP 地址</strong>：通过 <strong>IP 地址</strong> 找到网络上的 <strong>计算机</strong></li>
+<li><p><strong>端口号</strong>：通过 <strong>端口号</strong> 可以找到 <strong>计算机上运行的应用程序</strong></p>
+<ul>
+<li><strong>SSH 服务器</strong> 的默认端口号是 <code>22</code>，如果是默认端口号，在连接的时候，可以省略</li>
+</ul>
+</li>
+<li><p>常见服务端口号列表：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH 服务器</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Web 服务器</td>
+<td>80</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>443</td>
+</tr>
+<tr>
+<td>FTP 服务器</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+<h3 id="客户端的简单使用"><a href="#客户端的简单使用" class="headerlink" title="客户端的简单使用"></a>客户端的简单使用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">ssh [-p port] user@remote</div></pre></td></tr></table></figure>
+<ul>
+<li><code>user</code> 是在远程机器上的用户名，如果不指定的话默认为当前用户</li>
+<li><code>remote</code> 是远程机器的地址，可以是 <strong>IP</strong>／<strong>域名</strong>，或者是 <strong>后面会提到的别名</strong></li>
+<li><code>port</code> 是 <strong>SSH Server 监听的端口</strong>，如果不指定，就为默认值 <code>22</code></li>
+</ul>
+<blockquote>
+<ul>
+<li>在工作中，SSH 服务器的端口号很有可能<strong>不是 22</strong>，如果遇到这种情况就需要使用 <code>-p</code> 选项，指定正确的端口号，否则无法正常连接到服务器</li>
+</ul>
+</blockquote>
+<h3 id="SSH-高级"><a href="#SSH-高级" class="headerlink" title="SSH 高级"></a>SSH 高级</h3><ul>
+<li>免密码登录</li>
+<li>配置别名</li>
+</ul>
+<blockquote>
+<p>提示：有关 SSH 配置信息都保存在用户家目录下的 <code>.ssh</code> 目录下</p>
+</blockquote>
+<h3 id="免密码登录"><a href="#免密码登录" class="headerlink" title="免密码登录"></a>免密码登录</h3><p><strong>步骤</strong></p>
+<ul>
+<li>配置公钥<ul>
+<li>执行 <code>ssh-keygen</code> 即可生成 SSH 钥匙，一路回车即可</li>
+</ul>
+</li>
+<li>上传公钥到服务器<ul>
+<li>执行 <code>ssh-copy-id -p port user@remote</code>，可以让远程服务器记住我们的公钥</li>
+</ul>
+</li>
+</ul>
+<h4 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h4><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvv3sko7yxj30nx0dkq46.jpg" alt=""></p>
+<h3 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h3><p>每次都输入 <code>ssh -p port user@remote</code>，时间久了会觉得很麻烦，特别是当 <code>user</code>, <code>remote</code> 和 <code>port</code> 都得输入，而且还不好记忆</p>
+<p>而 <strong>配置别名</strong> 可以让我们进一步偷懒，譬如用：<code>ssh mac</code> 来替代上面这么一长串，那么就在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Host mac</div><div class="line">    HostName ip地址</div><div class="line">    User itheima</div><div class="line">    Port 22</div></pre></td></tr></table></figure>
+<p><strong>保存之后，即可用 <code>ssh mac</code> 实现远程登录了，<code>scp</code> 同样可以使用</strong></p>
+<h2 id="SCP-基础"><a href="#SCP-基础" class="headerlink" title="SCP 基础"></a>SCP 基础</h2><ul>
+<li>scp 就是 <code>secure copy</code>，是一个在 Linux 下用来进行 <strong>远程拷贝文件</strong> 的命令</li>
+<li>它的<strong>地址格式与 ssh 基本相同</strong>，<strong>需要注意的是</strong>，在指定端口时用的是大写的 <code>-P</code> 而不是小写的</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fvv3rr5mnaj30nx06bdg1.jpg" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 把本地当前目录下的 01.py 文件 复制到 远程 家目录下的 Desktop/01.py</span></div><div class="line"><span class="comment"># 注意：`:` 后面的路径如果不是绝对路径，则以用户的家目录作为参照路径</span></div><div class="line">scp -P port 01.py user@remote:Desktop/01.py</div><div class="line"></div><div class="line"><span class="comment"># 把远程 家目录下的 Desktop/01.py 文件 复制到 本地当前目录下的 01.py</span></div><div class="line">scp -P port user@remote:Desktop/01.py 01.py</div><div class="line"></div><div class="line"><span class="comment"># 加上 -r 选项可以传送文件夹</span></div><div class="line"><span class="comment"># 把当前目录下的 demo 文件夹 复制到 远程 家目录下的 Desktop</span></div><div class="line">scp -r demo user@remote:Desktop</div><div class="line"></div><div class="line"><span class="comment"># 把远程 家目录下的 Desktop 复制到 当前目录下的 demo 文件夹</span></div><div class="line">scp -r user@remote:Desktop demo</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件，则 scp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>若远程 SSH 服务器的端口不是 22，需要使用大写字母 -P 选项指定端口</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li><code>scp</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+</ul>
+</blockquote>
+<h2 id="用户权限相关命令"><a href="#用户权限相关命令" class="headerlink" title="用户权限相关命令"></a>用户权限相关命令</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><strong>用户</strong> 是 Linux 系统工作中重要的一环，用户管理包括 <strong>用户</strong> 与 <strong>组</strong> 管理</li>
+<li>在 Linux 系统中，不论是由本机或是远程登录系统，每个系统都<strong>必须拥有一个账号</strong>，并且<strong>对于不同的系统资源拥有不同的使用权限</strong></li>
+<li>在 Linux 中，可以指定 <strong>每一个用户</strong> 针对 <strong>不同的文件或者目录</strong> 的 <strong>不同权限</strong></li>
+<li>对 <strong>文件／目录</strong> 的权限包括：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">英文</th>
+<th style="text-align:center">缩写</th>
+<th style="text-align:center">数字代号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">01</td>
+<td style="text-align:center">读</td>
+<td style="text-align:center">read</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">02</td>
+<td style="text-align:center">写</td>
+<td style="text-align:center">write</td>
+<td style="text-align:center">w</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">03</td>
+<td style="text-align:center">执行</td>
+<td style="text-align:center">excute</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="组"><a href="#组" class="headerlink" title="组"></a>组</h3><ul>
+<li>为了方便用户管理，提出了 <strong>组</strong> 的概念，如下图所示</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg" alt="001_组示意图"></p>
+<ul>
+<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
+</ul>
+<h3 id="ls-l-扩展"><a href="#ls-l-扩展" class="headerlink" title="ls -l 扩展"></a>ls -l 扩展</h3><ul>
+<li><p><code>ls -l</code> 可以查看文件夹下文件的详细信息，从左到右依次是：</p>
+<ul>
+<li><strong>权限</strong>，第 1 个字符如果是 <code>d</code> 表示目录</li>
+<li><strong>硬链接数</strong>，通俗地讲，就是有多少种方式，可以访问到当前目录／文件</li>
+<li><strong>拥有者</strong>，家目录下 文件／目录 的拥有者通常都是当前用户</li>
+<li><strong>组</strong>，在 Linux 中，很多时候，会出现组名和用户名相同的情况，后续会讲</li>
+<li><strong>大小</strong></li>
+<li><strong>时间</strong></li>
+<li><strong>名称</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3wr254lj30hq041t8t.jpg" alt="002_权限示意图"></p>
+<h3 id="chmod-简单使用（重要）"><a href="#chmod-简单使用（重要）" class="headerlink" title="chmod 简单使用（重要）"></a><code>chmod</code> 简单使用（重要）</h3><ul>
+<li><code>chmod</code> 可以修改 <strong>用户／组</strong> 对 <strong>文件／目录</strong> 的权限</li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">chmod +/-rwx 文件名|目录名</div></pre></td></tr></table></figure>
+<blockquote>
+<p>提示：以上方式会一次性修改 <code>拥有者</code> / <code>组</code> 权限，有关 <code>chmod</code> 的高级用法，后续会讲</p>
+</blockquote>
+<h3 id="超级用户"><a href="#超级用户" class="headerlink" title="超级用户"></a>超级用户</h3><ul>
+<li>Linux 系统中的 <code>root</code> 账号通常 <strong>用于系统的维护和管理</strong>，对操作系统的所有资源 <strong>具有所有访问权限</strong></li>
+<li>在大多数版本的 Linux 中，都不推荐 <strong>直接使用 root 账号登录系统</strong></li>
+<li>在 Linux 安装的过程中，系统会自动创建一个用户账号，而这个默认的用户就称为“标准用户”</li>
+</ul>
+<h4 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h4><ul>
+<li><code>su</code> 是 <code>substitute user</code> 的缩写，表示 <strong>使用另一个用户的身份</strong></li>
+<li><code>sudo</code> 命令用来以其他身份来执行命令，预设的身份为 <code>root</code></li>
+<li>用户使用 <code>sudo</code> 时，必须先输入密码，之后有 <strong>5 分钟的有效期限</strong>，超过期限则必须重新输入密码</li>
+</ul>
+<blockquote>
+<p>若其未经授权的用户企图使用 <code>sudo</code>，则会发出警告邮件给管理员</p>
+</blockquote>
+<h2 id="组管理-终端命令"><a href="#组管理-终端命令" class="headerlink" title="组管理 终端命令"></a><strong>组管理</strong> 终端命令</h2><blockquote>
+<p>提示：<strong>创建组</strong> / <strong>删除组</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupadd 组名</td>
+<td>添加组</td>
+</tr>
+<tr>
+<td>groupdel 组名</td>
+<td>删除组</td>
+</tr>
+<tr>
+<td>cat /etc/group</td>
+<td>确认组信息</td>
+</tr>
+<tr>
+<td>chgrp -R 组名 文件/目录名</td>
+<td>递归修改文件/目录的所属组</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li>组信息保存在 <code>/etc/group</code> 文件中</li>
+<li><code>/etc</code> 目录是专门用来保存 <strong>系统配置信息</strong> 的目录</li>
+</ul>
+</blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3vhlw8xj30a5064gll.jpg" alt="001_组示意图"></p>
+<ul>
+<li>在实际应用中，可以预先针对 <strong>组</strong> 设置好权限，然后 <strong>将不同的用户添加到对应的组中</strong>，从而<strong>不用依次为每一个用户设置权限</strong></li>
+</ul>
+<h3 id="演练目标"><a href="#演练目标" class="headerlink" title="演练目标"></a>演练目标</h3><ol>
+<li>在 <code>python</code> 用户的桌面文件夹下创建 <code>Python学习</code> 目录</li>
+<li>新建 <code>dev</code> 组</li>
+<li>将 <code>Python学习</code> 目录的组修改为 <code>dev</code></li>
+</ol>
+<h3 id="用户管理-终端命令"><a href="#用户管理-终端命令" class="headerlink" title="用户管理 终端命令"></a><strong>用户管理</strong> 终端命令</h3><blockquote>
+<p>提示：<strong>创建用户</strong> / <strong>删除用户</strong> / <strong>修改其他用户密码</strong> 的终端命令都需要通过 <code>sudo</code> 执行</p>
+</blockquote>
+<h3 id="创建用户／设置密码／删除用户"><a href="#创建用户／设置密码／删除用户" class="headerlink" title="创建用户／设置密码／删除用户"></a>创建用户／设置密码／删除用户</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>useradd -m -g 组 新建用户名</td>
+<td>添加新用户</td>
+<td><ul><li>-m 自动建立用户家目录</li><li>-g 指定用户所在的组，否则会建立一个和同名的组</li></ul></td>
+</tr>
+<tr>
+<td>passwd 用户名</td>
+<td>设置用户密码</td>
+<td>如果是普通用户，直接用 passwd 可以修改自己的账户密码</td>
+</tr>
+<tr>
+<td>userdel -r 用户名</td>
+<td>删除用户</td>
+<td>-r 选项会自动删除用户家目录</td>
+</tr>
+<tr>
+<td>cat /etc/passwd &#124; grep 用户名</td>
+<td>确认用户信息</td>
+<td>新建用户后，用户信息会保存在 /etc/passwd 文件中</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li>创建用户时，如果忘记添加 <code>-m</code> 选项指定新用户的家目录 —— 最简单的方法就是<strong>删除用户，重新创建</strong></li>
+<li>创建用户时，默认会创建一个和<strong>用户名</strong>同名的<strong>组名</strong></li>
+<li>用户信息保存在 <code>/etc/passwd</code> 文件中</li>
+</ul>
+</blockquote>
+<h3 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>id [用户名]</td>
+<td>查看用户 UID 和 GID 信息</td>
+</tr>
+<tr>
+<td>02</td>
+<td>who</td>
+<td>查看当前所有登录的用户列表</td>
+</tr>
+<tr>
+<td>03</td>
+<td>whoami</td>
+<td>查看当前登录用户的账户名</td>
+</tr>
+</tbody>
+</table>
+<h4 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h4><p><code>/etc/passwd</code> 文件存放的是用户的信息，由 6 个分号组成的 7 个信息，分别是</p>
+<ol>
+<li>用户名</li>
+<li>密码（x，表示加密的密码）</li>
+<li>UID（用户标识）</li>
+<li>GID（组标识）</li>
+<li>用户全名或本地帐号</li>
+<li>家目录</li>
+<li>登录使用的 Shell，就是登录之后，使用的终端命令，<code>ubuntu</code> 默认是 <code>dash</code></li>
+</ol>
+<h4 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h4><ul>
+<li><code>usermod</code> 可以用来设置 <strong>用户</strong> 的 <strong>主组</strong> ／ <strong>附加组</strong> 和 <strong>登录 Shell</strong>，命令格式如下：</li>
+<li><strong>主组</strong>：通常在新建用户时指定，在 <code>etc/passwd</code> 的第 4 列 <strong>GID 对应的组</strong></li>
+<li><strong>附加组</strong>：在 <code>etc/group</code> 中最后一列表示该组的用户列表，用于指定 <strong>用户的附加权限</strong></li>
+</ul>
+<blockquote>
+<p>提示：设置了用户的附加组之后，需要重新登录才能生效！</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 修改用户的主组（passwd 中的 GID）</span></div><div class="line">usermod -g 组 用户名</div><div class="line"></div><div class="line"><span class="comment"># 修改用户的附加组</span></div><div class="line">usermod -G 组 用户名</div><div class="line"></div><div class="line"><span class="comment"># 修改用户登录 Shell</span></div><div class="line">usermod -s /bin/bash 用户名</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：默认使用 <code>useradd</code> 添加的用户是没有权限使用 <code>sudo</code> 以 <code>root</code> 身份执行命令的，可以使用以下命令，将用户添加到 <code>sudo</code> 附加组中</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">usermod -G sudo 用户名</div></pre></td></tr></table></figure>
+<h4 id="which（重要）"><a href="#which（重要）" class="headerlink" title="which（重要）"></a>which（重要）</h4><blockquote>
+<p>提示</p>
+<ul>
+<li><code>/etc/passwd</code> 是用于保存用户信息的文件</li>
+<li><code>/usr/bin/passwd</code> 是用于修改用户密码的程序</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>which</code> 命令可以查看执行命令所在位置，例如：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">which</span> ls</div><div class="line"></div><div class="line"><span class="comment"># 输出</span></div><div class="line"><span class="comment"># /bin/ls</span></div><div class="line"></div><div class="line"><span class="built_in">which</span> useradd</div><div class="line"></div><div class="line"><span class="comment"># 输出</span></div><div class="line"><span class="comment"># /usr/sbin/useradd</span></div></pre></td></tr></table></figure>
+<h5 id="bin-和-sbin"><a href="#bin-和-sbin" class="headerlink" title="bin 和 sbin"></a><code>bin</code> 和 <code>sbin</code></h5><ul>
+<li>在 <code>Linux</code> 中，绝大多数可执行文件都是保存在 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code></li>
+<li><code>/bin</code>（<code>binary</code>）是二进制执行文件目录，主要用于具体应用</li>
+<li><code>/sbin</code>（<code>system binary</code>）是系统管理员专用的二进制代码存放目录，主要用于系统管理</li>
+<li><code>/usr/bin</code>（<code>user commands for applications</code>）后期安装的一些软件</li>
+<li><code>/usr/sbin</code>（<code>super user commands for applications</code>）超级用户的一些管理程序</li>
+</ul>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li><code>cd</code> 这个终端命令是内置在系统内核中的，没有独立的文件，因此用 <code>which</code> 无法找到 <code>cd</code> 命令的位置</li>
+</ul>
+</blockquote>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>su - 用户名</td>
+<td>切换用户，并且切换目录</td>
+<td>- 可以切换到用户家目录，否则保持位置不变</td>
+</tr>
+<tr>
+<td>02</td>
+<td>exit</td>
+<td>退出当前登录账户</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>su</code> 不接用户名，可以切换到 <code>root</code>，但是不推荐使用，因为不安全</li>
+<li><code>exit</code> 示意图如下：</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvv3xt2jqfj30dy076q33.jpg" alt="003_su和exit示意图"></p>
+<h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chown</td>
+<td>修改拥有者</td>
+</tr>
+<tr>
+<td>chgrp</td>
+<td>修改组</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>修改权限</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 修改文件|目录的拥有者</span></div><div class="line">chown 用户名 文件名|目录名</div><div class="line"></div><div class="line"><span class="comment"># 递归修改文件|目录的组</span></div><div class="line">chgrp -R 组名 文件名|目录名</div><div class="line"></div><div class="line"><span class="comment"># 递归修改文件权限</span></div><div class="line">chmod -R 755 文件名|目录名</div></pre></td></tr></table></figure>
+<ul>
+<li><code>chmod</code> 在设置权限时，可以简单地使用三个数字分别对应 <strong>拥有者</strong> ／ <strong>组</strong> 和 <strong>其他</strong> 用户的权限</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 直接修改文件|目录的 读|写|执行 权限，但是不能精确到 拥有者|组|其他</span></div><div class="line">chmod +/-rwx 文件名|目录名</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvv3y1jzq8j30b60etdg5.jpg" alt="004_文件权限示意图"></p>
+<ul>
+<li>常见数字组合有（<code>u</code>表示用户／<code>g</code>表示组／<code>o</code>表示其他）：<ul>
+<li><code>777</code> ===&gt; <code>u=rwx,g=rwx,o=rwx</code></li>
+<li><code>755</code> ===&gt; <code>u=rwx,g=rx,o=rx</code></li>
+<li><code>644</code> ===&gt; <code>u=rw,g=r,o=r</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="chmod-演练目标"><a href="#chmod-演练目标" class="headerlink" title="chmod 演练目标"></a><code>chmod</code> 演练目标</h4><ol>
+<li>将 <code>01.py</code> 的权限修改为 <code>u=rwx,g=rx,o=r</code></li>
+<li>将 <code>123.txt</code> 的权限修改为 <code>u=rw,g=r,o=-</code></li>
+<li>将 <code>test</code> 目录以及目录下的 <strong>所有</strong> 文件权限修改为 <code>u=rwx,g=rwx,o=rx</code></li>
+</ol>
+<h2 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h2><h3 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>查看系统时间</td>
+</tr>
+<tr>
+<td>cal</td>
+<td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td>
+</tr>
+</tbody>
+</table>
+<h3 id="磁盘信息"><a href="#磁盘信息" class="headerlink" title="磁盘信息"></a>磁盘信息</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>df -h</td>
+<td><code>disk free</code> 显示磁盘剩余空间</td>
+</tr>
+<tr>
+<td>du -h [目录名]</td>
+<td><code>disk usage</code> 显示目录下的文件大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>以人性化的方式显示文件大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="进程信息"><a href="#进程信息" class="headerlink" title="进程信息"></a>进程信息</h3><ul>
+<li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ps aux</td>
+<td><code>process status</code> 查看进程的详细状况</td>
+</tr>
+<tr>
+<td>top</td>
+<td>动态显示运行中的进程并且排序</td>
+</tr>
+<tr>
+<td>kill [-9] 进程代号</td>
+<td>终止指定代号的进程，<code>-9</code> 表示强行终止</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p>
+</blockquote>
+<ul>
+<li><code>ps</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>显示终端上的所有进程，包括其他用户的进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示进程的详细状态</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示没有控制终端的进程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ul>
+<li>要退出 <code>top</code> 可以直接输入 <code>q</code></li>
+</ul>
+</blockquote>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><h3 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h3><ul>
+<li><code>find</code> 命令功能非常强大，通常用来在 <strong>特定的目录下</strong> <strong>搜索</strong> 符合条件的文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>find [路径] -name “*.py”</td>
+<td>查找指定路径下扩展名是 <code>.py</code> 的文件，包括子目录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>如果省略路径，表示在当前文件夹下查找</li>
+<li>之前学习的通配符，在使用 <code>find</code> 命令时同时可用</li>
+<li>有关 <code>find</code> 的高级使用，在就业班会讲</li>
+</ul>
+<h4 id="演练目标-1"><a href="#演练目标-1" class="headerlink" title="演练目标"></a>演练目标</h4><ul>
+<li><ol>
+<li>搜索桌面目录下，文件名包含 <code>1</code> 的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"*1*"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>搜索桌面目录下，所有以 <code>.txt</code> 为扩展名的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"*.txt"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>搜索桌面目录下，以数字 <code>1</code> 开头的文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">find -name <span class="string">"1*"</span></div></pre></td></tr></table></figure>
+<h3 id="02-软链接"><a href="#02-软链接" class="headerlink" title="02. 软链接"></a>02. 软链接</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>ln -s 被链接的源文件 链接文件</td>
+<td>建立文件的软链接，用通俗的方式讲<strong>类似于</strong> Windows 下的<strong>快捷方式</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>注意：</li>
+<li><ol>
+<li>没有 <code>-s</code> 选项建立的是一个 <strong>硬链接文件</strong><ul>
+<li>两个文件占用相同大小的硬盘空间，<strong>工作中几乎不会建立文件的硬链接</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li><strong>源文件要使用绝对路径</strong>，不能使用相对路径，这样可以方便移动链接文件后，仍然能够正常使用</li>
+</ol>
+</li>
+</ul>
+<h3 id="演练目标-2"><a href="#演练目标-2" class="headerlink" title="演练目标"></a>演练目标</h3><ul>
+<li><ol>
+<li>将桌面目录下的 <code>01.py</code> <strong>移动</strong>到 <code>demo/b/c</code> 目录下</li>
+</ol>
+</li>
+<li><ol>
+<li>在桌面目录下新建 <code>01.py</code> 的 <strong>软链接</strong> <code>FirstPython</code><ul>
+<li>分别使用 <strong>相对路径</strong> 和 <strong>绝对路径</strong> 建立 <code>FirstPython</code> 的软链接</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>将 <code>FirstPython</code> <strong>移动</strong>到 <code>demo</code> 目录下，对比使用 <strong>相对路径</strong> 和 <strong>绝对路径</strong> 的区别</li>
+</ol>
+</li>
+</ul>
+<h3 id="硬链接简介（知道）"><a href="#硬链接简介（知道）" class="headerlink" title="硬链接简介（知道）"></a>硬链接简介（知道）</h3><ul>
+<li>在使用 <code>ln</code> 创建链接时，如果没有 <code>-s</code> 选项，会创建一个 <strong>硬链接</strong>，而不是软链接</li>
+</ul>
+<h4 id="硬链接演练"><a href="#硬链接演练" class="headerlink" title="硬链接演练"></a>硬链接演练</h4><ul>
+<li><ol>
+<li>在 <code>~/Desktop/demo</code> 目录下建立 <code>~/Desktop/demo/b/c/01.py</code> 的硬链接 <code>01_hard</code></li>
+</ol>
+</li>
+<li><ol>
+<li>使用 <code>ls -l</code> 查看文件的<strong>硬链接数</strong>（硬链接——有多少种方式可以访问文件或者目录）</li>
+</ol>
+</li>
+<li><ol>
+<li>删除 <code>~/Desktop/demo/b/c/01.py</code>，并且使用 <code>tree</code> 来确认 <code>demo</code> 目录下的三个链接文件</li>
+</ol>
+</li>
+</ul>
+<h4 id="文件软硬链接的示意图"><a href="#文件软硬链接的示意图" class="headerlink" title="文件软硬链接的示意图"></a>文件软硬链接的示意图</h4><p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvv41w2wvtj30vl0agwf4.jpg" alt="001_文件软硬链接示意图"></p>
+<blockquote>
+<p>在 Linux 中，<strong>文件名</strong> 和 <strong>文件的数据</strong> 是分开存储的</p>
+</blockquote>
+<ul>
+<li>提示：<ul>
+<li>在 Linux 中，只有文件的 <code>硬链接数 == 0</code> 才会被删除</li>
+<li>使用 <code>ls -l</code> 可以查看一个文件的硬链接的数量</li>
+<li>在日常工作中，几乎不会建立文件的硬链接，知道即可</li>
+</ul>
+</li>
+</ul>
+<h2 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h2><ul>
+<li><strong>打包压缩</strong> 是日常工作中备份文件的一种方式</li>
+<li>在不同操作系统中，常用的打包压缩方式是不同的<ul>
+<li><code>Windows</code> 常用 <code>rar</code></li>
+<li><code>Mac</code> 常用 <code>zip</code></li>
+<li><code>Linux</code> 常用 <code>tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="打包-／-解包"><a href="#打包-／-解包" class="headerlink" title="打包 ／ 解包"></a>打包 ／ 解包</h3><ul>
+<li><code>tar</code> 是 Linux 中最常用的 <strong>备份</strong>工具，此命令可以 <strong>把一系列文件</strong> 打包到 <strong>一个大文件中</strong>，也可以把一个 <strong>打包的大文件恢复成一系列文件</strong></li>
+<li><code>tar</code> 的命令格式如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 打包文件</span></div><div class="line">tar -cvf 打包文件.tar 被打包的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解包文件</span></div><div class="line">tar -xvf 打包文件.tar</div></pre></td></tr></table></figure>
+<ul>
+<li><code>tar</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c</td>
+<td>生成档案文件，创建打包文件</td>
+</tr>
+<tr>
+<td>x</td>
+<td>解开档案文件</td>
+</tr>
+<tr>
+<td>v</td>
+<td>列出归档解档的详细过程，显示进度</td>
+</tr>
+<tr>
+<td>f</td>
+<td>指定档案文件名称，f 后面一定是 .tar 文件，所以必须放选项最后</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：<code>f</code> 选项必须放在最后，其他选项顺序可以随意</p>
+</blockquote>
+<h4 id="打包解包演练"><a href="#打包解包演练" class="headerlink" title="打包解包演练"></a>打包解包演练</h4><ol>
+<li>删除桌面下的所有内容</li>
+<li>在桌面下新建三个空白文件 <code>01.py</code>、<code>02.py</code>、<code>03.py</code></li>
+<li>将这三个文件打一个 <code>py.tar</code> 的包</li>
+<li>新建 <code>tar</code> 目录，并且将 <code>py.tar</code> 移动到 <code>tar</code> 目录下</li>
+<li>解包 <code>py.tar</code></li>
+</ol>
+<h3 id="压缩／解压缩"><a href="#压缩／解压缩" class="headerlink" title="压缩／解压缩"></a>压缩／解压缩</h3><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a><code>gzip</code></h4><ul>
+<li><code>tar</code> 与 <code>gzip</code> 命令结合可以使用实现文件 <strong>打包和压缩</strong><ul>
+<li><code>tar</code> 只负责打包文件，但不压缩</li>
+<li>用 <code>gzip</code> 压缩 <code>tar</code> 打包后的文件，其扩展名一般用 <code>xxx.tar.gz</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在 <code>Linux</code> 中，最常见的压缩文件格式就是 <code>xxx.tar.gz</code></p>
+</blockquote>
+<ul>
+<li><p>在 <code>tar</code> 命令中有一个选项 <strong>-z</strong> 可以调用 <code>gzip</code>，从而可以方便的实现压缩和解压缩的功能</p>
+</li>
+<li><p>命令格式如下：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 压缩文件</span></div><div class="line">tar -zcvf 打包文件.tar.gz 被压缩的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解压缩文件</span></div><div class="line">tar -zxvf 打包文件.tar.gz</div><div class="line"></div><div class="line"><span class="comment"># 解压缩到指定路径</span></div><div class="line">tar -zxvf 打包文件.tar.gz -C 目标路径</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-C</td>
+<td>解压缩到指定目录，注意：要解压缩的目录必须存在</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bzip2-two"><a href="#bzip2-two" class="headerlink" title="bzip2(two)"></a><code>bzip2(two)</code></h4><ul>
+<li><p><code>tar</code> 与 <code>bzip2</code> 命令结合可以使用实现文件 <strong>打包和压缩</strong>（用法和 <code>gzip</code> 一样）</p>
+<ul>
+<li><code>tar</code> 只负责打包文件，但不压缩，</li>
+<li>用 <code>bzip2</code> 压缩 <code>tar</code> 打包后的文件，其扩展名一般用 <code>xxx.tar.bz2</code></li>
+</ul>
+</li>
+<li><p>在 <code>tar</code> 命令中有一个选项 <strong>-j</strong> 可以调用 <code>bzip2</code>，从而可以方便的实现压缩和解压缩的功能</p>
+</li>
+<li><p>命令格式如下：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 压缩文件</span></div><div class="line">tar -jcvf 打包文件.tar.bz2 被压缩的文件／路径...</div><div class="line"></div><div class="line"><span class="comment"># 解压缩文件</span></div><div class="line">tar -jxvf 打包文件.tar.bz2</div></pre></td></tr></table></figure>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h2 id="通过-apt-安装／卸载软件"><a href="#通过-apt-安装／卸载软件" class="headerlink" title="通过 apt 安装／卸载软件"></a>通过 apt 安装／卸载软件</h2><ul>
+<li>apt 是 <code>Advanced Packaging Tool</code>，是 Linux 下的一款安装包管理工具</li>
+<li>可以在终端中方便的 <strong>安装</strong>／<strong>卸载</strong>／<strong>更新软件包</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 1. 安装软件</span></div><div class="line">$ sudo apt install 软件包</div><div class="line"></div><div class="line"><span class="comment"># 2. 卸载软件</span></div><div class="line">$ sudo apt remove 软件名</div><div class="line"></div><div class="line"><span class="comment"># 3. 更新已安装的包</span></div><div class="line">$ sudo apt upgrade</div></pre></td></tr></table></figure>
+<h3 id="安装演练"><a href="#安装演练" class="headerlink" title="安装演练"></a>安装演练</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 一个小火车提示</span></div><div class="line">$ sudo apt install sl</div><div class="line"></div><div class="line"><span class="comment"># 一个比较漂亮的查看当前进程排名的软件</span></div><div class="line">$ sudo apt install htop</div></pre></td></tr></table></figure>
+<p>压缩解压 tar<br>如果要在服务器之间发送大量数据，肯定少不了压缩和解压这两步，但是 tar 这个命令的参数之多，让我很绝望，于是我发明了一个简单的记忆方法。</p>
+<p>使用 tar 命令只要记得参数是『必选+自选+f』即可，我们先来看看『必选！五选一』:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-c 意为 create，表示创建压缩包</div><div class="line">-x 意为 extract，表示解压</div><div class="line">-t 表示查看内容</div><div class="line">-r 给压缩包追加文件</div><div class="line">-u 意为 update，更新压缩包中的文件</div></pre></td></tr></table></figure></p>
+<p>注意了，上面是一定要五选一的，不能一个都不选，也不能同时选俩。但是自选的部分就可以按照需要挑选了，比如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">-z 使用 gzip 属性</div><div class="line">-j 使用 bz2 属性</div><div class="line">-Z 使用 compress 属性</div><div class="line">-v 意为 verbose，显示详细的操作过程</div><div class="line">-O 将文件输出到标准输出</div></pre></td></tr></table></figure>
+<p>然后最后一个一定要是 f 后面跟压缩包名（无论是要解压还是要压缩，都是指压缩包的名字）。接下来我们看看具体实例，就很容易理解具体的用法了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 假设我们有很多 .md 文件需要打包，那么可以使用</div><div class="line">tar -cf posts.tar *.md # c 是创建压缩包，也就是压缩，然后是 f，给出压缩包名，最后是要压缩的文件</div><div class="line"># 然后我们发现还有一些 .txt 文件也需要打包进去，那么可以使用</div><div class="line">tar -rf posts.tar *.txt # r 是追加文件</div><div class="line"># 然后我们发现 hello.md 弄错了，修正后需要更新到压缩包中，可以使用</div><div class="line">tar -uf post.tar hello.md # u 是更新</div><div class="line"># 压缩好了，我们来看看压缩包的内容，可以使用</div><div class="line">tar -tf posts.tar # t 是列出文件内容</div><div class="line"># 把压缩包发送到其他位置之后，需要解压，可以使用</div><div class="line">tar -xf posts.tar # x 是解压</div><div class="line">加入自选参数后的用法（要不要加 v 可以看个人喜好）</div></pre></td></tr></table></figure>
+<h2 id="tar-gz-相关"><a href="#tar-gz-相关" class="headerlink" title="tar.gz 相关"></a>tar.gz 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -czf posts.tar.gz *.md # 压缩</div><div class="line">tar -xzf posts.tar.gz # 解压</div></pre></td></tr></table></figure>
+<h2 id="tar-bz2-相关"><a href="#tar-bz2-相关" class="headerlink" title="tar.bz2 相关"></a>tar.bz2 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -cjf posts.tar.bz2 *.md # 压缩</div><div class="line">tar -xjf posts.tar.bz2 # 解压</div></pre></td></tr></table></figure>
+<h2 id="tar-Z-相关"><a href="#tar-Z-相关" class="headerlink" title="tar.Z 相关"></a>tar.Z 相关</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">tar -cZf posts.tar.Z *.md # 压缩</div><div class="line">tar -xZf posts.tar.Z # 解压</div></pre></td></tr></table></figure>
+<p>总结一波，遇到不同类型的文件，请用不同的套路来应对：</p>
+<ul>
+<li>.tar -&gt; tar -xf</li>
+<li>.tar.gz -&gt; tar -xzf</li>
+<li>.tar.bz2 -&gt; tar -xjf</li>
+<li>.tar.Z -&gt; tar -xZf</li>
+<li>.gz -&gt; gzip -d</li>
+<li>.rar -&gt; unrar e</li>
+<li>.zip -&gt; unzip</li>
+</ul>
+<p>空间占用 du<br>很多时候磁盘被写满了是各种奇怪错误的源头，所以如何快速找到问题所在就很重要了，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 显示当前文件下 Top 10 空间占用的文件/目录，</div><div class="line"># s 表示不显示每个子目录或文件的大小</div><div class="line"># h 表示用更加自然的方式显示（比如 K/M/G 这样）</div><div class="line">du -sh * | sort -nr | head</div></pre></td></tr></table></figure>
+<p>系统状态 top<br>了解系统状态一般少不了 top 命令，虽然基本上不需要做任何操作，但是还是有一些可以自定义的内容的，比如<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 查看某用户的进程</div><div class="line">top -u wdxtub</div><div class="line"># 进入系统状态显示后，具体值代表的意思是</div><div class="line"># PR    进程优先级，越小优先级越高</div><div class="line"># VIRT  占用的虚拟内存</div><div class="line"># RES   占用的物理内存</div><div class="line"># SHR   占用的共享内存</div><div class="line"># S     进程状态（S - 休眠，R - 正在运行，Z - 僵死状态，N - 优先级为负数）</div><div class="line"># TIME+ 进程启动后占用的总 CPU 时间</div><div class="line"># 可以按照不同的指标排序显示，按对应键即可</div><div class="line"># P 按照 CPU 使用率排序</div><div class="line"># T 按照 MITE+ 排序</div><div class="line"># M 按内存使用占比排序</div></pre></td></tr></table></figure></p>
+<p>其他查看进程相关信息的命令有</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 查看进程内存分布</div><div class="line">pmap -d 12345 # 12345 是进程号</div><div class="line"># 按照内存排序，这里的 grep 可以过滤特定的用户</div><div class="line">ps -e -o &apos;pid,comm,srgs,pcpu,rsz,vsz,stime,user,uid&apos; | grep wdxtub | sort nrk5</div></pre></td></tr></table></figure>
+<p>查找 find<br>在命令行界面中进行查找是每个需要在服务器上执行操作的同学都必备的技能，这里用实例来说明常见的实用用法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 找出七天前的文件</div><div class="line">find / -type f -mtime +7 -print</div><div class="line"># / 表示从根目录中查找</div><div class="line"># -type f 表示找出系统普通文件，不包含目录</div><div class="line"># -mtime +n 表示寻找 n 天前的数据</div><div class="line"># -print 打印文件名称</div><div class="line"># 找出并删除七天前的文件</div><div class="line">find /temp/ -type f -mtime +7 -print -exec rm -f &#123;&#125; \;</div><div class="line"># -exec 表示后面执行系统命令</div><div class="line"># &#123;&#125; 只有该符号能跟在命令你后面</div><div class="line"># \; 结束符号</div><div class="line">find /temp/ -type f -mtime +7 -print | xargs rm -f</div><div class="line"># 使用管道和 xargs = -exec</div><div class="line"># 查找 /var 下最大的十个文件</div><div class="line">find /var -type f -ls | sort -k 7 -r -n | head</div><div class="line"># 查找 /var/log 下大于 5GB 的文件</div><div class="line">find /var/log/ -type f -size +5120M -exec ls -lh &#123;&#125; \;</div><div class="line"># 找出今天所有文件并将它们拷贝到另一个目录</div><div class="line">find /home/wdxtub/ -ctime 0 -print -exec cp &#123;&#125; /mnt/backup/&#123;&#125; \;</div></pre></td></tr></table></figure>
+<p>远程登录 ssh</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">`ssh -vvv username@ip` ssh 的 debug 模式</div><div class="line">`ssh -i key.pem username@ip` 用 pem key 登录 ssh</div></pre></td></tr></table></figure>
+<p>奇技淫巧<br>这里是一些比较零碎的命令行技巧</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">openssl rand -hex n 产生随机的十六进制数，n 是字符数</div><div class="line">source /path/to/filename 在当前 shell 里执行一个文件里的命令</div><div class="line">$&#123;variable:0:5&#125; 截取变量的前五个字符</div><div class="line">wget -r --no-parent --reject &quot;index.html*&quot; http://hostname/ -P /home/user/dirs 用 wget 抓取完整的网站目录结构，存放到本地目录中</div><div class="line">mkdir -p /home/wdxtub/&#123;test0,test1,test2&#125; 一次创建多个目录</div><div class="line">dd if=/dev/zero of=/tmp/output.img bs=8k count=256k; rm -rf /tmp/output.img 测试硬盘写入速度</div><div class="line">hdparm -Tt /dev/sda 测试硬盘读取速度</div><div class="line">echo -n &quot;test&quot; | md5sum 获取文本的 md5</div><div class="line">curl -I http://wdxtub.com 获取 HTTP 头信息</div><div class="line">netstat -tln4 | awk &apos;&#123;print $4&#125;&apos; | cut -f2 -d: | grep -o &apos;[0-9]*&apos; 显示所有 tcp4 监听端口</div><div class="line">time command 查看命令的运行时间</div><div class="line">export 查看所有的环境变量</div><div class="line">cmp file1 file2 文件内容对比</div><div class="line">cat -n file 内容前面会显示行号</div><div class="line">lsof -i:22 查看 22 端口现在运行的程序</div><div class="line">lsof -c abc 显示 abc 进程现在打开的文件</div><div class="line">lsof -p 12 看进程号为 12 的进程打开了哪些文件</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;系统结构目录&quot;&gt;&lt;a href=&quot;#系统结构目录&quot; class=&quot;headerlink&quot; title=&quot;系统结构目录&quot;&gt;&lt;/a&gt;系统结构目录&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目录路径&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;/usr：&lt;/td&gt;
+&lt;td&gt;用户的很多应用程序和文件都放在此目录下。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/usr/bin：&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;系统用户&lt;/strong&gt; 使用的应用程序。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/usr/sbin：&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;超级用户&lt;/strong&gt; 使用的比较高级的管理程序和系统守护程序。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/usr/src：&lt;/td&gt;
+&lt;td&gt;内核源代码默认的放置目录。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/home：&lt;/td&gt;
+&lt;td&gt;用户的主目录，该目录名一般是以用户的账号命名的。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/bin：&lt;/td&gt;
+&lt;td&gt;Binary 的缩写, 存放着最经常使用的终端命令。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/root：&lt;/td&gt;
+&lt;td&gt;该目录为系统管理员，也称作 &lt;strong&gt;超级权限者&lt;/strong&gt; 的用户主目录。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/boot：&lt;/td&gt;
+&lt;td&gt;启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/etc：&lt;/td&gt;
+&lt;td&gt;存放所有的系统管理所需要的 &lt;strong&gt;配置文件&lt;/strong&gt; 和子目录。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/dev ：&lt;/td&gt;
+&lt;td&gt;Device (设备)的缩写, 该目录下存放的是Linux的外部设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/proc：&lt;/td&gt;
+&lt;td&gt;一个映射 &lt;strong&gt;系统内存&lt;/strong&gt; 的虚拟目录，可以通过直接访问此目录获取系统信息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/sbin：&lt;/td&gt;
+&lt;td&gt;存放 &lt;strong&gt;系统管理员&lt;/strong&gt; 使用的系统管理程序。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/tmp：&lt;/td&gt;
+&lt;td&gt;存放一些临时文件的。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/var：&lt;/td&gt;
+&lt;td&gt;不断扩充或者 &lt;strong&gt;经常被修改&lt;/strong&gt; 的文件会存放在此目录下，比如各种日志文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/media：&lt;/td&gt;
+&lt;td&gt;Linux 会把识别的设备挂载到这个目录下。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/lost+found：&lt;/td&gt;
+&lt;td&gt;当系统非法关机后，这里就存放了一些文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/lib：&lt;/td&gt;
+&lt;td&gt;存放系统最基本的动态连接共享库。几乎所有的应用程序都需要用到这些共享库。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/mnt：&lt;/td&gt;
+&lt;td&gt;该目录是为了让用户临时挂载其他文件系统的，可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/opt：&lt;/td&gt;
+&lt;td&gt;这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/selinux：&lt;/td&gt;
+&lt;td&gt;这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/srv：&lt;/td&gt;
+&lt;td&gt;该目录存放一些服务启动之后需要提取的数据。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/sys：&lt;/td&gt;
+&lt;td&gt;该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="linux" scheme="http://www.baixiaojian.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>以太坊 笔记</title>
+    <link href="http://www.baixiaojian.com/eth/"/>
+    <id>http://www.baixiaojian.com/eth/</id>
+    <published>2018-07-11T15:33:38.000Z</published>
+    <updated>2018-10-03T13:39:27.597Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">eth.accounts                                                      =&gt; 查看账户</div><div class="line">personal.newAccount()                                             =&gt; 创建账户</div><div class="line">eth.getBalance(eth.accounts[0])                                   =&gt; 查看余额</div><div class="line">miner.start(1)                                                    =&gt; 启动挖矿</div><div class="line">miner.stop()                                                      =&gt; 停止挖矿</div><div class="line">miner.start(1);admin.sleepBlocks(1);miner.stop();                 =&gt; 挖矿后</div><div class="line">web3.fromWei(eth.getBalance(eth.accounts[1]))                     =&gt; 查看转换过后的数量</div><div class="line">geth init ./genesis.json --datadir ./data                         =&gt; 初始化</div><div class="line">geth --datadir ./data --nodiscover --networkid 1024 --rpc console =&gt; 启动</div><div class="line">geth --datadir ./data --nodiscover --networkid 1024 --rpc --rpccorsdomain=&quot;\*&quot; console =&gt; 启动时解决本地跨域问题</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="坑点"><a href="#坑点" class="headerlink" title="坑点"></a>坑点</h2><ul>
+<li><code>60000 * (5000000000 / 1e18) = 60000 * (gasLimit / 1e18)</code> 计算打币需消耗的 eth</li>
+<li>地址前面需要加上 0x 否则生成地址不一致的问题</li>
+<li>chainId 不一致带来的交易失效问题</li>
+<li><code>--rpccorsdomain=&quot;*&quot;</code> 解决跨域的问题</li>
+<li>批量打 true (动态设置 nonce 值)</li>
+<li>通过 <code>web3.eth.sendTransaction</code> 发起交易可以记录 tx 交易值</li>
+</ul>
+<h2 id="ERC20-API"><a href="#ERC20-API" class="headerlink" title="ERC20 API"></a>ERC20 API</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">eth      =&gt; 包含一些跟操作区块链相关的方法</div><div class="line">net      =&gt; 包含以下查看p2p网络状态的方法</div><div class="line">admin    =&gt; 包含一些与管理节点相关的方法</div><div class="line">miner    =&gt; 包含启动&amp;停止挖矿的一些方法</div><div class="line">personal =&gt; 主要包含一些管理账户的方法</div><div class="line">txpool   =&gt; 包含一些查看交易内存池的方法</div><div class="line">web3     =&gt; 包含了以上对象，还包含一些单位换算的方法</div></pre></td></tr></table></figure>
+<h2 id="钱包概念"><a href="#钱包概念" class="headerlink" title="钱包概念"></a>钱包概念</h2><p>以太坊系钱包名词有地址、密码、私钥、助记词、keystore。</p>
+<p>若以银行账户为类比，这 5 个词分别对应内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">地址          = 银行卡号</div><div class="line">密码          = 银行卡密码</div><div class="line">私钥          = 银行卡号+银行卡密码</div><div class="line">助记词        = 银行卡号+银行卡密码</div><div class="line">Keystore+密码 = 银行卡号+银行卡密码</div><div class="line">Keystore      ≠ 银行卡号</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用操作&quot;&gt;&lt;a href=&quot;#常用操作&quot; class=&quot;headerlink&quot; title=&quot;常用操作&quot;&gt;&lt;/a&gt;常用操作&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;eth.accounts                                                      =&amp;gt; 查看账户&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;personal.newAccount()                                             =&amp;gt; 创建账户&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;eth.getBalance(eth.accounts[0])                                   =&amp;gt; 查看余额&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;miner.start(1)                                                    =&amp;gt; 启动挖矿&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;miner.stop()                                                      =&amp;gt; 停止挖矿&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;miner.start(1);admin.sleepBlocks(1);miner.stop();                 =&amp;gt; 挖矿后&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;web3.fromWei(eth.getBalance(eth.accounts[1]))                     =&amp;gt; 查看转换过后的数量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;geth init ./genesis.json --datadir ./data                         =&amp;gt; 初始化&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;geth --datadir ./data --nodiscover --networkid 1024 --rpc console =&amp;gt; 启动&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;geth --datadir ./data --nodiscover --networkid 1024 --rpc --rpccorsdomain=&amp;quot;\*&amp;quot; console =&amp;gt; 启动时解决本地跨域问题&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="以太坊" scheme="http://www.baixiaojian.com/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+      <category term="智能合约" scheme="http://www.baixiaojian.com/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
+    
+      <category term="去中心化" scheme="http://www.baixiaojian.com/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/"/>
+    
+      <category term="区块链" scheme="http://www.baixiaojian.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象</title>
     <link href="http://www.baixiaojian.com/jsrelearn/"/>
     <id>http://www.baixiaojian.com/jsrelearn/</id>
     <published>2018-03-19T08:14:49.000Z</published>
-    <updated>2018-03-28T08:21:17.000Z</updated>
+    <updated>2018-10-03T13:40:17.877Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>JS 中其他<strong>所有对象都继承自Object对象</strong>，即那些对象都是Object的实例。<br>Object对象的原生方法分成两类：<code>本身</code>和<code>实例</code>方法。</p>
 <h3 id="Object-工具方法"><a href="#Object-工具方法" class="headerlink" title="Object() 工具方法"></a>Object() 工具方法</h3><p>Object 本身是一个函数,<br>可以把<strong>任意参数</strong>转换成对象,<br>如果参数是<code>对象则直接返回</code>该参数,<br>如果参数是<code>原始类型</code>的值, 则将其转为对应的<code>包装对象的实例</code>.</p>
@@ -276,11 +1567,11 @@
     <link href="http://www.baixiaojian.com/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2node%E5%BA%94%E7%94%A8/"/>
     <id>http://www.baixiaojian.com/云服务器部署node应用/</id>
     <published>2018-03-08T14:22:27.000Z</published>
-    <updated>2018-03-10T03:32:12.000Z</updated>
+    <updated>2018-09-29T03:51:32.864Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>就在前天，微信群里有人说腾讯云服务器搞活动 <code>1核2G 一个月10块钱</code>，<br>一起拼团的话还有优惠，我就心动了，一下续了二年的，<br>正好结合我所掌握的技术点，走通上线部署的流程，<br>不仅可以巩固我所掌握的知识点，也是让自己学的东西有个输出。</p>
 <a id="more"></a>
-<h2 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h2><p>我的云服务器主机的基本配置</p>
+<h2 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h2><p>我的云服务器主机 <code>centOS</code> 的基本配置</p>
 <p><img src="../imgs/server.jpeg" alt=""></p>
 <h2 id="服务器登录"><a href="#服务器登录" class="headerlink" title="服务器登录"></a>服务器登录</h2><p>Mac 下可以使用自带的终端或者 <code>iTerm2</code> 通过命令方式进行登录</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ssh root@&lt;公网IP&gt;</div></pre></td></tr></table></figure>
@@ -288,18 +1579,21 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash</div></pre></td></tr></table></figure>
 <p>安装 node：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">nvm install v8.9.5</div><div class="line">node -v</div></pre></td></tr></table></figure>
-<h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">200</span>;</div><div class="line">    res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>);</div><div class="line">    res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line">server.listen(<span class="number">3000</span>, () =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`Server is running at port 3000`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="安装-cnpm"><a href="#安装-cnpm" class="headerlink" title="安装 cnpm"></a>安装 cnpm</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+<h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">yum install git</div></pre></td></tr></table></figure>
+<h2 id="生成-ssh-秘钥"><a href="#生成-ssh-秘钥" class="headerlink" title="生成 ssh 秘钥"></a>生成 ssh 秘钥</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">git config --global user.name &quot;baixiaojian&quot;</div><div class="line">git config --global user.email &quot;邮箱&quot;</div><div class="line"></div><div class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;</div></pre></td></tr></table></figure>
+<h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</div><div class="line">  res.statusCode = <span class="number">200</span>;</div><div class="line">  res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>);</div><div class="line">  res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line">server.listen(<span class="number">3000</span>, () =&gt; &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`Server is running at port 3000`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>在服务端执行：</p>
 <p><img src="../imgs/iterm.jpg" alt=""></p>
 <p>在浏览器`中打开:</p>
 <p><img src="../imgs/hello.png" alt=""></p>
 <h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p>虽然可以通过 IP 地址访问, 但是记忆起来比较困难, 可以通过<code>配置域名</code>来访问 node 应用。</p>
 <p><img src="../imgs/yuming.png" alt=""></p>
-<p>我原本就有一个 <code>baixiaojian.com</code> 的域名,<br>所以我再次基础上配一个二级域名指向自己的主机,<br>如 <code>ok.baixiaojian.com</code>, 访问主机时 通过 nginx 反向代理到服务器指定端口应用,<br>这样的一个好处就是可以使80端口共用, <code>域名解析默认</code>是 80 端口, 如果不是 80 端口,<br>就需要指定端口号, 就像这样 <code>ok.baixiaojian.com:4000</code> 这样的体验是非常差的,<br>所以nginx使80端口可以共用是非常必要的。</p>
-<p><a href="http://www.baixiaojian.com/nginx/">安装nginx</a><br><a href="http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/#more">配置nginx</a></p>
-<h2 id="Transmit"><a href="#Transmit" class="headerlink" title="Transmit"></a>Transmit</h2><p>Transmit 是 Mac下一款实用的FTP客户端软件，它使用起来非常的稳定，速度也比较理想。</p>
+<p>我原本就有一个 <code>baixiaojian.com</code> 的域名,<br>所以我再次基础上配一个二级域名指向自己的主机,<br>如 <code>ok.baixiaojian.com</code>, 访问主机时 通过 nginx 反向代理到服务器指定端口应用,<br>这样的一个好处就是可以使 80 端口共用, <code>域名解析默认</code>是 80 端口, 如果不是 80 端口,<br>就需要指定端口号, 就像这样 <code>ok.baixiaojian.com:4000</code> 这样的体验是非常差的,<br>所以 nginx 使 80 端口可以共用是非常必要的。</p>
+<p><a href="http://www.baixiaojian.com/nginx/">安装 nginx</a><br><a href="http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/#more">配置 nginx</a></p>
+<h2 id="Transmit"><a href="#Transmit" class="headerlink" title="Transmit"></a>Transmit</h2><p>Transmit 是 Mac 下一款实用的 FTP 客户端软件，它使用起来非常的稳定，速度也比较理想。</p>
 <p><a href="https://www.hitnology.com/video-813.html" rel="external nofollow noopener noreferrer" target="_blank">使用教程</a></p>
-<h2 id="pm2-进程管理"><a href="#pm2-进程管理" class="headerlink" title="pm2 进程管理"></a>pm2 进程管理</h2><p><a href="http://www.cnblogs.com/chyingp/p/pm2-documentation.html" rel="external nofollow noopener noreferrer" target="_blank">pm2入门指南</a></p>
+<h2 id="pm2-进程管理"><a href="#pm2-进程管理" class="headerlink" title="pm2 进程管理"></a>pm2 进程管理</h2><p><a href="http://www.cnblogs.com/chyingp/p/pm2-documentation.html" rel="external nofollow noopener noreferrer" target="_blank">pm2 入门指南</a></p>
 ]]></content>
     
     <summary type="html">
@@ -321,10 +1615,10 @@
   
   <entry>
     <title>nginx 笔记</title>
-    <link href="http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/"/>
-    <id>http://www.baixiaojian.com/nginx笔记/</id>
+    <link href="http://www.baixiaojian.com/nginx/"/>
+    <id>http://www.baixiaojian.com/nginx/</id>
     <published>2018-03-04T12:35:57.000Z</published>
-    <updated>2018-03-07T01:58:42.000Z</updated>
+    <updated>2018-09-29T03:53:45.615Z</updated>
     
     <content type="html"><![CDATA[<p><img src="../imgs/nginx-proxy.jpg" alt=""></p>
 <a id="more"></a>
@@ -358,7 +1652,7 @@
 <h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p><strong>Nginx 使用反向代理，主要是使用location模块下的 <code>proxy_pass</code> 选项。</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">来个最简单的。</div><div class="line">当我访问 mac 上的nginx 的 centos.com 的内容时候,</div><div class="line">就反向代理到虚拟机centos上的 10.211.55.5 的index.html页面。</div></pre></td></tr></table></figure>
 <p>第一步: 在 hosts 里新加域名:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#vi /etc/hosts </div><div class="line">127.0.0.1 centos.com</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#vi /etc/hosts</div><div class="line">127.0.0.1 centos.com</div></pre></td></tr></table></figure>
 <p>第二步: 在 servers 目录中新建一个 .conf 的配置文件：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#centos.conf</div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name centos.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://10.211.55.5;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>执行 <code>sudo nginx -s reload</code> 重启后访问 <code>centos.com</code></p>
@@ -367,10 +1661,10 @@
 <h4 id="基于-weight-权重的负载"><a href="#基于-weight-权重的负载" class="headerlink" title="基于 weight 权重的负载"></a>基于 weight 权重的负载</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">upstream webservers&#123;</div><div class="line">    server 192.168.33.11 weight=10;</div><div class="line">    server 192.168.33.12 weight=10;</div><div class="line">    server 192.168.33.13 weight=10;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name upstream.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://webservers;</div><div class="line">        proxy_set_header  X-Real-IP  $remote_addr;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="基于-ip-hash-的负载"><a href="#基于-ip-hash-的负载" class="headerlink" title="基于 ip_hash 的负载"></a>基于 ip_hash 的负载</h4><p><strong>每个请求按访问IP的hash结果分配</strong>，这样来自同一个IP的访客固定访问一个后端服务器，有效解决了动态网页存在的session共享问题。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">upstream webservers&#123;</div><div class="line">    ip_hash;</div><div class="line">    server 192.168.33.11 weight=1 max_fails=2 fail_timeout=30s;</div><div class="line">    server 192.168.33.12 weight=1 max_fails=2 fail_timeout=30s;</div><div class="line">    server 192.168.33.13 down;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注: ip_hash 模式下，不要设置 <code>weight</code> 和 <code>backup</code> </p>
+<p>注: ip_hash 模式下，不要设置 <code>weight</code> 和 <code>backup</code></p>
 <h3 id="页面缓存"><a href="#页面缓存" class="headerlink" title="页面缓存"></a>页面缓存</h3><p>只需要简单配置下，就能将指定的一个页面缓存起来.<br>原理就是<code>匹配当前访问的url, hash加密后，去指定的缓存目录查找</code>, 有的话就说明匹配到缓存.</p>
 <p><strong>先来看一下一个简单的页面缓存的配置：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">http &#123;</div><div class="line">    proxy_cache_path /data/nginx/cache levels=1:2 keys_zone=cache_zone:10m inactive=1d max_size=100m;</div><div class="line">    # proxy_cache_path path [levels=number] keys_zone=zone_name:zone_size [inactive=time] [max_size=size]; </div><div class="line">                                                    # path        =&gt; 缓存路径 </div><div class="line">                                                    # levels      =&gt; 文件夹级数 </div><div class="line">                                                    # keys_zone   =&gt; 指的是共享池的名称 </div><div class="line">                                                    # inactive    =&gt; 表示指定的时间内缓存的数据没有被请求则被删除</div><div class="line">                                                    # max_size    =&gt; 缓存区域的总大小</div><div class="line">                                                    # clean_time  =&gt; 表示每间隔自动清除的时间</div><div class="line">    upstream myproject &#123;</div><div class="line">        .....</div><div class="line">    &#125;</div><div class="line">    server  &#123;</div><div class="line">        ....</div><div class="line">        location ~ *\.php$ &#123;</div><div class="line">            proxy_cache cache_zone;                 # keys_zone的名字</div><div class="line">            proxy_cache_key $host$uri$is_args$args; # 缓存规则</div><div class="line">            proxy_cache_valid any 1d;               # 为不同的http响应状态码设置不同的缓存时间。</div><div class="line">            proxy_pass http://127.0.0.1:8080;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">http &#123;</div><div class="line">    proxy_cache_path /data/nginx/cache levels=1:2 keys_zone=cache_zone:10m inactive=1d max_size=100m;</div><div class="line">    # proxy_cache_path path [levels=number] keys_zone=zone_name:zone_size [inactive=time] [max_size=size];</div><div class="line">                                                    # path        =&gt; 缓存路径</div><div class="line">                                                    # levels      =&gt; 文件夹级数</div><div class="line">                                                    # keys_zone   =&gt; 指的是共享池的名称</div><div class="line">                                                    # inactive    =&gt; 表示指定的时间内缓存的数据没有被请求则被删除</div><div class="line">                                                    # max_size    =&gt; 缓存区域的总大小</div><div class="line">                                                    # clean_time  =&gt; 表示每间隔自动清除的时间</div><div class="line">    upstream myproject &#123;</div><div class="line">        .....</div><div class="line">    &#125;</div><div class="line">    server  &#123;</div><div class="line">        ....</div><div class="line">        location ~ *\.php$ &#123;</div><div class="line">            proxy_cache cache_zone;                 # keys_zone的名字</div><div class="line">            proxy_cache_key $host$uri$is_args$args; # 缓存规则</div><div class="line">            proxy_cache_valid any 1d;               # 为不同的http响应状态码设置不同的缓存时间。</div><div class="line">            proxy_pass http://127.0.0.1:8080;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>开始进行实战</strong></p>
 <p>第一步: Parallels Desktop 上启动一台 linux 虚拟机(10.211.55.5)</p>
 <p>第二部: Mac hosts配置 <code>cache.com</code> 域名, 然后按照上面的配置在 servers 下新建一个 <code>cache.conf</code> 文件:</p>
@@ -421,7 +1715,7 @@
 <h3 id="Location-正则模块"><a href="#Location-正则模块" class="headerlink" title="Location 正则模块"></a>Location 正则模块</h3><p><code>location /</code> 表示匹配访问根目录。<br><code>location ~</code> 表示开启正则匹配。<br>还可以用这个来匹配静态资源，缓存它们，设置过期时间：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|mp3|mp4|swf)&#123;</div><div class="line">    expires 15d;</div><div class="line">&#125;</div><div class="line">location ~ .*\.(css|js)&#123;</div><div class="line">    expires 12d;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 运行用户</div><div class="line">user www-data;    </div><div class="line"># 启动进程,通常设置成和cpu的数量相等</div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line"># 全局错误日志及PID文件</div><div class="line">error_log  /var/log/nginx/error.log;</div><div class="line">pid        /var/run/nginx.pid;</div><div class="line"></div><div class="line"># 工作模式及连接数上限</div><div class="line">events &#123;</div><div class="line">    use epoll; #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能</div><div class="line">    worker_connections 1024; #单个后台worker process进程的最大并发链接数</div><div class="line">    # multi_accept on; </div><div class="line">&#125;</div><div class="line"></div><div class="line">#设定http服务器，利用它的反向代理功能提供负载均衡支持</div><div class="line">http &#123;</div><div class="line">    #设定mime类型,类型由mime.type文件定义</div><div class="line">    include       /etc/nginx/mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line">    #设定日志格式</div><div class="line">    access_log    /var/log/nginx/access.log;</div><div class="line"></div><div class="line">    #sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，对于普通应用，</div><div class="line">    #必须设为 on,如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，以平衡磁盘与网络I/O处理速度，降低系统的uptime.</div><div class="line">    sendfile        on;</div><div class="line">    #将tcp_nopush和tcp_nodelay两个指令设置为on用于防止网络阻塞</div><div class="line">    tcp_nopush      on;</div><div class="line">    tcp_nodelay     on;</div><div class="line">    #连接超时时间</div><div class="line">    keepalive_timeout  65;</div><div class="line">    </div><div class="line">    #开启gzip压缩</div><div class="line">    gzip  on;</div><div class="line">    gzip_disable &quot;MSIE [1-6]\.(?!.*SV1)&quot;;</div><div class="line"></div><div class="line">    #设定请求缓冲</div><div class="line">    client_header_buffer_size    1k;</div><div class="line">    large_client_header_buffers  4 4k;</div><div class="line"></div><div class="line">    include /etc/nginx/conf.d/*.conf;</div><div class="line">    include /etc/nginx/sites-enabled/*;</div><div class="line"></div><div class="line">    #设定负载均衡的服务器列表</div><div class="line">    upstream mysvr &#123;</div><div class="line">        #weigth参数表示权值，权值越高被分配到的几率越大</div><div class="line">        #本机上的Squid开启3128端口</div><div class="line">        server 192.168.8.1:3128 weight=5;</div><div class="line">        server 192.168.8.2:80  weight=1;</div><div class="line">        server 192.168.8.3:80  weight=6;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    server &#123;</div><div class="line">        #侦听80端口</div><div class="line">        listen       80;</div><div class="line">        #定义使用www.xx.com访问</div><div class="line">        server_name  www.xx.com;</div><div class="line"></div><div class="line">        #设定本虚拟主机的访问日志</div><div class="line">        access_log  logs/www.xx.com.access.log  main;</div><div class="line"></div><div class="line">        #默认请求</div><div class="line">        location / &#123;</div><div class="line">            root   /root;                               #定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;       #定义首页索引文件的名称</div><div class="line"></div><div class="line">            fastcgi_pass  www.xx.com;</div><div class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name; </div><div class="line">            include /etc/nginx/fastcgi_params;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        # 定义错误提示页面</div><div class="line">        error_page   500 502 503 504 /50x.html;  </div><div class="line">            location = /50x.html &#123;</div><div class="line">            root   /root;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #静态文件，nginx自己处理</div><div class="line">        location ~ ^/(images|javascript|js|css|flash|media|static)/ &#123;</div><div class="line">            root /var/www/virtual/htdocs;</div><div class="line">            #过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。</div><div class="line">            expires 30d;</div><div class="line">        &#125;</div><div class="line">        #PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置.</div><div class="line">        location ~ \.php$ &#123;</div><div class="line">            root /root;</div><div class="line">            fastcgi_pass 127.0.0.1:9000;</div><div class="line">            fastcgi_index index.php;</div><div class="line">            fastcgi_param SCRIPT_FILENAME /home/www/www$fastcgi_script_name;</div><div class="line">            include fastcgi_params;</div><div class="line">        &#125;</div><div class="line">        #设定查看Nginx状态的地址</div><div class="line">        location /NginxStatus &#123;</div><div class="line">            stub_status            on;</div><div class="line">            access_log              on;</div><div class="line">            auth_basic              &quot;NginxStatus&quot;;</div><div class="line">            auth_basic_user_file  conf/htpasswd;</div><div class="line">        &#125;</div><div class="line">        #禁止访问 .htxxx 文件</div><div class="line">        location ~ /\.ht &#123;</div><div class="line">            deny all;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    #第一个虚拟服务器</div><div class="line">    server &#123;</div><div class="line">        #侦听192.168.8.x的80端口</div><div class="line">        listen       80;</div><div class="line">        server_name  192.168.8.x;</div><div class="line"></div><div class="line">        #对aspx后缀的进行负载均衡请求</div><div class="line">        location ~ .*\.aspx$ &#123;</div><div class="line">            root   /root;#定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;#定义首页索引文件的名称</div><div class="line"></div><div class="line">            proxy_pass  http://mysvr;#请求转向mysvr 定义的服务器列表</div><div class="line"></div><div class="line">            #以下是一些反向代理的配置可删除.</div><div class="line">            proxy_redirect off;</div><div class="line"></div><div class="line">            #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</div><div class="line">            proxy_set_header Host $host;</div><div class="line">            proxy_set_header X-Real-IP $remote_addr;</div><div class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">            client_max_body_size 10m;                                       #允许客户端请求的最大单文件字节数</div><div class="line">            client_body_buffer_size 128k;                                   #缓冲区代理缓冲用户端请求的最大字节数，</div><div class="line">            proxy_connect_timeout 90;                                       #nginx跟后端服务器连接超时时间(代理连接超时)</div><div class="line">            proxy_send_timeout 90;                                          #后端服务器数据回传时间(代理发送超时)</div><div class="line">            proxy_read_timeout 90;                                          #连接成功后，后端服务器响应时间(代理接收超时)</div><div class="line">            proxy_buffer_size 4k;                                           #设置代理服务器（nginx）保存用户头信息的缓冲区大小</div><div class="line">            proxy_buffers 4 32k;                                            #proxy_buffers缓冲区，网页平均在32k以下的话，这样设置</div><div class="line">            proxy_busy_buffers_size 64k;                                    #高负荷下缓冲大小（proxy_buffers*2）</div><div class="line">            proxy_temp_file_write_size 64k;                                 #设定缓存文件夹大小，大于这个值，将从upstream服务器传</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 运行用户</div><div class="line">user www-data;</div><div class="line"># 启动进程,通常设置成和cpu的数量相等</div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line"># 全局错误日志及PID文件</div><div class="line">error_log  /var/log/nginx/error.log;</div><div class="line">pid        /var/run/nginx.pid;</div><div class="line"></div><div class="line"># 工作模式及连接数上限</div><div class="line">events &#123;</div><div class="line">    use epoll; #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能</div><div class="line">    worker_connections 1024; #单个后台worker process进程的最大并发链接数</div><div class="line">    # multi_accept on;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#设定http服务器，利用它的反向代理功能提供负载均衡支持</div><div class="line">http &#123;</div><div class="line">    #设定mime类型,类型由mime.type文件定义</div><div class="line">    include       /etc/nginx/mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line">    #设定日志格式</div><div class="line">    access_log    /var/log/nginx/access.log;</div><div class="line"></div><div class="line">    #sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，对于普通应用，</div><div class="line">    #必须设为 on,如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，以平衡磁盘与网络I/O处理速度，降低系统的uptime.</div><div class="line">    sendfile        on;</div><div class="line">    #将tcp_nopush和tcp_nodelay两个指令设置为on用于防止网络阻塞</div><div class="line">    tcp_nopush      on;</div><div class="line">    tcp_nodelay     on;</div><div class="line">    #连接超时时间</div><div class="line">    keepalive_timeout  65;</div><div class="line"></div><div class="line">    #开启gzip压缩</div><div class="line">    gzip  on;</div><div class="line">    gzip_disable &quot;MSIE [1-6]\.(?!.*SV1)&quot;;</div><div class="line"></div><div class="line">    #设定请求缓冲</div><div class="line">    client_header_buffer_size    1k;</div><div class="line">    large_client_header_buffers  4 4k;</div><div class="line"></div><div class="line">    include /etc/nginx/conf.d/*.conf;</div><div class="line">    include /etc/nginx/sites-enabled/*;</div><div class="line"></div><div class="line">    #设定负载均衡的服务器列表</div><div class="line">    upstream mysvr &#123;</div><div class="line">        #weigth参数表示权值，权值越高被分配到的几率越大</div><div class="line">        #本机上的Squid开启3128端口</div><div class="line">        server 192.168.8.1:3128 weight=5;</div><div class="line">        server 192.168.8.2:80  weight=1;</div><div class="line">        server 192.168.8.3:80  weight=6;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    server &#123;</div><div class="line">        #侦听80端口</div><div class="line">        listen       80;</div><div class="line">        #定义使用www.xx.com访问</div><div class="line">        server_name  www.xx.com;</div><div class="line"></div><div class="line">        #设定本虚拟主机的访问日志</div><div class="line">        access_log  logs/www.xx.com.access.log  main;</div><div class="line"></div><div class="line">        #默认请求</div><div class="line">        location / &#123;</div><div class="line">            root   /root;                               #定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;       #定义首页索引文件的名称</div><div class="line"></div><div class="line">            fastcgi_pass  www.xx.com;</div><div class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root/$fastcgi_script_name;</div><div class="line">            include /etc/nginx/fastcgi_params;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        # 定义错误提示页面</div><div class="line">        error_page   500 502 503 504 /50x.html;</div><div class="line">            location = /50x.html &#123;</div><div class="line">            root   /root;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #静态文件，nginx自己处理</div><div class="line">        location ~ ^/(images|javascript|js|css|flash|media|static)/ &#123;</div><div class="line">            root /var/www/virtual/htdocs;</div><div class="line">            #过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。</div><div class="line">            expires 30d;</div><div class="line">        &#125;</div><div class="line">        #PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置.</div><div class="line">        location ~ \.php$ &#123;</div><div class="line">            root /root;</div><div class="line">            fastcgi_pass 127.0.0.1:9000;</div><div class="line">            fastcgi_index index.php;</div><div class="line">            fastcgi_param SCRIPT_FILENAME /home/www/www$fastcgi_script_name;</div><div class="line">            include fastcgi_params;</div><div class="line">        &#125;</div><div class="line">        #设定查看Nginx状态的地址</div><div class="line">        location /NginxStatus &#123;</div><div class="line">            stub_status            on;</div><div class="line">            access_log              on;</div><div class="line">            auth_basic              &quot;NginxStatus&quot;;</div><div class="line">            auth_basic_user_file  conf/htpasswd;</div><div class="line">        &#125;</div><div class="line">        #禁止访问 .htxxx 文件</div><div class="line">        location ~ /\.ht &#123;</div><div class="line">            deny all;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    #第一个虚拟服务器</div><div class="line">    server &#123;</div><div class="line">        #侦听192.168.8.x的80端口</div><div class="line">        listen       80;</div><div class="line">        server_name  192.168.8.x;</div><div class="line"></div><div class="line">        #对aspx后缀的进行负载均衡请求</div><div class="line">        location ~ .*\.aspx$ &#123;</div><div class="line">            root   /root;#定义服务器的默认网站根目录位置</div><div class="line">            index index.php index.html index.htm;#定义首页索引文件的名称</div><div class="line"></div><div class="line">            proxy_pass  http://mysvr;#请求转向mysvr 定义的服务器列表</div><div class="line"></div><div class="line">            #以下是一些反向代理的配置可删除.</div><div class="line">            proxy_redirect off;</div><div class="line"></div><div class="line">            #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</div><div class="line">            proxy_set_header Host $host;</div><div class="line">            proxy_set_header X-Real-IP $remote_addr;</div><div class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">            client_max_body_size 10m;                                       #允许客户端请求的最大单文件字节数</div><div class="line">            client_body_buffer_size 128k;                                   #缓冲区代理缓冲用户端请求的最大字节数，</div><div class="line">            proxy_connect_timeout 90;                                       #nginx跟后端服务器连接超时时间(代理连接超时)</div><div class="line">            proxy_send_timeout 90;                                          #后端服务器数据回传时间(代理发送超时)</div><div class="line">            proxy_read_timeout 90;                                          #连接成功后，后端服务器响应时间(代理接收超时)</div><div class="line">            proxy_buffer_size 4k;                                           #设置代理服务器（nginx）保存用户头信息的缓冲区大小</div><div class="line">            proxy_buffers 4 32k;                                            #proxy_buffers缓冲区，网页平均在32k以下的话，这样设置</div><div class="line">            proxy_busy_buffers_size 64k;                                    #高负荷下缓冲大小（proxy_buffers*2）</div><div class="line">            proxy_temp_file_write_size 64k;                                 #设定缓存文件夹大小，大于这个值，将从upstream服务器传</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="https://www.jianshu.com/p/bed000e1830b" rel="external nofollow noopener noreferrer" target="_blank">参考资料</a></p>
 ]]></content>
     
@@ -436,214 +1730,11 @@
     
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="mac" scheme="http://www.baixiaojian.com/tags/mac/"/>
-    
-      <category term="nginx" scheme="http://www.baixiaojian.com/tags/nginx/"/>
-    
       <category term="linux" scheme="http://www.baixiaojian.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx 安装与基本操作</title>
-    <link href="http://www.baixiaojian.com/nginx/"/>
-    <id>http://www.baixiaojian.com/nginx/</id>
-    <published>2018-03-01T12:58:27.000Z</published>
-    <updated>2018-03-04T12:36:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Mac-安装"><a href="#Mac-安装" class="headerlink" title="Mac 安装"></a>Mac 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew search nginx</div><div class="line">brew install nginx</div></pre></td></tr></table></figure>
-<p>安装完成后, 终端输出会显示相关 <code>路径配置</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/usr/local/etc/nginx/nginx.conf   -&gt; 配置文件路径`</div><div class="line">/usr/local/var/www                -&gt; 服务器默认路径</div><div class="line">/usr/local/Cellar/nginx/1.8.0     -&gt; 安装路径</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>启动</td>
-<td>sudo nginx</td>
-</tr>
-<tr>
-<td>快速停止命令</td>
-<td>sudo nginx -s stop</td>
-</tr>
-<tr>
-<td>平稳退出命令</td>
-<td>sudo nginx -s quit</td>
-</tr>
-<tr>
-<td>查询nginx主进程号</td>
-<td>ps -ef “I” grep nginx</td>
-</tr>
-<tr>
-<td>正常停止</td>
-<td>sudo kill -QUIT 主进程号</td>
-</tr>
-<tr>
-<td>快速停止</td>
-<td>sudo kill -TERM 主进程号</td>
-</tr>
-<tr>
-<td>重启</td>
-<td>sudo nginx -s reload</td>
-</tr>
-</tbody>
-</table>
-<a id="more"></a>
-<h2 id="CentOS-安装"><a href="#CentOS-安装" class="headerlink" title="CentOS 安装"></a>CentOS 安装</h2><blockquote>
-<p>1.添加Nginx到YUM源</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</div></pre></td></tr></table></figure>
-<blockquote>
-<p>2.安装Nginx</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo yum install -y nginx</div></pre></td></tr></table></figure>
-<blockquote>
-<p>3.首次启动</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">sudo systemctl start nginx.service</div></pre></td></tr></table></figure>
-<blockquote>
-<p>4.验证是否成功</p>
-</blockquote>
-<p>通过本机域名或者IP来访问web页面<br><code>注意: 要关闭防火墙否则其他主机无法访问到</code></p>
-<table>
-<thead>
-<tr>
-<th>说明</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>启动</td>
-<td>service nginx start</td>
-</tr>
-<tr>
-<td>停止</td>
-<td>service nginx stop</td>
-</tr>
-<tr>
-<td>重启</td>
-<td>service nginx restart</td>
-</tr>
-<tr>
-<td>开机自启</td>
-<td>sudo systemctl enable nginx.service</td>
-</tr>
-<tr>
-<td>查看 nginx 安装路径</td>
-<td>rpm -ql nginx</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Nginx配置信息"><a href="#Nginx配置信息" class="headerlink" title="Nginx配置信息"></a>Nginx配置信息</h3><table>
-<thead>
-<tr>
-<th>作用</th>
-<th>路径</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>网站文件存放默认目录</td>
-<td>/usr/share/nginx/html</td>
-</tr>
-<tr>
-<td>网站默认站点配置</td>
-<td>/etc/nginx/conf.d/default.conf</td>
-</tr>
-<tr>
-<td>自定义Nginx站点配置文件存放目录</td>
-<td>/etc/nginx/conf.d/</td>
-</tr>
-<tr>
-<td>Nginx全局配置</td>
-<td>/etc/nginx/nginx.conf</td>
-</tr>
-</tbody>
-</table>
-<h3 id="防火墙操作"><a href="#防火墙操作" class="headerlink" title="防火墙操作"></a>防火墙操作</h3><table>
-<thead>
-<tr>
-<th>说明</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>查看防火墙状态</td>
-<td>firewall-cmd –state</td>
-</tr>
-<tr>
-<td>关闭防火墙</td>
-<td>systemctl stop firewalld</td>
-</tr>
-<tr>
-<td>开启防火墙</td>
-<td>systemctl start firewalld</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://segmentfault.com/a/1190000007116797" rel="external nofollow noopener noreferrer" target="_blank">参考资料1</a><br><a href="http://blog.csdn.net/u012486840/article/details/52610320" rel="external nofollow noopener noreferrer" target="_blank">参考资料2</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Mac-安装&quot;&gt;&lt;a href=&quot;#Mac-安装&quot; class=&quot;headerlink&quot; title=&quot;Mac 安装&quot;&gt;&lt;/a&gt;Mac 安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;brew search nginx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;brew install nginx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;安装完成后, 终端输出会显示相关 &lt;code&gt;路径配置&lt;/code&gt; ：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/etc/nginx/nginx.conf   -&amp;gt; 配置文件路径`&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/var/www                -&amp;gt; 服务器默认路径&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/local/Cellar/nginx/1.8.0     -&amp;gt; 安装路径&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;命令&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;启动&lt;/td&gt;
-&lt;td&gt;sudo nginx&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;快速停止命令&lt;/td&gt;
-&lt;td&gt;sudo nginx -s stop&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;平稳退出命令&lt;/td&gt;
-&lt;td&gt;sudo nginx -s quit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;查询nginx主进程号&lt;/td&gt;
-&lt;td&gt;ps -ef “I” grep nginx&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;正常停止&lt;/td&gt;
-&lt;td&gt;sudo kill -QUIT 主进程号&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;快速停止&lt;/td&gt;
-&lt;td&gt;sudo kill -TERM 主进程号&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;重启&lt;/td&gt;
-&lt;td&gt;sudo nginx -s reload&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-    
-    </summary>
-    
-      <category term="配置相关" scheme="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
-    
     
       <category term="mac" scheme="http://www.baixiaojian.com/tags/mac/"/>
     
       <category term="nginx" scheme="http://www.baixiaojian.com/tags/nginx/"/>
-    
-      <category term="linux" scheme="http://www.baixiaojian.com/tags/linux/"/>
     
   </entry>
   
@@ -652,7 +1743,7 @@
     <link href="http://www.baixiaojian.com/mac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     <id>http://www.baixiaojian.com/mac环境变量/</id>
     <published>2018-02-27T04:36:34.000Z</published>
-    <updated>2018-03-16T07:53:41.000Z</updated>
+    <updated>2018-09-29T09:19:59.772Z</updated>
     
     <content type="html"><![CDATA[<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="../imgs/mac-config.png" alt=""></p>
 <a id="more"></a>
@@ -1309,313 +2400,6 @@
   </entry>
   
   <entry>
-    <title>Structured Query Language</title>
-    <link href="http://www.baixiaojian.com/spl%E8%AF%AD%E5%8F%A5/"/>
-    <id>http://www.baixiaojian.com/spl语句/</id>
-    <published>2018-01-26T12:10:26.000Z</published>
-    <updated>2018-02-27T04:34:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p> “web” 表</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">| id | name         | url                       | alexa | country |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div><div class="line">|  1 | Google       | https://www.google.cm/    |     1 | USA     |</div><div class="line">|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |</div><div class="line">|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |</div><div class="line">|  4 | 微博          | http://weibo.com/         |    20 | CN      |</div><div class="line">|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |</div><div class="line">+----+--------------+---------------------------+-------+---------+</div></pre></td></tr></table></figure>
-<blockquote>
-<p>“access_log” 表</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+-----+---------+-------+------------+</div><div class="line">| aid | site_id | count | date       |</div><div class="line">+-----+---------+-------+------------+</div><div class="line">|   1 |       1 |    45 | 2016-05-10 |</div><div class="line">|   2 |       3 |   100 | 2016-05-13 |</div><div class="line">|   3 |       1 |   230 | 2016-05-14 |</div><div class="line">|   4 |       2 |    10 | 2016-05-14 |</div><div class="line">|   5 |       5 |   205 | 2016-05-14 |</div><div class="line">|   6 |       4 |    13 | 2016-05-15 |</div><div class="line">|   7 |       3 |   220 | 2016-05-15 |</div><div class="line">|   8 |       5 |   545 | 2016-05-16 |</div><div class="line">|   9 |       3 |   201 | 2016-05-17 |</div><div class="line">+-----+---------+-------+------------+</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><p><strong>例子有限,要结合基础知识举一反三</strong></p>
-<h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><table>
-<thead>
-<tr>
-<th>指令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SELECT * FROM web;</td>
-<td>查找 web 内每条数据的所有字段</td>
-</tr>
-<tr>
-<td>SELECT name,country FROM web;</td>
-<td>查找 web 内每条数据的 name、country 字段</td>
-</tr>
-<tr>
-<td>SELECT DISTINCT country FROM web;</td>
-<td>查找 web 中 <code>去重后</code> 的 country 值</td>
-</tr>
-<tr>
-<td>SELECT * FROM web WHERE country=’CN’;</td>
-<td>从 web 中找出 country为CN 的所有字段</td>
-</tr>
-<tr>
-<td>SELECT * FROM web WHERE id=1;</td>
-<td>从 web 中找出 id为1 数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE country=&#39;CN&#39; and alexa &lt; 50</code>;</td>
-<td>从 web 中找出 国家为中国并且排名小于50 的 名称字段</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE country=&#39;CN&#39; or alexa &lt; 50</code>;</td>
-<td>从 web 中找出 国家为中国或者排名小于50 的 名称字段</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE alexa &gt; 15 AND (country=&#39;CN&#39; OR country=&#39;USA&#39;)</code>;</td>
-<td>从 web 中找出 <code>中国或美国并且排名要大于15</code> 的 所有字段</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>ORDER BY alexa</code>;</td>
-<td>取出 web 中 所有字段,并按照 <code>alexa 排序</code></td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>ORDER BY country,alexa</code>;</td>
-<td>取出 web 中 所有字段,并按照 country 与 alexa 排序</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>LIMIT</code> 2;</td>
-<td>取出 web 中 前俩条数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name LIKE &#39;G%&#39;</code>;</td>
-<td>取出 web 中 name 以 G 开始的数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name LIKE &#39;%oo%&#39;</code>;</td>
-<td><code>包含</code> “oo” 的数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name NOT LIKE &#39;%oo%&#39;</code>;</td>
-<td><code>不包含</code> “oo” 的数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name LIKE &#39;_oogle&#39;</code>;</td>
-<td>下划线表任意字符 _oogle</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name LIKE &#39;G_o_le&#39;</code>;</td>
-<td>任意字符拼接的 G_o_le</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name REGEXP &#39;^[GFs]&#39;</code>;</td>
-<td>结合正则匹配 name 以 G/F/s 开头的数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE name in (&#39;google&#39;,&#39;淘宝&#39;);</code></td>
-<td>找出 name 为 google/淘宝 的数据</td>
-</tr>
-<tr>
-<td>SELECT * FROM web <code>WHERE alexa BETWEEN 1 AND 20;</code></td>
-<td>找出 排名在 1-20 之间的数据</td>
-</tr>
-<tr>
-<td>SELECT <code>name AS n</code>, country AS c FROM web;</td>
-<td>指定 name 与 country 的<code>字段别名</code></td>
-</tr>
-<tr>
-<td>SELECT name, CONCAT(url, ‘, ‘, alexa, ‘, ‘, country) AS site_info FROM web;</td>
-<td>连接 url/alexa/country 在一起并创建新命名</td>
-</tr>
-<tr>
-<td>SELECT w.name  FROM <code>Websites AS w WHERE</code>  w.name=”菜鸟教程”;</td>
-<td>连接<code>表的别名</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>注意的点<ul>
-<li>先将country值这一列排序，同为CN的排前面，同属USA的排后面；</li>
-<li>然后在同属CN的这些多行数据中，再根据alexa值的大小排列。</li>
-<li>ORDER BY 排列时，不写明 <code>ASC</code>、<code>DESC</code> 的时候，默认是ASC。</li>
-</ul>
-</li>
-</ul>
-<h4 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h4><ul>
-<li>列出可以使用的不同的 SQL JOIN 类型：<ul>
-<li>INNER JOIN：如果表中有至少一个匹配，则返回行</li>
-<li>LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行</li>
-<li>RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行</li>
-<li>FULL JOIN：只要其中一个表中存在匹配，则返回行</li>
-</ul>
-</li>
-</ul>
-<p><a href="http://www.runoob.com/sql/sql-join-left.html" rel="external nofollow noopener noreferrer" target="_blank">深度阅读</a></p>
-<h3 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h3><table>
-<thead>
-<tr>
-<th>指令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INSERT INTO web (name, url, alexa, country) VALUES (‘百度’,’https:xxx’,’4’,’CN’);</td>
-<td>往 web 内插入数据</td>
-</tr>
-</tbody>
-</table>
-<p>注：<em>一次性插入多条数据，中间使用逗号隔开</em></p>
-<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><blockquote>
-<p>删除数据，注：使用delete一定要记得使用 WHERE条件限制</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>DELETE</strong> FROM web WHERE name=’百度’ AND country=’CN’;</td>
-<td>从 web 中删除 name 为 百度 且国家为 CN 的网站 。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><blockquote>
-<p>更新数组，注：也一定要记得使用 WHERE条件限制</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>UPDATE</strong> web SET alexa=’5000’, country=’USA’ WHERE name=’菜鸟教程’;</td>
-<td>更新 web 内 name 为 菜鸟教程 的 alexa 排名为 5000，country 改为 USA。</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="SQL-关键字使用"><a href="#SQL-关键字使用" class="headerlink" title="SQL 关键字使用"></a>SQL 关键字使用</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>from</td>
-<td>表</td>
-</tr>
-<tr>
-<td>select</td>
-<td>选择的字段</td>
-</tr>
-<tr>
-<td>where</td>
-<td>查询的条件</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>起始记录位置，取记录的条数</td>
-</tr>
-<tr>
-<td>group by</td>
-<td>分组属性 having 分组过滤的条件</td>
-</tr>
-<tr>
-<td>order by</td>
-<td>起始记录位置，取记录的条数</td>
-</tr>
-</tbody>
-</table>
-<h3 id="where后可约束的条件"><a href="#where后可约束的条件" class="headerlink" title="where后可约束的条件"></a>where后可约束的条件</h3><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&gt;</td>
-<td>大于</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>大于等于</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>小于等于</td>
-</tr>
-<tr>
-<td>!=  或者 &lt;&gt;</td>
-<td>不等于</td>
-</tr>
-<tr>
-<td>=</td>
-<td>等于</td>
-</tr>
-<tr>
-<td>or</td>
-<td>或者</td>
-</tr>
-<tr>
-<td>and</td>
-<td>并且</td>
-</tr>
-<tr>
-<td>between</td>
-<td>在某个比区间</td>
-</tr>
-<tr>
-<td>in</td>
-<td>在该范围内</td>
-</tr>
-<tr>
-<td>not in</td>
-<td>不在该范围内</td>
-</tr>
-<tr>
-<td>_驴</td>
-<td>匹配什么驴</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>匹配结尾是驴的</td>
-</tr>
-<tr>
-<td>LIKE</td>
-<td>搜索某种模式</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt; “web” 表&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| id | name         | url                       | alexa | country |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  1 | Google       | https://www.google.cm/    |     1 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  2 | 淘宝          | https://www.taobao.com/   |    13 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  3 | 菜鸟教程       | http://www.runoob.com/    |  4689 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  4 | 微博          | http://weibo.com/         |    20 | CN      |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|  5 | Facebook     | https://www.facebook.com/ |     3 | USA     |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+----+--------------+---------------------------+-------+---------+&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“access_log” 表&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;| aid | site_id | count | date       |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   1 |       1 |    45 | 2016-05-10 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   2 |       3 |   100 | 2016-05-13 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   3 |       1 |   230 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   4 |       2 |    10 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   5 |       5 |   205 | 2016-05-14 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   6 |       4 |    13 | 2016-05-15 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   7 |       3 |   220 | 2016-05-15 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   8 |       5 |   545 | 2016-05-16 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|   9 |       3 |   201 | 2016-05-17 |&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+-----+---------+-------+------------+&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="技术笔记" scheme="http://www.baixiaojian.com/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="spl" scheme="http://www.baixiaojian.com/tags/spl/"/>
-    
-  </entry>
-  
-  <entry>
     <title>mongodb 安装与基本配置</title>
     <link href="http://www.baixiaojian.com/mongodb/"/>
     <id>http://www.baixiaojian.com/mongodb/</id>
@@ -1661,7 +2445,7 @@
     <link href="http://www.baixiaojian.com/log-busy/"/>
     <id>http://www.baixiaojian.com/log-busy/</id>
     <published>2018-01-21T15:16:09.000Z</published>
-    <updated>2018-01-26T09:27:18.000Z</updated>
+    <updated>2018-09-29T03:42:46.908Z</updated>
     
     <content type="html"><![CDATA[<p>最近有点忙<br>一些想记的笔记<br>想吐的槽<br>都被忙碌的时间搁了浅<br>早九晚九+<br>周末单休+<br>今天也是在夜深人静后挤出的 “闲暇” 时光<br>可能忙碌中才能更好的积累与沉淀吧</p>
 <a id="more"></a>
@@ -1677,69 +2461,6 @@
     
       <category term="东拉西扯" scheme="http://www.baixiaojian.com/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>charles 抓取 https</title>
-    <link href="http://www.baixiaojian.com/charlesConfig/"/>
-    <id>http://www.baixiaojian.com/charlesConfig/</id>
-    <published>2018-01-04T06:21:18.000Z</published>
-    <updated>2018-01-26T09:30:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>Charles</p>
-<ul>
-<li>电脑上下载证书</li>
-<li>始终相信</li>
-<li>保存并导出证书</li>
-<li>导入在手机中并安装</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;p&gt;Charles&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;电脑上下载证书&lt;/li&gt;
-&lt;li&gt;始终相信&lt;/li&gt;
-&lt;li&gt;保存并导出证书&lt;/li&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="配置相关" scheme="http://www.baixiaojian.com/categories/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3/"/>
-    
-    
-      <category term="charles" scheme="http://www.baixiaojian.com/tags/charles/"/>
-    
-      <category term="https" scheme="http://www.baixiaojian.com/tags/https/"/>
-    
-      <category term="配置" scheme="http://www.baixiaojian.com/tags/%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>term</title>
-    <link href="http://www.baixiaojian.com/term/"/>
-    <id>http://www.baixiaojian.com/term/</id>
-    <published>2018-01-04T03:01:47.000Z</published>
-    <updated>2018-01-26T09:31:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="待完善"><a href="#待完善" class="headerlink" title="待完善"></a>待完善</h2><p>内存<br>带宽<br>单线程<br>多线程<br>进程<br>死锁<br>单点故障<br>三次握手<br>子网掩码<br>端口<br>集群<br><a id="more"></a><br>高并发<br>持续集成<br>内存泄漏<br>虚拟地址<br>物理地址<br>负载均衡<br>虚拟DOM<br>压力测试<br>前后端分离<br>反向代理<br>闭包<br>HTTP<br>HTTPS<br>es6新特性 new Proxy/async/await/map/set<br>docker<br>SEO<br>TPS<br>CPU<br>CPU 密集型<br>闭包<br>算法</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;待完善&quot;&gt;&lt;a href=&quot;#待完善&quot; class=&quot;headerlink&quot; title=&quot;待完善&quot;&gt;&lt;/a&gt;待完善&lt;/h2&gt;&lt;p&gt;内存&lt;br&gt;带宽&lt;br&gt;单线程&lt;br&gt;多线程&lt;br&gt;进程&lt;br&gt;死锁&lt;br&gt;单点故障&lt;br&gt;三次握手&lt;br&gt;子网掩码&lt;br&gt;端口&lt;br&gt;集群&lt;br&gt;
-    
-    </summary>
-    
-      <category term="专业术语" scheme="http://www.baixiaojian.com/categories/%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD/"/>
-    
-    
-      <category term="进阶" scheme="http://www.baixiaojian.com/tags/%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="术语" scheme="http://www.baixiaojian.com/tags/%E6%9C%AF%E8%AF%AD/"/>
     
   </entry>
   
@@ -1787,135 +2508,13 @@
   </entry>
   
   <entry>
-    <title>mac终端常用命令</title>
-    <link href="http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://www.baixiaojian.com/mac终端常用命令/</id>
+    <title>Unix 终端常用命令</title>
+    <link href="http://www.baixiaojian.com/unxi/"/>
+    <id>http://www.baixiaojian.com/unxi/</id>
     <published>2017-12-04T08:56:04.000Z</published>
-    <updated>2017-12-31T10:37:13.000Z</updated>
+    <updated>2018-10-04T14:57:40.709Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Mac-终端常用命令"><a href="#Mac-终端常用命令" class="headerlink" title="Mac 终端常用命令"></a>Mac 终端常用命令</h1><table>
-<thead>
-<tr>
-<th>命令名</th>
-<th>功能描述</th>
-<th>使用举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mkdir</td>
-<td>创建一个目录</td>
-<td>mkdir dirname</td>
-</tr>
-<tr>
-<td>rmdir</td>
-<td>删除一个目录</td>
-<td>rmdir dirname</td>
-</tr>
-<tr>
-<td>mv -f</td>
-<td>移动或重命名一个目录</td>
-<td>mv -f dir1 dir2</td>
-</tr>
-<tr>
-<td>cd</td>
-<td>改变当前目录</td>
-<td>cd dirname</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>显示当前目录的路径名</td>
-<td>pwd</td>
-</tr>
-<tr>
-<td>touch</td>
-<td>新建一个文件</td>
-<td>touch index.html</td>
-</tr>
-<tr>
-<td>ls</td>
-<td>显示当前目录的内容</td>
-<td>ls -la</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>显示或连接文件</td>
-<td>cat filename</td>
-</tr>
-<tr>
-<td>rm</td>
-<td>删除文件或目录</td>
-<td>rm filename</td>
-</tr>
-<tr>
-<td>mv</td>
-<td>改变文件名或所在目录</td>
-<td>mv file1 file2</td>
-</tr>
-<tr>
-<td>open</td>
-<td>使用默认的程序打开文件</td>
-<td>open filename</td>
-</tr>
-<tr>
-<td>grep</td>
-<td>在文件中按模式查找</td>
-<td>grep “^[a-zA-Z]” filename</td>
-</tr>
-<tr>
-<td>passwd</td>
-<td>修改用户密码</td>
-<td>passwd</td>
-</tr>
-<tr>
-<td>ping</td>
-<td>给一个网络主机发送</td>
-<td>回应请求  ping hpc.sp.net.edu.cn</td>
-</tr>
-<tr>
-<td>history</td>
-<td>列出最近执行过的几条命令及编号</td>
-<td>history</td>
-</tr>
-<tr>
-<td>alias</td>
-<td>给某个命令定义别名</td>
-<td>alias del=rm -i</td>
-</tr>
-<tr>
-<td>unalias</td>
-<td>取消对某个别名的定义</td>
-<td>unalias del</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>清除屏幕或窗口内容</td>
-<td>clear</td>
-</tr>
-<tr>
-<td>uniq</td>
-<td>去掉文件中的重复行</td>
-<td>uniq file1 file2</td>
-</tr>
-<tr>
-<td>env</td>
-<td>显示当前所有设置过的环境变量</td>
-<td>env</td>
-</tr>
-<tr>
-<td>who</td>
-<td>列出当前登录的所有用户</td>
-<td>who</td>
-</tr>
-<tr>
-<td>whoami</td>
-<td>显示当前正进行操作的用户名</td>
-<td>whoami</td>
-</tr>
-</tbody>
-</table>
-<a id="more"></a>
-<h1 id="Mac-终端命令大全"><a href="#Mac-终端命令大全" class="headerlink" title="Mac 终端命令大全"></a><a href="http://www.jianshu.com/p/3291de46f3ff" rel="external nofollow noopener noreferrer" target="_blank">Mac 终端命令大全</a></h1><h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><table>
+    <content type="html"><![CDATA[<h1 id="Unix-终端命令大全"><a href="#Unix-终端命令大全" class="headerlink" title="Unix 终端命令大全"></a><a href="http://www.jianshu.com/p/3291de46f3ff" rel="external nofollow noopener noreferrer" target="_blank">Unix 终端命令大全</a></h1><h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><table>
 <thead>
 <tr>
 <th>命令名</th>
@@ -1959,8 +2558,29 @@
 <td>比较两个目录的内容</td>
 <td>dircmp dir1 dir2</td>
 </tr>
+<tr>
+<td>tree</td>
+<td>树状图列出文件目录结构</td>
+<td>tree</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>显示参数指定的文字</td>
+<td>echo hello</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>表示输出，会覆盖文件原有的内容</td>
+<td>echo hello &gt; aa.txt</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>表示追加，会将内容追加到已有文件的末尾</td>
+<td>echo hello &gt;&gt; aa.txt</td>
+</tr>
 </tbody>
 </table>
+<a id="more"></a>
 <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><table>
 <thead>
 <tr>
@@ -2291,6 +2911,11 @@
 <td>允许或拒绝接收报文</td>
 <td>mesg n</td>
 </tr>
+<tr>
+<td>ifconfig</td>
+<td>查看/配置计算机当前的网卡配置信息</td>
+<td>ifconfig</td>
+</tr>
 </tbody>
 </table>
 <h2 id="Korn-Shell-命令"><a href="#Korn-Shell-命令" class="headerlink" title="Korn Shell 命令"></a>Korn Shell 命令</h2><table>
@@ -2389,7 +3014,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Mac-终端常用命令&quot;&gt;&lt;a href=&quot;#Mac-终端常用命令&quot; class=&quot;headerlink&quot; title=&quot;Mac 终端常用命令&quot;&gt;&lt;/a&gt;Mac 终端常用命令&lt;/h1&gt;&lt;table&gt;
+      &lt;h1 id=&quot;Unix-终端命令大全&quot;&gt;&lt;a href=&quot;#Unix-终端命令大全&quot; class=&quot;headerlink&quot; title=&quot;Unix 终端命令大全&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.jianshu.com/p/3291de46f3ff&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Unix 终端命令大全&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;目录操作&quot;&gt;&lt;a href=&quot;#目录操作&quot; class=&quot;headerlink&quot; title=&quot;目录操作&quot;&gt;&lt;/a&gt;目录操作&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;命令名&lt;/th&gt;
@@ -2424,89 +3049,34 @@
 &lt;td&gt;pwd&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;touch&lt;/td&gt;
-&lt;td&gt;新建一个文件&lt;/td&gt;
-&lt;td&gt;touch index.html&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;ls&lt;/td&gt;
 &lt;td&gt;显示当前目录的内容&lt;/td&gt;
 &lt;td&gt;ls -la&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;cat&lt;/td&gt;
-&lt;td&gt;显示或连接文件&lt;/td&gt;
-&lt;td&gt;cat filename&lt;/td&gt;
+&lt;td&gt;dircmp&lt;/td&gt;
+&lt;td&gt;比较两个目录的内容&lt;/td&gt;
+&lt;td&gt;dircmp dir1 dir2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;rm&lt;/td&gt;
-&lt;td&gt;删除文件或目录&lt;/td&gt;
-&lt;td&gt;rm filename&lt;/td&gt;
+&lt;td&gt;tree&lt;/td&gt;
+&lt;td&gt;树状图列出文件目录结构&lt;/td&gt;
+&lt;td&gt;tree&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;mv&lt;/td&gt;
-&lt;td&gt;改变文件名或所在目录&lt;/td&gt;
-&lt;td&gt;mv file1 file2&lt;/td&gt;
+&lt;td&gt;echo&lt;/td&gt;
+&lt;td&gt;显示参数指定的文字&lt;/td&gt;
+&lt;td&gt;echo hello&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;open&lt;/td&gt;
-&lt;td&gt;使用默认的程序打开文件&lt;/td&gt;
-&lt;td&gt;open filename&lt;/td&gt;
+&lt;td&gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;表示输出，会覆盖文件原有的内容&lt;/td&gt;
+&lt;td&gt;echo hello &amp;gt; aa.txt&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;grep&lt;/td&gt;
-&lt;td&gt;在文件中按模式查找&lt;/td&gt;
-&lt;td&gt;grep “^[a-zA-Z]” filename&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;passwd&lt;/td&gt;
-&lt;td&gt;修改用户密码&lt;/td&gt;
-&lt;td&gt;passwd&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ping&lt;/td&gt;
-&lt;td&gt;给一个网络主机发送&lt;/td&gt;
-&lt;td&gt;回应请求  ping hpc.sp.net.edu.cn&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;history&lt;/td&gt;
-&lt;td&gt;列出最近执行过的几条命令及编号&lt;/td&gt;
-&lt;td&gt;history&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;alias&lt;/td&gt;
-&lt;td&gt;给某个命令定义别名&lt;/td&gt;
-&lt;td&gt;alias del=rm -i&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;unalias&lt;/td&gt;
-&lt;td&gt;取消对某个别名的定义&lt;/td&gt;
-&lt;td&gt;unalias del&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;clear&lt;/td&gt;
-&lt;td&gt;清除屏幕或窗口内容&lt;/td&gt;
-&lt;td&gt;clear&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;uniq&lt;/td&gt;
-&lt;td&gt;去掉文件中的重复行&lt;/td&gt;
-&lt;td&gt;uniq file1 file2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;env&lt;/td&gt;
-&lt;td&gt;显示当前所有设置过的环境变量&lt;/td&gt;
-&lt;td&gt;env&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;who&lt;/td&gt;
-&lt;td&gt;列出当前登录的所有用户&lt;/td&gt;
-&lt;td&gt;who&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;whoami&lt;/td&gt;
-&lt;td&gt;显示当前正进行操作的用户名&lt;/td&gt;
-&lt;td&gt;whoami&lt;/td&gt;
+&lt;td&gt;&amp;gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;表示追加，会将内容追加到已有文件的末尾&lt;/td&gt;
+&lt;td&gt;echo hello &amp;gt;&amp;gt; aa.txt&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2520,7 +3090,7 @@
     
       <category term="命令" scheme="http://www.baixiaojian.com/tags/%E5%91%BD%E4%BB%A4/"/>
     
-      <category term="mac" scheme="http://www.baixiaojian.com/tags/mac/"/>
+      <category term="Unix" scheme="http://www.baixiaojian.com/tags/Unix/"/>
     
       <category term="终端" scheme="http://www.baixiaojian.com/tags/%E7%BB%88%E7%AB%AF/"/>
     
@@ -2528,166 +3098,54 @@
   
   <entry>
     <title>vim 基本操作</title>
-    <link href="http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>http://www.baixiaojian.com/vim基本操作/</id>
+    <link href="http://www.baixiaojian.com/vim/"/>
+    <id>http://www.baixiaojian.com/vim/</id>
     <published>2017-12-04T08:04:02.000Z</published>
-    <updated>2017-12-31T10:37:35.000Z</updated>
+    <updated>2018-10-12T06:24:45.558Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Vim的三种模式"><a href="#Vim的三种模式" class="headerlink" title="Vim的三种模式"></a>Vim的三种模式</h1><h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
-<li>刚刚启动Vim时，便进入了命令模式。</li>
-<li>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。</li>
-<li>比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。<ul>
-<li>以下是常用的几个命令：</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>切换到插入模式，以输入字符。</td>
-</tr>
-<tr>
-<td>x</td>
-<td>删除当前光标所在处的字符。</td>
-</tr>
-<tr>
-<td>:</td>
-<td>切换到底线命令模式，以在最底一行输入命令。</td>
-</tr>
-</tbody>
-</table>
+    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvwm4j345og30sg0k40w3.gif" alt=""></p>
 <a id="more"></a>
-<h2 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h2><blockquote>
-<p>在命令模式下按下i就进入了输入模式</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>字符按键以及Shift组合</td>
-<td>输入字符</td>
-</tr>
-<tr>
-<td>ENTER</td>
-<td>回车键，换行</td>
-</tr>
-<tr>
-<td>BACK SPACE</td>
-<td>退格键，删除光标前一个字符</td>
-</tr>
-<tr>
-<td>DEL</td>
-<td>删除键，删除光标后一个字符</td>
-</tr>
-<tr>
-<td>方向键</td>
-<td>在文本中移动光标</td>
-</tr>
-<tr>
-<td>HOME/END</td>
-<td>移动光标到行首/行尾</td>
-</tr>
-<tr>
-<td>Page Up/Page Down</td>
-<td>上/下翻页</td>
-</tr>
-<tr>
-<td>Insert</td>
-<td>切换光标为输入/替换模式，光标将变成竖线/下划线</td>
-</tr>
-<tr>
-<td>ESC</td>
-<td>退出输入模式，切换到命令模式</td>
-</tr>
-</tbody>
-</table>
-<h2 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h2><blockquote>
-<p>按ESC键可随时退出底线命令模式</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:q</td>
-<td>不保存,直接退出(未编辑)</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>不保存，并强制退出</td>
-</tr>
-<tr>
-<td>:e!</td>
-<td>放弃所有修改，从上次保存文件开始再编辑</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>保存文件,但不退出</td>
-</tr>
-<tr>
-<td>:w!</td>
-<td>强制保存，不退出</td>
-</tr>
-<tr>
-<td>:wq或:x</td>
-<td>保存，并退出</td>
-</tr>
-<tr>
-<td>:wq!</td>
-<td>强制保存，并退出</td>
-</tr>
-</tbody>
-</table>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><ul>
+<li><code>p</code> 在当前位置 <strong>之后</strong> 粘贴</li>
+<li><code>P</code> 在当前位置 <strong>之前</strong> 粘贴</li>
+<li><code>yy</code> 拷贝当前行，相当于 ddP</li>
+<li><code>x</code> 删除当前光标所在的字符</li>
+<li><code>dd</code> 剪贴当前行</li>
+</ul>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><ul>
+<li><code>a</code> 在光标后插入</li>
+<li><code>O</code> 在当前 <strong>行前插入</strong> 一个新行</li>
+<li><code>o</code> 在当前 <strong>行后插入</strong> 一个新行</li>
+<li><code>cw</code> 替换从光标所在位置后到一个单词结尾的字符</li>
+</ul>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><ul>
+<li><code>^</code> 到本首</li>
+<li><code>g_</code> 到本尾</li>
+<li><code>0</code> 到行头</li>
+<li><code>$</code> 到行末</li>
+<li><code>w b</code> 词移动</li>
+<li><code>gg</code> 文件开头</li>
+<li><code>G</code> 文件结尾</li>
+<li><code>h/j/k/l</code> 左/下/上/右</li>
+</ul>
+<h2 id="撤销-重做"><a href="#撤销-重做" class="headerlink" title="撤销/重做"></a>撤销/重做</h2><ul>
+<li><code>u</code> undo</li>
+<li><code>&lt;Ctrl+r&gt;</code> redo</li>
+</ul>
+<h2 id="退出方式"><a href="#退出方式" class="headerlink" title="退出方式"></a>退出方式</h2><ul>
+<li><code>:e</code> <path to="" file=""></path> 打开一个文件</li>
+<li><code>:w</code> 存盘</li>
+<li><code>:saveas</code> <path to="" file=""></path> 另存为 <path to="" file=""></path></li>
+<li><code>:x</code>, ZZ 或 :wq 保存并退出</li>
+<li><code>:q!</code> 退出不保存</li>
+<li><code>:qa!</code> 强行退出所有文件。</li>
+<li><code>:bn</code> 和 :bp 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Vim的三种模式&quot;&gt;&lt;a href=&quot;#Vim的三种模式&quot; class=&quot;headerlink&quot; title=&quot;Vim的三种模式&quot;&gt;&lt;/a&gt;Vim的三种模式&lt;/h1&gt;&lt;h2 id=&quot;命令模式&quot;&gt;&lt;a href=&quot;#命令模式&quot; class=&quot;headerlink&quot; title=&quot;命令模式&quot;&gt;&lt;/a&gt;命令模式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;刚刚启动Vim时，便进入了命令模式。&lt;/li&gt;
-&lt;li&gt;此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。&lt;/li&gt;
-&lt;li&gt;比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。&lt;ul&gt;
-&lt;li&gt;以下是常用的几个命令：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;命令&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;i&lt;/td&gt;
-&lt;td&gt;切换到插入模式，以输入字符。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;删除当前光标所在处的字符。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;:&lt;/td&gt;
-&lt;td&gt;切换到底线命令模式，以在最底一行输入命令。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tNbRwly1fvwm4j345og30sg0k40w3.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2707,7 +3165,7 @@
     <link href="http://www.baixiaojian.com/git/"/>
     <id>http://www.baixiaojian.com/git/</id>
     <published>2017-11-29T12:46:11.000Z</published>
-    <updated>2017-12-31T07:12:15.000Z</updated>
+    <updated>2018-10-04T16:36:00.006Z</updated>
     
     <content type="html"><![CDATA[<h2 id="回退相关操作"><a href="#回退相关操作" class="headerlink" title="回退相关操作"></a>回退相关操作</h2><h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><table>
 <thead>
@@ -3080,7 +3538,7 @@
     <link href="http://www.baixiaojian.com/FEDAY3/"/>
     <id>http://www.baixiaojian.com/FEDAY3/</id>
     <published>2017-09-09T02:19:57.000Z</published>
-    <updated>2018-01-26T07:34:25.000Z</updated>
+    <updated>2018-09-29T04:01:47.594Z</updated>
     
     <content type="html"><![CDATA[<h2 id="构建大型应用"><a href="#构建大型应用" class="headerlink" title="构建大型应用"></a>构建大型应用</h2><p>分享人：孟红伦(钉钉)</p>
 <h3 id="重要的俩块"><a href="#重要的俩块" class="headerlink" title="重要的俩块"></a>重要的俩块</h3><ul>
@@ -3101,9 +3559,9 @@
 <li>问题责任:测试的锅</li>
 </ul>
 <a id="more"></a>
-<h3 id="什么是Typescript"><a href="#什么是Typescript" class="headerlink" title="什么是Typescript"></a>什么是Typescript</h3><ul>
+<h3 id="什么是-Typescript"><a href="#什么是-Typescript" class="headerlink" title="什么是 Typescript"></a>什么是 Typescript</h3><ul>
 <li>它是 JS 的超集,兼容 ES5,ES2015/16/17.</li>
-<li>它的编译结果是 JS , 可以运行在浏览器/Node端.</li>
+<li>它的编译结果是 JS , 可以运行在浏览器/Node 端.</li>
 <li>它支持 TS 和 JS 混用</li>
 </ul>
 <h3 id="主流框架支持程度"><a href="#主流框架支持程度" class="headerlink" title="主流框架支持程度"></a>主流框架支持程度</h3><ul>
@@ -3182,14 +3640,14 @@
 
 <p><a href="https://www.npmjs.com/package/webpack-bundle-analyzer" rel="external nofollow noopener noreferrer" target="_blank">https://www.npmjs.com/package/webpack-bundle-analyzer</a></p>
 <hr>
-<h2 id="RN跨三端技术实践"><a href="#RN跨三端技术实践" class="headerlink" title="RN跨三端技术实践"></a>RN跨三端技术实践</h2><p>分享人：<a href="https://github.com/putaoshu" rel="external nofollow noopener noreferrer" target="_blank">刘威</a>(京东金融)</p>
+<h2 id="RN-跨三端技术实践"><a href="#RN-跨三端技术实践" class="headerlink" title="RN 跨三端技术实践"></a>RN 跨三端技术实践</h2><p>分享人：<a href="https://github.com/putaoshu" rel="external nofollow noopener noreferrer" target="_blank">刘威</a>(京东金融)</p>
 <h3 id="移动开发常见问题"><a href="#移动开发常见问题" class="headerlink" title="移动开发常见问题"></a>移动开发常见问题</h3><ul>
 <li>原生开发 <code>门槛高</code></li>
 <li>原生发版到上线相对 <code>周期长</code></li>
 <li>原生线上问题相对 <code>难修复</code></li>
 <li>H5 相对原生 <code>体验差</code></li>
 </ul>
-<h3 id="RN优缺点"><a href="#RN优缺点" class="headerlink" title="RN优缺点"></a>RN优缺点</h3><ul>
+<h3 id="RN-优缺点"><a href="#RN-优缺点" class="headerlink" title="RN 优缺点"></a>RN 优缺点</h3><ul>
 <li>优点<ul>
 <li>学习<code>成本低</code></li>
 <li>体验<code>接近原生</code></li>
@@ -3199,7 +3657,7 @@
 </li>
 <li>缺点<ul>
 <li>不支持热更新</li>
-<li>不支持h5</li>
+<li>不支持 h5</li>
 <li>向下兼容性差</li>
 <li>低端机型会有崩溃</li>
 </ul>
@@ -3211,7 +3669,7 @@
 <ul>
 <li>缓存机制<ul>
 <li>模块名称</li>
-<li>bundle文件下载地址</li>
+<li>bundle 文件下载地址</li>
 <li>文件校验安全码</li>
 <li>版本号</li>
 </ul>
@@ -3223,35 +3681,35 @@
 </ul>
 <p>大体思路好像是：</p>
 <ol>
-<li>用户进入APP</li>
+<li>用户进入 APP</li>
 <li>默认下载一个某个接口的数据到本地<ul>
-<li>接口中包括模块名称、bundle文件<code>下载地址</code>、文件校验安全码、版本号</li>
+<li>接口中包括模块名称、bundle 文件<code>下载地址</code>、文件校验安全码、版本号</li>
 </ul>
 </li>
-<li>当用户再一次进入APP中的时候会再次下载接口中的数据</li>
+<li>当用户再一次进入 APP 中的时候会再次下载接口中的数据</li>
 <li>然后在对比之前的数据是否发生了变化，安全码是否一致</li>
 <li>如果不一致，就重新下载一遍，以此实现热更新</li>
 </ol>
-<h4 id="拆分bundle"><a href="#拆分bundle" class="headerlink" title="拆分bundle"></a>拆分bundle</h4><ul>
-<li>底层框架Bundle<ul>
-<li>基础RN JS库</li>
-<li>三端组件 JS库</li>
+<h4 id="拆分-bundle"><a href="#拆分-bundle" class="headerlink" title="拆分 bundle"></a>拆分 bundle</h4><ul>
+<li>底层框架 Bundle<ul>
+<li>基础 RN JS 库</li>
+<li>三端组件 JS 库</li>
 </ul>
 </li>
-<li>业务代码Bundle<ul>
-<li>纯业务JS</li>
+<li>业务代码 Bundle<ul>
+<li>纯业务 JS</li>
 </ul>
 </li>
-<li><a href="https://www.npmjs.com/package/@cqingwang/react-native-split" rel="external nofollow noopener noreferrer" target="_blank">可参考react-native-split</a></li>
+<li><a href="https://www.npmjs.com/package/@cqingwang/react-native-split" rel="external nofollow noopener noreferrer" target="_blank">可参考 react-native-split</a></li>
 </ul>
 <h4 id="灾备策略"><a href="#灾备策略" class="headerlink" title="灾备策略"></a>灾备策略</h4><p id="border-red">当在低版本手机点击时出现崩溃备用方案</p>
 
 <ul>
-<li>低版本的原生跳H5</li>
-<li>原生连续崩溃降级至H5</li>
+<li>低版本的原生跳 H5</li>
+<li>原生连续崩溃降级至 H5</li>
 </ul>
-<h4 id="如何支持web端"><a href="#如何支持web端" class="headerlink" title="如何支持web端"></a>如何支持web端</h4><ul>
-<li>编译时转译RN API</li>
+<h4 id="如何支持-web-端"><a href="#如何支持-web-端" class="headerlink" title="如何支持 web 端"></a>如何支持 web 端</h4><ul>
+<li>编译时转译 RN API</li>
 <li><a href="https://github.com/necolas/react-native-web" rel="external nofollow noopener noreferrer" target="_blank">react-native-web</a></li>
 <li><a href="https://www.npmjs.com/package/node-haste-webpack-plugin" rel="external nofollow noopener noreferrer" target="_blank">node-haste-webpack-plugin</a></li>
 </ul>
@@ -3264,20 +3722,20 @@
 </li>
 </ul>
 <h4 id="跳转中心"><a href="#跳转中心" class="headerlink" title="跳转中心"></a>跳转中心</h4><ul>
-<li>低版本H5</li>
+<li>低版本 H5</li>
 <li>高版本原生<ul>
-<li>全量包URL</li>
-<li>拆分包URL</li>
+<li>全量包 URL</li>
+<li>拆分包 URL</li>
 </ul>
 </li>
-<li>App 外输出H5页面</li>
+<li>App 外输出 H5 页面</li>
 </ul>
 <h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p><img src="../imgs/youhua.png" alt=""></p>
 <h4 id="数据上报"><a href="#数据上报" class="headerlink" title="数据上报"></a>数据上报</h4><p><img src="../imgs/shangbao.png" alt=""></p>
 <hr>
 <h3 id="三端平台-集成方案"><a href="#三端平台-集成方案" class="headerlink" title="三端平台-集成方案"></a>三端平台-集成方案</h3><h4 id="三端组件"><a href="#三端组件" class="headerlink" title="三端组件"></a>三端组件</h4><ul>
-<li>JS UI组件<ul>
-<li>为<code>抹平</code>三端<code>差异化</code>的API，基于视觉的规范UI层JS组件</li>
+<li>JS UI 组件<ul>
+<li>为<code>抹平</code>三端<code>差异化</code>的 API，基于视觉的规范 UI 层 JS 组件</li>
 <li>UIButon、UIExplain、UISwipe…</li>
 </ul>
 </li>
@@ -3288,11 +3746,11 @@
 </ul>
 <p><a href="https://fe.jr.jd.com/" rel="external nofollow noopener noreferrer" target="_blank">变色龙三端开发平台文档</a></p>
 <h4 id="三端工具"><a href="#三端工具" class="headerlink" title="三端工具"></a>三端工具</h4><ul>
-<li>本地Nodejs脚手架</li>
+<li>本地 Nodejs 脚手架</li>
 <li>本地模拟器-Android</li>
 <li>本地模拟器-IOS</li>
 <li><a href="https://itunes.apple.com/cn/app/id1244996679?mt=8" rel="external nofollow noopener noreferrer" target="_blank"><code>独立调试IOS</code> APP</a></li>
-<li>本地IDE客户端</li>
+<li>本地 IDE 客户端</li>
 </ul>
 <hr>
 <h2 id="链家网前端工程实践"><a href="#链家网前端工程实践" class="headerlink" title="链家网前端工程实践"></a>链家网前端工程实践</h2><p>分享人：杨永林(链家)</p>
@@ -3808,6 +4266,223 @@
       <category term="笔记" scheme="http://www.baixiaojian.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="React" scheme="http://www.baixiaojian.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 笔记</title>
+    <link href="http://www.baixiaojian.com/Hexo%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.baixiaojian.com/Hexo操作/</id>
+    <published>2017-07-06T08:59:12.000Z</published>
+    <updated>2018-09-29T03:44:01.995Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo n “我的博客”</td>
+<td>hexo new “我的博客” #新建文章</td>
+</tr>
+<tr>
+<td>hexo p</td>
+<td>hexo publish</td>
+</tr>
+<tr>
+<td>hexo g</td>
+<td>hexo generate#生成</td>
+</tr>
+<tr>
+<td>hexo s</td>
+<td>hexo server #启动服务预览</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td>hexo deploy#部署</td>
+</tr>
+</tbody>
+</table>
+<p id="border-purple">hexo d #部署 #可与hexo g合并为 <code>hexo d -g</code></p>
+
+<a id="more"></a>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo server</td>
+<td>#Hexo 会监视文件变动并自动更新，您无须重启服务器</td>
+</tr>
+<tr>
+<td>hexo server -s</td>
+<td>#静态模式</td>
+</tr>
+<tr>
+<td>hexo server -p 5000</td>
+<td>#更改端口</td>
+</tr>
+<tr>
+<td>hexo server -i 192.168.1.1</td>
+<td>#自定义 IP</td>
+</tr>
+<tr>
+<td>hexo clean</td>
+<td>#清除缓存 网页正常情况下可以忽略此条命令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo g</td>
+<td>#生成静态网页</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td>#开始部署</td>
+</tr>
+</tbody>
+</table>
+<h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo new “postName”</td>
+<td>#新建文章</td>
+</tr>
+<tr>
+<td>hexo new page “pageName”</td>
+<td>#新建页面</td>
+</tr>
+<tr>
+<td>hexo generate</td>
+<td>#生成静态页面至public目录</td>
+</tr>
+<tr>
+<td>hexo server</td>
+<td>#开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</td>
+</tr>
+<tr>
+<td>hexo deploy</td>
+<td>#将.deploy目录部署到GitHub</td>
+</tr>
+</tbody>
+</table>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:title</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>:year</td>
+<td>建立的年份（4 位数）</td>
+</tr>
+<tr>
+<td>:month</td>
+<td>建立的月份（2 位数）</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td>建立的月份（去掉开头的零）</td>
+</tr>
+<tr>
+<td>:day</td>
+<td>建立的日期（2 位数）</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td>建立的日期（去掉开头的零）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">title: 搭建个人博客</div><div class="line">layout: post</div><div class="line">date: 2020-01-01 12:00:00</div><div class="line">comments: true</div><div class="line">categories: Blog</div><div class="line">tags: [Hexo]</div><div class="line">words: Hexo, Blog</div><div class="line">description: 搭建个人博客还是要用 Hexo</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="书写语法"><a href="#书写语法" class="headerlink" title="书写语法"></a>书写语法</h2><h3 id="自定义图片大小"><a href="#自定义图片大小" class="headerlink" title="自定义图片大小"></a>自定义图片大小</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">标准：&#123;% img [class names] /path/image [width] [height] [title text [alt text]] %&#125;</div><div class="line">例如：&#123;% img  /imgs/baiyan.jpg 100 50  %&#125;</div></pre></td></tr></table></figure>
+<h3 id="突破容器宽度限制的图片的三种方式"><a href="#突破容器宽度限制的图片的三种方式" class="headerlink" title="突破容器宽度限制的图片的三种方式"></a>突破容器宽度限制的图片的三种方式</h3><p id="border-blue">当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上 <code>提升图片的吸引力</code> 。</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</div><div class="line">&#123;% fullimage /image-url, alt, title %&#125;</div><div class="line">&#123;% fi /image-url, alt, title %&#125;</div></pre></td></tr></table></figure>
+<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</div></pre></td></tr></table></figure>
+<p>其中，<code>class_name</code> 可以是以下列表中的一个值：</p>
+<ul>
+<li>default  默认</li>
+<li>primary  提示</li>
+<li>success  成功</li>
+<li>info     提示</li>
+<li>warning  警告</li>
+<li>danger   危险</li>
+</ul>
+<h3 id="从书中引用"><a href="#从书中引用" class="headerlink" title="从书中引用"></a>从书中引用</h3><blockquote><p>新：DevDocs现在附带语法高亮。<a href="http://devdocs.io" rel="external nofollow noopener noreferrer" target="_blank">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" rel="external nofollow noopener noreferrer" target="_blank">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+<h3 id="文本居中的引用3中方式"><a href="#文本居中的引用3中方式" class="headerlink" title="文本居中的引用3中方式"></a>文本居中的引用3中方式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125;人一切的痛苦，本质上都是对自己的无能的愤怒&#123;% endcq %&#125;   推荐</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h2&gt;&lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo n “我的博客”&lt;/td&gt;
+&lt;td&gt;hexo new “我的博客” #新建文章&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo p&lt;/td&gt;
+&lt;td&gt;hexo publish&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo g&lt;/td&gt;
+&lt;td&gt;hexo generate#生成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo s&lt;/td&gt;
+&lt;td&gt;hexo server #启动服务预览&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hexo d&lt;/td&gt;
+&lt;td&gt;hexo deploy#部署&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p id=&quot;border-purple&quot;&gt;hexo d #部署 #可与hexo g合并为 &lt;code&gt;hexo d -g&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://www.baixiaojian.com/categories/Hexo/"/>
+    
+    
+      <category term="快捷键" scheme="http://www.baixiaojian.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   

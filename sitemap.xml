@@ -2,44 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.baixiaojian.com/python/</loc>
+    
+    <lastmod>2018-10-12T06:50:32.490Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/vim/</loc>
+    
+    <lastmod>2018-10-12T06:24:45.558Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/git/</loc>
+    
+    <lastmod>2018-10-04T16:36:00.006Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/linux/</loc>
+    
+    <lastmod>2018-10-04T16:35:45.807Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/unxi/</loc>
+    
+    <lastmod>2018-10-04T14:57:40.709Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.baixiaojian.com/jsrelearn/</loc>
     
-    <lastmod>2018-03-28T08:21:17.000Z</lastmod>
+    <lastmod>2018-10-03T13:40:17.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/eth/</loc>
+    
+    <lastmod>2018-10-03T13:39:27.597Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.baixiaojian.com/mac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
     
-    <lastmod>2018-03-16T07:53:41.000Z</lastmod>
+    <lastmod>2018-09-29T09:19:59.772Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2node%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://www.baixiaojian.com/FEDAY3/</loc>
     
-    <lastmod>2018-03-10T03:32:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/nginx%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2018-03-07T01:58:42.000Z</lastmod>
+    <lastmod>2018-09-29T04:01:47.594Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.baixiaojian.com/nginx/</loc>
     
-    <lastmod>2018-03-04T12:36:29.000Z</lastmod>
+    <lastmod>2018-09-29T03:53:45.615Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/spl%E8%AF%AD%E5%8F%A5/</loc>
+    <loc>http://www.baixiaojian.com/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2node%E5%BA%94%E7%94%A8/</loc>
     
-    <lastmod>2018-02-27T04:34:16.000Z</lastmod>
+    <lastmod>2018-09-29T03:51:32.864Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/Hexo%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2018-09-29T03:44:01.995Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/log-busy/</loc>
+    
+    <lastmod>2018-09-29T03:42:46.908Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/hexo1/</loc>
+    
+    <lastmod>2018-09-29T03:42:44.303Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/hello-world/</loc>
+    
+    <lastmod>2018-09-29T03:42:39.637Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/github%E5%92%8Ccoding/</loc>
+    
+    <lastmod>2018-09-29T03:42:32.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.baixiaojian.com/flex/</loc>
+    
+    <lastmod>2018-09-29T03:42:24.686Z</lastmod>
     
   </url>
   
@@ -51,30 +128,9 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/term/</loc>
-    
-    <lastmod>2018-01-26T09:31:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/charlesConfig/</loc>
-    
-    <lastmod>2018-01-26T09:30:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/2017-last-day/</loc>
     
     <lastmod>2018-01-26T09:29:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/log-busy/</loc>
-    
-    <lastmod>2018-01-26T09:27:18.000Z</lastmod>
     
   </url>
   
@@ -86,44 +142,9 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/FEDAY3/</loc>
-    
-    <lastmod>2018-01-26T07:34:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/hexo1/</loc>
-    
-    <lastmod>2018-01-21T15:14:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/ReactES6/</loc>
     
     <lastmod>2018-01-12T16:12:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/vim%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2017-12-31T10:37:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/mac%E7%BB%88%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2017-12-31T10:37:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/node%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2017-12-31T10:34:28.000Z</lastmod>
     
   </url>
   
@@ -152,13 +173,6 @@
     <loc>http://www.baixiaojian.com/quotation/</loc>
     
     <lastmod>2017-12-31T07:39:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/hello-world/</loc>
-    
-    <lastmod>2017-12-31T07:24:49.000Z</lastmod>
     
   </url>
   
@@ -198,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://www.baixiaojian.com/github%E5%92%8Ccoding/</loc>
-    
-    <lastmod>2017-12-31T07:13:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.baixiaojian.com/encrypt/</loc>
     
     <lastmod>2017-12-31T07:13:18.000Z</lastmod>
@@ -215,27 +222,6 @@
     <loc>http://www.baixiaojian.com/backup/</loc>
     
     <lastmod>2017-12-31T07:13:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/Hexo%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2017-12-31T07:13:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/git/</loc>
-    
-    <lastmod>2017-12-31T07:12:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.baixiaojian.com/flex/</loc>
-    
-    <lastmod>2017-12-31T07:12:06.000Z</lastmod>
     
   </url>
   
