@@ -74,9 +74,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>linux</tag>
         <tag>mac</tag>
         <tag>nginx</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -180,8 +180,8 @@
         <category>技术笔记</category>
       </categories>
       <tags>
-        <tag>FEDAY3</tag>
         <tag>笔记</tag>
+        <tag>FEDAY3</tag>
         <tag>记录</tag>
       </tags>
   </entry>
@@ -218,8 +218,8 @@
         <category>技术笔记</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>React</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -230,8 +230,8 @@
         <category>技术笔记</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>React</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -366,9 +366,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>encrypt</tag>
         <tag>Next+Hexo</tag>
         <tag>博客搭建</tag>
+        <tag>encrypt</tag>
       </tags>
   </entry>
   <entry>
